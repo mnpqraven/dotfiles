@@ -5,7 +5,6 @@
 !/Git
 !/.config
 /.config/*
-!/.config/bumblebee-status
 !/.config/Clementine
 !/.config/powerline
-!/.config/
+!/.config/i3
