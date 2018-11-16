@@ -5,8 +5,7 @@
 !.zshrc
 !.tmux.conf
 !.gtk*
-!.zsh*
-.zsh_history
+!.zshrc
 !.dir_color*
 !/.local
 !/.screenlayout
@@ -20,7 +19,6 @@
 !/.config/Clementine
 !/.config/powerline
 !/.config/i3
-!/.config/BetterDiscord
 !/.config/gtk*
 !/.config/vlc
 !/*/xfce4/terminal
