@@ -6,6 +6,7 @@
 !.tmux.conf
 !.gtk*
 !.zsh*
+.zsh_history
 !.dir_color*
 !/.local
 !/.screenlayout
