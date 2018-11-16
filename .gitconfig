@@ -3,6 +3,9 @@
 	name = Othi
  [color]
     ui = auto
+[color "remote"]
+warning = red reverse
+hint = dim green
   [color "branch"]
     current = bold red reverse
     local = bold red
