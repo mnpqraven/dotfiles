@@ -17,7 +17,7 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/othi/.config/i3/config" added="2018-11-15T05:24:53Z" modified="2018-11-15T05:52:09Z" visited="2018-11-15T05:24:54Z">
+  <bookmark href="file:///home/othi/.config/i3/config" added="2018-11-15T05:24:53Z" modified="2018-11-16T02:24:18Z" visited="2018-11-15T05:24:54Z">
     <desc>Charset: UTF-8</desc>
     <info>
       <metadata owner="http://freedesktop.org">
@@ -26,7 +26,7 @@
           <bookmark:group>Mousepad</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-15T05:52:09Z" count="3"/>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:24:18Z" count="5"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -51,12 +51,17 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/othi/.screenlayout/layout.sh" added="2018-11-15T06:24:19Z" modified="2018-11-15T06:36:24Z" visited="2018-11-15T06:24:19Z">
+  <bookmark href="file:///home/othi/.screenlayout/layout.sh" added="2018-11-15T06:24:19Z" modified="2018-11-16T02:23:40Z" visited="2018-11-15T06:24:19Z">
+    <desc>Charset: UTF-8</desc>
     <info>
       <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/x-shellscript"/>
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
         <bookmark:applications>
           <bookmark:application name="arandr" exec="&apos;arandr %u&apos;" modified="2018-11-15T06:36:24Z" count="3"/>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:23:40Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -523,6 +528,62 @@
         </bookmark:groups>
         <bookmark:applications>
           <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:01:58Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/.config/BetterDiscord/bdstorage.json" added="2018-11-16T02:13:20Z" modified="2018-11-16T02:13:20Z" visited="2018-11-16T02:13:20Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:13:20Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/.config/BetterDiscord/logs.log" added="2018-11-16T02:13:32Z" modified="2018-11-16T02:13:32Z" visited="2018-11-16T02:13:32Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:13:32Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/.config/BetterDiscord/emote_data.json" added="2018-11-16T02:14:58Z" modified="2018-11-16T02:14:58Z" visited="2018-11-16T02:16:09Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:14:58Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/i3-gaps/.gitignore" added="2018-11-16T02:23:08Z" modified="2018-11-16T02:23:08Z" visited="2018-11-16T02:23:08Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:23:08Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>

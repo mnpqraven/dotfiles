@@ -226,3 +226,46 @@ source .bashrc
 git status
 bash
 exit
+git status
+git log
+echo # aaa
+echo #aaa
+bash
+git status
+zsh
+souce .bashrc
+source .bashrc
+git log
+tmux
+git log
+git status
+git status
+git log --decorate
+git log --decorate
+git log --decorate
+git log --graph --pretty=oneline --abbrev-commit
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+git lg1
+git lg2
+git lg2
+git lg1
+git lg
+git lg2
+git lg
+git lg
+tree
+git lg
+git tree
+git tree
+git tree
+git tree
+git tree
+git tree
+git tree
+git tree
+git tree
+git status
+git status
+bash
+ls -a
+zsh

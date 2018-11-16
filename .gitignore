@@ -18,7 +18,7 @@
 /.config/*
 !/.config/Clementine
 !/.config/powerline
-!/.confi/i3
+!/.config/i3
 !/.config/BetterDiscord
 !/.config/gtk*
 !/.config/vlc

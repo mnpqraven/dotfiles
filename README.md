@@ -1,2 +1,5 @@
 /usr/ and /etc/ not yet linked
-[ ] ready
+
+betterdiscord not linked
+
+- [ ] ready
