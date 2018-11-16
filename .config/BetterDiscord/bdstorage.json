@@ -1,0 +1,52 @@
+{
+    "settings": {
+        "stable": {
+            "settings": {
+                "bda-gs-0": false,
+                "bda-gs-1": true,
+                "bda-gs-2": false,
+                "bda-gs-3": false,
+                "bda-gs-4": false,
+                "bda-gs-5": true,
+                "bda-gs-6": false,
+                "bda-gs-7": false,
+                "bda-gs-8": false,
+                "bda-es-0": true,
+                "bda-es-1": true,
+                "bda-es-2": true,
+                "bda-es-3": false,
+                "bda-es-4": false,
+                "bda-es-5": true,
+                "bda-es-6": true,
+                "bda-es-7": true,
+                "bda-gs-b": false,
+                "bda-es-8": true,
+                "bda-dc-0": false,
+                "bda-css-0": true,
+                "bda-css-1": false,
+                "bda-es-9": true,
+                "fork-dm-1": false,
+                "fork-ps-1": true,
+                "fork-ps-2": true,
+                "fork-ps-3": true,
+                "fork-ps-4": true,
+                "fork-ps-5": true,
+                "fork-es-2": false,
+                "fork-es-3": true,
+                "fork-wp-1": false,
+                "fork-wp-2": false
+            },
+            "plugins": {
+                "Citador": true
+            },
+            "themes": {
+                "Othi Blue": true,
+                "Wishful Blue": false
+            }
+        },
+        "canary": {},
+        "ptb": {}
+    },
+    "bdcustomcss": "Lm1lc3NhZ2Ugc3BhbiB7CiAgICBmb250LXNpemU6IDI0cHggIWltcG9ydGFudDsKICAgIGxpbmUtaGVpZ2h0OiAyOHB4Owp9CgoubWFya3VwLTJCT3ctaiB7CiAgICBmb250LXNpemU6IDE4cHggIWltcG9ydGFudDsKICAgIGxpbmUtaGVpZ2h0OiAyOHB4Owp9CgoudXNlci1uYW1lIHsKICAgICAgICBmb250LXNpemU6IDIwcHggIWltcG9ydGFudDsKfQoKLmNoYW5uZWwtdGV4dGFyZWEtaW5uZXIgdGV4dGFyZWEgewogICAgZm9udC1zaXplOiAyMHB4ICFpbXBvcnRhbnQ7CiAgICBoZWlnaHQ6IDI0cHg7CiAgICBsaW5lLWhlaWdodDogMjJweDsKfQoKc3Bhbi50aW1lc3RhbXAgewogICAgIGZvbnQtc2l6ZTogMjBweCAhaW1wb3J0YW50Owp9CgouZW1vamkgewogICAgaGVpZ2h0OiA1MHB4ICFpbXBvcnRhbnQ7CiAgICB3aWR0aDogNTBweCAhaW1wb3J0YW50Owp9Ci5lZGl0ZWQtREw5RUNsIHsKICAgIGZvbnQtc2l6ZTogMTVweDsKICAgIGNvbG9yOiAjYWYwMDAwICFpbXBvcnRhbnQ7Cn0KLmNoYW5uZWxUZXh0QXJlYS1yTnNJaEcgewogICAgbWFyZ2luLWJvdHRvbTogMjBweDsKICAgIHBhZGRpbmctdG9wOiAxMHB4Owp9",
+    "emoteCacheDate": "2018-11-15T18:21:43.807Z"
+}
