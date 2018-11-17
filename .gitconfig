@@ -33,3 +33,5 @@ tree = log --graph --abbrev-commit --decorate --date=format:'%d-%m-%Y %H:%M:%S' 
 	insteadOf = https://github.com/
 [url "ssh://git@bitbucket.org/"]
 	insteadOf = https://bitbucket.org/
+[credential]
+	helper = cache
