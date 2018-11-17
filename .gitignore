@@ -1,4 +1,5 @@
 /*
+!sshtest
 !*.md
 !.bash*
 !.vimrc
