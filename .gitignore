@@ -7,7 +7,7 @@
 !.gtk*
 !.zshrc
 !.dir_color*
-!/.local
+# !/.local
 !/.screenlayout
 !/i3-gaps
 !/powerline
@@ -16,9 +16,9 @@
 !/Git
 !/.config
 /.config/*
-!/.config/Clementine
 !/.config/powerline
 !/.config/i3
 !/.config/gtk*
 !/.config/vlc
 !/*/xfce4/terminal
+/.config/BetterDiscord
