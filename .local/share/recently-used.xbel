@@ -17,7 +17,7 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/othi/.config/i3/config" added="2018-11-15T05:24:53Z" modified="2018-11-15T05:52:09Z" visited="2018-11-15T05:24:54Z">
+  <bookmark href="file:///home/othi/.config/i3/config" added="2018-11-15T05:24:53Z" modified="2018-11-16T02:24:18Z" visited="2018-11-15T05:24:54Z">
     <desc>Charset: UTF-8</desc>
     <info>
       <metadata owner="http://freedesktop.org">
@@ -26,7 +26,7 @@
           <bookmark:group>Mousepad</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-15T05:52:09Z" count="3"/>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:24:18Z" count="5"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -51,12 +51,17 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/othi/.screenlayout/layout.sh" added="2018-11-15T06:24:19Z" modified="2018-11-15T06:36:24Z" visited="2018-11-15T06:24:19Z">
+  <bookmark href="file:///home/othi/.screenlayout/layout.sh" added="2018-11-15T06:24:19Z" modified="2018-11-16T02:23:40Z" visited="2018-11-15T06:24:19Z">
+    <desc>Charset: UTF-8</desc>
     <info>
       <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/x-shellscript"/>
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
         <bookmark:applications>
           <bookmark:application name="arandr" exec="&apos;arandr %u&apos;" modified="2018-11-15T06:36:24Z" count="3"/>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:23:40Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -142,7 +147,7 @@
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///run/media/othi/Raven/backup/discord.css" added="2018-11-15T18:20:46Z" modified="2018-11-15T18:20:46Z" visited="2018-11-15T18:20:46Z">
+  <bookmark href="file:///run/media/othi/Raven/backup/discord.css" added="2018-11-15T18:20:46Z" modified="2018-11-16T19:26:49Z" visited="2018-11-15T18:20:46Z">
     <desc>Charset: UTF-8</desc>
     <info>
       <metadata owner="http://freedesktop.org">
@@ -151,7 +156,7 @@
           <bookmark:group>Mousepad</bookmark:group>
         </bookmark:groups>
         <bookmark:applications>
-          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-15T18:20:46Z" count="1"/>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T19:26:49Z" count="3"/>
         </bookmark:applications>
       </metadata>
     </info>
@@ -523,6 +528,239 @@
         </bookmark:groups>
         <bookmark:applications>
           <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:01:58Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/i3-gaps/.gitignore" added="2018-11-16T02:23:08Z" modified="2018-11-16T02:23:08Z" visited="2018-11-16T02:23:08Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:23:08Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/bumblebee-status/themes/sac_red.json" added="2018-11-16T02:56:05Z" modified="2018-11-16T02:56:05Z" visited="2018-11-16T02:56:05Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:56:05Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/bumblebee-status/themes/gruvbox.json" added="2018-11-16T02:56:13Z" modified="2018-11-16T02:56:13Z" visited="2018-11-16T02:56:13Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:56:13Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/bumblebee-status/bumblebee/modules/indicator.py" added="2018-11-16T02:57:04Z" modified="2018-11-16T02:57:04Z" visited="2018-11-16T02:57:04Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T02:57:04Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/bumblebee-status/bumblebee/modules/weather.py" added="2018-11-16T12:31:26Z" modified="2018-11-16T12:35:09Z" visited="2018-11-16T12:31:27Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T12:35:09Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/bumblebee-status/bumblebee-status" added="2018-11-16T12:34:18Z" modified="2018-11-16T12:34:18Z" visited="2018-11-16T12:34:18Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T12:34:18Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/othi/Raven/Tonari%20no%20Kyuuketsuki-san" added="2018-11-16T15:56:45Z" modified="2018-11-16T15:56:45Z" visited="2018-11-16T15:56:45Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="deluge" exec="&apos;deluge %u&apos;" modified="2018-11-16T15:56:45Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/othi/Raven/To%20Aru%20Majutsu%20no%20Index%20III" added="2018-11-16T15:56:59Z" modified="2018-11-16T15:56:59Z" visited="2018-11-16T15:56:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="deluge" exec="&apos;deluge %u&apos;" modified="2018-11-16T15:56:59Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/othi/Raven/JoJo%E2%80%99s%20Bizarre%20Adventure%20%E2%80%93%20Golden%20Wind" added="2018-11-16T20:04:12Z" modified="2018-11-16T20:04:12Z" visited="2018-11-16T20:04:12Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="deluge" exec="&apos;deluge %u&apos;" modified="2018-11-16T20:04:12Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/othi/Raven/Kishuku%20Gakkou%20no%20Juliet" added="2018-11-16T20:04:22Z" modified="2018-11-16T20:04:22Z" visited="2018-11-16T20:04:22Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="deluge" exec="&apos;deluge %u&apos;" modified="2018-11-16T20:04:22Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/othi/Raven/Uchi%20no%20Maid%20ga%20Uzasugiru!" added="2018-11-16T20:04:36Z" modified="2018-11-16T20:04:36Z" visited="2018-11-16T20:04:36Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="deluge" exec="&apos;deluge %u&apos;" modified="2018-11-16T20:04:36Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/othi/Raven/Hinomaru%20Sumo" added="2018-11-16T20:04:48Z" modified="2018-11-16T20:04:48Z" visited="2018-11-16T20:04:48Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="deluge" exec="&apos;deluge %u&apos;" modified="2018-11-16T20:04:48Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/othi/Raven/Irozuku%20Sekai%20no%20Ashita%20kara" added="2018-11-16T21:44:47Z" modified="2018-11-16T21:44:47Z" visited="2018-11-16T21:44:48Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="deluge" exec="&apos;deluge %u&apos;" modified="2018-11-16T21:44:47Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/Screenshot_2018-11-16_22-56-24.png" added="2018-11-16T21:56:33Z" modified="2018-11-16T21:56:33Z" visited="2018-11-16T21:56:33Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="GNU Image Manipulation Program" exec="&apos;gimp-2.10 %u&apos;" modified="2018-11-16T21:56:33Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/genymotion-log.zip" added="2018-11-16T22:42:36Z" modified="2018-11-16T22:53:10Z" visited="2018-11-16T22:42:36Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2018-11-16T22:53:10Z" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/.cache/.fr-OLzO82/general-VirtualBox.xml" added="2018-11-16T22:53:20Z" modified="2018-11-16T22:53:20Z" visited="2018-11-16T22:53:20Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-16T22:53:20Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/.local/bin/powerline-config" added="2018-11-17T01:17:40Z" modified="2018-11-17T01:17:40Z" visited="2018-11-17T01:17:40Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-17T01:17:40Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/.local/bin/powerline-render" added="2018-11-17T01:17:48Z" modified="2018-11-17T01:17:48Z" visited="2018-11-17T01:17:48Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-17T01:17:48Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/othi/.config/BetterDiscord/bdstorage.json" added="2018-11-17T01:24:24Z" modified="2018-11-17T01:24:24Z" visited="2018-11-17T01:24:24Z">
+    <desc>Charset: UTF-8</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2018-11-17T01:24:24Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
