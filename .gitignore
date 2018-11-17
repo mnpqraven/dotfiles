@@ -7,9 +7,6 @@
 !.gtk*
 !.zshrc
 !.dir_color*
-# !/.local
-!/.screenlayout
-!/i3-gaps
 !/powerline
 !.gitignore
 !.gitconfig
