@@ -1,5 +1,10 @@
 /usr/ and /etc/ not yet linked
 
-betterdiscord not linked
+TO-DOs:
+- config i3gaps
+- config vim colo
+- config zsh colo
+- config qmk env
+- config moc
 
-- [ ] ready
+- [ ] ready to port to laptop

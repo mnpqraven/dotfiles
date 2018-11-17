@@ -269,3 +269,5 @@ git status
 bash
 ls -a
 zsh
+zsh
+exit
