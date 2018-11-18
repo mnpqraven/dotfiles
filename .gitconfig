@@ -33,4 +33,3 @@ hint = dim green
  	insteadOf = https://github.com/
 [url "ssh://git@bitbucket.org/"]
  	insteadOf = https://bitbucket.org/
-# testint ssh
