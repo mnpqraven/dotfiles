@@ -1,21 +1,21 @@
 [user]
 	email = mnpq.raven@gmail.com
 	name = Othi
- [color]
+[color]
     ui = auto
 [color "remote"]
 warning = red reverse
 hint = dim green
-  [color "branch"]
+[color "branch"]
     current = bold red reverse
     local = bold red
     remote = bold red italic
-  [color "diff"]
+[color "diff"]
     meta = red bold
     frag = magenta bold
     old = red bold
     new = green bold
-  [color "status"]
+[color "status"]
     added = cyan
     changed = green
     untracked = bold red
@@ -31,7 +31,7 @@ hint = dim green
 	editor = vim
 # [url "ssh://git@github.com/"]
 # 	insteadOf = https://github.com/
-# [url "ssh://git@bitbucket.org/"]
-# 	insteadOf = https://bitbucket.org/
+[url "ssh://git@bitbucket.org/"]
+ 	insteadOf = https://bitbucket.org/
 [credential]
 	helper = cache

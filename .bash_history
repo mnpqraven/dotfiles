@@ -271,3 +271,14 @@ ls -a
 zsh
 zsh
 exit
+vim .
+bash
+ars
+pip install --user powerline-status
+sudo pacman -S python-powerline-git
+yay  python-powerline-git
+badh
+bash
+zsh
+zsh
+zsh

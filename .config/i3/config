@@ -166,7 +166,7 @@ gaps bottom 0
 gaps left 0
 
 # window borders
-new_window 1pixel
+# new_window 1pixel
 
 bindsym $mod+r mode "resize"
 
@@ -221,4 +221,4 @@ assign [class="discord"] $ws6
 exec_always pamac-manager
 assign [class="Pamac-manager"] $ws9
 exec_always --no-startup-id discord
-exec --no-startup-id compton -f
+exec_always --no-startup-id compton -b -f

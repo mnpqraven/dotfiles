@@ -5,6 +5,8 @@ TO-DOs:
 - config vim colo
 - config zsh colo
 - config qmk env **done**
-- config moc
+- config moc or npcpmpp
+- config ranger
 
+- [ ] separate checker for laptop screen
 - [ ] ready to port to laptop
