@@ -8,6 +8,7 @@
 !.zshrc
 !.dir_color*
 !ssh-agent.sh
+!/.vim
 !/powerline
 !.gitignore
 !.gitconfig

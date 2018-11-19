@@ -2,8 +2,8 @@
 
 TO-DOs:
 - config i3gaps
-- config vim colo
-- config zsh colo
+- config vim colo **stable**
+- config zsh colo **stable**
 - config qmk env **done**
 - config moc or npcpmpp
 - config ranger
