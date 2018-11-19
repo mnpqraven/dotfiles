@@ -63,9 +63,6 @@ export UPDATE_ZSH_DAYS=13
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,19 +74,14 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
-fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 source ~/ssh-agent.sh
 
+# auto suggestion
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -100,8 +92,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias golinux="mate /run/media/othi/linux-data"
-alias gowin="mate /run/media/othi/WIN-DATA"
+alias golinux="cd /run/media/othi/linux-data"
+alias gowin="cd /run/media/othi/WIN-DATA"
 POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
 POWERLEVEL9K_MODE='nerdfont-complete'
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
@@ -119,9 +111,9 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='darkred'
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='015'
 # TODO
-POWERLEVEL9K_STATUS_OK_BACKGROUND='darkred'
+POWERLEVEL9K_STATUS_OK_BACKGROUND='dodgerblue1'
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND='015'
-POWERLEVEL9K_OK_ICON=''
+POWERLEVEL9K_OK_ICON='\Uf42e'
 POWERLEVEL9K_CARRIAGE_RETURN_ICON=''
 
 POWERLEVEL9K_DIR_HOME_BACKGROUND='240'
@@ -130,12 +122,16 @@ POWERLEVEL9K_DIR_HOME_FOREGROUND='015'
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='248'
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='232'
 
+POWERLEVEL9K_VCS_HIDE_TAGS=true
+POWERLEVEL9K_SHOW_CHANGESET=true
+POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND='green'
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='springgreen3'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='011'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='011'
+POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
 
 POWERLEVEL9K_STATUS_OK_FOREGROUND='black'
 POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\Uf54a'

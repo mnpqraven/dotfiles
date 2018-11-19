@@ -140,22 +140,22 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-# bindsym $mod+Alt+h resize shrink width 1 px or 1 ppt
-# bindsym $mod+Alt+n resize grow height 1 px or 1 ppt
-# bindsym $mod+Alt+l resize shrink height 1 px or 1 ppt
-# bindsym $mod+Alt+e resize grow width 1 px or 1 ppt
-
-# same bindings, but for the arrow keys
-bindsym $mod+Alt+Left resize shrink width 1 px or 1 ppt
-bindsym $mod+Alt+Down resize grow height 1 px or 1 ppt
-bindsym $mod+Alt+Up resize shrink height 1 px or 1 ppt
-bindsym $mod+Alt+Right resize grow width 1 px or 1 ppt
+# # resize window (you can also use the mouse for that)
+# # bindsym $mod+Alt+h resize shrink width 1 px or 1 ppt
+# # bindsym $mod+Alt+n resize grow height 1 px or 1 ppt
+# # bindsym $mod+Alt+l resize shrink height 1 px or 1 ppt
+# # bindsym $mod+Alt+e resize grow width 1 px or 1 ppt
+# 
+# # same bindings, but for the arrow keys
+# bindsym $mod+Alt+Left resize shrink width 1 px or 1 ppt
+# bindsym $mod+Alt+Down resize grow height 1 px or 1 ppt
+# bindsym $mod+Alt+Up resize shrink height 1 px or 1 ppt
+# bindsym $mod+Alt+Right resize grow width 1 px or 1 ppt
 
 # back to normal: Enter or Escape or $mod+r
-bindsym Return mode "default"
-bindsym Escape mode "default"
-bindsym $mod+r mode "default"
+# bindsym Return mode "default"
+# bindsym Escape mode "default"
+# bindsym $mod+r mode "default"
 
 # Gaping
 gaps inner 10
@@ -235,21 +235,17 @@ bindsym $mod+d exec dmenu_run -m DP-4
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# Start ups
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)
+# START UPS
 
 # monitor scaling
-# TODO: edit this in laptop
-exec_always xrandr --output HDMI-2 --off --output HDMI-1 --off --output HDMI-0 --off --output DP-5 --off --output DP-4 --primary --mode 2560x1440 --pos 0x784 --rotate normal --output DP-3 --off --output DP-2 --off --output DP-1 --off --output DP-0 --mode 2560x1440 --pos 2560x0 --rotate left
+exec_always --no-startup-id ~/.screenlayout/layout.sh
 
-exec_always feh --bg-center Pictures/picdump/wall/06e863f2e9c55658e1daf53800bd3720.png Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
+exec_always --no-startup-id feh --bg-center Pictures/picdump/wall/06e863f2e9c55658e1daf53800bd3720.png Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
 #TODO: edit this after new mp
 exec_always kill $(ps aux | grep '[c]lementine' | awk '{print $2}')
 exec_always --no-startup-id clementine
 assign [class="Clementine"] $ws6
-exec_always clementine
+exec_always --no-startup-id clementine
 assign [class="discord"] $ws6
-# exec_always pamac-manager
-# assign [class="Pamac-manager"] $ws9
 exec_always --no-startup-id discord
 exec_always --no-startup-id compton -b -f
