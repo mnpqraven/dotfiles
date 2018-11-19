@@ -282,3 +282,10 @@ bash
 zsh
 zsh
 zsh
+git pull
+git fetch
+git checkout masfer
+git checkout master
+git pull
+git rm -r --cached .
+git pull

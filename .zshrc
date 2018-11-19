@@ -87,7 +87,7 @@ fi
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 source ~/ssh-agent.sh
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -100,7 +100,9 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+alias golinux="mate /run/media/othi/linux-data"
+alias gowin="mate /run/media/othi/WIN-DATA"
+POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
 POWERLEVEL9K_MODE='nerdfont-complete'
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 

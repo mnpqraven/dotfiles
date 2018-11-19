@@ -57,6 +57,12 @@ bindsym $mod+s split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+## quick terminal
+#TODO
+# exec --no-startup-id xfce4-terminal -name dropdown
+# for_window [instance="dropdown"] floating enable;
+# for_window [instance="dropdown"] move scratchpad; [instance="dropdown"] scratchpad show; move position 0px 22px; resize shrink height 300px; resize grow width 683px; move scratchpad
+# bindsym $mod+t [instance="dropdown"] scratchpad show
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+p layout stacking
 bindsym $mod+w layout tabbed
@@ -123,6 +129,10 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# Cycle through active workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -131,23 +141,21 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym h resize shrink width 1 px or 1 ppt
-        bindsym n resize grow height 1 px or 1 ppt
-        bindsym l resize shrink height 1 px or 1 ppt
-        bindsym e resize grow width 1 px or 1 ppt
+# bindsym $mod+Alt+h resize shrink width 1 px or 1 ppt
+# bindsym $mod+Alt+n resize grow height 1 px or 1 ppt
+# bindsym $mod+Alt+l resize shrink height 1 px or 1 ppt
+# bindsym $mod+Alt+e resize grow width 1 px or 1 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 1 px or 1 ppt
-        bindsym Down resize grow height 1 px or 1 ppt
-        bindsym Up resize shrink height 1 px or 1 ppt
-        bindsym Right resize grow width 1 px or 1 ppt
+# same bindings, but for the arrow keys
+bindsym $mod+Alt+Left resize shrink width 1 px or 1 ppt
+bindsym $mod+Alt+Down resize grow height 1 px or 1 ppt
+bindsym $mod+Alt+Up resize shrink height 1 px or 1 ppt
+bindsym $mod+Alt+Right resize grow width 1 px or 1 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
+# back to normal: Enter or Escape or $mod+r
+bindsym Return mode "default"
+bindsym Escape mode "default"
+bindsym $mod+r mode "default"
 
 # Gaping
 gaps inner 10
@@ -221,7 +229,7 @@ bar {
 bindsym $mod+Shift+x exec i3lock
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -m DP-3
+bindsym $mod+d exec dmenu_run -m DP-4
 # There also is the (new) i3-dmenu-desktop which only displays applications#
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -229,14 +237,19 @@ bindsym $mod+d exec dmenu_run -m DP-3
 
 # Start ups
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)
+
+# monitor scaling
+# TODO: edit this in laptop
 exec_always xrandr --output HDMI-2 --off --output HDMI-1 --off --output HDMI-0 --off --output DP-5 --off --output DP-4 --primary --mode 2560x1440 --pos 0x784 --rotate normal --output DP-3 --off --output DP-2 --off --output DP-1 --off --output DP-0 --mode 2560x1440 --pos 2560x0 --rotate left
+
 exec_always feh --bg-center Pictures/picdump/wall/06e863f2e9c55658e1daf53800bd3720.png Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
+#TODO: edit this after new mp
 exec_always kill $(ps aux | grep '[c]lementine' | awk '{print $2}')
 exec_always --no-startup-id clementine
 assign [class="Clementine"] $ws6
 exec_always clementine
 assign [class="discord"] $ws6
-exec_always pamac-manager
-assign [class="Pamac-manager"] $ws9
+# exec_always pamac-manager
+# assign [class="Pamac-manager"] $ws9
 exec_always --no-startup-id discord
 exec_always --no-startup-id compton -b -f
