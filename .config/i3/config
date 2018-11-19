@@ -132,22 +132,16 @@ bindsym $mod+Shift+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym n resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym e resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym n resize grow height 1 px or 1 ppt
+        bindsym l resize shrink height 1 px or 1 ppt
+        bindsym e resize grow width 1 px or 1 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 1 px or 1 ppt
+        bindsym Down resize grow height 1 px or 1 ppt
+        bindsym Up resize shrink height 1 px or 1 ppt
+        bindsym Right resize grow width 1 px or 1 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -170,22 +164,35 @@ gaps left 0
 
 bindsym $mod+r mode "resize"
 
+#darkred
 set $bg-color 	         #410B0C
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
+set $darkred             #00ff00
 
 # window colors
 #                       border              background         text                 indicator
- client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
- client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
- client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+client.focused          $bg-color           $bg-color          $text-color          $bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+		colors {
+			background $bg-color
+			statusline #eeeeee
+			separator #eeeeee
+			#background #666666
+			#statusline #ffffff
+			#separator #ffffff
+			focused_workspace  #ffffff #ffffff #333333
+			#focused_workspace  #ffffff #ffffff #$bgcolor
+			inactive_workspace #cecece #cecece #$txtcolor
+		}
 	output DP-4
 	font pango:DejaVu Sans Mono 12
 	position top
@@ -193,6 +200,17 @@ bar {
 	status_command bumblebee-status/bumblebee-status  -m cpu date time weather pasink pasource indicator -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d %Y" -t gruvbox-powerline
 }
 bar {
+		colors {
+			background #333333
+			statusline #eeeeee
+			separator #eeeeee
+			#background #666666
+			#statusline #ffffff
+			#separator #ffffff
+			focused_workspace  #ffffff #ffffff #333333
+			#focused_workspace  #ffffff #ffffff #$bgcolor
+			inactive_workspace #cecece #cecece #$txtcolor
+		}
 	output DP-0
 	font pango:DejaVu Sans Mono 15
 	position bottom
