@@ -33,11 +33,12 @@ endw
 set timeout ttimeoutlen=50
 noremap <A-y> <C-e>
 noremap <F5> :so .vimrc<CR>
-" zoom and split resizing
+" split resizing
 let mapleader = " "
-map <Leader>u :res +5<CR>
-map <Leader>d :res -5<CR>
-
+map <A-l> :res +5<CR>
+map <A-n> :res -5<CR>
+map <A-h> :vertical resize -5<CR>
+map <A-e> :vertical resize +5<CR>
 " NERDTree keys
 noremap <C-\> :NERDTreeToggle<CR>
 noremap <C-Tab> :NERDTree<CR>
