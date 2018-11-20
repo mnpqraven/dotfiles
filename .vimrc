@@ -1,5 +1,3 @@
-" MAPPINGS WITH <Esc> ARE ALSO INTERPRETED AS <Alt> DUE TO VIM EXPECTING 8-bit
-" ENCODING
 " Basic settings
 set is
 set nocompatible
@@ -17,12 +15,13 @@ noremap K N
 noremap k n
 noremap l k
 noremap E $
+nnoremap <CR><CR> :
 noremap <C-H> <C-W>h
 noremap <C-N> <C-W>j
 noremap <C-E> <C-W>l
 noremap <C-L> <C-W>k
 
-
+" workaround to get vim getting Alt responses
 let c='a'
 while c <= 'z'
   exec "set <A-".c.">=\e".c
@@ -32,16 +31,16 @@ endw
 
 set timeout ttimeoutlen=50
 noremap <A-y> <C-e>
-noremap <F5> :so .vimrc<CR>
+noremap <F5> :so ~/.vimrc<CR>
 " split resizing
-let mapleader = " "
+let mapleader=" "
 map <A-l> :res +5<CR>
 map <A-n> :res -5<CR>
 map <A-h> :vertical resize -5<CR>
 map <A-e> :vertical resize +5<CR>
 " NERDTree keys
 noremap <C-\> :NERDTreeToggle<CR>
-noremap <C-Tab> :NERDTree<CR>
+" noremap <C-Tab> :NERDTree<CR>
 set relativenumber
 set complete=.,w,b,u,t,i,kspell
 " set spell

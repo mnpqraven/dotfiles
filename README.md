@@ -3,6 +3,7 @@
 TO-DOs:
 - config i3gaps keybinds
 - config bumblebee shortcuts
+- calendar in bumblebee
 - config vim colo **stable**
 - find a vim fuzzy finder
 - config zsh colo **stable**
