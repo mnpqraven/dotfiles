@@ -13,6 +13,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/ssh-agent.sh
 
 # auto suggestion
+# plugins=(zsh-autosuggestions)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Example aliases
