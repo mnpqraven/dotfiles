@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/othi'
+let g:netrw_dirhist_2='/home/othi/.screenlayout'
+let g:netrw_dirhist_3='/home/othi'
+let g:netrw_dirhist_4='/home/othi/.config/bumblebee-status'
+let g:netrw_dirhist_5='/home/othi/.config'
+let g:netrw_dirhist_6='/home/othi/.config/bumblebee-status'
+let g:netrw_dirhist_7='/run/media/othi/linux-data/studium/swt/swt2018_altradgieseltung/ueb03/bibmodel/src'

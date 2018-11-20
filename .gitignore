@@ -1,4 +1,5 @@
 /*
+!preview.png
 !*.md
 !.bash*
 !.*vimrc
@@ -12,7 +13,7 @@
 !/powerline
 !.gitignore
 !.gitconfig
-!/Git
+!/.config
 /.config/*
 !/.config/powerline
 !/.config/i3
