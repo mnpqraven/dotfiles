@@ -21,3 +21,8 @@
 !/.config/vlc
 !/*/xfce4/terminal
 /.config/BetterDiscord
+!/bumblebee-status
+/bumblebee-status/*
+!/bumblebee-status/themes
+/bumblebee-status/themes/*
+!/bumblebee-status/themes/othi-burgundy.json
