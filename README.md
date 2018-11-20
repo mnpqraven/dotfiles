@@ -3,7 +3,7 @@ Muh i3 rice
 Terminal font: Anonymice Nerd Font Bold 13
 Opacity 0.75
 
-![muh chinese waifoo](https://mnpqraven.github.com/images/preview.png)
+![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
 TO-DOs:
 - config i3gaps keybinds
 - config bumblebee shortcuts
