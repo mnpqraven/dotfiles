@@ -1,9 +1,12 @@
 /usr/ and /etc/ not yet linked
+Muh i3 rice
+Terminal font: Anonymice Nerd Font Bold 13
+Opacity 0.75
 
 TO-DOs:
 - config i3gaps keybinds
 - config bumblebee shortcuts
-- calendar in bumblebee
+- calendar in bumblebee **spawn location left**
 - config vim colo **stable**
 - find a vim fuzzy finder
 - config zsh colo **stable**
@@ -22,3 +25,5 @@ TO-DOs:
 - zsh
 - i3 + i3 gaps
 - bumblebee-status
+- xinput for touchpad
+- ranger
