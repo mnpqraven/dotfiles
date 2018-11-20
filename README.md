@@ -11,7 +11,7 @@ TO-DOs:
 - config ncmpcpp
 - config ranger
 
-- [ ] separate checker for laptop screen
+- [ ] separate checker for laptop screen **stable**
 - [ ] ready to port to laptop
 
 # install order, no script yet cause i'm a literal retard
