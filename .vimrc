@@ -46,6 +46,7 @@ set complete=.,w,b,u,t,i,kspell
 " set spell
 colo dracula
 syntax on
+" force clear bg
 hi Normal ctermbg=none
 set path+=**
 set wildmenu
@@ -61,5 +62,5 @@ inoremap {;<CR> {<CR>};<ESC>O
 set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
-set timeoutlen=500 ttimeoutlen=50
+set timeoutlen=500 ttimeoutlen=0
 set noshowmode

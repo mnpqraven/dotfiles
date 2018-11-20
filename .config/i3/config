@@ -243,7 +243,7 @@ bar {
 	font pango:DejaVu Sans Mono 12
 	position top
 	tray_output none  
-	status_command bumblebee-status/bumblebee-status  -m cpu date time weather pasink pasource indicator battery -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d %Y" date.left-click="orage" -t gruvbox-powerline
+	status_command bumblebee-status/bumblebee-status  -m shortcut cpu date time weather pasink pasource indicator battery -p shortcut.cmds="xfce4-screenshooter" shortcut.labels="Prnt" weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d %Y" date.left-click="orage" -t gruvbox-powerline
 }
 bindsym $mod+Shift+x exec i3lock
 
