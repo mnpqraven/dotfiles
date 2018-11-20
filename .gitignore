@@ -13,7 +13,7 @@
 !.gitignore
 !.gitconfig
 !/Git
-!/.config/ranger
+/.config/*
 !/.config/powerline
 !/.config/i3
 !/.config/gtk*
