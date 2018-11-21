@@ -16,8 +16,8 @@ TO-DOs:
 - config ranger
 - unify commands in i3
 
-- [ ] separate checker for laptop screen **stable**
-- [ ] ready to port to laptop
+- [ ] separate checker for laptop screen
+- [x] ready to port to laptop
 
 # install order, no script yet cause i'm a literal retard
 - compton, feh
@@ -29,3 +29,4 @@ TO-DOs:
 - bumblebee-status
 - xinput for touchpad
 - ranger
+- systemctl enable atd.service
