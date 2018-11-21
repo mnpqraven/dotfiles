@@ -14,6 +14,9 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: SauceCodePro Nerd Font Black 10
 
+# variables and shortcuts
+set $web google-chrome-stable
+set $term i3-sensible-terminal
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -49,10 +52,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+v split h
+bindsym $mod+v split h ;; exec $term
 
 # split in vertical orientation
-bindsym $mod+s split v
+bindsym $mod+s split v ;; exec $term
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -130,8 +133,10 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Cycle through active workspaces
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+# bindsym $mod+Tab workspace next
+# bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab workspace back_and_forth
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -140,35 +145,32 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# # resize window (you can also use the mouse for that)
-# # bindsym $mod+Alt+h resize shrink width 1 px or 1 ppt
-# # bindsym $mod+Alt+n resize grow height 1 px or 1 ppt
-# # bindsym $mod+Alt+l resize shrink height 1 px or 1 ppt
-# # bindsym $mod+Alt+e resize grow width 1 px or 1 ppt
-# 
-# # same bindings, but for the arrow keys
-# bindsym $mod+Alt+Left resize shrink width 1 px or 1 ppt
-# bindsym $mod+Alt+Down resize grow height 1 px or 1 ppt
-# bindsym $mod+Alt+Up resize shrink height 1 px or 1 ppt
-# bindsym $mod+Alt+Right resize grow width 1 px or 1 ppt
-
-# back to normal: Enter or Escape or $mod+r
-# bindsym Return mode "default"
-# bindsym Escape mode "default"
-# bindsym $mod+r mode "default"
+# resize window (you can also use the mouse for that)
+bindsym $mod+Mod1+h resize shrink width 1 px or 1 ppt
+bindsym $mod+Mod1+n resize grow height 1 px or 1 ppt
+bindsym $mod+Mod1+l resize shrink height 1 px or 1 ppt
+bindsym $mod+Mod1+e resize grow width 1 px or 1 ppt
+# same bindings, but for the arrow keys
+bindsym $mod+Mod1+Left resize shrink width 1 px or 1 ppt
+bindsym $mod+Mod1+Down resize grow height 1 px or 1 ppt
+bindsym $mod+Mod1+Up resize shrink height 1 px or 1 ppt
+bindsym $mod+Mod1+Right resize grow width 1 px or 1 ppt
 
 # Gaping
-gaps inner 10
-gaps outer 10
+gaps inner 15
+gaps outer 15
 gaps horizontal 10
 gaps vertical 10
 gaps top 0
 gaps right 0
 gaps bottom 0
 gaps left 0
+# Gaping resize
 
+# applications
+bindsym $mod+Mod1+c exec $web
 # window borders
-# new_window 1pixel
+new_window pixel 3
 
 bindsym $mod+r mode "resize"
 
@@ -249,17 +251,14 @@ bindsym $mod+Shift+x exec i3lock
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -m eDP1
-# There also is the (new) i3-dmenu-desktop which only displays applications#
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # START UPS
-
 # monitor scaling
 exec_always --no-startup-id ~/.screenlayout/layout.sh
+#TODO: another 3 keys with prompt for laptop rotation
 
-exec_always --no-startup-id feh --bg-center Pictures/picdump/wall/06e863f2e9c55658e1daf53800bd3720.png Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
+# wallpapers
+exec_always --no-startup-id feh --bg-center Pictures/wall/2702013m03_by_u_joe-d5we2yb.png Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
 #TODO: edit this after new mp
 # exec_always kill $(ps aux | grep '[c]lementine' | awk '{print $2}')
 exec_always --no-startup-id clementine

@@ -12,15 +12,19 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 source ~/ssh-agent.sh
 
+for i in `atq | awk '{print $1}'`;do atrm $i;done
+at 1859 <<< 'notify-send "BATTERY"'&>/dev/null
 # auto suggestion
 # plugins=(zsh-autosuggestions)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# misc
+# gf battery
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias golinux="cd /run/media/othi/linux-data"
 alias gowin="cd /run/media/othi/WIN-DATA"
+alias swt="cd /run/media/othi/linux-data/studium/swt/swt2018_altradgieseltung/"
+alias qm="cd ~/qmk_firmware"
 POWERLEVEL9K_CONTEXT_TEMPLATE="彼岸花"
 POWERLEVEL9K_MODE='nerdfont-complete'
 

@@ -9,7 +9,7 @@ TO-DOs:
 - config bumblebee shortcuts
 - calendar in bumblebee **spawn location left**
 - config vim colo **stable**
-- find a vim fuzzy finder
+- find a vim fuzzy finder **install ctrlP**
 - config zsh colo **stable**
 - config qmk env **done**
 - config ncmpcpp

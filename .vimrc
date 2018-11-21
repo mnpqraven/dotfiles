@@ -4,6 +4,8 @@ set nocompatible
 set number
 filetype plugin on
 set showcmd
+set cursorline
+set cursorcolumn
 " Colemak remapping
 noremap J E
 noremap j e
@@ -34,6 +36,7 @@ noremap <A-y> <C-e>
 noremap <F5> :so ~/.vimrc<CR>
 " split resizing
 let mapleader=" "
+map <Leader>t :NERDTree<CR>
 map <A-l> :res +5<CR>
 map <A-n> :res -5<CR>
 map <A-h> :vertical resize -5<CR>
