@@ -259,6 +259,8 @@ bindsym $mod+d exec dmenu_run -m eDP1
 # monitor scaling
 exec_always --no-startup-id ~/.screenlayout/layout.sh
 
+exec_always --no-startup-id feh --bg-center Pictures/scarlett-forest-1920×1080.jpg
+
 exec_always --no-startup-id feh --bg-center Pictures/picdump/wall/06e863f2e9c55658e1daf53800bd3720.png Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
 #TODO: edit this after new mp
 # exec_always kill $(ps aux | grep '[c]lementine' | awk '{print $2}')
