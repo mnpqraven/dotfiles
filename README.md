@@ -14,6 +14,7 @@ TO-DOs:
 - config qmk env **done**
 - config ncmpcpp
 - config ranger
+- unify commands in i3
 
 - [ ] separate checker for laptop screen **stable**
 - [ ] ready to port to laptop

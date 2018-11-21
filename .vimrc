@@ -4,8 +4,6 @@ set nocompatible
 set number
 filetype plugin on
 set showcmd
-set cursorline
-set cursorcolumn
 " Colemak remapping
 noremap J E
 noremap j e
