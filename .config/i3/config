@@ -255,6 +255,11 @@ bindsym $mod+d exec dmenu_run -m eDP1
 # START UPS
 # monitor scaling
 exec_always --no-startup-id ~/.screenlayout/layout.sh
+bindsym $mod+Mod1+k exec ~/.screenlayout/landscape.sh ;; exec ~/.screenlayout/layout.sh
+bindsym $mod+Mod1+m exec ~/.screenlayout/portrait.sh ;; exec ~/.screenlayout/layout-left.sh
+bindsym $mod+Mod1+b exec exec ~/.screenlayout/layout-inv.sh ;; exec ~/.screenlayout/landscape-inv.sh
+# bindsym $Mod+Mod1+k exec xinput set-prop 12 153 --type=float {0,-1,1,1,0,0,0,0,1}
+
 #TODO: another 3 keys with prompt for laptop rotation
 
 # wallpapers

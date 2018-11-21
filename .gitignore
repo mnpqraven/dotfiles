@@ -18,7 +18,7 @@
 /.config/*
 !/.config/powerline
 !/.config/i3
-!/.config/gtk*
+!/.config/gtk3*
 !/.config/vlc
 !/*/xfce4/terminal
 /.config/BetterDiscord
