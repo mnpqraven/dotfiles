@@ -11,6 +11,8 @@
 !ssh-agent.sh
 !othi-burgundy.json
 !/.vim
+!/.mpd
+!/.ncmpcpp
 !/powerline
 !.gitignore
 !.gitconfig

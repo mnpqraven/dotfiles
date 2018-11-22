@@ -19,6 +19,10 @@ TO-DOs:
 - [ ] separate checker for laptop screen
 - [x] ready to port to laptop
 
+# current todo: ncmpcpp
+- install ncmpcpp + mpd
+- reference: https://computingforgeeks.com/how-to-configure-mpd-and-ncmpcpp-on-linux/
+
 # install order, no script yet cause i'm a literal retard
 - compton, feh
 - vim
