@@ -306,11 +306,13 @@ def_key "9"
 #def_key "p"
 #  pause
 #
-#def_key ">"
-#  next
-#
-#def_key "<"
-#  previous
+def_key ">"
+  next
+  jump_to_playing_song
+
+def_key "<"
+  previous
+  jump_to_playing_song
 #
 #def_key "ctrl-h"
 #  jump_to_parent_directory
