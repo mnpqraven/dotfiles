@@ -16,7 +16,8 @@
 !.gitconfig
 !/.config
 /.config/*
-!/.config/mpd
+/.config/mpd/*
+!/.config/mpd.conf
 !/.config/ncmpcpp
 !/.config/powerline
 !/.config/i3

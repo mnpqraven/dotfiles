@@ -257,9 +257,6 @@ exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d
 #
 #TODO: edit this after new mp
 # exec_always kill $(ps aux | grep '[c]lementine' | awk '{print $2}')
-exec_always --no-startup-id clementine
-assign [class="Clementine"] $ws6
-exec_always --no-startup-id clementine
 assign [class="discord"] $ws6
 exec_always --no-startup-id discord
 exec_always --no-startup-id compton -b -f

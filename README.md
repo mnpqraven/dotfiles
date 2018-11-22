@@ -6,6 +6,7 @@ Terminal font: Anonymice Nerd Font Bold 13
 
 Opacity 0.75
 
+![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview2.png?raw=true)
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
 
 TO-DOs:
@@ -16,7 +17,7 @@ TO-DOs:
 - find a vim fuzzy finder **install ctrlP**
 - config zsh colo **stable**
 - config qmk env **done**
-- config ncmpcpp
+- config ncmpcpp **colorscheme on hold, TODO keymap**
 - config ranger
 - unify commands in i3
 
@@ -40,3 +41,4 @@ TO-DOs:
 - ranger
 - systemctl enable atd.service
 - mpd service and ncmpcpp
+- double check device list with `aplay --list-pcm`
