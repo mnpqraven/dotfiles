@@ -253,7 +253,7 @@ bindsym $mod+Mod1+b exec exec ~/.screenlayout/layout-inv.sh ;; exec ~/.screenlay
 
 # wallpapers
 exec_always --no-startup-id feh --bg-center Pictures/scarlett-forest-1920×1080.jpg
-exec_always --no-startup-id feh --bg-center Pictures/wall/2702013m03_by_u_joe-d5we2yb.png Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
+exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d4f42fc50e4b96db0e2e3b.jpg Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
 #
 #TODO: edit this after new mp
 # exec_always kill $(ps aux | grep '[c]lementine' | awk '{print $2}')

@@ -37,94 +37,6 @@ lyrics_directory = ~/Music
 # lyrics saved in music dir, see store_lyrics_in_song_dir
 mpd_music_dir = ~/Music
 
-visualizer_fifo_path = /tmp/mpd.fifo
-visualizer_output_name = "mpd_fifo"
-visualizer_in_stereo = yes
-visualizer_sample_multiplier = 2
-visualizer_sync_interval = 30
-
-playlist_disable_highlight_delay = 3
-message_delay_time = 3
-
-song_list_format = {%n  }{%t}|{%f}$R%l
-song_status_format = {$(13)%a$(end): $(138)%t$(end){ from $(5)"%b"$(end)}}|{%f}
-song_library_format = {%n - }{%t}|{%f}
-alternative_header_first_line_format = ♪ $(138){%t}|{%f}$(end) ♪
-alternative_header_second_line_format = $(13)%a$(end){ - %b{ (%y)}}
-
-now_playing_prefix = $(138)
-now_playing_suffix = $(end)
-browser_playlist_prefix = "$(138)m3u:$(end) "
-selected_item_prefix = $(13)
-selected_item_suffix = $(end)
-modified_item_prefix = $3> $9
-
-browser_sort_mode = format
-browser_sort_format = {{%a} {%y} {%b} {%n}|{%t}}|{%f}
-
-song_columns_list_format = (6f)[]{lr: } (25)[]{a} (3f)[]{nE: } (40)[]{t|f:Title} (5f)[]{yE: } (35)[]{b}
-
-playlist_shorten_total_times = yes
-playlist_show_remaining_time = yes
-
-playlist_display_mode = columns
-browser_display_mode = columns
-search_engine_display_mode = columns
-playlist_editor_display_mode = columns
-
-autocenter_mode = yes
-centered_cursor = yes
-
-progressbar_look = "․⨪ "
-progressbar_boldness = no
-
-default_place_to_search_in = database
-
-user_interface = alternative
-
-media_library_primary_tag = artist
-
-default_find_mode = wrapped
-
-header_text_scrolling = yes
-cyclic_scrolling = no
-lines_scrolled = 1
-
-follow_now_playing_lyrics = yes
-fetch_lyrics_for_current_song_in_background = no
-store_lyrics_in_song_dir = yes
-
-allow_for_physical_item_deletion = no
-
-screen_switcher_mode = previous
-
-jump_to_now_playing_song_at_start = yes
-
-ask_before_clearing_playlists = yes
-
-clock_display_seconds = no
-
-display_volume_level = yes
-display_bitrate = yes
-display_remaining_time = no
-
-regular_expressions = extended
-
-ignore_leading_the = yes
-
-block_search_constraints_change_if_items_found = yes
-
-mouse_support = yes
-mouse_list_scroll_whole_page = yes
-
-media_library_sort_by_mtime = no
-
-enable_window_title = yes
-
-search_engine_default_search_mode = 1
-
-external_editor = vim
-use_console_editor = yes
 
 colors_enabled = yes
 empty_tag_color = 240
@@ -297,40 +209,40 @@ active_column_color = 138
 ## Note: colors can be nested.
 ##
 #
-#song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
+song_list_format = {%A - }{%t}|{$8%f$9}$R{$3(%l)$9}
 #
-#song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
+song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
 #
-#song_library_format = {%n - }{%t}|{%f}
+song_library_format = {%n - }{%t}|{%f}
 #
-#alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
 #
-#alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
+alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
 #
-#current_item_prefix = $(yellow)$r
+current_item_prefix = $(yellow)$r
 #
-#current_item_suffix = $/r$(end)
+current_item_suffix = $/r$(end)
 #
-#current_item_inactive_column_prefix = $(white)$r
+current_item_inactive_column_prefix = $(white)$r
 #
-#current_item_inactive_column_suffix = $/r$(end)
+current_item_inactive_column_suffix = $/r$(end)
 #
-#now_playing_prefix = $b
+now_playing_prefix = $b
 #
-#now_playing_suffix = $/b
+now_playing_suffix = $/b
 #
-#browser_playlist_prefix = "$2playlist$9 "
+browser_playlist_prefix = "$2playlist$9 "
 #
-#selected_item_prefix = $6
+selected_item_prefix = $6
 #
-#selected_item_suffix = $9
+selected_item_suffix = $9
 #
-#modified_item_prefix = $3> $9
+modified_item_prefix = $3> $9
 #
 ##
 ## Note: attributes are not supported for the following variables.
 ##
-#song_window_title_format = {%a - }{%t}|{%f}
+song_window_title_format = {%A - }{%t}|{%f}
 ##
 ## Note: Below variables are used for sorting songs in browser.  The sort mode
 ## determines how songs are sorted, and can be used in combination with a sort
@@ -338,9 +250,9 @@ active_column_color = 138
 ## browser_sort_mode are "name", "mtime", "format" and "noop".
 ##
 #
-#browser_sort_mode = name
+browser_sort_mode = name
 #
-#browser_sort_format = {%a - }{%t}|{%f} {(%l)}
+browser_sort_format = {%A - }{%t}|{%f} {(%l)}
 #
 ##### columns settings #####
 ##
@@ -377,7 +289,7 @@ active_column_color = 138
 ##   available.
 ##
 #
-#song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+song_columns_list_format = (20)[]{A} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
 #
 ##### various settings #####
 #

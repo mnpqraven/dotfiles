@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/ssh-agent.sh
 
 for i in `atq | awk '{print $1}'`;do atrm $i;done
-at 1859 <<< 'notify-send "BATTERY"'&>/dev/null
+at 1859 <<< 'notify-send "BATTERY\nBATTERY\nBATTERY\nBATTERY\nBATTERY\nBATTERY\nBATTERY\nBATTERY"'&>/dev/null
 # auto suggestion
 # plugins=(zsh-autosuggestions)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
