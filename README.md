@@ -1,11 +1,15 @@
 /usr/ and /etc/ not yet linked
+
 Muh i3 rice
+
 Terminal font: Anonymice Nerd Font Bold 13
+
 Opacity 0.75
 
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
+
 TO-DOs:
-- config i3gaps keybinds
+- config i3gaps keybinds **stable**
 - config bumblebee shortcuts
 - calendar in bumblebee **spawn location left**
 - config vim colo **stable**
@@ -21,7 +25,8 @@ TO-DOs:
 
 # current todo: ncmpcpp
 - install ncmpcpp + mpd
-- reference: https://computingforgeeks.com/how-to-configure-mpd-and-ncmpcpp-on-linux/
+- reference: https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439
+- installation done, conf left
 
 # install order, no script yet cause i'm a literal retard
 - compton, feh
@@ -34,3 +39,4 @@ TO-DOs:
 - xinput for touchpad
 - ranger
 - systemctl enable atd.service
+- mpd service and ncmpcpp
