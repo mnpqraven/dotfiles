@@ -11,13 +11,13 @@
 !ssh-agent.sh
 !othi-burgundy.json
 !/.vim
-!/.mpd
-!/.ncmpcpp
 !/powerline
 !.gitignore
 !.gitconfig
 !/.config
 /.config/*
+!/.config/mpd
+!/.config/ncmpcpp
 !/.config/powerline
 !/.config/i3
 !/.config/gtk-3.0
