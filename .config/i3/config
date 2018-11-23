@@ -130,6 +130,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
 
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

@@ -78,7 +78,7 @@ browser_sort_mode = name
 
 browser_sort_format = {%A - }{%t}|{%f} {(%l)}
 
-song_columns_list_format = (15)[]{A:Circle} (20)[cyan]{b} (4f)[white]{dr:Dsc}(4f)[white]{Nr:Tr} (50)[white]{t|f:Title} (8f)[magenta]{lr:Duration}
+song_columns_list_format = (15)[]{A:Circle} (30)[cyan]{b} (4f)[white]{dr:Dsc}(4f)[white]{Nr:Tr} (50)[white]{t|f:Title} (5f)[white]{yr} (8f)[magenta]{lr:Time}
 centered_cursor = no
 progressbar_look = |
 
@@ -87,3 +87,11 @@ default_find_mode = normal
 allow_for_physical_item_deletion = no
 search_engine_default_search_mode = 2
 external_editor = vim
+cyclic_scrolling = yes
+user_interface = alternative
+display_volume_level = no
+jump_to_now_playing_song_at_start = yes
+display_bitrate = yes
+lines_scrolled = 2
+search_engine_display_mode = columns
+
