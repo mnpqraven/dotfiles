@@ -1,5 +1,6 @@
 /*
 !preview.png
+!preview2.png
 !*.md
 !.bash*
 !.*vimrc
@@ -16,9 +17,12 @@
 !.gitconfig
 !/.config
 /.config/*
+!/.config/mpd
+/.config/mpd/*
+!/.config/mpd/mpd.conf
+!/.config/ncmpcpp
 !/.config/powerline
 !/.config/i3
-!/.config/gtk3*
-!/.config/vlc
+!/.config/gtk-3.0
 !/*/xfce4/terminal
 /.config/BetterDiscord

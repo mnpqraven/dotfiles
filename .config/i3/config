@@ -130,6 +130,9 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
 
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -199,7 +202,7 @@ bar {
 	font pango:DejaVu Sans Mono 12
 	position top
 	tray_output none  
-	status_command bumblebee-status/bumblebee-status  -m cpu date time weather pasink pasource indicator -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.left-click="orage" date.format="%a, %b %d %Y" -t othi-burgundy
+	status_command bumblebee-status/bumblebee-status  -m mpd cpu date time weather pasink pasource indicator -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.left-click="orage" date.format="%a, %b %d %Y" -t othi-burgundy
 }
 bar {
 		colors {
@@ -253,13 +256,10 @@ bindsym $mod+Mod1+b exec exec ~/.screenlayout/layout-inv.sh ;; exec ~/.screenlay
 
 # wallpapers
 exec_always --no-startup-id feh --bg-center Pictures/scarlett-forest-1920×1080.jpg
-exec_always --no-startup-id feh --bg-center Pictures/wall/2702013m03_by_u_joe-d5we2yb.png Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
+exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d4f42fc50e4b96db0e2e3b.jpg Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
 #
 #TODO: edit this after new mp
 # exec_always kill $(ps aux | grep '[c]lementine' | awk '{print $2}')
-exec_always --no-startup-id clementine
-assign [class="Clementine"] $ws6
-exec_always --no-startup-id clementine
 assign [class="discord"] $ws6
 exec_always --no-startup-id discord
 exec_always --no-startup-id compton -b -f
