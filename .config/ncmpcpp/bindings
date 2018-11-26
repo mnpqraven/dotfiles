@@ -308,11 +308,15 @@ def_key "9"
 #
 def_key ">"
   next
-  jump_to_playing_song
 
 def_key "<"
   previous
-  jump_to_playing_song
+
+def_key "ctrl-u"
+  push_character "ctrl-f"
+  push_character "ctrl-u"
+  push_character "enter"
+  push_character "ctrl-l"
 #
 #def_key "ctrl-h"
 #  jump_to_parent_directory
@@ -491,7 +495,7 @@ def_key "<"
 #def_key "S"
 #  save_playlist
 #
-def_key "L"
+def_key "ctrl-l"
   jump_to_playing_song
 #
 #def_key "G"

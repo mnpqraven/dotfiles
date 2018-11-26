@@ -21,14 +21,21 @@ noremap <C-N> <C-W>j
 noremap <C-E> <C-W>l
 noremap <C-L> <C-W>k
 
+" indentation in vim
+set shiftwidth=2
+set tabstop=4
+set expandtab
+set smartindent
+
 " workaround to get vim getting Alt responses
 let c='a'
 while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
+exec "set <A-".c.">=\e".c
+exec "imap \e".c." <A-".c.">"
+let c = nr2char(1+char2nr(c))
 endw
 
+" leader bindings
 set timeout ttimeoutlen=50
 noremap <A-y> <C-e>
 noremap <F5> :so ~/.vimrc<CR>

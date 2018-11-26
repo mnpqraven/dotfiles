@@ -83,7 +83,7 @@ centered_cursor = no
 progressbar_look = |
 
 media_library_primary_tag = album_artist
-default_find_mode = normal
+default_find_mode = wrapped
 allow_for_physical_item_deletion = no
 search_engine_default_search_mode = 2
 external_editor = vim
@@ -94,4 +94,4 @@ jump_to_now_playing_song_at_start = yes
 display_bitrate = yes
 lines_scrolled = 2
 search_engine_display_mode = columns
-
+execute_on_song_change = "source ~/.config/ncmpcpp/notify.py"
