@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/home/othi/.oh-my-zsh"
 
@@ -12,14 +9,14 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 source ~/ssh-agent.sh
 
+# gf alarm
 for i in `atq | awk '{print $1}'`;do atrm $i;done
 at 1859 <<< 'notify-send "BATTERY"'&>/dev/null
+
 # auto suggestion
 # plugins=(zsh-autosuggestions)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# misc
-# gf battery
 # Example aliases
 alias golinux="cd /run/media/othi/linux-data"
 alias gowin="cd /run/media/othi/WIN-DATA"
@@ -57,7 +54,7 @@ POWERLEVEL9K_DIR_ETC_BACKGROUND='088'
 POWERLEVEL9K_DIR_ETC_FOREGROUND='white'
 
 
-POWERLEVEL9K_VCS_HIDE_TAGS=true
+POWERLEVEL9K_VCS_HIDE_TAGS=false
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
@@ -69,8 +66,8 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='011'
 POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
 
 POWERLEVEL9K_STATUS_OK_FOREGROUND='black'
-POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\Uf54a'
-POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$'\Uf562'
+POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\Uf54a '
+POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$'\Uf562 '
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
