@@ -95,3 +95,4 @@ display_bitrate = yes
 lines_scrolled = 2
 search_engine_display_mode = columns
 execute_on_song_change = "source ~/.config/ncmpcpp/notify.py"
+autocenter_mode = yes

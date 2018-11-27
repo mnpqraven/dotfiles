@@ -1,8 +1,5 @@
-# i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod4
+floating_modifier $mod
 
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: SauceCodePro Nerd Font Black 10
@@ -10,9 +7,6 @@ font pango: SauceCodePro Nerd Font Black 10
 # variables and shortcuts
 set $web google-chrome-stable
 set $term i3-sensible-terminal
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -25,8 +19,6 @@ bindsym $mod+h focus left
 bindsym $mod+n focus down
 bindsym $mod+l focus up
 bindsym $mod+e focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -37,33 +29,39 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+n move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+e move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# split
 bindsym $mod+v split h ;; exec $term
-
-# split in vertical orientation
 bindsym $mod+s split v ;; exec $term
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-## quick terminal
-#TODO
+# dropdown terminal
 exec_always --no-startup-id $term --title=dropdown
+exec_always --no-startup-id copyq
+for_window [class="copyq"] floating enable
+for_window [class="copyq"] move scratchpad
+for_window [class="copyq"] sticky enable
+
 for_window [title="dropdown"] floating enable
 for_window [title="dropdown"] resize set 1600 900
 for_window [title="dropdown"] move scratchpad
 for_window [title="dropdown"] border pixel 3
 for_window [title="dropdown"] sticky enable
-bindsym $mod+t [title="dropdown"] scratchpad show; [title="dropdown"] move position center
+bindsym $mod+t [instance="copyq"] scratchpad show; [instance="copyq"] move position center; [instance="copyq"] move right 600; [title="dropdown"] scratchpad show; [title="dropdown"] move position center
+
+
+# apps
+set $screenshot maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+z exec maim -s | xclip -selection clipboard -t image/png
 
 # Make the currently focused window a scratchpad
+
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
@@ -90,7 +88,7 @@ focus_follows_mouse no
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: Main " 
+set $ws1 "1: Main "
 set $ws2 "2: Terminal "
 set $ws3 "3: Terminal "
 set $ws4 "4: Terminal "
@@ -213,7 +211,7 @@ bar {
 	output DP-4
 	font pango:DejaVu Sans Mono 12
 	position top
-	tray_output none  
+	tray_output none
 	status_command bumblebee-status/bumblebee-status  -m mpd cpu date time weather pasink pasource indicator -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.left-click="orage" date.format="%a, %b %d %Y" -t othi-burgundy
 }
 bar {
@@ -231,8 +229,8 @@ bar {
 	output DP-0
 	font pango:DejaVu Sans Mono 15
 	position bottom
-	tray_output none  
-	status_command bumblebee-status/bumblebee-status -m shortcut -p shortcut.cmds="xfce4-screenshooter;ps" shortcut.labels="A;B" -t othi-burgundy
+	tray_output none
+	status_command bumblebee-status/bumblebee-status -m shortcut -p shortcut.cmds="zsh -c 'maim -s | xclip -selection clipboard -t image/png';thunar" shortcut.labels="Screenshot;thunar" -t othi-burgundy
 }
 
 # LAPTOP DISPLAY
@@ -251,13 +249,13 @@ bar {
 	output eDP1
 	font pango:DejaVu Sans Mono 12
 	position top
-	tray_output none  
+	tray_output none
 	status_command bumblebee-status/bumblebee-status  -m shortcut cpu date time weather pasink pasource indicator battery -p shortcut.cmds="xfce4-screenshooter" shortcut.labels="Prnt" weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d %Y" date.left-click="orage" -t othi-burgundy
 }
 bindsym $mod+Shift+x exec i3lock
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -m eDP1
+bindsym $mod+d exec dmenu_run
 
 # monitor scaling
 # the screen layout/resolution scpipts are computer-bound, set them up with arandr before going into i3, landscape.sh and portrait.sh can be used as-is
@@ -268,7 +266,7 @@ bindsym $mod+Mod1+b exec exec ~/.screenlayout/layout-inv.sh ;; exec ~/.screenlay
 
 # wallpapers
 exec_always --no-startup-id feh --bg-center Pictures/scarlett-forest-1920×1080.jpg
-exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d4f42fc50e4b96db0e2e3b.jpg Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg 
+exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d4f42fc50e4b96db0e2e3b.jpg Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg
 #
 #TODO: edit this after new mp
 # exec_always kill $(ps aux | grep '[c]lementine' | awk '{print $2}')

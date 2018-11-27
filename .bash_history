@@ -289,3 +289,5 @@ git checkout master
 git pull
 git rm -r --cached .
 git pull
+tsrien
+zsh

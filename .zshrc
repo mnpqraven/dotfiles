@@ -22,6 +22,7 @@ alias golinux="cd /run/media/othi/linux-data"
 alias gowin="cd /run/media/othi/WIN-DATA"
 alias swt="cd /run/media/othi/linux-data/studium/swt/swt2018_altradgieseltung/"
 alias qm="cd ~/qmk_firmware"
+alias screen="maim -s | xclip -selection clipboard -t image/png"
 POWERLEVEL9K_CONTEXT_TEMPLATE="彼岸花"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
