@@ -64,9 +64,12 @@ endw
 set timeout ttimeoutlen=50
 noremap <space> <nop>
 let mapleader=" "
-noremap <Leader>t :NERDTree<CR>
-noremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
-noremap <silent><Leader><Leader> :%s/\s\+$//e<CR>
+nnoremap <Leader>t :NERDTree<CR>
+nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
+nnoremap <silent><Leader><Leader> :%s/\s\+$//e<CR>
+nnoremap <Leader>k :tabnext<CR>
+nnoremap <Leader>K :tabprevious<CR>
+nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 
 " misc bindings
 noremap <A-y> <C-e>
