@@ -18,7 +18,7 @@ TO-DOs:
 - [x] config qmk env
 - [ ] config ncmpcpp **colorscheme on hold, TODO keymap**
 - [ ] config ranger
-- [ ] unify commands in i3
+- [ ] unify commands in i3, spawns size conf
 - [ ] config scrot and other utility packages
 - [ ] add utility packages to bumblebee shortcuts
 

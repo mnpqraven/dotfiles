@@ -55,14 +55,25 @@ bindsym $mod+f fullscreen toggle
 
 ## quick terminal
 #TODO
-# exec --no-startup-id i3-sensible-terminal -name dropdown
-# for_window [instance="dropdown"] floating enable;
-# for_window [instance="dropdown"] move scratchpad; [instance="dropdown"] scratchpad show; move position 0px 22px; resize shrink height 300px; resize grow width 683px; move scratchpad
-# bindsym $mod+t [instance="dropdown"] scratchpad show
+exec_always --no-startup-id $term --title=dropdown
+for_window [title="dropdown"] floating enable
+for_window [title="dropdown"] resize set 1600 900
+for_window [title="dropdown"] move scratchpad
+for_window [title="dropdown"] border pixel 3
+for_window [title="dropdown"] sticky enable
+bindsym $mod+t [title="dropdown"] scratchpad show; [title="dropdown"] move position center
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show; move position center
+
 # change container layout (stacked, tabbed, toggle split)
+
 bindsym $mod+p layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+j layout toggle split
+# bindsym $mod+w layout tabbed
+bindsym $mod+j layout toggle splitv splith stacking
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -75,6 +86,7 @@ bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
+focus_follows_mouse no
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -84,10 +96,10 @@ set $ws3 "3: Terminal "
 set $ws4 "4: Terminal "
 set $ws5 "5: IDE "
 set $ws6 "6: Shitpost "
-set $ws7 "7: "
-set $ws8 "8:"
-set $ws9 "9:"
-set $ws10 "0: "
+set $ws7 "7: Terminal "
+set $ws8 "8: Terminal "
+set $ws9 "9: Terminal "
+set $ws10 "10: Terminal "
 
 # monitor init
 workspace $ws1 output  DP-4
@@ -168,9 +180,9 @@ bindsym $mod+Mod1+c exec $web
 # window borders
 new_window pixel 3
 
-bindsym $mod+r mode "resize"
+# bindsym $mod+r mode "resize"
 
-#darkred
+# darkred
 set $bg-color 	         #410B0C
 set $inactive-bg-color   #1d2021
 set $text-color          #f3f4f5
@@ -260,7 +272,7 @@ exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d
 #
 #TODO: edit this after new mp
 # exec_always kill $(ps aux | grep '[c]lementine' | awk '{print $2}')
-assign [class="discord"] $ws6
 exec_always --no-startup-id discord
+for_window [class="discord"] move container to workspace $ws6
 exec_always --no-startup-id compton -b -f
-exec_always xinput set-prop 13 309 {0,0,0,0,1,3,2}
+exec_always --no-startup-id xinput set-prop 13 309 {0,0,0,0,1,3,2}
