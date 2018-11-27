@@ -2,8 +2,25 @@
 set is
 set nocompatible
 set number
-filetype plugin on
 set showcmd
+set list listchars=tab:»·,trail:·
+
+" Vundle
+" to install the plugins use :PluginInstall in vim
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+call vundle#end()
+filetype plugin indent on
+
+" plugin settings
+let g:ctrlp_show_hidden = 1
+noremap <F6> :CtrlPClearCache<CR>
+noremap <F7> :CtrlPClearAllCaches<CR>
 " Colemak remapping
 noremap J E
 noremap j e
@@ -37,11 +54,15 @@ endw
 
 " leader bindings
 set timeout ttimeoutlen=50
+map <Leader>t :NERDTree<CR>
+noremap <silent><Leader><Leader> :%s/\s\+$//e<CR>
+
+" misc bindings
 noremap <A-y> <C-e>
-noremap <F5> :so ~/.vimrc<CR>
+noremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
+
 " split resizing
 let mapleader=" "
-map <Leader>t :NERDTree<CR>
 map <A-l> :res +5<CR>
 map <A-n> :res -5<CR>
 map <A-h> :vertical resize -5<CR>
@@ -51,15 +72,25 @@ noremap <C-\> :NERDTreeToggle<CR>
 " noremap <C-Tab> :NERDTree<CR>
 set relativenumber
 set complete=.,w,b,u,t,i,kspell
+
 " set spell
 colo dracula
 syntax on
+
 " force clear bg
 hi Normal ctermbg=none
 set path+=**
 set wildmenu
 command! MakeTags !ctags -R .
+
 " auto bracket
+" escapes double brackets
+inoremap "<ESC> "
+inoremap '<ESC> '
+inoremap (<ESC> (
+inoremap [<ESC> [
+inoremap {<ESC> {
+" auto closes brackets
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>

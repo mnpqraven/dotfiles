@@ -10,16 +10,17 @@ Opacity 0.75
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
 
 TO-DOs:
-- config i3gaps keybinds **stable**
-- config bumblebee shortcuts
-- calendar in bumblebee **spawn location left**
-- config vim colo **stable**
-- find a vim fuzzy finder **install ctrlP**
-- config zsh colo **stable**
-- config qmk env **done**
-- config ncmpcpp **colorscheme on hold, TODO keymap**
-- config ranger
-- unify commands in i3
+- [x] config i3gaps keybinds
+- [ ] calendar in bumblebee **spawn location left**
+- [x] config vim colo
+- [x] find a vim fuzzy finder
+- [x] config zsh colo
+- [x] config qmk env
+- [ ] config ncmpcpp **colorscheme on hold, TODO keymap**
+- [ ] config ranger
+- [ ] unify commands in i3
+- [ ] config scrot and other utility packages
+- [ ] add utility packages to bumblebee shortcuts
 
 - [ ] separate checker for laptop screen
 - [x] ready to port to laptop
