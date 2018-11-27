@@ -37,7 +37,15 @@ noremap <C-H> <C-W>h
 noremap <C-N> <C-W>j
 noremap <C-E> <C-W>l
 noremap <C-L> <C-W>k
+nmap G Gzz
+" smart vertical mapping
+noremap <up> ddkP
+noremap <down> ddp
 
+" scroll wheel
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <A-y>
 " indentation in vim
 set shiftwidth=2
 set tabstop=4
@@ -54,15 +62,16 @@ endw
 
 " leader bindings
 set timeout ttimeoutlen=50
-map <Leader>t :NERDTree<CR>
+noremap <space> <nop>
+let mapleader=" "
+noremap <Leader>t :NERDTree<CR>
+noremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
 noremap <silent><Leader><Leader> :%s/\s\+$//e<CR>
 
 " misc bindings
 noremap <A-y> <C-e>
-noremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
 
 " split resizing
-let mapleader=" "
 map <A-l> :res +5<CR>
 map <A-n> :res -5<CR>
 map <A-h> :vertical resize -5<CR>

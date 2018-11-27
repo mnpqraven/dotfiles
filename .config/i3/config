@@ -54,7 +54,7 @@ for_window [title="dropdown"] move scratchpad
 for_window [title="dropdown"] border pixel 3
 for_window [title="dropdown"] sticky enable
 bindsym $mod+t [instance="copyq"] scratchpad show; [instance="copyq"] move position center; [instance="copyq"] move right 600; [title="dropdown"] scratchpad show; [title="dropdown"] move position center
-
+bindsym $mod+equal scratchpad show
 
 # apps
 set $screenshot maim -s | xclip -selection clipboard -t image/png
