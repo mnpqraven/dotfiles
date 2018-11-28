@@ -2,7 +2,7 @@
 !preview.png
 !preview2.png
 !*.md
-!.bash*
+!.bashrc
 !.*vimrc
 !.zshrc
 !.tmux.conf

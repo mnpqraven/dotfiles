@@ -1,9 +1,22 @@
 " Basic settings
+set encoding=utf-8
+scriptencoding utf-8
 set is
 set nocompatible
 set number
 set showcmd
-set list listchars=tab:»·,trail:·
+
+" indentation in vim
+set tabstop=4
+set shiftwidth=4
+set foldcolumn=1
+set textwidth=80
+set colorcolumn=+1
+set linespace=0
+set history=1000
+set showbreak=↪\
+set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:¬
+set smartindent
 
 " Vundle
 " to install the plugins use :PluginInstall in vim
@@ -46,11 +59,6 @@ noremap <down> ddp
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <A-y>
-" indentation in vim
-set shiftwidth=2
-set tabstop=4
-set expandtab
-set smartindent
 
 " workaround to get vim getting Alt responses
 let c='a'
