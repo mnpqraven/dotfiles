@@ -1,32 +1,28 @@
-/usr/ and /etc/ not yet linked
+# Muh i3 rice
 
-Muh i3 rice
-
-Terminal font: Anonymice Nerd Font Bold 13
-
-Opacity 0.75
+ - Terminal font: Anonymice Nerd Font Bold 13
+ - Opacity 0.75
 
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview2.png?raw=true)
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
 
 TO-DOs:
 - [x] config i3gaps keybinds
-- [ ] calendar in bumblebee **spawn location left**
+- [x] calendar in bumblebee **spawn location left**
 - [x] config vim colo
 - [x] find a vim fuzzy finder
 - [x] config zsh colo
 - [x] config qmk env
-- [ ] config ncmpcpp **colorscheme on hold, TODO keymap**
+- [ ] config ncmpcpp **colorscheme on hold, TODO keymap** (other references [here](https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439))
 - [ ] config ranger
-- [ ] unify commands in i3, spawns size conf
-- [ ] config scrot and other utility packages
+- [x] unify commands in i3, spawns size conf
+- [x] config maim and other utility packages
 - [ ] add utility packages to bumblebee shortcuts
 - [ ] install + config Wine
 
 - [ ] separate checker for laptop screen
 - [x] ready to port to laptop
 
-# current todo: ncmpcpp
 - install ncmpcpp + mpd
 - reference: https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439
 - installation done, conf left

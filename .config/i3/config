@@ -169,6 +169,7 @@ bindsym $mod+Shift+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 set $screenshot maim -s | xclip -selection clipboard -t image/png
 bindsym $mod+z exec $screenshot
 bindsym $mod+Mod1+c exec $web
+bindsym $mod+Mod1+r exec $term -x ranger
 
 # window borders
 new_window pixel 3

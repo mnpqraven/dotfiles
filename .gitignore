@@ -11,6 +11,7 @@
 !.dir_color*
 !ssh-agent.sh
 !othi-burgundy.json
+!/misc
 !/.vim
 !/powerline
 !.gitignore
