@@ -22,6 +22,7 @@
 !/.config/mpd/mpd.conf
 !/.config/ncmpcpp
 !/.config/powerline
+!/.config/rofi
 !/.config/i3
 !/.config/gtk-3.0
 !/*/xfce4/terminal

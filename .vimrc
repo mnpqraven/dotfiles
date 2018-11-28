@@ -41,8 +41,8 @@ noremap N K
 noremap n j
 noremap E J
 noremap e l
-noremap K N
-noremap k n
+noremap K Nzz
+noremap k nzz
 noremap l k
 noremap E $
 nnoremap <CR><CR> :
@@ -52,8 +52,8 @@ noremap <C-E> <C-W>l
 noremap <C-L> <C-W>k
 nmap G Gzz
 " smart vertical mapping
-noremap <up> ddkP
-noremap <down> ddp
+nnoremap <up> ddkP
+nnoremap <down> ddp
 
 " scroll wheel
 set mouse=a

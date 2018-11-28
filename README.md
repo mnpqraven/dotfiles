@@ -21,6 +21,7 @@ TO-DOs:
 - [ ] unify commands in i3, spawns size conf
 - [ ] config scrot and other utility packages
 - [ ] add utility packages to bumblebee shortcuts
+- [ ] install + config Wine
 
 - [ ] separate checker for laptop screen
 - [x] ready to port to laptop

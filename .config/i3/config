@@ -1,6 +1,21 @@
 set $mod Mod4
 floating_modifier $mod
 
+# darkred
+set $bg-color 	         #410B0C
+set $inactive-bg-color   #1d2021
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+set $darkred             #00ff00
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          $bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
+
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: SauceCodePro Nerd Font Black 10
 
@@ -53,53 +68,48 @@ for_window [title="dropdown"] resize set 1600 900
 for_window [title="dropdown"] move scratchpad
 for_window [title="dropdown"] border pixel 3
 for_window [title="dropdown"] sticky enable
+
 bindsym $mod+t [instance="copyq"] scratchpad show; [instance="copyq"] move position center; [instance="copyq"] move right 600; [title="dropdown"] scratchpad show; [title="dropdown"] move position center
 bindsym $mod+equal scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show; move position center
+
+# startups
+exec_always --no-startup-id $term --title=ms
+assign [instance="xfce4-terminal" title="ms"] $ws7
+exec_always --no-startup-id discord
+for_window [class="discord"] move container to workspace $ws6
+exec_always --no-startup-id compton -b -f
+exec_always --no-startup-id xinput set-prop 13 309 {0,0,0,0,1,3,2}
+exec_always --no-startup-id feh --bg-center Pictures/scarlett-forest-1920×1080.jpg
+exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d4f42fc50e4b96db0e2e3b.jpg Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg
+exec_always --no-startup-id ~/.screenlayout/layout.sh
+exec_always --no-startup-id i3-msg 'workspace $ws8; exec google-chrome-stable --new-window https://tweetdeck.twitter.com; workspace $ws8'
+exec_always --no-startup-id i3-msg 'workspace $ws8; exec xfce4-terminal --command "neofetch" --hold; workspace $ws8'
 
 # apps
 set $screenshot maim -s | xclip -selection clipboard -t image/png
-bindsym $mod+z exec maim -s | xclip -selection clipboard -t image/png
-
-# Make the currently focused window a scratchpad
-
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the first scratchpad window
-bindsym $mod+minus scratchpad show; move position center
-
-# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+z exec $screenshot
 
 bindsym $mod+p layout stacking
-# bindsym $mod+w layout tabbed
 bindsym $mod+j layout toggle splitv splith stacking
 
-# toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
 bindsym $mod+a focus parent
 
-# focus the child container
-#bindsym $mod+d focus child
-focus_follows_mouse no
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
+# workspace settings
 set $ws1 "1: Main "
 set $ws2 "2: Terminal "
 set $ws3 "3: Terminal "
 set $ws4 "4: Terminal "
 set $ws5 "5: IDE "
 set $ws6 "6: Shitpost "
-set $ws7 "7: Terminal "
+set $ws7 "7: Music "
 set $ws8 "8: Terminal "
 set $ws9 "9: Terminal "
 set $ws10 "10: Terminal "
-
-# monitor init
 workspace $ws1 output  DP-4
 workspace $ws2 output  DP-4
 workspace $ws3 output  DP-4
@@ -110,8 +120,6 @@ workspace $ws7 output  DP-0
 workspace $ws8 output  DP-0
 workspace $ws9 output  DP-0
 workspace $ws10 output DP-0
-
-# switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -122,8 +130,6 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-
-# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -136,9 +142,9 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Cycle through active workspaces
-# bindsym $mod+Tab workspace next
-# bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+d exec rofi -show run -monitor primary
+bindsym $mod+Shift+Tab exec rofi -show window -monitor primary
 
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86AudioNext exec --no-startup-id mpc next
@@ -156,7 +162,6 @@ bindsym $mod+Mod1+h resize shrink width 1 px or 1 ppt
 bindsym $mod+Mod1+n resize grow height 1 px or 1 ppt
 bindsym $mod+Mod1+l resize shrink height 1 px or 1 ppt
 bindsym $mod+Mod1+e resize grow width 1 px or 1 ppt
-# same bindings, but for the arrow keys
 bindsym $mod+Mod1+Left resize shrink width 1 px or 1 ppt
 bindsym $mod+Mod1+Down resize grow height 1 px or 1 ppt
 bindsym $mod+Mod1+Up resize shrink height 1 px or 1 ppt
@@ -172,29 +177,18 @@ gaps right 0
 gaps bottom 0
 gaps left 0
 # Gaping resize
+# TODO
 
 # applications
 bindsym $mod+Mod1+c exec $web
+
 # window borders
 new_window pixel 3
+focus_follows_mouse no
+for_window [class="Pavucontrol"] floating enable
 
-# bindsym $mod+r mode "resize"
-
-# darkred
-set $bg-color 	         #410B0C
-set $inactive-bg-color   #1d2021
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-set $darkred             #00ff00
-
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          $bg-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $bg-color
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $bg-color
-
+set $shortcmds "zsh -c 'maim -s | xclip -selection clipboard -t image/png';thunar\"
+set $shortlabels "screenshot;thunar"
 # pc display
 bar {
 		colors {
@@ -230,7 +224,7 @@ bar {
 	font pango:DejaVu Sans Mono 15
 	position bottom
 	tray_output none
-	status_command bumblebee-status/bumblebee-status -m shortcut -p shortcut.cmds="zsh -c 'maim -s | xclip -selection clipboard -t image/png';thunar" shortcut.labels="Screenshot;thunar" -t othi-burgundy
+	status_command bumblebee-status/bumblebee-status -m shortcut -p shortcut.cmds=$shortcmds shortcut.labels=$shortlabels -t othi-burgundy
 }
 
 # LAPTOP DISPLAY
@@ -252,25 +246,10 @@ bar {
 	tray_output none
 	status_command bumblebee-status/bumblebee-status  -m shortcut cpu date time weather pasink pasource indicator battery -p shortcut.cmds="xfce4-screenshooter" shortcut.labels="Prnt" weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d %Y" date.left-click="orage" -t othi-burgundy
 }
-bindsym $mod+Shift+x exec i3lock
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# bindsym $mod+Shift+x exec i3lock
 
 # monitor scaling
 # the screen layout/resolution scpipts are computer-bound, set them up with arandr before going into i3, landscape.sh and portrait.sh can be used as-is
-exec_always --no-startup-id ~/.screenlayout/layout.sh
 bindsym $mod+Mod1+k exec ~/.screenlayout/landscape.sh ;; exec ~/.screenlayout/layout.sh
 bindsym $mod+Mod1+m exec ~/.screenlayout/portrait.sh ;; exec ~/.screenlayout/layout-left.sh
 bindsym $mod+Mod1+b exec exec ~/.screenlayout/layout-inv.sh ;; exec ~/.screenlayout/landscape-inv.sh
-
-# wallpapers
-exec_always --no-startup-id feh --bg-center Pictures/scarlett-forest-1920×1080.jpg
-exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d4f42fc50e4b96db0e2e3b.jpg Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg
-#
-#TODO: edit this after new mp
-# exec_always kill $(ps aux | grep '[c]lementine' | awk '{print $2}')
-exec_always --no-startup-id discord
-for_window [class="discord"] move container to workspace $ws6
-exec_always --no-startup-id compton -b -f
-exec_always --no-startup-id xinput set-prop 13 309 {0,0,0,0,1,3,2}
