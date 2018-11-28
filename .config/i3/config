@@ -1,7 +1,6 @@
 set $mod Mod4
 floating_modifier $mod
 
-# darkred
 set $bg-color 	         #410B0C
 set $inactive-bg-color   #1d2021
 set $text-color          #f3f4f5
@@ -19,17 +18,12 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango: SauceCodePro Nerd Font Black 10
 
-# variables and shortcuts
 set $web google-chrome-stable
 set $term i3-sensible-terminal
-
-# start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
-
-# kill focused window
 bindsym $mod+Shift+q kill
 
-# change focus
+# container management
 bindsym $mod+h focus left
 bindsym $mod+n focus down
 bindsym $mod+l focus up
@@ -38,8 +32,6 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+n move down
 bindsym $mod+Shift+l move up
@@ -49,20 +41,12 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split
-bindsym $mod+v split h ;; exec $term
-bindsym $mod+s split v ;; exec $term
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
 # dropdown terminal
 exec_always --no-startup-id $term --title=dropdown
 exec_always --no-startup-id copyq
 for_window [class="copyq"] floating enable
 for_window [class="copyq"] move scratchpad
 for_window [class="copyq"] sticky enable
-
 for_window [title="dropdown"] floating enable
 for_window [title="dropdown"] resize set 1600 900
 for_window [title="dropdown"] move scratchpad
@@ -70,34 +54,9 @@ for_window [title="dropdown"] border pixel 3
 for_window [title="dropdown"] sticky enable
 
 bindsym $mod+t [instance="copyq"] scratchpad show; [instance="copyq"] move position center; [instance="copyq"] move right 600; [title="dropdown"] scratchpad show; [title="dropdown"] move position center
-bindsym $mod+equal scratchpad show
+# manual scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show; move position center
-
-# startups
-exec_always --no-startup-id $term --title=ms
-assign [instance="xfce4-terminal" title="ms"] $ws7
-exec_always --no-startup-id discord
-for_window [class="discord"] move container to workspace $ws6
-exec_always --no-startup-id compton -b -f
-exec_always --no-startup-id xinput set-prop 13 309 {0,0,0,0,1,3,2}
-exec_always --no-startup-id feh --bg-center Pictures/scarlett-forest-1920×1080.jpg
-exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d4f42fc50e4b96db0e2e3b.jpg Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg
-exec_always --no-startup-id ~/.screenlayout/layout.sh
-exec_always --no-startup-id i3-msg 'workspace $ws8; exec google-chrome-stable --new-window https://tweetdeck.twitter.com; workspace $ws8'
-exec_always --no-startup-id i3-msg 'workspace $ws8; exec xfce4-terminal --command "neofetch" --hold; workspace $ws8'
-
-# apps
-set $screenshot maim -s | xclip -selection clipboard -t image/png
-bindsym $mod+z exec $screenshot
-
-bindsym $mod+p layout stacking
-bindsym $mod+j layout toggle splitv splith stacking
-
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-
-bindsym $mod+a focus parent
 
 # workspace settings
 set $ws1 "1: Main "
@@ -107,7 +66,7 @@ set $ws4 "4: Terminal "
 set $ws5 "5: IDE "
 set $ws6 "6: Shitpost "
 set $ws7 "7: Music "
-set $ws8 "8: Terminal "
+set $ws8 "8: Reader "
 set $ws9 "9: Terminal "
 set $ws10 "10: Terminal "
 workspace $ws1 output  DP-4
@@ -140,33 +99,6 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-
-# Cycle through active workspaces
-bindsym $mod+Tab workspace back_and_forth
-bindsym $mod+d exec rofi -show run -monitor primary
-bindsym $mod+Shift+Tab exec rofi -show window -monitor primary
-
-bindsym XF86AudioPlay exec --no-startup-id mpc toggle
-bindsym XF86AudioNext exec --no-startup-id mpc next
-bindsym XF86AudioPrev exec --no-startup-id mpc prev
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
-bindsym $mod+Mod1+h resize shrink width 1 px or 1 ppt
-bindsym $mod+Mod1+n resize grow height 1 px or 1 ppt
-bindsym $mod+Mod1+l resize shrink height 1 px or 1 ppt
-bindsym $mod+Mod1+e resize grow width 1 px or 1 ppt
-bindsym $mod+Mod1+Left resize shrink width 1 px or 1 ppt
-bindsym $mod+Mod1+Down resize grow height 1 px or 1 ppt
-bindsym $mod+Mod1+Up resize shrink height 1 px or 1 ppt
-bindsym $mod+Mod1+Right resize grow width 1 px or 1 ppt
-
 # Gaping
 gaps inner 15
 gaps outer 15
@@ -179,15 +111,68 @@ gaps left 0
 # Gaping resize
 # TODO
 
-# applications
+# resize window (you can also use the mouse for that)
+bindsym $mod+Mod1+h resize shrink width 1 px or 1 ppt
+bindsym $mod+Mod1+n resize grow height 1 px or 1 ppt
+bindsym $mod+Mod1+l resize shrink height 1 px or 1 ppt
+bindsym $mod+Mod1+e resize grow width 1 px or 1 ppt
+bindsym $mod+Mod1+Left resize shrink width 1 px or 1 ppt
+bindsym $mod+Mod1+Down resize grow height 1 px or 1 ppt
+bindsym $mod+Mod1+Up resize shrink height 1 px or 1 ppt
+bindsym $mod+Mod1+Right resize grow width 1 px or 1 ppt
+
+# startups
+exec_always --no-startup-id ~/.screenlayout/layout.sh
+exec_always --no-startup-id $term --title=ms
+assign [instance="xfce4-terminal" title="ms"] $ws7
+exec_always --no-startup-id discord
+exec_always --no-startup-id compton -b -f
+exec_always --no-startup-id xinput set-prop 13 309 {0,0,0,0,1,3,2}
+exec_always --no-startup-id feh --bg-center Pictures/scarlett-forest-1920×1080.jpg
+exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d4f42fc50e4b96db0e2e3b.jpg Pictures/picdump/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg
+exec_always --no-startup_id i3-msg 'workspace $ws6; exec discord; resize set height 69 ppt; workspace $ws8'
+exec_always --no-startup-id i3-msg 'workspace $ws8; exec xfce4-terminal --command "neofetch" --hold; workspace $ws8'
+exec_always --no-startup-id i3-msg 'workspace $ws8; exec google-chrome-stable --new-window https://tweetdeck.twitter.com; resize set height 85 ppt; workspace $ws1'
+for_window [class="discord"] move container to workspace $ws6
+for_window [class="discord"] resize set height 69 ppt; move up
+for_window [class="discord"] move up
+for_window [title="TweetDeck"] move container to workspace $ws8; resize set height 85 ppt
+for_window [title="TweetDeck"] resize set height 85 ppt
+focus_follows_mouse yes
+for_window [class="Pavucontrol"] floating enable
+
+# bindings
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+d exec rofi -show run -monitor primary
+bindsym $mod+w exec rofi -show window -monitor primary
+
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+
+bindsym $mod+p layout stacking
+bindsym $mod+j layout toggle splitv splith stacking
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+v split h ;; exec $term
+bindsym $mod+s split v ;; exec $term
+bindsym $mod+f fullscreen toggle
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+bindsym $mod+Shift+m exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# apps
+set $screenshot maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+z exec $screenshot
 bindsym $mod+Mod1+c exec $web
 
 # window borders
 new_window pixel 3
-focus_follows_mouse no
-for_window [class="Pavucontrol"] floating enable
-
-set $shortcmds "zsh -c 'maim -s | xclip -selection clipboard -t image/png';thunar\"
+set $shortcmds "zsh -c 'maim -s | xclip -selection clipboard -t image/png';thunar"
 set $shortlabels "screenshot;thunar"
 # pc display
 bar {
@@ -206,7 +191,7 @@ bar {
 	font pango:DejaVu Sans Mono 12
 	position top
 	tray_output none
-	status_command bumblebee-status/bumblebee-status  -m mpd cpu date time weather pasink pasource indicator -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.left-click="orage" date.format="%a, %b %d %Y" -t othi-burgundy
+	status_command bumblebee-status/bumblebee-status -m mpd cpu date time weather pasink pasource indicator -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.left-click="orage" date.format="%a, %b %d %Y" -t othi-burgundy
 }
 bar {
 		colors {
