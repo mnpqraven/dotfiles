@@ -1,3 +1,4 @@
+# my i3 conf
 set $mod Mod4
 floating_modifier $mod
 
