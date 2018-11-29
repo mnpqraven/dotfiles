@@ -22,6 +22,7 @@ alias golinux="cd /run/media/othi/linux-data"
 alias gowin="cd /run/media/othi/WIN-DATA"
 alias swt="cd /run/media/othi/linux-data/studium/swt/swt2018_altradgieseltung/"
 alias qm="cd ~/qmk_firmware"
+alias mz="ncmpcpp"
 alias screen="maim -s | xclip -selection clipboard -t image/png"
 POWERLEVEL9K_CONTEXT_TEMPLATE="彼岸花"
 POWERLEVEL9K_MODE='nerdfont-complete'
@@ -38,7 +39,6 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
 POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='darkred'
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='015'
-# TODO
 POWERLEVEL9K_STATUS_OK_BACKGROUND='dodgerblue1'
 POWERLEVEL9K_STATUS_ERROR_FOREGROUND='015'
 POWERLEVEL9K_OK_ICON='\Uf42e'
