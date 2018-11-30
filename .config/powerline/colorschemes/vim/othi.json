@@ -1,5 +1,5 @@
 {
-	"name": "Othi Vim Powerline Coloscheme",
+	"name": "Othi Red Vim",
 	"groups": {
 		"information:unimportant":  { "fg": "gray8", "bg": "gray2", "attrs": [] },
 		"information:additional":   { "fg": "gray9", "bg": "gray4", "attrs": [] },
@@ -56,86 +56,114 @@
 		},
 		"i": {
 			"colors": {
-				"gray0": "darkestblue",
-				"gray1": "darkestblue",
-				"gray2": "darkestblue",
+				"gray0": "darkestred",
+				"gray1": "darkestred",
+				"gray2": "darkestred",
 				"gray3": "darkred",
 				"gray4": "darkred",
-				"gray5": "darkestcyan",
-				"gray6": "darkestcyan",
-				"gray7": "darkestcyan",
-				"gray8": "mediumcyan",
-				"gray9": "mediumcyan",
-				"gray10": "mediumcyan",
+				"gray5": "mediumred",
+				"gray6": "mediumred",
+				"gray7": "mediumred",
+				"gray8": "gray8",
+				"gray9": "gray8",
+				"gray10": "gray8",
 				"green_yellow_red": "gray5",
 				"dark_green_gray": "light_green_gray"
 			},
 			"groups": {
-				"mode":               { "fg": "darkestcyan", "bg": "white", "attrs": ["bold"] },
-				"background:divider": { "fg": "darkcyan", "bg": "darkestblue", "attrs": [] },
-				"branch:divider":     { "fg": "darkcyan", "bg": "darkred", "attrs": [] }
+				"mode":               { "fg": "mediumred", "bg": "gray10", "attrs": ["bold"] },
+				"background:divider": { "fg": "gray8", "bg": "darkestred", "attrs": [] },
+				"branch:divider":     { "fg": "gray8", "bg": "darkred", "attrs": [] }
 			}
 		},
 		"ic": {
 			"colors": {
-				"gray0": "darkestblue",
-				"gray1": "darkestblue",
-				"gray2": "darkestblue",
+				"gray0": "darkestred",
+				"gray1": "darkestred",
+				"gray2": "darkestred",
 				"gray3": "darkred",
 				"gray4": "darkred",
-				"gray5": "darkestcyan",
-				"gray6": "darkestcyan",
-				"gray7": "darkestcyan",
-				"gray8": "mediumcyan",
-				"gray9": "mediumcyan",
-				"gray10": "mediumcyan",
+				"gray5": "mediumred",
+				"gray6": "mediumred",
+				"gray7": "mediumred",
+				"gray8": "gray8",
+				"gray9": "gray8",
+				"gray10": "gray8",
 				"green_yellow_red": "gray5",
 				"dark_green_gray": "light_green_gray"
 			},
 			"groups": {
-				"mode":               { "fg": "darkestcyan", "bg": "white", "attrs": ["bold"] },
-				"background:divider": { "fg": "darkcyan", "bg": "darkestblue", "attrs": [] },
-				"branch:divider":     { "fg": "darkcyan", "bg": "darkred", "attrs": [] }
+				"mode":               { "fg": "mediumred", "bg": "gray10", "attrs": ["bold"] },
+				"background:divider": { "fg": "gray8", "bg": "darkestred", "attrs": [] },
+				"branch:divider":     { "fg": "gray8", "bg": "darkred", "attrs": [] }
 			}
 		},
 		"ix": {
 			"colors": {
-				"gray0": "darkestblue",
-				"gray1": "darkestblue",
-				"gray2": "darkestblue",
+				"gray0": "darkestred",
+				"gray1": "darkestred",
+				"gray2": "darkestred",
 				"gray3": "darkred",
 				"gray4": "darkred",
-				"gray5": "darkestcyan",
-				"gray6": "darkestcyan",
-				"gray7": "darkestcyan",
-				"gray8": "mediumcyan",
-				"gray9": "mediumcyan",
-				"gray10": "mediumcyan",
+				"gray5": "mediumred",
+				"gray6": "mediumred",
+				"gray7": "mediumred",
+				"gray8": "gray8",
+				"gray9": "gray8",
+				"gray10": "gray8",
 				"green_yellow_red": "gray5",
 				"dark_green_gray": "light_green_gray"
 			},
 			"groups": {
-				"mode":               { "fg": "darkestcyan", "bg": "white", "attrs": ["bold"] },
-				"background:divider": { "fg": "darkcyan", "bg": "darkestblue", "attrs": [] },
-				"branch:divider":     { "fg": "darkcyan", "bg": "darkred", "attrs": [] }
+				"mode":               { "fg": "mediumred", "bg": "gray10", "attrs": ["bold"] },
+				"background:divider": { "fg": "gray8", "bg": "darkestred", "attrs": [] },
+				"branch:divider":     { "fg": "gray8", "bg": "darkred", "attrs": [] }
 			}
 		},
 		"v": {
+			"colors": {
+				"gray0": "darkorange",
+				"gray1": "darkorange",
+				"gray2": "darkorange",
+				"green_yellow_red": "gray5",
+				"dark_green_gray": "light_green_gray"
+			},
 			"groups": {
 				"mode": { "fg": "darkorange", "bg": "brightestorange", "attrs": ["bold"] }
 			}
 		},
 		"V": {
+			"colors": {
+				"gray0": "darkorange",
+				"gray1": "darkorange",
+				"gray2": "darkorange",
+				"green_yellow_red": "gray5",
+				"dark_green_gray": "light_green_gray"
+			},
 			"groups": {
 				"mode": { "fg": "darkorange", "bg": "brightestorange", "attrs": ["bold"] }
 			}
 		},
 		"^V": {
+			"colors": {
+				"gray0": "darkorange",
+				"gray1": "darkorange",
+				"gray2": "darkorange",
+				"green_yellow_red": "gray5",
+				"dark_green_gray": "light_green_gray"
+			},
 			"groups": {
 				"mode": { "fg": "darkorange", "bg": "brightestorange", "attrs": ["bold"] }
 			}
 		},
 		"R": {
+			"colors": {
+				"gray0": "brightred",
+				"gray1": "brightred",
+				"gray2": "brightred",
+				"green_yellow_red": "gray5",
+				"dark_green_gray": "light_green_gray"
+			},
 			"groups": {
 				"mode": { "fg": "white", "bg": "brightred", "attrs": ["bold"] }
 			}

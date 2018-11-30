@@ -53,6 +53,7 @@ noremap <C-N> <C-W>j
 noremap <C-E> <C-W>l
 noremap <C-L> <C-W>k
 nmap G Gzz
+" vnoremap <C-R> :'<,'>s/
 " smart vertical mapping/dragging
 nnoremap <up> ddkP
 nnoremap <down> ddp
@@ -122,7 +123,7 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
-set rtp+=/lib/python3.7/site-packages/powerline/bindings/vim/
+set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
 set timeoutlen=500 ttimeoutlen=0
