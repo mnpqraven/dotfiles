@@ -122,7 +122,7 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
-set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/
+set rtp+=/lib/python3.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
 set timeoutlen=500 ttimeoutlen=0

@@ -143,4 +143,4 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
-. /home/othi/.local/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+. /usr/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
