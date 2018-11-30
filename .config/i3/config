@@ -68,7 +68,7 @@ set $ws5 "5: IDE "
 set $ws6 "6: Shitpost "
 set $ws7 "7: Music "
 set $ws8 "8: Reader "
-set $ws9 "9: Terminal "
+set $ws9 "9: Atom "
 set $ws10 "10: Terminal "
 workspace $ws1 output  DP-4
 workspace $ws2 output  DP-4
@@ -139,8 +139,11 @@ for_window [class="discord"] resize set height 69 ppt; move up
 for_window [class="discord"] move up
 for_window [title="TweetDeck"] move container to workspace $ws8; resize set height 85 ppt
 for_window [title="TweetDeck"] resize set height 85 ppt
+for_window [title="TweetDeck"] move down
 focus_follows_mouse yes
 for_window [class="Pavucontrol"] floating enable
+for_window [class="atom"] move container to $ws9
+for_window [class="jetbrains-idea-ce"] move container to $ws5
 
 # bindings
 bindsym $mod+Tab workspace back_and_forth
@@ -159,6 +162,7 @@ bindsym $mod+a focus parent
 bindsym $mod+v split h ;; exec $term
 bindsym $mod+s split v ;; exec $term
 bindsym $mod+f fullscreen toggle
+bindsym $mod+q resize set height 69 ppt
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

@@ -27,6 +27,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'whiteinge/diffconflicts'
 call vundle#end()
 filetype plugin indent on
 
@@ -45,15 +46,18 @@ noremap K Nzz
 noremap k nzz
 noremap l k
 noremap E $
+noremap H 0
 nnoremap <CR><CR> :
 noremap <C-H> <C-W>h
 noremap <C-N> <C-W>j
 noremap <C-E> <C-W>l
 noremap <C-L> <C-W>k
 nmap G Gzz
-" smart vertical mapping
+" smart vertical mapping/dragging
 nnoremap <up> ddkP
 nnoremap <down> ddp
+vnoremap <up> dkP1v
+vnoremap <down> dp1v
 
 " scroll wheel
 set mouse=a
@@ -69,11 +73,10 @@ let c = nr2char(1+char2nr(c))
 endw
 
 " leader bindings
-set timeout ttimeoutlen=50
+" set timeout ttimeoutlen=50
 noremap <space> <nop>
 let mapleader=" "
 nnoremap <Leader>t :NERDTree<CR>
-nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
 nnoremap <silent><Leader><Leader> :%s/\s\+$//e<CR>
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
@@ -81,6 +84,7 @@ nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 
 " misc bindings
 noremap <A-y> <C-e>
+nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
 
 " split resizing
 map <A-l> :res +5<CR>

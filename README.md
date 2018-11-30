@@ -7,18 +7,16 @@
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
 
 TO-DOs:
+- [ ] config ranger
+- [ ] config ncmpcpp **colorscheme on hold, TODO keymap** (other references [here](https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439))
+- [ ] add utility packages to bumblebee shortcuts
+- [ ] take a look at fugitive.vim
+- [ ] install + config Wine
 - [x] config i3gaps keybinds
 - [x] calendar in bumblebee **spawn location left**
-- [x] config vim colo
 - [x] find a vim fuzzy finder
-- [x] config zsh colo
-- [x] config qmk env
-- [ ] config ncmpcpp **colorscheme on hold, TODO keymap** (other references [here](https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439))
-- [ ] config ranger
 - [x] unify commands in i3, spawns size conf
 - [x] config maim and other utility packages
-- [ ] add utility packages to bumblebee shortcuts
-- [ ] install + config Wine
 
 - [ ] separate checker for laptop screen
 - [x] ready to port to laptop
