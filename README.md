@@ -1,7 +1,35 @@
 # Muh i3 rice
 
- - Terminal font: Anonymice Nerd Font Bold 13
- - Opacity 0.75
+TODO: full setup list
+ - **Terminal**
+ 	* Terminal: **zsh + tmux** in xfce4-terminal
+	* Terminal font: Anonymice Nerd Font Bold 13
+	* Opacity 0.75
+ - **WM**
+	* i3gaps
+	* xfce4 GUI for windows
+ - **Audio**
+ 	* **mpd** as backend
+	* **ncmpcpp** as frontent
+ - **Video**
+ 	* **mpv**
+ - **Files Management**
+ 	* **ranger**
+	* **thunar**
+ - **Text editor**
+ 	* Main text editor: **Vim**
+	* Diffs: Atom
+ - **Image Processing**
+ 	* **feh**
+	* **maim** for screenshot
+ - **Clipboard**
+ 	* **copyq**
+ - **placeholder**
+ - **placeholder**
+ - **placeholder**
+ - **Virtual Machines**
+ 	* **Genymotion**
+	* Wine
 
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview2.png?raw=true)
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
@@ -20,6 +48,7 @@ TO-DOs:
 
 - [ ] separate checker for laptop screen
 - [x] ready to port to laptop
+ usr/share
 
 - install ncmpcpp + mpd
 - reference: https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439
