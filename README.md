@@ -15,17 +15,19 @@ TODO: full setup list
  	* **mpv**
  - **Files Management**
  	* **ranger**
-	* **thunar**
+	* thunar
  - **Text editor**
  	* Main text editor: **Vim**
-	* Diffs: Atom
+	* Diffs and MD preview: Atom
  - **Image Processing**
  	* **feh**
 	* **maim** for screenshot
  - **Clipboard**
  	* **copyq**
- - **placeholder**
- - **placeholder**
+ - **Web browser**
+ 	* Google Chrome, might switch to qtbrowser soon
+ - **Mail**
+ 	* Thunderbird, might move to mutt soon
  - **placeholder**
  - **Virtual Machines**
  	* **Genymotion**
