@@ -13,6 +13,12 @@ source ~/Scripts/ssh-agent.sh
 # gf alarm
 for i in `atq | awk '{print $1}'`;do atrm $i;done
 at 1859 <<< 'notify-send -i "battery" "get batts" "more batts" -u critical'&>/dev/null
+
+if [[ -z "$(pgrep mpd)" ]]; then
+  mpd
+  mpc pause
+fi
+
 # auto suggestion
 # plugins=(zsh-autosuggestions)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

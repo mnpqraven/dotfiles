@@ -37,11 +37,12 @@ TODO: full setup list
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
 
 TO-DOs:
-- [ ] config ranger
+- [ ] config ranger, config fasd or fzf with ranger
 - [ ] config ncmpcpp **colorscheme on hold, TODO keymap** (other references [here](https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439))
 - [ ] add utility packages to bumblebee shortcuts
-- [ ] take a look at fugitive.vim
+- [ ] take a look at fugitive.vim, more read on ctrlP
 - [ ] install + config Wine
+- [ ] config tmux
 - [x] config i3gaps keybinds
 - [x] calendar in bumblebee **spawn location left**
 - [x] find a vim fuzzy finder
