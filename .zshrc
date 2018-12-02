@@ -3,11 +3,12 @@ export ZSH="/home/othi/.oh-my-zsh"
 
 export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=7
+export EDITOR=vim
 source $ZSH/oh-my-zsh.sh
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-source ~/ssh-agent.sh
+source ~/Scripts/ssh-agent.sh
 
 # gf alarm
 for i in `atq | awk '{print $1}'`;do atrm $i;done
