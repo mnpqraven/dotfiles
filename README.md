@@ -42,7 +42,7 @@ TO-DOs:
 - [ ] add utility packages to bumblebee shortcuts
 - [ ] take a look at fugitive.vim, more read on ctrlP
 - [ ] install + config Wine
-- [ ] config tmux
+- [ ] config tmux **change the bindings**
 - [x] config i3gaps keybinds
 - [x] calendar in bumblebee **spawn location left**
 - [x] find a vim fuzzy finder

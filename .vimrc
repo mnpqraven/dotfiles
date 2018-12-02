@@ -39,12 +39,12 @@ noremap <F7> :CtrlPClearAllCaches<CR>
 noremap J E
 noremap j e
 noremap N K
-noremap n j
+noremap n gj
 noremap E J
 noremap e l
 noremap K Nzz
 noremap k nzz
-noremap l k
+noremap l gk
 noremap E $
 noremap H 0
 nnoremap <CR><CR> :
@@ -82,28 +82,41 @@ nnoremap <silent><Leader><Leader> :%s/\s\+$//e<CR>
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
 nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
+noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 
 " misc bindings
 noremap <A-y> <C-e>
 nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
+
+" NERDTree keys
+noremap <C-\> :NERDTreeToggle<CR>
 
 " split resizing
 map <A-l> :res +5<CR>
 map <A-n> :res -5<CR>
 map <A-h> :vertical resize -5<CR>
 map <A-e> :vertical resize +5<CR>
-" NERDTree keys
-noremap <C-\> :NERDTreeToggle<CR>
-" noremap <C-Tab> :NERDTree<CR>
 set relativenumber
 set complete=.,w,b,u,t,i,kspell
 
-" set spell
+function ToggleWrap()
+  if &wrap
+    echo "Wrap OFF"
+    setlocal nowrap
+    set virtualedit=all
+  else
+    echo "Wrap ON"
+    setlocal wrap linebreak nolist
+    set virtualedit=
+    setlocal display+=lastline
+  endif
+endfunction
+
+" colosceme
 colo dracula
 syntax on
-
-" force clear bg
 hi Normal ctermbg=none
+
 set path+=**
 set wildmenu
 command! MakeTags !ctags -R .
@@ -126,5 +139,5 @@ inoremap {;<CR> {<CR>};<ESC>O
 set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
-set timeoutlen=500 ttimeoutlen=0
+set timeoutlen=1000 ttimeoutlen=0
 set noshowmode
