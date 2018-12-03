@@ -1,14 +1,12 @@
-# Path to your oh-my-zsh installation.
 export ZSH="/home/othi/.oh-my-zsh"
 
 export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=7
 export EDITOR=vim
-source $ZSH/oh-my-zsh.sh
+export KEYTIMEOUT=1
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
-source ~/Scripts/ssh-agent.sh
 
 # gf alarm
 for i in `atq | awk '{print $1}'`;do atrm $i;done
@@ -19,8 +17,12 @@ if [[ -z "$(pgrep mpd)" ]]; then
   mpc pause
 fi
 
-# auto suggestion
-# plugins=(zsh-autosuggestions)
+bindkey -v
+plugins=(
+git
+vi-mode
+tmux
+)
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Example aliases
@@ -31,6 +33,10 @@ alias swt="cd /run/media/othi/linux-data/studium/swt/swt2018_altradgieseltung/"
 alias qm="cd ~/qmk_firmware"
 alias mz="ncmpcpp"
 alias screen="maim -s | xclip -selection clipboard -t image/png"
+
+source $ZSH/oh-my-zsh.sh
+source ~/Scripts/ssh-agent.sh
+
 POWERLEVEL9K_CONTEXT_TEMPLATE="彼岸花"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
@@ -77,7 +83,14 @@ POWERLEVEL9K_STATUS_OK_FOREGROUND='black'
 POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\Uf54a '
 POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$'\Uf562 '
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir)
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='148'
+POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='22'
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='darkred'
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='015'
+POWERLEVEL9K_VI_COMMAND_MODE_STRING="彼岸花"
+POWERLEVEL9K_VI_INSERT_MODE_STRING="彼岸花"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(vi_mode dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
 
 #Icon config

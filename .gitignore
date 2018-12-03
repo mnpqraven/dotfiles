@@ -9,6 +9,7 @@
 !.gtk*
 !.zshrc
 !.dir_color*
+!.profile
 !ssh-agent.sh
 !othi-burgundy.json
 !/misc
