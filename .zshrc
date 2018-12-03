@@ -37,6 +37,13 @@ alias screen="maim -s | xclip -selection clipboard -t image/png"
 source $ZSH/oh-my-zsh.sh
 source ~/Scripts/ssh-agent.sh
 
+# bindkeys after sourcing omz !
+bindkey '^o' autosuggest-execute
+bindkey '^b' backward-word
+bindkey '^w' forward-word
+bindkey '^[[3~' delete-char
+bindkey -M vicmd '^[[3~' forward-char
+
 POWERLEVEL9K_CONTEXT_TEMPLATE="彼岸花"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
