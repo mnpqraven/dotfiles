@@ -35,7 +35,7 @@ alias mz="ncmpcpp"
 alias screen="maim -s | xclip -selection clipboard -t image/png"
 
 source $ZSH/oh-my-zsh.sh
-source ~/Scripts/ssh-agent.sh
+alias key="source /home/othi/Scripts/ssh-agent.sh"
 
 # bindkeys after sourcing omz !
 bindkey '^o' autosuggest-execute

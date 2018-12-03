@@ -14,6 +14,8 @@
 !othi-burgundy.json
 !/misc
 !/.vim
+/.vim/bundle
+!/.vim/bundle/Vundle.vim
 !/Scripts
 !/powerline
 !.gitignore
@@ -25,6 +27,7 @@
 !/.config/mpd/mpd.conf
 !/.config/ncmpcpp
 !/.config/ranger
+/.config/ranger/plugins
 !/.config/powerline
 !/.config/rofi
 !/.config/i3
