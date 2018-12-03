@@ -93,7 +93,7 @@ noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 noremap <A-y> <C-e>
 nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
 
-let g:gitgutter_override_sign_column_highlight = 0
+"let g:gitgutter_override_sign_column_highlight = 0
 highlight SignColumn ctermbg=15
 
 
