@@ -28,6 +28,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'whiteinge/diffconflicts'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 
@@ -35,6 +37,8 @@ filetype plugin indent on
 let g:ctrlp_show_hidden = 1
 noremap <F6> :CtrlPClearCache<CR>
 noremap <F7> :CtrlPClearAllCaches<CR>
+let g:gitgutter_override_sign_column_highlight = 0
+
 " Colemak remapping
 noremap J E
 noremap j e
@@ -81,12 +85,17 @@ nnoremap <Leader>t :NERDTree<CR>
 nnoremap <silent><Leader><Leader> :%s/\s\+$//e<CR>
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
+nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
 nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 
 " misc bindings
 noremap <A-y> <C-e>
 nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
+
+let g:gitgutter_override_sign_column_highlight = 0
+highlight SignColumn ctermbg=15
+
 
 " NERDTree keys
 noremap <C-\> :NERDTreeToggle<CR>
@@ -140,4 +149,5 @@ set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
 set timeoutlen=1000 ttimeoutlen=0
+set updatetime=100
 set noshowmode
