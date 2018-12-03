@@ -14,7 +14,7 @@ TODO: full setup list
  - **Video**
  	* **mpv**
  - **Files Management**
- 	* **ranger**
+ 	* **ranger + fzf**
 	* thunar
  - **Text editor**
  	* Main text editor: **Vim**
