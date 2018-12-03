@@ -28,16 +28,17 @@ hint = dim green
 	allcommit = "!git add . && git commit -m"
 	tree = log --graph --abbrev-commit --decorate --date=format:'%d-%m-%Y %H:%M:%S' --format=format:'%C(reverse bold red)%h%C(reset) - %C(white)%ad%C(reset) %C(dim white)(%ar)%C(reset)%C(auto)%d%C(reset)%n''   %C(bold cyan)%s%C(reset) <%C(dim white)%an - %ae%C(reset)>' --all
 	tags = "show-ref --abbrev=6 --tags"
+	co = "checkout"
 [core]
 	editor = vim
 [url "ssh://git@github.com/"]
  	insteadOf = https://github.com/
 [url "ssh://git@bitbucket.org/"]
  	insteadOf = https://bitbucket.org/
-[merge]
-	tool = diffconflicts
-[mergetool "diffconflicts"]
-	cmd = vim -c DiffConflicts \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
-	trustExitCode = true
+# [merge]
+# 	tool = diffconflicts
+# [mergetool "diffconflicts"]
+# 	cmd = vim -c DiffConflicts \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+# 	trustExitCode = true
 [mergetool]
 	keepBackup = false

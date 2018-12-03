@@ -5,18 +5,11 @@ set is
 set nocompatible
 set number
 set showcmd
-
-" indentation in vim
-set tabstop=4
-set shiftwidth=4
-set foldcolumn=1
-set textwidth=80
-set colorcolumn=+1
-set linespace=0
-set history=1000
-set showbreak=↪\
-set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:¬
-set smartindent
+set splitbelow splitright
+autocmd BufWritePre * %s/\s\+$//e
+set path+=**
+set wildmenu
+set wildmode=longest,list,full
 
 " Vundle
 " to install the plugins use :PluginInstall in vim
@@ -30,14 +23,37 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'whiteinge/diffconflicts'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 filetype plugin indent on
 
+" indentation in vim
+set tabstop=4
+set shiftwidth=4
+set foldcolumn=1
+set textwidth=80
+set colorcolumn=+1
+set linespace=0
+set history=1000
+set showbreak=↪\
+set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:¬
+set smartindent
+
 " plugin settings
 let g:ctrlp_show_hidden = 1
+noremap <C-f> :CtrlP<CR>
 noremap <F6> :CtrlPClearCache<CR>
 noremap <F7> :CtrlPClearAllCaches<CR>
 let g:gitgutter_override_sign_column_highlight = 0
+
+" tmux navigator
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-H> :TmuxNavigateLeft<CR>
+nnoremap <silent> <C-N> :TmuxNavigateDown<CR>
+nnoremap <silent> <C-L> :TmuxNavigateUp<CR>
+nnoremap <silent> <C-E> :TmuxNavigateRight<CR>
+nnoremap <silent> <C-K> :TmuxNavigatePrevious<CR>
+
 
 " Colemak remapping
 noremap J E
@@ -51,13 +67,17 @@ noremap k nzz
 noremap l gk
 noremap E $
 noremap H 0
-nnoremap <CR><CR> :
-noremap <C-H> <C-W>h
-noremap <C-N> <C-W>j
-noremap <C-E> <C-W>l
-noremap <C-L> <C-W>k
+
+" nnoremap <CR><CR> :
+" legacy panes navigation, use this if the above tmux navigations are not used
+" noremap <C-H> <C-W>h
+" noremap <C-N> <C-W>j
+" noremap <C-E> <C-W>l
+" noremap <C-L> <C-W>k
 nmap G Gzz
-" vnoremap <C-R> :'<,'>s/
+vnoremap <C-c> "*Y :let @+=@*<CR>
+map <C-z> "+P
+
 " smart vertical mapping/dragging
 nnoremap <up> ddkP
 nnoremap <down> ddp
@@ -82,10 +102,10 @@ endw
 noremap <space> <nop>
 let mapleader=" "
 nnoremap <Leader>t :NERDTree<CR>
-nnoremap <silent><Leader><Leader> :%s/\s\+$//e<CR>
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
 nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
+map <Leader>s :setlocal spell! spelllang=en_US<CR>
 nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 
@@ -126,8 +146,6 @@ colo dracula
 syntax on
 hi Normal ctermbg=none
 
-set path+=**
-set wildmenu
 command! MakeTags !ctags -R .
 
 " auto bracket
