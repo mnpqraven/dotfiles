@@ -24,6 +24,7 @@
 /.config/mpd/*
 !/.config/mpd/mpd.conf
 !/.config/ncmpcpp
+!/.config/ranger
 !/.config/powerline
 !/.config/rofi
 !/.config/i3
