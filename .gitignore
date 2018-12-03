@@ -28,6 +28,7 @@
 !/.config/ncmpcpp
 !/.config/ranger
 /**/ranger/__pycache__/*
+/**/ranger/*/__pycache__/*
 !/.config/powerline
 !/.config/rofi
 !/.config/i3
