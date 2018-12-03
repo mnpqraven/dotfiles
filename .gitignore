@@ -27,7 +27,7 @@
 !/.config/mpd/mpd.conf
 !/.config/ncmpcpp
 !/.config/ranger
-/.config/ranger/plugins
+/**/ranger/__pycache__
 !/.config/powerline
 !/.config/rofi
 !/.config/i3
