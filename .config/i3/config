@@ -198,7 +198,7 @@ bar {
 	font pango:DejaVu Sans Mono 12
 	position top
 	tray_output none
-	status_command bumblebee-status/bumblebee-status -m mpd cpu date time weather pasink pasource indicator -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.left-click="orage" date.format="%a, %b %d %Y" -t othi-burgundy
+	status_command bumblebee-status/bumblebee-status -m mpd cpu date time weather pasink pasource indicator -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.left-click="orage" mpd.right-click="i3-msg workspace 7: Music " date.format="%a, %b %d %Y" -t othi-burgundy
 }
 bar {
 		colors {
