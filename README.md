@@ -28,7 +28,8 @@ TODO: full setup list
  	* Google Chrome, might switch to qtbrowser soon
  - **Mail**
  	* Thunderbird, might move to mutt soon
- - **placeholder**
+ - **Applets**
+ 	* nm-applet
  - **Virtual Machines**
  	* **Genymotion**
 	* Wine
