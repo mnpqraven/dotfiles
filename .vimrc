@@ -68,7 +68,17 @@ noremap l gk
 noremap E $
 noremap H 0
 
-" nnoremap <CR><CR> :
+" chrome like tab navigation
+nnoremap <C-J>1 1gt
+nnoremap <C-J>2 2gt
+nnoremap <C-J>3 3gt
+nnoremap <C-J>4 4gt
+nnoremap <C-J>5 5gt
+nnoremap <C-J>6 6gt
+nnoremap <C-J>7 7gt
+nnoremap <C-J>8 8gt
+nnoremap <C-J>9 9gt
+
 " legacy panes navigation, use this if the above tmux navigations are not used
 " noremap <C-H> <C-W>h
 " noremap <C-N> <C-W>j

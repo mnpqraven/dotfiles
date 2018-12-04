@@ -52,7 +52,7 @@ function launch_ssh_agent() {
 
 check_forward_ssh_agent
 if [ $? -eq 0 ]; then
-  # echo "using forwarded agent instead of launching local"
+  echo "using forwarded agent instead of launching local"
   return 0
 fi
 
