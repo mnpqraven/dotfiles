@@ -33,6 +33,21 @@
 		"warning":                  { "fg": "brightyellow", "bg": "darkorange", "attrs": ["bold"] },
 		"current_tag":              { "fg": "gray9", "bg": "gray2", "attrs": [] },
 
+		"gitstatus":                 { "fg": "gray8",           "bg": "gray2", "attrs": [] },
+		"gitstatus_branch":          { "fg": "gray8",           "bg": "gray2", "attrs": [] },
+		"gitstatus_branch_clean":    { "fg": "green",           "bg": "gray2", "attrs": [] },
+		"gitstatus_branch_dirty":    { "fg": "gray8",           "bg": "gray2", "attrs": [] },
+		"gitstatus_branch_detached": { "fg": "mediumpurple",    "bg": "gray2", "attrs": [] },
+		"gitstatus_tag":             { "fg": "darkcyan",        "bg": "gray2", "attrs": [] },
+		"gitstatus_behind":          { "fg": "gray10",          "bg": "gray2", "attrs": [] },
+		"gitstatus_ahead":           { "fg": "gray10",          "bg": "gray2", "attrs": [] },
+		"gitstatus_staged":          { "fg": "green",           "bg": "gray2", "attrs": [] },
+		"gitstatus_unmerged":        { "fg": "brightred",       "bg": "gray2", "attrs": [] },
+		"gitstatus_changed":         { "fg": "mediumorange",    "bg": "gray2", "attrs": [] },
+		"gitstatus_untracked":       { "fg": "brightestorange", "bg": "gray2", "attrs": [] },
+		"gitstatus_stashed":         { "fg": "darkblue",        "bg": "gray2", "attrs": [] },
+		"gitstatus:divider":         { "fg": "gray8",           "bg": "gray2", "attrs": [] },
+
 		"tab_nc:modified_indicator": { "fg": "brightyellow", "bg": "gray2", "attrs": ["bold"] }
 	},
 	"mode_translations": {
@@ -74,9 +89,7 @@
 			"groups": {
 				"mode":               { "fg": "mediumred", "bg": "gray10", "attrs": ["bold"] },
 				"background:divider": { "fg": "gray8", "bg": "darkestred", "attrs": [] },
-				"branch:divider":     { "fg": "gray8", "bg": "darkred", "attrs": [] },
-				"branch_clean":       { "fg": "gray8", "bg": "darkred", "attrs": [] },
-				"branch_dirty":       { "fg": "gray8", "bg": "darkred", "attrs": [] }
+				"branch:divider":     { "fg": "gray8", "bg": "darkred", "attrs": [] }
 			}
 		},
 		"ic": {
@@ -98,9 +111,7 @@
 			"groups": {
 				"mode":               { "fg": "mediumred", "bg": "gray10", "attrs": ["bold"] },
 				"background:divider": { "fg": "gray8", "bg": "darkestred", "attrs": [] },
-				"branch:divider":     { "fg": "gray8", "bg": "darkred", "attrs": [] },
-				"branch_clean":       { "fg": "gray8", "bg": "darkred", "attrs": [] },
-				"branch_dirty":       { "fg": "gray8", "bg": "darkred", "attrs": [] }
+				"branch:divider":     { "fg": "gray8", "bg": "darkred", "attrs": [] }
 			}
 		},
 		"ix": {
@@ -122,9 +133,7 @@
 			"groups": {
 				"mode":               { "fg": "mediumred", "bg": "gray10", "attrs": ["bold"] },
 				"background:divider": { "fg": "gray8", "bg": "darkestred", "attrs": [] },
-				"branch:divider":     { "fg": "gray8", "bg": "darkred", "attrs": [] },
-				"branch_clean":       { "fg": "gray8", "bg": "darkred", "attrs": [] },
-				"branch_dirty":       { "fg": "gray8", "bg": "darkred", "attrs": [] }
+				"branch:divider":     { "fg": "gray8", "bg": "darkred", "attrs": [] }
 			}
 		},
 		"v": {
@@ -172,23 +181,17 @@
 				"dark_green_gray": "light_green_gray"
 			},
 			"groups": {
-				"mode": { "fg": "white", "bg": "brightred", "attrs": ["bold"] },
-				"branch_clean": { "fg": "white", "bg": "brightred", "attrs": [] },
-				"branch_dirty": { "fg": "white", "bg": "brightred", "attrs": [] }
+				"mode": { "fg": "white", "bg": "brightred", "attrs": ["bold"] }
 			}
 		},
 		"Rc": {
 			"groups": {
-				"mode": { "fg": "white", "bg": "brightred", "attrs": ["bold"] },
-				"branch_clean": { "fg": "white", "bg": "brightred", "attrs": [] },
-				"branch_dirty": { "fg": "white", "bg": "brightred", "attrs": [] }
+				"mode": { "fg": "white", "bg": "brightred", "attrs": ["bold"] }
 			}
 		},
 		"Rx": {
 			"groups": {
-				"mode": { "fg": "white", "bg": "brightred", "attrs": ["bold"] },
-				"branch_clean": { "fg": "white", "bg": "brightred", "attrs": [] },
-				"branch_dirty": { "fg": "white", "bg": "brightred", "attrs": [] }
+				"mode": { "fg": "white", "bg": "brightred", "attrs": ["bold"] }
 			}
 		}
 	}
