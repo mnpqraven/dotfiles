@@ -59,7 +59,7 @@
 			}
 		},
 		"powerline.segments.common.sys.uptime": {
-			"before": "↑  "
+			"before": "Up: "
 		},
 		"powerline.segments.common.mail.email_imap_alert": {
 			"before": "MAIL "
