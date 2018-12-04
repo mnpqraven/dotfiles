@@ -1,3 +1,4 @@
+#!bin/sh
 function check_forward_ssh_agent() {
   if [[ ! -S ${SSH_AUTH_SOCK} ]]; then
     # no: agent forward detected
@@ -17,7 +18,7 @@ function check_ssh_agent() {
   fi
 
   if [[ ${OSTYPE//[0-9.]/} == 'darwin' ]]; then
-    ps -p $SSH_AGENT_PID > /dev/null  
+    ps -p $SSH_AGENT_PID > /dev/null
     # gotcha: does not verify the PID is actually an ssh-agent
     # just that the PID is running
     return $?
@@ -25,7 +26,7 @@ function check_ssh_agent() {
 
   if [ -d /proc/$SSH_AGENT_PID/ ]; then
     # verify PID dir is actually an agent
-    grep ssh-agent /proc/$SSH_AGENT_PID/cmdline  > /dev/null  2> /dev/null; 
+    grep ssh-agent /proc/$SSH_AGENT_PID/cmdline  > /dev/null  2> /dev/null;
     if [ $? -eq 0 ]; then
       # yep - that is an agent
       return 0
@@ -36,7 +37,7 @@ function check_ssh_agent() {
   else
     # agent PID dir does not exist - dead agent
     return 1
-  fi 
+  fi
 }
 
 function launch_ssh_agent() {
