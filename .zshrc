@@ -4,7 +4,9 @@ export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=7
 export EDITOR=vim
 export KEYTIMEOUT=1
-
+stty -ixon
+# To allow any key to get things flowing again, use
+# stty ixany
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
