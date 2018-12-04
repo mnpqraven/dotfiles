@@ -23,6 +23,9 @@
 			{
 				"function": "branch",
 				"exclude_modes": ["nc"],
+				"args": {
+					"status_colors": true
+				},
 				"priority": 30
 			},
 			{
