@@ -38,6 +38,9 @@ alias swt="cd /run/media/othi/linux-data/studium/swt/swt2018_altradgieseltung/"
 alias qm="cd ~/qmk_firmware"
 alias mz="ncmpcpp"
 alias screen="maim -s | xclip -selection clipboard -t image/png"
+alias cl="clear"
+alias gac="git allcommit '"
+# alias att="tmux -a"
 
 source $ZSH/oh-my-zsh.sh
 alias key="source /home/othi/Scripts/ssh-agent.sh"

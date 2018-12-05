@@ -28,8 +28,6 @@ TODO: full setup list
  	* Google Chrome, might switch to qtbrowser soon
  - **Mail**
  	* Thunderbird, might move to mutt soon
- - **Applets**
- 	* nm-applet
  - **Virtual Machines**
  	* **Genymotion**
 	* Wine
@@ -42,17 +40,12 @@ TO-DOs:
 - [ ] config ncmpcpp **colorscheme on hold, TODO keymap** (other references [here](https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439))
 - [ ] add utility packages to bumblebee shortcuts
 - [ ] install + config Wine
-- [x] take a look at fugitive.vim, more read on ctrlP
 - [x] config tmux **misc**
-- [x] config i3gaps keybinds
 - [x] calendar in bumblebee **spawn location left**
-- [x] find a vim fuzzy finder
-- [x] unify commands in i3, spawns size conf
-- [x] config maim and other utility packages
 
 - [ ] separate checker for laptop screen
 - [x] ready to port to laptop
- usr/share
+- [ ] some small stuff in usr/share, will edit this when i remember
 
 - install ncmpcpp + mpd
 - reference: https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439

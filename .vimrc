@@ -85,8 +85,10 @@ nnoremap <C-J>9 9gt
 " noremap <C-E> <C-W>l
 " noremap <C-L> <C-W>k
 nmap G Gzz
-vnoremap <C-c> "*Y :let @+=@*<CR>
-map <C-z> "+P
+" vnoremap <C-c> "*Y :let @+=@*<CR>
+inoremap <C-z> <ESC>l"+pi
+nnoremap <C-z> "+P
+vnoremap <C-c> "+y
 
 " smart vertical mapping/dragging
 nnoremap <up> ddkP
@@ -157,6 +159,7 @@ syntax on
 hi Normal ctermbg=none
 
 command! MakeTags !ctags -R .
+command Diff Gdiff
 
 " auto bracket
 " escapes double brackets
