@@ -2,7 +2,8 @@ export ZSH="/home/othi/.oh-my-zsh"
 
 export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=7
-
+export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
+# compdef vman="man"
 # export this in .profile if ranger opens up nano when opening ranger with
 # keybinds
 export EDITOR=vim
@@ -18,8 +19,8 @@ for i in `atq | awk '{print $1}'`;do atrm $i;done
 at 1859 <<< 'notify-send -i "battery" "get batts" "more batts" -u critical'&>/dev/null
 
 if [[ -z "$(pgrep mpd)" ]]; then
-  mpd
-  mpc pause
+	mpd
+	mpc pause
 fi
 
 bindkey -v
@@ -27,6 +28,8 @@ plugins=(
 git
 vi-mode
 tmux
+archlinux
+colored-man-pages
 # zsh-autosuggestions
 )
 
@@ -35,15 +38,17 @@ tmux
 alias golinux="cd /run/media/othi/linux-data"
 alias gowin="cd /run/media/othi/WIN-DATA"
 alias swt="cd /run/media/othi/linux-data/studium/swt/swt2018_altradgieseltung/"
+alias swtD="cd $HOME/Documents/swt2018_altradgieseltung/"
 alias qm="cd ~/qmk_firmware"
 alias mz="ncmpcpp"
 alias screen="maim -s | xclip -selection clipboard -t image/png"
 alias cl="clear"
 alias gac="git allcommit '"
-# alias att="tmux -a"
+alias tat="tmux attach"
+alias key="source /home/othi/Scripts/ssh-agent.sh"
+alias tree="git tree"
 
 source $ZSH/oh-my-zsh.sh
-alias key="source /home/othi/Scripts/ssh-agent.sh"
 
 # bindkeys after sourcing omz !
 bindkey '^o' autosuggest-execute
@@ -51,7 +56,6 @@ bindkey '^b' backward-word
 bindkey '^[[3~' delete-char
 bindkey '^w' forward-word
 bindkey -M vicmd '^[[3~' forward-char
-alias tree="git tree"
 
 POWERLEVEL9K_CONTEXT_TEMPLATE="彼岸花"
 POWERLEVEL9K_MODE='nerdfont-complete'

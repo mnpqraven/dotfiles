@@ -26,6 +26,7 @@ Plugin 'whiteinge/diffconflicts'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'jez/vim-superman'
 call vundle#end()
 filetype plugin indent on
 
@@ -33,8 +34,8 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set foldcolumn=1
-set textwidth=80
-set colorcolumn=+1
+"set textwidth=80
+"set colorcolumn=+1
 set linespace=0
 set history=1000
 set showbreak=↪\
@@ -69,17 +70,8 @@ noremap k nzz
 noremap l gk
 noremap E $
 noremap H 0
-
-" chrome like tab navigation
-nnoremap <C-J>1 1gt
-nnoremap <C-J>2 2gt
-nnoremap <C-J>3 3gt
-nnoremap <C-J>4 4gt
-nnoremap <C-J>5 5gt
-nnoremap <C-J>6 6gt
-nnoremap <C-J>7 7gt
-nnoremap <C-J>8 8gt
-nnoremap <C-J>9 9gt
+noremap <C-d> <C-d>zz
+noremap <C-d> <C-d>zz
 
 " legacy panes navigation, use this if the above tmux navigations are not used
 " noremap <C-H> <C-W>h
@@ -106,9 +98,9 @@ map <ScrollWheelDown> <A-y>
 " workaround to get vim getting Alt responses
 let c='a'
 while c <= 'z'
-exec "set <A-".c.">=\e".c
-exec "imap \e".c." <A-".c.">"
-let c = nr2char(1+char2nr(c))
+	exec "set <A-".c.">=\e".c
+	exec "imap \e".c." <A-".c.">"
+	let c = nr2char(1+char2nr(c))
 endw
 
 " leader bindings
@@ -123,9 +115,20 @@ map <Leader>s :setlocal spell! spelllang=en_US<CR>
 nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 
+" chrome like tab navigation
+nnoremap <Leader>1 1gt
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
+nnoremap <Leader>6 6gt
+nnoremap <Leader>7 7gt
+nnoremap <Leader>8 8gt
+nnoremap <Leader>9 9gt
+
 " misc bindings
 noremap <A-y> <C-e>
-nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR>
+nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR> :echo "vimrc reloaded"<CR>
 
 "let g:gitgutter_override_sign_column_highlight = 0
 highlight SignColumn ctermbg=15
@@ -143,26 +146,25 @@ set relativenumber
 set complete=.,w,b,u,t,i,kspell
 
 function ToggleWrap()
-  if &wrap
-    echo "Wrap OFF"
-    setlocal nowrap
-    set virtualedit=all
-  else
-    echo "Wrap ON"
-    setlocal wrap linebreak nolist
-    set virtualedit=
-    setlocal display+=lastline
-  endif
+	if &wrap
+		echo "Wrap OFF"
+		setlocal nowrap
+		set virtualedit=all
+	else
+		echo "Wrap ON"
+		setlocal wrap linebreak nolist
+		set virtualedit=
+		setlocal display+=lastline
+	endif
 endfunction
 
-" colosceme
-colo dracula
+" coloscheme, change the color in the Palette section
+colo othi
 syntax on
 hi Normal ctermbg=none
 
 command! MakeTags !ctags -R .
 command! Diff Gdiff
-" command Q q!
 
 " auto bracket
 " escapes double brackets

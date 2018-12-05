@@ -40,6 +40,7 @@ TO-DOs:
 - [ ] config ncmpcpp **colorscheme on hold, TODO keymap** (other references [here](https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439))
 - [ ] add utility packages to bumblebee shortcuts
 - [ ] install + config Wine
+- [ ] use global variables in zsh aliases
 - [x] config tmux **misc**
 - [x] calendar in bumblebee **spawn location left**
 
