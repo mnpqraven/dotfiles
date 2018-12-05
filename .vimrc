@@ -10,6 +10,8 @@ autocmd BufWritePre * %s/\s\+$//e
 set path+=**
 set wildmenu
 set wildmode=longest,list,full
+set cursorcolumn
+set cursorline
 
 " Vundle
 " to install the plugins use :PluginInstall in vim
@@ -159,7 +161,8 @@ syntax on
 hi Normal ctermbg=none
 
 command! MakeTags !ctags -R .
-command Diff Gdiff
+command! Diff Gdiff
+" command Q q!
 
 " auto bracket
 " escapes double brackets
