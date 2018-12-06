@@ -3,6 +3,8 @@ export ZSH="/home/othi/.oh-my-zsh"
 export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=7
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
+# probably comment this in pc
+export PATH="$PATH:$HOME/.local/bin"
 # compdef vman="man"
 # export this in .profile if ranger opens up nano when opening ranger with
 # keybinds
