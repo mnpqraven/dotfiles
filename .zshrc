@@ -13,6 +13,12 @@ stty -ixon
 # stty ixany
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval "$(<~/.ssh-agent)" > /dev/null
+fi
 
 # gf alarm
 for i in `atq | awk '{print $1}'`;do atrm $i;done
