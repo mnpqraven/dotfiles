@@ -31,10 +31,20 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jez/vim-superman'
 if has('nvim')
 	Plugin 'vim-airline/vim-airline'
+	Plugin 'vim-airline/vim-airline-themes'
 endif
 call vundle#end()
 filetype plugin indent on
 
+" VIM-AIRLINE CONFIG ------------------------------------------------------------
+let g:airline_theme='othi'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#branch#sha1_len = 6
+"let g:airline#extensions#tmuxline#enabled = 1
+" -------------------------------------------------------------------------------
 " indentation in vim
 set tabstop=4
 set shiftwidth=4
@@ -190,6 +200,7 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
 if !has('nvim')
 	set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/
 	set laststatus=2

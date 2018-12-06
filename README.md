@@ -59,6 +59,11 @@ TO-DOs:
 - compton, feh
 - vim
 - powerline
+	- NOTE: install powerline using this
+	````
+	pip install --user powerline-status
+	pip install --user git+git://github.com/powerline/powerline
+	````
 - arandr, save the layout as layout.sh
 - zsh
 - i3 + i3 gaps
