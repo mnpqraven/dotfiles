@@ -1,34 +1,36 @@
 # Muh i3 rice
 
 TODO: full setup list
- - **Terminal**
+- **Terminal**
  	* Terminal: **zsh + tmux** in xfce4-terminal
 	* Terminal font: Anonymice Nerd Font Bold 13
 	* Opacity 0.75
- - **WM**
+- **WM**
 	* i3gaps
 	* xfce4 GUI for windows
- - **Audio**
+- **Audio**
  	* **mpd** as backend
 	* **ncmpcpp** as frontent
- - **Video**
+- **Video**
  	* **mpv**
- - **Files Management**
+- **Files Management**
  	* **ranger + fzf**
 	* thunar
- - **Text editor**
+- **Text editor**
  	* Main text editor: **Vim**
 	* Diffs and MD preview: Atom
- - **Image Processing**
+- **Image Processing**
  	* **feh**
 	* **maim** for screenshot
- - **Clipboard**
+- **Clipboard**
  	* **copyq**
- - **Web browser**
+- **IDE**
+ 	* **Intellij** (help - custom settings `suppress.focus.stealing=false`)
+- **Web browser**
  	* Google Chrome, might switch to qtbrowser soon
- - **Mail**
+- **Mail**
  	* Thunderbird, might move to mutt soon
- - **Virtual Machines**
+- **Virtual Machines**
  	* **Genymotion**
 	* Wine
 
@@ -36,6 +38,7 @@ TODO: full setup list
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
 
 TO-DOs:
+- [ ] config vim-airline for nv
 - [ ] config ranger
 - [ ] config ncmpcpp **colorscheme on hold, TODO keymap** (other references [here](https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439))
 - [ ] add utility packages to bumblebee shortcuts

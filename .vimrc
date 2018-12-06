@@ -1,3 +1,5 @@
+" DISCLAIMER: Alt bindings don't work with vim (technically it can but it fucks up macros) so no alt key bindings until powerline supports neovim or i find a just as good status line
+
 " Basic settings
 set encoding=utf-8
 scriptencoding utf-8
@@ -27,6 +29,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jez/vim-superman'
+if has('nvim')
+	Plugin 'vim-airline/vim-airline'
+endif
 call vundle#end()
 filetype plugin indent on
 
@@ -48,6 +53,9 @@ noremap <C-f> :CtrlP<CR>
 noremap <F6> :CtrlPClearCache<CR>
 noremap <F7> :CtrlPClearAllCaches<CR>
 let g:gitgutter_override_sign_column_highlight = 0
+
+" Press F4 to toggle highlighting on/off, and show current value.
+noremap <F8> :set hlsearch! hlsearch?<CR>
 
 " tmux navigator
 let g:tmux_navigator_no_mappings = 1
@@ -94,14 +102,14 @@ vnoremap <down> dp1v
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <A-y>
-
+" BUGGGGGGGGGGGGGGGGGGGGGGGG, only works in nvim
 " workaround to get vim getting Alt responses
-let c='a'
-while c <= 'z'
-	exec "set <A-".c.">=\e".c
-	exec "imap \e".c." <A-".c.">"
-	let c = nr2char(1+char2nr(c))
-endw
+" let c='a'
+" while c <= 'z'
+" 	exec "set <A-".c.">=\e".c
+" 	exec "imap \e".c." <A-".c.">"
+" 	let c = nr2char(1+char2nr(c))
+" endw
 
 " leader bindings
 " set timeout ttimeoutlen=50
@@ -145,7 +153,7 @@ map <A-e> :vertical resize +5<CR>
 set relativenumber
 set complete=.,w,b,u,t,i,kspell
 
-function ToggleWrap()
+function! ToggleWrap()
 	if &wrap
 		echo "Wrap OFF"
 		setlocal nowrap
@@ -177,13 +185,16 @@ inoremap {<ESC> {
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
+inoremap (; ();
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
-set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/
-set laststatus=2
-set t_Co=256
-set timeoutlen=1000 ttimeoutlen=0
+if !has('nvim')
+	set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/
+	set laststatus=2
+	set t_Co=256
+endif
+set timeoutlen=500 ttimeoutlen=0
 set updatetime=100
 set noshowmode
