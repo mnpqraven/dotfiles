@@ -11,10 +11,6 @@
 			},
 			{
 				"function": "powerline.segments.common.time.date",
-				"priority": 30
-			},
-			{
-				"function": "powerline.segments.common.time.date",
 				"name": "time",
 				"args": {
 					"format": "%H:%M",

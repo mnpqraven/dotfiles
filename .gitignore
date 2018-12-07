@@ -15,8 +15,9 @@
 !/misc
 
 !/.vim
-/.vim/bundle
+/.vim/bundle/*
 !/.vim/bundle/Vundle.vim
+!/.vim/bundle/othi-airline-themes
 
 !/Scripts
 !/powerline
@@ -26,8 +27,8 @@
 !/.config
 /.config/*
 
-!/.config/mpd
 /.config/mpd/*
+!/.config/mpd
 !/.config/mpd/mpd.conf
 !/.config/ncmpcpp
 !/.config/ranger
