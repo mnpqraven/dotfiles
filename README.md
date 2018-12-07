@@ -38,12 +38,12 @@ TODO: full setup list
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
 
 TO-DOs:
-- [ ] config vim-airline for nv
 - [ ] config ranger
 - [ ] config ncmpcpp **colorscheme on hold, TODO keymap** (other references [here](https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439))
 - [ ] add utility packages to bumblebee shortcuts
 - [ ] install + config Wine
 - [ ] use global variables in zsh aliases
+- [x] config vim-airline for nv
 - [x] config tmux **misc**
 - [x] calendar in bumblebee **spawn location left**
 

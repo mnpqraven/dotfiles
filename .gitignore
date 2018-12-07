@@ -36,6 +36,8 @@
 /**/ranger/*/__pycache__/*
 !/.config/powerline
 
+!/.config/nvim
+
 !/.config/xfce4
 /.config/xfce4/*
 !/.config/xfce4/terminal/

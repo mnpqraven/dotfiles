@@ -55,8 +55,8 @@ alias gac="git allcommit '"
 alias tat="tmux attach"
 alias key="source /home/othi/Scripts/ssh-agent.sh"
 alias tree="git tree"
-alias v="vim"
-alias nv="nvim"
+alias v="nvim"
+#alias nv="nvim"
 
 source $ZSH/oh-my-zsh.sh
 
