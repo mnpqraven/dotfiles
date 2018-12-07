@@ -32,6 +32,8 @@
 !/.config
 /.config/*
 
+!/.config/alacritty
+
 /.config/mpd/*
 !/.config/mpd
 !/.config/mpd/mpd.conf
