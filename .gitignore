@@ -14,6 +14,10 @@
 !othi-burgundy.json
 !/misc
 
+!/.ssh
+/.ssh/*
+!/.ssh/config
+
 !/.vim
 /.vim/bundle/*
 !/.vim/bundle/Vundle.vim
