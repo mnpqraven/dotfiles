@@ -38,7 +38,7 @@ vi-mode
 tmux
 archlinux
 colored-man-pages
-# zsh-autosuggestions
+zsh-autosuggestions
 )
 
 # Example aliases
