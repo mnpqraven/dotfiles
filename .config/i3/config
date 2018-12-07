@@ -23,7 +23,9 @@ font pango: SauceCodePro Nerd Font Black 8
 
 set $web google-chrome-stable
 set $term i3-sensible-terminal
+set $term2 alacritty
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec $term2
 bindsym $mod+Shift+q kill
 
 # container management
