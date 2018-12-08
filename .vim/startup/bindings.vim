@@ -26,6 +26,9 @@ nnoremap <Leader>6 6gt
 nnoremap <Leader>7 7gt
 nnoremap <Leader>8 8gt
 nnoremap <Leader>9 9gt
+" buffer navigation
+nnoremap <C-M> :bn<CR>
+nnoremap <C-B> :bp<CR>
 
 " Colemak remapping
 noremap J E
@@ -84,6 +87,7 @@ nnoremap <Leader>t :NERDTree<CR>
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
 nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
+nnoremap <Leader>cd :cd %:p:h<CR>
 map <Leader>s :setlocal spell! spelllang=en_US<CR>
 nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz

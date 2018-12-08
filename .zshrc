@@ -1,4 +1,5 @@
 export ZSH="/home/othi/.oh-my-zsh"
+export WINIT_HIDPI_FACTOR=1
 
 export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=7
@@ -38,8 +39,9 @@ vi-mode
 tmux
 archlinux
 colored-man-pages
-zsh-autosuggestions
+#zsh-autosuggestions
 )
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Example aliases
 # TODO symbolic links
@@ -55,6 +57,7 @@ alias gac="git allcommit '"
 alias tat="tmux attach"
 alias key="source /home/othi/Scripts/ssh-agent.sh"
 alias r="ranger"
+alias gt="git tree"
 #alias tree="git tree"
 alias v="nvim"
 #alias nv="nvim"

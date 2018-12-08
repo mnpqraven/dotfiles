@@ -14,6 +14,7 @@ set wildmenu
 set wildmode=longest,list,full
 set cursorcolumn
 set cursorline
+set nohlsearch
 
 set relativenumber
 set complete=.,w,b,u,t,i,kspell

@@ -86,24 +86,24 @@ tabspaces: 4
 font:
   # Normal (roman) font face
   normal:
-    family: Anonymice Nerd Font
+    family: Anonymice Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     style: Bold
 
   # Bold font face
   bold:
-    family: Anonymice Nerd Font
+    family: Anonymice Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     style: Bold
 
   # Italic font face
   italic:
-    family: Anonymice Nerd Font
+    family: Anonymice Nerd Font Mono
      # The `style` can be specified to pick a specific face.
     style: Italic
 
   # Point size
-  size: 8
+  size: 13
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -122,7 +122,6 @@ font:
   # screens and make reading text a little easier.
   # On X11 it is possible to change the DPI for each instance of alacritty by using
   # WINIT_HIDPI_FACTOR=1.0 alacritty to scale the font.
-
 # Display the time it takes to redraw each frame.
 render_timer: false
 

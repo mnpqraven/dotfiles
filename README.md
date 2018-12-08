@@ -43,6 +43,7 @@ TO-DOs:
 - [ ] add utility packages to bumblebee shortcuts
 - [ ] install + config Wine
 - [ ] use global variables in zsh aliases
+- [ ] conf vim ale for java env
 - [x] config vim-airline for nv
 - [x] config tmux **misc**
 - [x] calendar in bumblebee **spawn location left**
