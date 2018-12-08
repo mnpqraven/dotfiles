@@ -5,6 +5,7 @@
 !.bashrc
 !.*vimrc
 !.zshrc
+!.zshenv
 !.tmux.conf
 !.gtk*
 !.zshrc

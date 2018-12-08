@@ -3,7 +3,7 @@
 TODO: full setup list
 - **Terminal**
  	* Terminal: **zsh + tmux** in xfce4-terminal
-	* Terminal font: Anonymice Nerd Font Bold 13
+	* Terminal font: ShureTechMono Nerd Font 14
 	* Opacity 0.75
 - **WM**
 	* i3gaps

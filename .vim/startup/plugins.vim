@@ -16,9 +16,14 @@ if has('nvim')
 	Plugin 'vim-airline/vim-airline'
 	Plugin 'vim-airline/vim-airline-themes'
 	Plugin 'mnpqraven/othi-airline-themes'
+	Plugin 'Shougo/deoplete.nvim'
 endif
 call vundle#end()
 
+autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
+
+let g:deoplete#enable_at_startup = 1
 let g:gitgutter_override_sign_column_highlight = 0
 let g:tmux_navigator_no_mappings = 1
 let g:ctrlp_show_hidden = 1
+

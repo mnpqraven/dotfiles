@@ -140,6 +140,8 @@ exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d
 exec_always --no-startup_id i3-msg 'workspace $ws6; exec discord; resize set height 69 ppt; workspace $ws8'
 exec_always --no-startup-id i3-msg 'workspace $ws8; exec xfce4-terminal --command "neofetch" --hold; workspace $ws8'
 exec_always --no-startup-id i3-msg 'workspace $ws8; exec google-chrome-stable --new-window https://tweetdeck.twitter.com; resize set height 85 ppt; workspace $ws1'
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+
 # spawns
 for_window [class="discord"] move container to workspace $ws6
 for_window [class="discord"] resize set height 69 ppt; move up
@@ -181,6 +183,7 @@ bindsym $mod+Shift+m exec "i3-nagbar -t warning -m 'Save your progress before pr
 set $screenshot maim -s | xclip -selection clipboard -t image/png
 bindsym $mod+z exec $screenshot
 bindsym $mod+Mod1+c exec $web
+bindsym $mod+Mod1+t exec $term -x tmux
 bindsym $mod+Mod1+r exec $term -x ranger
 
 # window borders
