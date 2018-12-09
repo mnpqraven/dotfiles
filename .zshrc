@@ -37,29 +37,46 @@ vi-mode
 tmux
 archlinux
 colored-man-pages
-#zsh-autosuggestions
 )
 # removes emulate -L zsh if can't completet dirs
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# ALIASES
-# in .zshenv
+# ALIASES in .zshenv
 
 source $ZSH/oh-my-zsh.sh
 
+# KEYBINDINGS {{{
 # bindkeys after sourcing omz !
 bindkey '^o' autosuggest-execute
 bindkey '^b' backward-word
+bindkey '^q' backward-delete-word
 bindkey '^[[3~' delete-char
 bindkey '^w' forward-word
 bindkey -M vicmd '^[[3~' forward-char
+# }}}
+
+# SYNTAX HIGHLIGHTING CONFIGURATION {{{
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES=(main brackets)
+ZSH_HIGHLIGHT_STYLES[unknown_token]='fg=yellow'
+ZSH_HIGHLIGHT_STYLES[default]='fg=225'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=cyan,bold'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan,underline'
+ZSH_HIGHLIGHT_STYLES[command]='fg=cyan,bold'
+ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan,underline'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,underline'
+ZSH_HIGHLIGHT_STYLES[path]='fg=225,underline'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=225'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=225'
+# }}}
+
+# POWERLEVEL9K CONFIGURATION {{{
 
 POWERLEVEL9K_CONTEXT_TEMPLATE="彼岸花"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 DEFAULT_FOREGROUND=006 DEFAULT_BACKGROUND=235
 DEFAULT_COLOR=$DEFAULT_FOREGROUND
-
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -124,4 +141,7 @@ POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\uE0B2'
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{052}\u256D%F{white}"
 #P9K_MULTILINE_SECOND_PROMPT_PREFIX="❱ "
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{088}\u2570%F{124}\uF460%F{160}\uf460%F{196}\uF460%F{015} "
+# }}}
+
 source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
