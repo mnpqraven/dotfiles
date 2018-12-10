@@ -1,6 +1,7 @@
 " DISCLAIMER: Alt bindings don't work with vim (technically it can but it fucks up macros) so no alt key bindings until powerline supports neovim or i find a just as good status line
 
 " Basic settings
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set encoding=utf-8
 scriptencoding utf-8
 set is
@@ -12,13 +13,15 @@ autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 " fix for cursor reseting to block after exiting nv
 au VimLeave * set guicursor=a:hor30-blinkon0
+set guicursor=a:hor30-blinkon0
 set path+=**
 set wildmenu
 set wildmode=longest,list,full
 set cursorcolumn
 set cursorline
 set nohlsearch
-autocmd FileType * setlocal formatoptions-=cro
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 set shell=zsh
 set relativenumber

@@ -91,6 +91,7 @@ nnoremap <Leader>cd :cd %:p:h<CR> :pwd<CR><left>
 map <Leader>s :setlocal spell! spelllang=en_US<CR>
 nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
+noremap <silent> <Leader>a :call ToggleAutoComment()<CR>zz
 " NERDTree keys
 noremap <C-\> :NERDTreeToggle<CR>
 let NERDTreeMenuDown='n'
