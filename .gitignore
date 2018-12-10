@@ -11,6 +11,7 @@
 !.zshrc
 !.dir_color*
 !.profile
+!.lesskey
 !ssh-agent.sh
 !othi-burgundy.json
 !/misc
