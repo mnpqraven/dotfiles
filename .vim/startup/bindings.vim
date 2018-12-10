@@ -1,4 +1,3 @@
-
 noremap <C-f> :CtrlP<CR>
 noremap <F6> :CtrlPClearCache<CR>
 noremap <F7> :CtrlPClearAllCaches<CR>
@@ -87,16 +86,19 @@ nnoremap <Leader>t :NERDTree<CR>
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
 nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
-nnoremap <Leader>cd :cd %:p:h<CR>
+nnoremap <Leader>cd :cd %:p:h<CR> :pwd<CR><left>
+"noremap <Leader>' :call ToggleAutoComment()<CR>
 map <Leader>s :setlocal spell! spelllang=en_US<CR>
 nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 " NERDTree keys
 noremap <C-\> :NERDTreeToggle<CR>
+let NERDTreeMenuDown='n'
+let NERDTreeMenuUp='l'
 
 " misc bindings
 noremap <A-y> <C-e>
-nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR> :echo "vimrc reloaded"<CR>
+nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR> :echo "vimrc reloaded"<CR>2<left>
 
 " auto bracket
 " escapes double brackets
@@ -111,8 +113,11 @@ inoremap {<ESC> {
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
+inoremap () ()
 inoremap (; ();
 inoremap [ []<left>
+inoremap [] []
 inoremap { {}<left>
+inoremap {} {}
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O

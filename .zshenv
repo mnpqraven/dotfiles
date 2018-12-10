@@ -19,30 +19,47 @@ vi-mode
 tmux
 archlinux
 colored-man-pages
+common-aliases
 #zsh-autosuggestions
 )
 # removes emulate -L zsh if can't completet dirs
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ALIASES
+# dir aliases {{{
 # TODO symbolic links
 alias golinux="cd /run/media/othi/linux-data"
 alias gowin="cd /run/media/othi/WIN-DATA"
 alias swt="cd /run/media/othi/linux-data/studium/swt/swt2018_altradgieseltung/"
 alias swtD="cd $HOME/Documents/swt2018_altradgieseltung/"
 alias qm="cd ~/qmk_firmware"
+# }}}
+
+# commands aliases {{{
 alias mz="ncmpcpp"
 alias screen="maim -s | xclip -selection clipboard -t image/png"
 alias cl="clear"
-alias gac="git allcommit '"
-alias grst="git reset --"
 alias tat="tmux attach"
 alias key="source /home/othi/Scripts/ssh-agent.sh"
 alias r="ranger"
-alias gt="git tree"
+alias cfg="ranger --selectfile= .config/"
 alias tm="tmux"
-#alias tree="git tree"
 alias v="$EDITOR"
+# }}}
+
+# config aliases
+alias vrc="$EDITOR .vimrc"
+alias zrc="$EDITOR .zshrc"
+alias zenv="$EDITOR .zshenv"
+alias rrc="$EDITOR .config/ranger/rc.conf"
+
+# git aliases {{{
+alias gt="git tree"
+alias gac="git allcommit '"
+alias grst="git reset"
+alias gRST="git reset --hard && git clean -fd"
+alias gmnc="git merge --no-commit"
+# }}}
 #alias nv="nvim"
 
 source $ZSH/oh-my-zsh.sh

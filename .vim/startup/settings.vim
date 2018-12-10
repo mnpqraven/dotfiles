@@ -10,12 +10,15 @@ set showcmd
 set splitbelow splitright
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
+" fix for cursor reseting to block after exiting nv
+au VimLeave * set guicursor=a:hor30-blinkon0
 set path+=**
 set wildmenu
 set wildmode=longest,list,full
 set cursorcolumn
 set cursorline
 set nohlsearch
+autocmd FileType * setlocal formatoptions-=cro
 
 set shell=zsh
 set relativenumber
@@ -32,4 +35,3 @@ set history=1000
 set showbreak=↪\
 set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:¬
 set smartindent
-

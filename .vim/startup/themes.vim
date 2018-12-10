@@ -17,6 +17,9 @@ colo othi
 syntax on
 hi Normal ctermbg=none
 
+" cursor
+set guicursor=n:hor50-blinkon0
+highlight Cursor gui=reverse guifg=NONE guibg=NONE
 
 if !has('nvim')
 	set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/
