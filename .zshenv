@@ -48,10 +48,11 @@ alias v="$EDITOR"
 # }}}
 
 # config aliases
-alias vrc="$EDITOR .vimrc"
-alias zrc="$EDITOR .zshrc"
-alias zenv="$EDITOR .zshenv"
-alias rrc="$EDITOR .config/ranger/rc.conf"
+alias vrc="$EDITOR $HOME/.vimrc"
+alias zrc="$EDITOR $HOME/.zshrc"
+alias zenv="$EDITOR $HOME/.zshenv"
+alias rrc="$EDITOR $HOME/.config/ranger/rc.conf"
+alias tmrc="$EDITOR $HOME/.tmux.conf"
 
 # git aliases {{{
 alias gt="git tree"
