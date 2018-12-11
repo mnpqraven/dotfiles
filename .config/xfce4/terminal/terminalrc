@@ -29,4 +29,5 @@ MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 FontName=ShureTechMono Nerd Font 14
+ScrollingBar=TERMINAL_SCROLLBAR_NONE
 
