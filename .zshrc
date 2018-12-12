@@ -1,4 +1,4 @@
-export ZSH="/home/othi/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 #alac huge font fix
 export WINIT_HIDPI_FACTOR=1
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
@@ -10,7 +10,6 @@ export UPDATE_ZSH_DAYS=7
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 # probably comment this in pc
 export PATH="$PATH:$HOME/.local/bin"
-# export this in .profile if ranger opens up nano when opening ranger with
 export KEYTIMEOUT=1
 stty -ixon
 # To allow any key to get things flowing again, use

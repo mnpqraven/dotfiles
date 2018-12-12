@@ -1,7 +1,4 @@
-export ZSH="/home/othi/.oh-my-zsh"
-#alac huge font fix
-export WINIT_HIDPI_FACTOR=1
-
+export ZSH="$HOME/.oh-my-zsh"
 export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=7
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
@@ -22,29 +19,29 @@ colored-man-pages
 common-aliases
 #zsh-autosuggestions
 )
-# removes emulate -L zsh if can't completet dirs
+# removes emulate -L zsh if can't complete dirs
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ALIASES
 # dir aliases {{{
-# TODO symbolic links
-alias golinux="cd /run/media/othi/linux-data"
-alias gowin="cd /run/media/othi/WIN-DATA"
-alias swt="cd /run/media/othi/linux-data/studium/swt/swt2018_altradgieseltung/"
-alias swtD="cd $HOME/Documents/swt2018_altradgieseltung/"
-alias qm="cd ~/qmk_firmware"
+# add an a at the end to go to the dir directly
+alias linux="ranger --selectfile=$HOME/Documents/linux-data/a"
+alias win="ranger --selectfile=$HOME/Documents/WIN-DATA/a"
+alias raven="ranger --selectfile=$HOME/Documents/Raven/a"
+alias swt="ranger --selectfile=$HOME/Documents/studium/swt/swt2018_altradgieseltung/a"
+alias qmk="ranger --selectfile=$HOME/qmk_firmware"
+alias cfg="ranger --cmd='set show_hidden true' --selectfile=$HOME/.config/a"
 # }}}
 
 # commands aliases {{{
+alias v="$EDITOR"
 alias mz="ncmpcpp"
 alias screen="maim -s | xclip -selection clipboard -t image/png"
 alias cl="clear"
 alias tat="tmux attach"
-alias key="source /home/othi/Scripts/ssh-agent.sh"
+alias key="source $HOME/Scripts/ssh-agent.sh"
 alias r="ranger"
-alias cfg="ranger --selectfile= .config/"
 alias tm="tmux"
-alias v="$EDITOR"
 # }}}
 
 # config aliases
@@ -56,11 +53,10 @@ alias tmrc="$EDITOR $HOME/.tmux.conf"
 
 # git aliases {{{
 alias gt="git tree"
-alias gac="git allcommit '"
+alias gac="git allcommit"
 alias grst="git reset"
 alias gRST="git reset --hard && git clean -fd"
 alias gmnc="git merge --no-commit"
 # }}}
-#alias nv="nvim"
 
 source $ZSH/oh-my-zsh.sh
