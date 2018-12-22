@@ -15,6 +15,23 @@ nnoremap <down> ddp
 vnoremap <up> dkP1v
 vnoremap <down> dp1v
 
+" Leader keys
+noremap <space> <nop>
+let mapleader=" "
+nnoremap <Leader>t :NERDTree<CR>
+nnoremap <Leader>k :tabnext<CR>
+nnoremap <Leader>K :tabprevious<CR>
+nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
+nnoremap <Leader>cd :cd %:p:h<CR> :pwd<CR><left>
+map <Leader>s :setlocal spell! spelllang=en_US<CR>
+nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
+noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
+noremap <silent> <Leader>a :call ToggleAutoComment()<CR>zz
+" NERDTree keys
+noremap <C-\> :NERDTreeToggle<CR>
+let NERDTreeMenuDown='n'
+let NERDTreeMenuUp='l'
+
 " chrome like tab navigation
 nnoremap <Leader>1 1gt
 nnoremap <Leader>2 2gt
@@ -78,23 +95,6 @@ map <ScrollWheelDown> <A-y>
 " 	exec "imap \e".c." <A-".c.">"
 " 	let c = nr2char(1+char2nr(c))
 " endw
-
-" Leader keys
-noremap <space> <nop>
-let mapleader=" "
-nnoremap <Leader>t :NERDTree<CR>
-nnoremap <Leader>k :tabnext<CR>
-nnoremap <Leader>K :tabprevious<CR>
-nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
-nnoremap <Leader>cd :cd %:p:h<CR> :pwd<CR><left>
-map <Leader>s :setlocal spell! spelllang=en_US<CR>
-nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
-noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
-noremap <silent> <Leader>a :call ToggleAutoComment()<CR>zz
-" NERDTree keys
-noremap <C-\> :NERDTreeToggle<CR>
-let NERDTreeMenuDown='n'
-let NERDTreeMenuUp='l'
 
 " misc bindings
 noremap <A-y> <C-e>
