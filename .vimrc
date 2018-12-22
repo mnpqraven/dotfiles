@@ -1,10 +1,10 @@
 " MY .VIMRC
+" Keybindings
+source ~/.vim/startup/bindings.vim
 " General settings
 source ~/.vim/startup/settings.vim
 " Plugins
 source ~/.vim/startup/plugins.vim
-" Keybindings
-source ~/.vim/startup/bindings.vim
 " Functions and commands
 source ~/.vim/startup/functions.vim
 " Themes and coloway customization
