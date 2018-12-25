@@ -246,7 +246,7 @@ bar {
 	font pango:DejaVu Sans Mono 12
 	position top
 	tray_output primary
-	status_command bumblebee-status/bumblebee-status  -m shortcut cpu nic date time weather pasink pasource indicator battery -p shortcut.cmds="xfce4-screenshooter" shortcut.labels="Prnt" weather.location="Marburg" nic.right-click="nm-applet" root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d %Y" date.left-click="orage" -t othi-burgundy
+	status_command bumblebee-status/bumblebee-status  -m shortcut cpu date time weather pasink pasource indicator battery -p shortcut.cmds="xfce4-screenshooter" shortcut.labels="Prnt" weather.location="Marburg" nic.right-click="nm-applet" root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d %Y" date.left-click="orage" -t othi-burgundy
 }
 # bindsym $mod+Shift+x exec i3lock
 
