@@ -57,6 +57,8 @@ alias gac="git allcommit"
 alias grst="git reset"
 alias gRST="git reset --hard && git clean -fd"
 alias gmnc="git merge --no-commit"
+alias gcom="git checkout master"
+alias qmkf="git checkout master && git fetch upstream && git pull upstream master && git push origin master"
 # }}}
 
 source $ZSH/oh-my-zsh.sh
