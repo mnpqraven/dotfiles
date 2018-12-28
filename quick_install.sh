@@ -1,3 +1,6 @@
+sudo pacman -Su
+sudo pacman -Syu
+sudo pacman -S --noconfirm ibus ibus-anthy ibus-unikey
 sudo pacman -S --noconfirm yay
 sudo pacman -S --noconfirm maim
 sudo pacman -S --noconfirm neofetch
@@ -9,7 +12,7 @@ sudo pacman -S --noconfirm i3-wm
 sudo pacman -S --noconfirm mpd
 sudo pacman -S --noconfirm ncmpcpp
 sudo pacman -S --noconfirm copyq
-
+sudo pacman -S --noconfirm vim neovim
 
 pip install --user powerline-status
 pip install --user git+git://github.com/powerline/powerline
