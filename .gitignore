@@ -1,6 +1,7 @@
 /*
 !preview.png
 !preview2.png
+!quick_install.sh
 !*.md
 !.bashrc
 !.*vimrc
@@ -52,6 +53,10 @@
 !/.config/xfce4/terminal/
 /.config/xfce4/terminal/*
 !/.config/xfce4/terminal/terminalrc
+
+!/.config/copyq
+/.config/copyq/*
+!/.config/copyq/copyq.conf
 
 !/.config/rofi
 !/.config/i3
