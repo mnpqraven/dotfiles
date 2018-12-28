@@ -53,14 +53,18 @@ TO-DOs:
 - installation done, conf left
 
 # install order, no script yet cause i'm a literal retard
+- mount all drives
 - git SSH key
 ````
 sudo pacman -S --noconfirm xclip
 git keygen
 xclip -sel clip < ~/.ssh/id_rsa.pub
 ````
-- compton, feh
-- vim
+- Clone the dofile repo
+`git clone git@github.com:mnpqraven/dotfiles.git`
+
+- You can now run the main install script
+`dotfiles/quick_install.sh`
 - powerline
 	- NOTE: install powerline using this
 	````
