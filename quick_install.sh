@@ -4,19 +4,17 @@ sudo pacman -S --noconfirm ibus ibus-anthy ibus-unikey
 sudo pacman -S --noconfirm yay
 sudo pacman -S --noconfirm maim
 sudo pacman -S --noconfirm neofetch tmux at atom
-sudo pacman -S --noconfirm compton rofi
-sudo pacman -S --noconfirm genymotion
-sudo pacman -S --noconfirm ranger deludge
+sudo pacman -S --noconfirm compton rofi feh
+sudo pacman -S --noconfirm ranger deluge
 sudo pacman -S --noconfirm arandr
 sudo pacman -S --noconfirm i3-gaps
-sudo pacman -S --noconfirm mpd mpv mpc
-sudo pacman -S --noconfirm ncmpcpp
-sudo pacman -S --noconfirm copyq
-sudo pacman -S --noconfirm vim neovim zsh-theme-powerlevel9k
+sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp
+sudo pacman -S --noconfirm virtualbox
+sudo pacman -S --noconfirm copyq fzf
+sudo pacman -S --noconfirm vim neovim zsh-theme-powerlevel9k awesome-terminal-fonts ttf-font-awesome powerline-fonts
 
 pip install --user powerline-status
 pip install --user git+git://github.com/powerline/powerline
-sudo pacman -S --noconfirm powerline-fonts
 
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -31,6 +29,13 @@ sudo systemctl start mpd
 yay nerd-fonts-complete
 yay google-chrome
 yay discord
+yay genymotion
+sudo modprobe vboxdrv
+sudo modprobe vboxnetflt
+sudo modprobe vboxnetadp
+sudo modprobe vboxpci
+
+
 
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

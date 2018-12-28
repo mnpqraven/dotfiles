@@ -73,6 +73,3 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 	````
 - arandr, save the layout as layout.sh
 - copy images
-- systemctl enable atd.service
-- mpd service and ncmpcpp
-- double check device list with `aplay --list-pcm`
