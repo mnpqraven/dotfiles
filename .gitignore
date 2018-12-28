@@ -10,12 +10,15 @@
 !.tmux.conf
 !.gtk*
 !.zshrc
+
 !.dir_color*
 !.profile
 !.lesskey
 !ssh-agent.sh
 !othi-burgundy.json
 !/misc
+
+!/.screenlayout
 
 !/.zsh
 !/.ssh

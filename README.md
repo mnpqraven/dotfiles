@@ -53,6 +53,12 @@ TO-DOs:
 - installation done, conf left
 
 # install order, no script yet cause i'm a literal retard
+- git SSH key
+````
+sudo pacman -S --noconfirm xclip
+git keygen
+xclip -sel clip < ~/.ssh/id_rsa.pub
+````
 - compton, feh
 - vim
 - powerline
