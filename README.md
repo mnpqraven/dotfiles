@@ -68,11 +68,7 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 	pip install --user git+git://github.com/powerline/powerline
 	````
 - arandr, save the layout as layout.sh
-- zsh
-- i3 + i3 gaps
-- bumblebee-status
-- xinput for touchpad
-- ranger
+- copy images
 - systemctl enable atd.service
 - mpd service and ncmpcpp
 - double check device list with `aplay --list-pcm`

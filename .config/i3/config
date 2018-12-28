@@ -108,12 +108,12 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Gaping
 gaps inner 15
 gaps outer 15
-gaps horizontal 10
-gaps vertical 10
-gaps top 0
-gaps right 0
-gaps bottom 0
-gaps left 0
+gaps horizontal outer 10
+gaps vertical outer 10
+gaps top inner 0
+gaps right inner 0
+gaps bottom inner 0
+gaps left inner 0
 # Gaping resize
 # TODO
 
