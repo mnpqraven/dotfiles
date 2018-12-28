@@ -24,4 +24,4 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 git clone git://github.com/tobi-wan-kenobi/bumblebee-status
-mv ~/dotfiles/othi-burgundy.json ~/bumblebee-status/
+cp ~/dotfiles/othi-burgundy.json ~/bumblebee-status/
