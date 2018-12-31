@@ -110,6 +110,7 @@ inoremap [<ESC> [
 inoremap {<ESC> {
 
 " auto closes brackets
+inoremap ;<Space> <Right>;<Space>
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
