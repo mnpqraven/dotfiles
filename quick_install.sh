@@ -10,7 +10,7 @@ sudo pacman -S --noconfirm arandr
 sudo pacman -S --noconfirm i3-gaps
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp
 sudo pacman -S --noconfirm virtualbox
-sudo pacman -S --noconfirm copyq fzf
+sudo pacman -S --noconfirm copyq fzf w3m
 sudo pacman -S --noconfirm vim neovim zsh-theme-powerlevel9k awesome-terminal-fonts ttf-font-awesome powerline-fonts
 
 pip install --user powerline-status
@@ -36,9 +36,11 @@ sudo modprobe vboxnetadp
 sudo modprobe vboxpci
 
 
-
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+cd .oh-my-zsh/custom/plugins
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+cd ~/
 
 sudo pip install netifaces psutil requests power i3ipc docker
 git clone git://github.com/tobi-wan-kenobi/bumblebee-status

@@ -73,3 +73,4 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 	````
 - arandr, save the layout as layout.sh
 - copy images
+- copy contents from dotfiles/ to home/
