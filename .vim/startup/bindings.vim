@@ -108,9 +108,11 @@ inoremap '<ESC> '
 inoremap (<ESC> (
 inoremap [<ESC> [
 inoremap {<ESC> {
+inoremap ;<ESC> ;
 
 " auto closes brackets
-inoremap ;<Space> <Right>;<Space>
+inoremap ;<Space> ;<Space>
+inoremap ;<Space><Space> <Right>;<Space>
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>

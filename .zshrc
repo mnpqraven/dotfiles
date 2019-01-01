@@ -2,8 +2,9 @@ export ZSH="$HOME/.oh-my-zsh"
 #alac huge font fix
 export WINIT_HIDPI_FACTOR=1
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 # using screen-256color here would produce a weird double output of command after <CR> in zsh like:
-# $tmux
+# $ tmux
 # tmuxtmux no session
 export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=7
@@ -11,11 +12,12 @@ export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 # probably comment this in pc
 export PATH="$PATH:$HOME/.local/bin"
 export KEYTIMEOUT=1
-stty -ixon
+
 # To allow any key to get things flowing again, use
+stty -ixon
 # stty ixany
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# SSH
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent
 fi
@@ -27,10 +29,10 @@ fi
 for i in `atq | awk '{print $1}'`;do atrm $i;done
 at 1859 <<< 'notify-send -i "battery" "get batts" "more batts" -u critical'&>/dev/null
 
-if [[ -z "$(pgrep mpd)" ]]; then
-	mpd
-	mpc pause
-fi
+#if [[ -z "$(pgrep mpd)" ]]; then
+#	mpd
+#	mpc pause
+#fi
 
 bindkey -v
 plugins=(

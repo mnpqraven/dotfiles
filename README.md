@@ -38,7 +38,7 @@ TODO: full setup list
 ![muh chinese waifoo](https://github.com/mnpqraven/dotfiles/blob/master/preview.png?raw=true)
 
 TO-DOs:
-- [ ] config ranger
+- [x] config ranger
 - [ ] config ncmpcpp **colorscheme on hold, TODO keymap** (other references [here](https://ubuntu-mate.community/t/how-to-install-and-setup-mpd-mpdscribble-ncmpcpp/8439))
 - [ ] add utility packages to bumblebee shortcuts
 - [ ] install + config Wine
@@ -71,6 +71,6 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 	pip install --user powerline-status
 	pip install --user git+git://github.com/powerline/powerline
 	````
-- arandr, save the layout as layout.sh
-- copy images
+- optional: arandr, save the layout as layout.sh
+- copy images to Pictures/
 - copy contents from dotfiles/ to home/
