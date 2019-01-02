@@ -65,12 +65,11 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 
 - You can now run the main install script
 `dotfiles/quick_install.sh`
-- powerline
-	- NOTE: install powerline using this
-	````
-	pip install --user powerline-status
-	pip install --user git+git://github.com/powerline/powerline
-	````
-- optional: arandr, save the layout as layout.sh
+- If you use a new screen layout(optional): arandr, save the layout as layout.sh
 - copy images to Pictures/
 - copy contents from dotfiles/ to home/
+- Virtualbox
+  - install virtualbox modules
+  - run `/sbin/rcvboxdrv setup` to reload module list in case kernel update broke it
+  - add storage permission to browser
+  - Android machine is Google Nexus 5X API 6.0

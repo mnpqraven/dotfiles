@@ -21,6 +21,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 systemctl enable atd.service
 
+# mpd setup
 mkdir ~/Playlists
 sudo systemctl enable mpd
 sudo systemctl start mpd
@@ -30,22 +31,25 @@ yay nerd-fonts-complete
 yay google-chrome
 yay discord
 yay genymotion
+/sbin/rcvboxdrv setup
 sudo modprobe vboxdrv
 sudo modprobe vboxnetflt
 sudo modprobe vboxnetadp
 sudo modprobe vboxpci
 
-
+# ZSH setup
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cd .oh-my-zsh/custom/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 cd ~/
 
+# bumblebee-status setup
 sudo pip install netifaces psutil requests power i3ipc docker
 git clone git://github.com/tobi-wan-kenobi/bumblebee-status
 cp ~/dotfiles/othi-burgundy.json ~/bumblebee-status/themes
 
+# QMK setup
 git clone git@github.com:mnpqraven/qmk_firmware.git
 qmk_firmware/util/linux_install.sh
 cd qmk_firmware
@@ -56,5 +60,6 @@ git pull upstream master
 git push origin master
 cd ..
 
-
+# folder fix and setup completion
+mkdir ~/.config/mpd/playlists
 ln -s /run/media/othi/linux-data/Music/* Music
