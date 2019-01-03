@@ -103,23 +103,37 @@ nnoremap <silent><F3> :e %<CR> :echo "current file reloaded"<CR><C-o>
 
 " auto bracket
 " escapes double brackets
-inoremap "<ESC> "
-inoremap '<ESC> '
+inoremap "" ""
+inoremap '' ''
+inoremap ;; ;;
 inoremap (<ESC> (
 inoremap [<ESC> [
 inoremap {<ESC> {
-inoremap ;<ESC> ;
+inoremap "<Space> "<Space>
+inoremap '<Space> '<Space>
+inoremap ;<Space> ;<Space>
+inoremap '<ESC> '<ESC>
+inoremap "<ESC> "<ESC>
+inoremap ;<ESC> ;<ESC>
+
+
+" smarter semicolon
+inoremap ;; :
+inoremap ;<Space> ;<Space>
+inoremap ;<Space><Space> <ESC>Ea;<Space>
 
 " auto closes brackets
-inoremap ;<Space> ;<Space>
-inoremap ;<Space><Space> <Right>;<Space>
 inoremap " ""<left>
 inoremap ' ''<left>
+
 inoremap ( ()<left>
 inoremap () ()
-inoremap (; ();
+inoremap (; ();<left><left>
+
 inoremap [ []<left>
 inoremap [] []
+inoremap [; [];<left>
+
 inoremap { {}<left>
 inoremap {} {}
 inoremap {<CR> {<CR>}<ESC>O

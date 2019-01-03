@@ -11,6 +11,11 @@ set showcmd
 set splitbelow splitright
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
+
+"auto save folds
+autocmd BufWrite * mkview
+autocmd BufRead * silent! loadview
+
 " fix for cursor reseting to block after exiting nv
 au VimLeave * set guicursor=a:hor30-blinkon0
 set guicursor=a:hor30-blinkon0

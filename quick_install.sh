@@ -20,6 +20,7 @@ pip install --user git+git://github.com/powerline/powerline
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 systemctl enable atd.service
+apm install atom-package-sync
 
 # mpd setup
 mkdir ~/Playlists
