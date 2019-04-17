@@ -23,6 +23,7 @@ nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
 nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
 nnoremap <Leader>cd :cd %:p:h<CR> :pwd<CR><left>
+nnoremap <Leader>c :%y+<CR>
 map <Leader>s :setlocal spell! spelllang=en_US<CR>
 nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
