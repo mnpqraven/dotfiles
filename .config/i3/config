@@ -185,8 +185,8 @@ bindsym $mod+Mod1+r exec $term -x ranger
 
 # window borders
 new_window pixel 3
-set $shortcmds "zsh -c 'maim -s | xclip -selection clipboard -t image/png';thunar"
-set $shortlabels "screenshot;thunar"
+set $shortcmds "zsh -c 'maim -s | xclip -selection clipboard -t image/png';xfce4-screenshooter;thunar"
+set $shortlabels "screenshot;imgur;thunar"
 # pc display
 bar {
 		colors {

@@ -13,6 +13,8 @@ sudo pacman -S --noconfirm virtualbox
 sudo pacman -S --noconfirm copyq fzf w3m
 sudo pacman -S --noconfirm vim neovim zsh-theme-powerlevel9k awesome-terminal-fonts ttf-font-awesome powerline-fonts
 
+sudo pacman -S --noconfirm intellij-idea-community-edition
+
 pip install --user powerline-status
 pip install --user git+git://github.com/powerline/powerline
 

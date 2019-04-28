@@ -22,12 +22,13 @@ if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent
 fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<~/.ssh-agent)" > /dev/null
+    #eval "$(<~/.ssh-agent)" > /dev/null
+    eval "$(<.ssh-agent)" > /dev/null
 fi
 
 # gf alarm
 for i in `atq | awk '{print $1}'`;do atrm $i;done
-at 1859 <<< 'notify-send -i "battery" "get batts" "more batts" -u critical'&>/dev/null
+at 2000 <<< 'notify-send -i "battery" "get batts" "more batts" -u critical'&>/dev/null
 
 #if [[ -z "$(pgrep mpd)" ]]; then
 #	mpd

@@ -9,6 +9,7 @@ set nocompatible
 set number
 set showcmd
 set splitbelow splitright
+set foldmethod=manual
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 
