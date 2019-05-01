@@ -80,8 +80,9 @@ mv Citador.plugin.js ~/.config/BetterDiscord/plugins
 curl -O https://gist.githubusercontent.com/mnpqraven/7b7fa891033efbfb2148e80643f4a8dc/raw/1364a91c6803a86dfedf62531dacb56c53fb84d4/Izanami.theme.css
 mv Izanami.theme.css ~/.config/BetterDiscord/themes/
 
-# markdown
-sudo pacman -S --noconfirm r pandoc pandoc-citeproc
+# markdown and latex
+sudo pip3 install neovim-remote
+sudo pacman -S --noconfirm r pandoc pandoc-citeproc texlive-most
 yay rstudio-desktop-bin
 
 # folder fix and setup completion

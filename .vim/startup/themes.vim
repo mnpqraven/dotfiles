@@ -14,6 +14,7 @@ let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr} %l%
 highlight SignColumn ctermbg=15
 
 colo othi
+filetype plugin on
 syntax on
 hi Normal ctermbg=none
 

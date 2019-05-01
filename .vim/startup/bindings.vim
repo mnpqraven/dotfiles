@@ -18,6 +18,7 @@ vnoremap <down> dp1v
 " Leader keys
 noremap <space> <nop>
 let mapleader=" "
+let maplocalleader="\\"
 nnoremap <Leader>t :NERDTree<CR>
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
@@ -101,7 +102,8 @@ map <ScrollWheelDown> <A-y>
 
 " misc bindings
 noremap <A-y> <C-e>
-autocmd Filetype rmd map <silent><F9> :silent<space>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>:echo<space>@%"rendered"<CR>
+autocmd Filetype rmd map <silent><F9> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+":echo<space>@%"rendered"<CR>
 nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR> :echo ".vimrc reloaded"<CR>2<left>
 nnoremap <silent><F3> :e %<CR> :echo "current file reloaded"<CR><C-o>
 
@@ -144,5 +146,14 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 " markdown
-autocmd Filetype markdown,rmd,Rmd map <leader>- i---<CR>title:<CR>author:<CR>output: pdf_document<CR>---<ESC>?title<CR>A<space>
-autocmd Filetype markdown,rmd,Rmd map <leader>b i\
+autocmd Filetype md,markdown,rmd,Rmd map <leader>- i---<CR>title:<CR>author:<CR>output: pdf_document<CR>---<ESC>?title<CR>A<space>
+autocmd Filetype md,markdown,rmd,Rmd,tex map <leader>b i\
+autocmd Filetype md,markdown,rmd,Rmd map <leader>q i```<CR><CR>```<ESC>lI
+autocmd Filetype md,markdown,rmd,Rmd noremap <leader>1 O#<ESC>A<space>
+autocmd Filetype md,markdown,rmd,Rmd noremap <leader>2 O##<ESC>A<space>
+autocmd Filetype md,markdown,rmd,Rmd noremap <leader>3 O###<ESC>A<space>
+autocmd Filetype md,markdown,rmd,Rmd noremap <leader>l i[]()<ESC>i
+autocmd Filetype md,markdown,rmd,Rmd noremap <leader>L i![]()<ESC>i
+
+autocmd Filetype md,markdown,rmd,Rmd noremap <leader>c I\centerline{<CR>}<ESC>O
+autocmd Filetype md,markdown,rmd,Rmd noremap <leader>i I\includegraphics[width=1\textwidth]{}<ESC>i

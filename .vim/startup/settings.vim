@@ -39,6 +39,7 @@ set complete=.,w,b,u,t,i,kspell
 set tabstop=4
 set shiftwidth=4
 set foldcolumn=1
+set expandtab
 "set textwidth=80
 "set colorcolumn=+1
 set linespace=0
