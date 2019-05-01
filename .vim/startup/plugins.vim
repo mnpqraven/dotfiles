@@ -12,6 +12,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jez/vim-superman'
 Plugin 'w0rp/ale'
+Plugin 'vim-pandoc/vim-rmarkdown'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 if has('nvim')
 	Plugin 'vim-airline/vim-airline'
 	Plugin 'vim-airline/vim-airline-themes'
@@ -21,6 +24,9 @@ endif
 call vundle#end()
 
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
+
+let g:pandoc#modules#disabled = ["keyboard", "spell"]
+let g:pandoc#spell#enabled = 0
 
 let g:deoplete#enable_at_startup = 1
 let g:gitgutter_override_sign_column_highlight = 0

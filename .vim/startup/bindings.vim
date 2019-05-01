@@ -54,8 +54,8 @@ noremap N K
 noremap n gj
 noremap E J
 noremap e l
-noremap K Nzz
 noremap k nzz
+noremap K Nzz
 noremap l gk
 noremap E $
 noremap H 0
@@ -99,6 +99,7 @@ map <ScrollWheelDown> <A-y>
 
 " misc bindings
 noremap <A-y> <C-e>
+autocmd Filetype rmd map <silent><F9> :silent<space>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>:echo<space>@%"rendered"<CR>
 nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR> :echo ".vimrc reloaded"<CR>2<left>
 nnoremap <silent><F3> :e %<CR> :echo "current file reloaded"<CR><C-o>
 
@@ -139,3 +140,7 @@ inoremap { {}<left>
 inoremap {} {}
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+" markdown
+autocmd Filetype markdown,rmd,Rmd map <leader>- i---<CR>title:<CR>author:<CR>output: pdf_document<CR>---<ESC>?title<CR>A<space>
+autocmd Filetype markdown,rmd,Rmd map <leader>b i\

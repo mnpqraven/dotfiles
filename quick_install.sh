@@ -1,5 +1,15 @@
-sudo pacman -Su
+sudo pacman -Syyu
 sudo pacman -Syu
+
+sudo pacman -S --noconfirm virtualbox
+yay genymotion
+# /sbin/rcvboxdrv setup
+# sudo modprobe vboxdrv
+# sudo modprobe vboxnetflt
+# sudo modprobe vboxnetadp
+# sudo modprobe vboxpci
+
+
 sudo pacman -S --noconfirm ibus ibus-anthy ibus-unikey
 sudo pacman -S --noconfirm yay
 sudo pacman -S --noconfirm maim
@@ -9,7 +19,6 @@ sudo pacman -S --noconfirm ranger deluge
 sudo pacman -S --noconfirm arandr
 sudo pacman -S --noconfirm i3-gaps
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp
-sudo pacman -S --noconfirm virtualbox
 sudo pacman -S --noconfirm copyq fzf w3m
 sudo pacman -S --noconfirm vim neovim zsh-theme-powerlevel9k awesome-terminal-fonts ttf-font-awesome powerline-fonts
 
@@ -31,12 +40,6 @@ sudo systemctl start mpd
 yay nerd-fonts-complete
 yay google-chrome
 yay discord
-yay genymotion
-/sbin/rcvboxdrv setup
-sudo modprobe vboxdrv
-sudo modprobe vboxnetflt
-sudo modprobe vboxnetadp
-sudo modprobe vboxpci
 
 # ZSH setup
 chsh -s $(which zsh)
@@ -53,6 +56,7 @@ cp ~/dotfiles/othi-burgundy.json ~/bumblebee-status/themes
 # QMK setup
 git clone git@github.com:mnpqraven/qmk_firmware.git
 qmk_firmware/util/linux_install.sh
+cd ~/
 cd qmk_firmware
 git remote add upstream https://github.com/qmk/qmk_firmware.git
 git checkout master
@@ -61,6 +65,27 @@ git pull upstream master
 git push origin master
 cd ..
 
+# betterDiscord, check link for potential new changes
+# https://gist.github.com/ObserverOfTime/d7e60eb9aa7fe837545c8cb77cf31172
+cd ~/
+curl -O https://raw.githubusercontent.com/bb010g/betterdiscordctl/master/betterdiscordctl
+chmod +x betterdiscordctl
+sudo mv betterdiscordctl /usr/local/bin
+betterdiscordctl install
+betterdiscordctl update
+curl -O https://raw.githubusercontent.com/nirewen/Citador/master/Citador.plugin.js
+mv Citador.plugin.js ~/.config/BetterDiscord/plugins
+curl -O https://gist.githubusercontent.com/mnpqraven/7b7fa891033efbfb2148e80643f4a8dc/raw/1364a91c6803a86dfedf62531dacb56c53fb84d4/Izanami.theme.css
+mv Izanami.theme.css ~/.config/BetterDiscord/themes/
+
+# markdown
+sudo pacman -S --noconfirm r pandoc pandoc-citeproc
+yay rstudio-desktop-bin
+
 # folder fix and setup completion
 mkdir ~/.config/mpd/playlists
 ln -s /run/media/othi/linux-data/Music/* Music
+
+# install plugins in vim
+# add JP and VI codex into ibus
+# follow markdown installation with RStudio
