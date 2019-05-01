@@ -22,7 +22,8 @@ if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent
 fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<~/.ssh-agent)" > /dev/null
+    #eval "$(<~/.ssh-agent)" > /dev/null
+    eval "$(<.ssh-agent)" > /dev/null
 fi
 
 # gf alarm

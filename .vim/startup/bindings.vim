@@ -59,6 +59,8 @@ noremap K Nzz
 noremap l gk
 noremap E $
 noremap H 0
+noremap L H
+noremap N L
 noremap <C-d> <C-d>zz
 noremap <C-d> <C-d>zz
 
