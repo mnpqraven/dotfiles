@@ -12,6 +12,7 @@ set splitbelow splitright
 set foldmethod=manual
 
 " delete whitespace
+autocmd FileType rmd autocmd BufWritePre <buffer> call RRender()
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 
