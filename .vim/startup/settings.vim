@@ -13,10 +13,7 @@ set foldmethod=manual
 
 " delete whitespace
 autocmd FileType rmd autocmd BufWritePre <buffer> call RRender()
-function! RRender()
-    !echo "require(rmarkdown); render('%')" | R --vanilla
-endfunction
-"autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 
 "auto save folds

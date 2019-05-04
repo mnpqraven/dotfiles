@@ -1,6 +1,7 @@
 noremap <C-f> :CtrlP<CR>
 noremap <F6> :CtrlPClearCache<CR>
 noremap <F7> :CtrlPClearAllCaches<CR>
+noremap <C-w> :bd<CR>
 
 " tmux navigator
 nnoremap <silent> <C-H> :TmuxNavigateLeft<CR>

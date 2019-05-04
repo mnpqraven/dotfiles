@@ -23,3 +23,6 @@ endfunction
 command! MakeTags !ctags -R .
 command! Diff Gdiff
 
+function! RRender()
+    !echo "require(rmarkdown); render('%')" | R --vanilla
+endfunction
