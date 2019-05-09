@@ -7,12 +7,13 @@ scriptencoding utf-8
 set is
 set nocompatible
 set number
+set nospell
 set showcmd
 set splitbelow splitright
 set foldmethod=manual
 
 " delete whitespace
-autocmd FileType rmd autocmd BufWritePre <buffer> call RRender()
+autocmd FileType rmd autocmd BufWritePre *.rmd call RRender()
 autocmd BufWritePre * %s/\s\+$//e
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 

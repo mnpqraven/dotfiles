@@ -48,6 +48,8 @@
 
 !/.config/alacritty
 
+!/.config/feh
+
 /.config/mpd/*
 !/.config/mpd
 !/.config/mpd/mpd.conf

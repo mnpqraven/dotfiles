@@ -25,6 +25,7 @@ endif
 call vundle#end()
 
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
+let g:tex_flavor = 'latex'
 
 let g:pandoc#modules#disabled = ["keyboard", "spell"]
 let g:pandoc#spell#enabled = 0

@@ -26,7 +26,7 @@ nnoremap <Leader>K :tabprevious<CR>
 nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
 nnoremap <Leader>cd :cd %:p:h<CR> :pwd<CR><left>
 nnoremap <Leader>c :%y+<CR>
-map <Leader>s :setlocal spell! spelllang=en_US<CR>
+nnoremap <silent><Leader>s :setlocal spell! spelllang=en_US<CR><ESC>
 nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 noremap <silent> <Leader>a :call ToggleAutoComment()<CR>zz
@@ -155,6 +155,17 @@ autocmd Filetype md,markdown,rmd,Rmd noremap <leader>2 O##<ESC>A<space>
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>3 O###<ESC>A<space>
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>l i[]()<ESC>i
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>L i![]()<ESC>i
-
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>c I\centerline{<CR>}<ESC>O
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>i I\includegraphics[width=1\textwidth]{}<ESC>i
+
+" LaTeX
+autocmd Filetype tex noremap <leader>st i\section{}<ESC>i
+autocmd Filetype tex noremap <leader>ss i\subsection{}<ESC>i
+autocmd Filetype tex noremap <leader>bb i\begin{}<ESC>o\end{}<ESC><ESC>lA<ESC>i
+autocmd Filetype tex noremap <leader>lt i{\LaTeX}<ESC>A
+autocmd Filetype tex noremap <leader>cw a\codeword{}<ESC>i
+autocmd Filetype tex noremap \\ A<space>\\<CR>
+
+" html
+autocmd Filetype html inoremap ,br <br><ESC>o
+autocmd Filetype html inoremap ,cc <!-- --><ESC>F<space>s
