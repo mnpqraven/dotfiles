@@ -19,8 +19,10 @@ syntax on
 hi Normal ctermbg=none
 
 " cursor
-set guicursor=n:hor50-blinkon0
-highlight Cursor gui=reverse guifg=NONE guibg=NONE
+au VimLeave * set guicursor=a:hor90-blinkon0
+set guicursor=a:block
+"au VimLeave * set guicursor=a:hor70-blinkon0
+"set guicursor=a:hor50-blinkon0
 
 if !has('nvim')
 	set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/

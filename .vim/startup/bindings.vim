@@ -20,6 +20,7 @@ vnoremap <down> dp1v
 noremap <space> <nop>
 let mapleader=" "
 let maplocalleader="\\"
+nnoremap <Leader>cl :WhatColumn!<CR>
 nnoremap <Leader>t :NERDTree<CR>
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
@@ -146,13 +147,21 @@ inoremap {} {}
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+"CSV
+"autocmd filetype csv noremap <silent>H :<C-U>call csv#MoveCol(-1, line("."))<CR>:<C-U>call csv#MoveCol(-1, line("."))<CR>l
+autocmd filetype csv noremap <silent>H :<C-U>call csv#MoveCol(-1, line("."))<CR>:<C-U>call csv#MoveCol(-1, line("."))<CR>b:<C-U>call csv#MoveCol(1, line("."))<CR>
+":call csv#MoveCol(-1, line("."), 1)<CR>
+autocmd filetype csv noremap <silent>E :<C-U>call csv#MoveCol(1, line("."))<CR>
+autocmd filetype csv noremap <silent>N :<C-U>call csv#MoveCol(0, line(".")+v:count1)<CR>
+autocmd filetype csv noremap <silent>L :<C-U>call csv#MoveCol(0, line(".")-v:count1)<CR>
+
 " markdown
 autocmd Filetype md,markdown,rmd,Rmd map <leader>- i---<CR>title:<CR>author:<CR>output: pdf_document<CR>---<ESC>?title<CR>A<space>
 autocmd Filetype md,markdown,rmd,Rmd,tex map <leader>b i\
 autocmd Filetype md,markdown,rmd,Rmd map <leader>q i```<CR><CR>```<ESC>lI
-autocmd Filetype md,markdown,rmd,Rmd noremap <leader>1 O#<ESC>A<space>
-autocmd Filetype md,markdown,rmd,Rmd noremap <leader>2 O##<ESC>A<space>
-autocmd Filetype md,markdown,rmd,Rmd noremap <leader>3 O###<ESC>A<space>
+"autocmd Filetype md,markdown,rmd,Rmd noremap <leader>1 O#<ESC>A<space>
+"autocmd Filetype md,markdown,rmd,Rmd noremap <leader>2 O##<ESC>A<space>
+"autocmd Filetype md,markdown,rmd,Rmd noremap <leader>3 O###<ESC>A<space>
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>l i[]()<ESC>i
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>L i![]()<ESC>i
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>c I\centerline{<CR>}<ESC>O
