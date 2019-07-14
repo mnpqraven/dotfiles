@@ -27,6 +27,7 @@
 
 !/.vim
 /.vim/bundle/*
+/.vim/view
 !/.vim/bundle/Vundle.vim
 !/.vim/bundle/othi-airline-themes
 

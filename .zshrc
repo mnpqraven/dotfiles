@@ -22,7 +22,6 @@ if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent
 fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
-    #eval "$(<~/.ssh-agent)" > /dev/null
     eval "$(<.ssh-agent)" > /dev/null
 fi
 
@@ -66,7 +65,7 @@ ZSH_HIGHLIGHT_STYLES=(main brackets)
 ZSH_HIGHLIGHT_STYLES[unknown_token]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[default]='fg=225'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=cyan,bold'
-ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan,underline'
+ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[command]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan,underline'
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,underline'

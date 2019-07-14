@@ -132,14 +132,14 @@ exec_always --no-startup-id compton -b -f
 exec_always --no-startup-id xinput set-prop 13 309 {0,0,0,0,1,3,2}
 exec_always --no-startup-id feh --bg-center Pictures/scarlett-forest-1920×1080.jpg
 exec_always --no-startup-id feh --bg-center /home/othi/Pictures/wall/b2edeca608d4f42fc50e4b96db0e2e3b.jpg /home/othi/Pictures/vertical/f24ed9dba8e3041c1973b0093e6f5c9f.jpg
-exec_always --no-startup-id i3-msg 'workspace $ws6; exec discord; resize set height 69 ppt; workspace $ws8'
+exec_always --no-startup-id i3-msg 'workspace $ws6; exec discord; resize set height 59 ppt; workspace $ws8'
 exec_always --no-startup-id i3-msg 'workspace $ws8; exec $term; workspace $ws8'
 exec_always --no-startup-id i3-msg 'workspace $ws8; exec google-chrome-stable --new-window https://tweetdeck.twitter.com; resize set height 85 ppt; workspace $ws1'
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 
 # spawns
 for_window [class="discord"] move container to workspace $ws6
-for_window [class="discord"] resize set height 69 ppt; move up
+for_window [class="discord"] resize set height 59 ppt; move up
 for_window [class="discord"] move up
 for_window [title="TweetDeck"] move container to workspace $ws8; resize set height 85 ppt
 for_window [title="TweetDeck"] resize set height 85 ppt
@@ -166,7 +166,7 @@ bindsym $mod+a focus parent
 bindsym $mod+v split h ;; exec $term
 bindsym $mod+s split v ;; exec $term
 bindsym $mod+f fullscreen toggle
-bindsym $mod+q resize set height 69 ppt
+bindsym $mod+q resize set height 59 ppt
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
