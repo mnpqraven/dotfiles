@@ -26,7 +26,8 @@ endif
 call vundle#end()
 
 " csv.vim
-let g:csv_delim_test = ',|; '
+"let g:csv_delim_test = ',|; '
+let g:csv_delim_test = ';'
 let g:csv_highlight_column = 'y'
 
 "let g:no_csv_maps = 1

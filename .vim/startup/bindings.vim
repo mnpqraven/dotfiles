@@ -108,6 +108,8 @@ autocmd Filetype rmd map <silent><F9> :!echo<space>"require(rmarkdown);<space>re
 ":echo<space>@%"rendered"<CR>
 nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR> :echo ".vimrc reloaded"<CR>2<left>
 nnoremap <silent><F3> :e %<CR> :echo "current file reloaded"<CR><C-o>
+" smart searching selected text in visual mode
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " auto bracket
 " escapes double brackets

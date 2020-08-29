@@ -39,7 +39,8 @@ sudo systemctl enable mpd
 sudo systemctl start mpd
 # double check device list with `aplay --list-pcm`
 
-yay nerd-fonts-complete
+yay nerd-fonts-complete emoji-font
+yay kasumi
 yay google-chrome
 yay discord
 
