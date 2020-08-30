@@ -39,7 +39,8 @@ let g:csv_nomap_j = 1
 let g:csv_nomap_k = 1
 
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
-let g:tex_flavor = 'latex'
+let g:tex_flavor = 'xelatex'
+let g:vimtex_compiler_latexmk_engine = {'xelatex': '-pdf'}
 
 let g:pandoc#modules#disabled = ["keyboard", "spell"]
 let g:pandoc#spell#enabled = 0

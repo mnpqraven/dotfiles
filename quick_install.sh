@@ -22,7 +22,7 @@ sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp
 sudo pacman -S --noconfirm copyq fzf w3m
 sudo pacman -S --noconfirm vim neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
 
-sudo pacman -S --noconfirm intellij-idea-community-edition
+sudo pacman -S --noconfirm intellij-idea-community-edition tk
 
 pip install --user powerline
 pip install --user git+git://github.com/powerline/powerline
@@ -91,6 +91,11 @@ yay rstudio-desktop-bin
 mkdir ~/.config/mpd
 mkdir ~/.config/mpd/playlists
 ln -s /run/media/othi/linux-data/Music/* Music
+
+sudo gpasswd -a mpd othi
+chmod 710 ~/
+sudo gpasswd -a mpd audio
+
 # mpd --verbose --stdout --no-daemon
 
 # install plugins in vim
