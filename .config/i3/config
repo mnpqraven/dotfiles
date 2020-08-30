@@ -76,16 +76,16 @@ set $ws7 "7: Music  "
 set $ws8 "8: Reader  "
 set $ws9 "9: Atom  "
 set $ws10 "10: Terminal  "
-workspace $ws1 output  DP-4
-workspace $ws2 output  DP-4
-workspace $ws3 output  DP-4
-workspace $ws4 output  DP-4
-workspace $ws5 output  DP-4
-workspace $ws6 output  DP-0
-workspace $ws7 output  DP-0
-workspace $ws8 output  DP-0
-workspace $ws9 output  DP-0
-workspace $ws10 output DP-0
+workspace $ws1 output  DP-1
+workspace $ws2 output  DP-1
+workspace $ws3 output  DP-1
+workspace $ws4 output  DP-1
+workspace $ws5 output  DP-1
+workspace $ws6 output  DP-3
+workspace $ws7 output  DP-3
+workspace $ws8 output  DP-3
+workspace $ws9 output  DP-3
+workspace $ws10 output DP-3
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -125,7 +125,7 @@ bindsym $mod+Mod1+Right resize grow width 1 px or 1 ppt
 # STARTUP
 exec_always --no-startup-id ibus-daemon -d
 exec dbus-launch nm-applet
-exec_always --no-startup-id ~/.screenlayout/layout.sh
+# exec_always --no-startup-id ~/.screenlayout/layout.sh
 exec_always --no-startup-id $term --title=ms
 assign [instance="xfce4-terminal" title="ms"] $ws7
 exec_always --no-startup-id compton -b -f
@@ -203,7 +203,7 @@ bar {
 			#focused_workspace  #ffffff #ffffff #$bgcolor
 			inactive_workspace #cecece #cecece #$txtcolor
 		}
-	output DP-4
+	output DP-1
 	font pango:DejaVu Sans Mono Nerd Font 12
 	position bottom
 	tray_output primary
@@ -221,7 +221,7 @@ bar {
 			#focused_workspace  #ffffff #ffffff #$bgcolor
 			inactive_workspace #cecece #cecece #$txtcolor
 		}
-	output DP-0
+	output DP-3
 	font pango:DejaVu Sans Mono Nerd Font 15
 	position bottom
 	tray_output none

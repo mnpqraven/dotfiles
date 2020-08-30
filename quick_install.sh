@@ -20,11 +20,11 @@ sudo pacman -S --noconfirm arandr
 sudo pacman -S --noconfirm i3-gaps
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp
 sudo pacman -S --noconfirm copyq fzf w3m
-sudo pacman -S --noconfirm vim neovim zsh-theme-powerlevel9k awesome-terminal-fonts ttf-font-awesome powerline-fonts
+sudo pacman -S --noconfirm vim neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
 
 sudo pacman -S --noconfirm intellij-idea-community-edition
 
-pip install --user powerline-status
+pip install --user powerline
 pip install --user git+git://github.com/powerline/powerline
 
 
@@ -39,7 +39,8 @@ sudo systemctl enable mpd
 sudo systemctl start mpd
 # double check device list with `aplay --list-pcm`
 
-yay nerd-fonts-complete emoji-font
+yay nerd-fonts-complete
+yay emoji-font
 yay kasumi
 yay google-chrome
 yay discord
@@ -87,8 +88,10 @@ sudo pacman -S --noconfirm r pandoc pandoc-citeproc texlive-most
 yay rstudio-desktop-bin
 
 # folder fix and setup completion
+mkdir ~/.config/mpd
 mkdir ~/.config/mpd/playlists
 ln -s /run/media/othi/linux-data/Music/* Music
+# mpd --verbose --stdout --no-daemon
 
 # install plugins in vim
 # add JP and VI codex into ibus
