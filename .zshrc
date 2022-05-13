@@ -9,16 +9,21 @@ export QT_IM_MODULE=ibus
 # using screen-256color here would produce a weird double output of command after <CR> in zsh like:
 # $ tmux
 # tmuxtmux no session
-export TERM="xterm-256color"
+export TERM="xterm-256color-italic"
 export UPDATE_ZSH_DAYS=7
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 # probably comment this in pc
 export PATH="$PATH:$HOME/.local/bin"
 export KEYTIMEOUT=1
 
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH="$PATH:$ANDROID_SDK_ROOT/emulator"
+export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
+
 # To allow any key to get things flowing again, use
 stty -ixon
 # stty ixany
+ibus-daemon -d
 
 # SSH
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
@@ -27,10 +32,6 @@ fi
 if [[ "$SSH_AGENT_PID" == "" ]]; then
     eval "$(<.ssh-agent)" > /dev/null
 fi
-
-# gf alarm
-for i in `atq | awk '{print $1}'`;do atrm $i;done
-at 2000 <<< 'notify-send -i "battery" "get batts" "more batts" -u critical'&>/dev/null
 
 #if [[ -z "$(pgrep mpd)" ]]; then
 #	mpd
