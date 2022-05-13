@@ -11,6 +11,7 @@ set nospell
 set showcmd
 set splitbelow splitright
 set foldmethod=manual
+set foldlevel=99
 "
 " delete whitespace
 autocmd FileType rmd autocmd BufWritePre *.rmd call RRender()
@@ -48,3 +49,14 @@ set history=1000
 set showbreak=↪\
 set list listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·,eol:¬
 set smartindent
+
+au BufNewFile,BufRead *.js set shiftwidth=2
+
+au BufNewFile,BufRead *.py
+    \ set foldmethod=indent tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
+
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
+autocmd BufEnter *.tex set conceallevel=0
+

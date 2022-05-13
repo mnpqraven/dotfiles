@@ -1,6 +1,7 @@
 " change airline color in the Palette section
 " VIM-AIRLINE CONFIG ------------------------------------------------------------
 let g:airline_theme='othipowerline'
+"let g:airline_theme='monokai_tasty'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_close_button = 0
@@ -13,7 +14,9 @@ let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr} %l%
 "let g:airline#extensions#tmuxline#enabled = 1
 highlight SignColumn ctermbg=15
 
-colo othi
+"colo othi
+let g:vim_monokai_tasty_italic = 1
+colo vim-monokai-tasty
 filetype plugin on
 syntax on
 hi Normal ctermbg=none

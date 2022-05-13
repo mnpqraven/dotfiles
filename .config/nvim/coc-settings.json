@@ -1,0 +1,17 @@
+{
+  "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascriptreact",
+    "typescript.tsx"
+  ],
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "diagnostic.errorSign": "!",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•"
+}

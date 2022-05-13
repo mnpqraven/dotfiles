@@ -11,19 +11,63 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'jez/vim-superman'
-Plugin 'w0rp/ale'
 Plugin 'lervag/vimtex'
-Plugin 'vim-pandoc/vim-rmarkdown'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'chrisbra/csv.vim'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-scripts/indentpython.vim'
 if has('nvim')
 	Plugin 'vim-airline/vim-airline'
 	Plugin 'vim-airline/vim-airline-themes'
 	Plugin 'mnpqraven/othi-airline-themes'
-	"Plugin 'Shougo/deoplete.nvim'
 endif
 call vundle#end()
+
+" PLUG
+call plug#begin()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'patstockwell/vim-monokai-tasty'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'styled-components/vim-styled-components'
+Plug 'mattn/emmet-vim'
+Plug 'leafOfTree/vim-vue-plugin'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-emmet.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'ap/vim-css-color'
+call plug#end()
+filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
+
+" coc.nvim
+" install the tsserver
+" :CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-emmet
+
+" emmet
+let g:user_emmet_settings = {
+  \  'typescript' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
+" asyncomplete
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emmet#get_source_options({
+    \ 'name': 'emmet',
+    \ 'whitelist': ['html'],
+    \ 'completor': function('asyncomplete#sources#emmet#completor'),
+    \ }))
+
+"CtrlP keys
+  let g:ctrlp_prompt_mappings = {
+    \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
+    \ 'PrtSelectMove("k")':   ['<c-l>', '<up>'],
+    \ 'PrtCurEnd()':          ['<c-4>'],
+    \ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
+    \ 'PrtCurRight()':        ['<c-e>', '<right>'],
+    \ 'PrtHistory(-1)':       ['<c-b>'],
+    \ 'PrtHistory(1)':        ['<c-w>'],
+    \ 'ToggleType(-1)':       ['<c-q>', '<c-down>'],
+    \ }
 
 " csv.vim
 "let g:csv_delim_test = ',|; '
@@ -40,7 +84,10 @@ let g:csv_nomap_k = 1
 
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 let g:tex_flavor = 'xelatex'
+let g:vimtex_view_general_viewer = 'evince'
 let g:vimtex_compiler_latexmk_engine = {'xelatex': '-pdf'}
+let g:vimtex_syntax_conceal_disabled=1
+set conceallevel=0
 
 let g:pandoc#modules#disabled = ["keyboard", "spell"]
 let g:pandoc#spell#enabled = 0
@@ -48,5 +95,16 @@ let g:pandoc#spell#enabled = 0
 let g:deoplete#enable_at_startup = 1
 let g:gitgutter_override_sign_column_highlight = 0
 let g:tmux_navigator_no_mappings = 1
+
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 
+let g:ale_fixers = {
+            \ '*': ['remove_trailing_lines','trim_whitespace'],
+            \ 'javascript': ['importjs','prettier'],
+            \}
+let g:ale_fix_on_save = 1
+
+let g:SimpylFold_docstring_preview=1
+
+let g:python3_host_prog='/usr/bin/python3'

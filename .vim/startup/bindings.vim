@@ -1,7 +1,10 @@
 noremap <C-f> :CtrlP<CR>
 noremap <F6> :CtrlPClearCache<CR>
 noremap <F7> :CtrlPClearAllCaches<CR>
+noremap <F9> :VimtexStop<CR>:VimtexClean<CR>
 noremap <C-w> :bd<CR>
+" Press F8 to toggle highlighting on/off, and show current value.
+noremap <F8> :set hlsearch! hlsearch?<CR>
 
 " tmux navigator
 nnoremap <silent> <C-H> :TmuxNavigateLeft<CR>
@@ -31,6 +34,7 @@ nnoremap <silent><Leader>s :setlocal spell! spelllang=en_US<CR><ESC>
 nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 noremap <silent> <Leader>a :call ToggleAutoComment()<CR>zz
+noremap z<tab> zf%
 " NERDTree keys
 noremap <C-\> :NERDTreeToggle<CR>
 let NERDTreeMenuDown='n'
@@ -46,9 +50,10 @@ nnoremap <Leader>6 6gt
 nnoremap <Leader>7 7gt
 nnoremap <Leader>8 8gt
 nnoremap <Leader>9 9gt
+
 " buffer navigation
-nnoremap <C-M> :bn<CR>
-nnoremap <C-B> :bp<CR>
+nnoremap <C-k> :bn<CR>
+nnoremap <C-b> :bp<CR>
 
 " Colemak remapping
 noremap J E
@@ -66,21 +71,13 @@ noremap L H
 noremap N L
 noremap <C-d> <C-d>zz
 noremap <C-d> <C-d>zz
-
-" legacy panes navigation, use this if the above tmux navigations are not used
-" noremap <C-H> <C-W>h
-" noremap <C-N> <C-W>j
-" noremap <C-E> <C-W>l
-" noremap <C-L> <C-W>k
+noremap <leader><leader> za
 
 " split resizing
 map <A-l> :res +5<CR>
 map <A-n> :res -5<CR>
 map <A-h> :vertical resize -5<CR>
 map <A-e> :vertical resize +5<CR>
-
-" Press F8 to toggle highlighting on/off, and show current value.
-noremap <F8> :set hlsearch! hlsearch?<CR>
 
 nmap G Gzz
 " vnoremap <C-c> "*Y :let @+=@*<CR>
@@ -119,6 +116,9 @@ inoremap ;; ;;
 inoremap (<ESC> (
 inoremap [<ESC> [
 inoremap {<ESC> {
+inoremap (<tab> ()<Space>
+inoremap [<tab> []<Space>
+inoremap {<tab> {}<Space>
 inoremap "<Space> "<Space>
 inoremap '<Space> '<Space>
 inoremap ;<Space> ;<Space>
@@ -157,6 +157,14 @@ autocmd filetype csv noremap <silent>E :<C-U>call csv#MoveCol(1, line("."))<CR>
 autocmd filetype csv noremap <silent>N :<C-U>call csv#MoveCol(0, line(".")+v:count1)<CR>
 autocmd filetype csv noremap <silent>L :<C-U>call csv#MoveCol(0, line(".")-v:count1)<CR>
 
+" js
+inoremap <C-h> <space>=<space>()<space>=><space>{<CR>}<ESC>O
+
+" TAB COMPLETION
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
 " markdown
 autocmd Filetype md,markdown,rmd,Rmd map <leader>- i---<CR>title:<CR>author:<CR>output: pdf_document<CR>---<ESC>?title<CR>A<space>
 autocmd Filetype md,markdown,rmd,Rmd,tex map <leader>b i\
@@ -172,7 +180,7 @@ autocmd Filetype md,markdown,rmd,Rmd noremap <leader>i I\includegraphics[width=1
 " LaTeX
 autocmd Filetype tex noremap <leader>st i\section{}<ESC>i
 autocmd Filetype tex noremap <leader>ss i\subsection{}<ESC>i
-autocmd Filetype tex noremap <leader>bb i\begin{}<ESC>o\end{}<ESC><ESC>lA<ESC>i
+autocmd Filetype tex noremap <leader>bb i\begin{}<ESC>o\end{}<ESC>k$i
 autocmd Filetype tex noremap <leader>lt i{\LaTeX}<ESC>A
 autocmd Filetype tex noremap <leader>cw a\codeword{}<ESC>i
 autocmd Filetype tex noremap \\ A<space>\\<CR>
