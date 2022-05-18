@@ -1,7 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 #alac huge font fix
 export WINIT_HIDPI_FACTOR=1
-export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 # using screen-256color here would produce a weird double output of command after <CR> in zsh like:
 # $ tmux

@@ -22,7 +22,7 @@ syntax on
 hi Normal ctermbg=none
 
 " cursor
-au VimLeave * set guicursor=a:hor90-blinkon0
+au VimLeave * set guicursor=a:ver90-blinkon0
 set guicursor=a:block
 "au VimLeave * set guicursor=a:hor70-blinkon0
 "set guicursor=a:hor50-blinkon0

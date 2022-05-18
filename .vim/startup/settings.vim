@@ -23,7 +23,7 @@ autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 "  autocmd BufRead * silent! loadview
 "
 " fix for cursor reseting to block after exiting nv
-highlight Cursor gui=reverse guifg=NONE guibg=NONE
+"highlight Cursor gui=reverse guifg=NONE guibg=NONE
 set path+=**
 set wildmenu
 set wildmode=list:longest,full
