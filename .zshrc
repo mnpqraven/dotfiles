@@ -11,7 +11,7 @@ export UPDATE_ZSH_DAYS=7
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 # probably comment this in pc
 export PATH="$PATH:$HOME/.local/bin"
-export KEYTIMEOUT=1
+export KEYTIMEOUT=200
 
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH="$PATH:$ANDROID_SDK_ROOT/emulator"
@@ -41,6 +41,7 @@ vi-mode
 tmux
 archlinux
 colored-man-pages
+npm
 )
 # removes emulate -L zsh if can't completet dirs
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -57,6 +58,7 @@ bindkey '^q' backward-delete-word
 bindkey '^[[3~' delete-char
 bindkey '^w' forward-word
 bindkey -M vicmd '^[[3~' forward-char
+#bindkey -M vicmd 'V' edit-command-line # this remaps `vv` to `V` (but overrides `visual-mode`)
 # }}}
 
 # SYNTAX HIGHLIGHTING CONFIGURATION {{{
@@ -68,7 +70,7 @@ ZSH_HIGHLIGHT_STYLES[builtin]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[command]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=cyan,underline'
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,underline'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=cyan,bold'
 ZSH_HIGHLIGHT_STYLES[path]='fg=225,underline'
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=225'
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=225'
