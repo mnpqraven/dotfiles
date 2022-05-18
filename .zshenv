@@ -32,6 +32,8 @@ alias swt="ranger --selectfile=$HOME/Documents/studium/swt/swt2018_altradgieselt
 alias qmk="ranger --selectfile=$HOME/qmk_firmware/a"
 alias gh="ranger --selectfile=$HOME/a"
 alias cfg="ranger --cmd='set show_hidden true' --selectfile=$HOME/.config/a"
+alias cz="cd ~ && cd \$(find * -type d | fzf)"
+
 # }}}
 
 # commands aliases {{{
