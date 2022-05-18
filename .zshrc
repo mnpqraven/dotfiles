@@ -2,9 +2,6 @@ export ZSH="$HOME/.oh-my-zsh"
 #alac huge font fix
 export WINIT_HIDPI_FACTOR=1
 export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
 
 # using screen-256color here would produce a weird double output of command after <CR> in zsh like:
 # $ tmux
@@ -23,7 +20,6 @@ export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
 # To allow any key to get things flowing again, use
 stty -ixon
 # stty ixany
-ibus-daemon -d
 
 # SSH
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then

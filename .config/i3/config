@@ -23,8 +23,8 @@ font pango:SauceCodePro Nerd Font Black 8
 
 set $web google-chrome-stable
 #set $term i3-sensible-terminal
-set $term xfce4-terminal
-set $term2 alacritty
+set $term2 xfce4-terminal
+set $term alacritty
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term2
 bindsym $mod+Shift+q kill
@@ -123,11 +123,9 @@ bindsym $mod+Mod1+Up resize shrink height 1 px or 1 ppt
 bindsym $mod+Mod1+Right resize grow width 1 px or 1 ppt
 
 # STARTUP
-exec_always --no-startup-id ibus-daemon -d
+exec_always --no-startup-id fcitx5
 exec dbus-launch nm-applet
 # exec_always --no-startup-id ~/.screenlayout/layout.sh
-exec_always --no-startup-id $term --title=ms
-assign [instance="xfce4-terminal" title="ms"] $ws7
 exec_always --no-startup-id compton -b -f
 # laptop input
 exec_always --no-startup-id xinput set-prop 13 309 {0,0,0,0,1,3,2}
