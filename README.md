@@ -84,5 +84,5 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 
 run the install script
 ```
-curl -s https://github.com/mnpqraven/dotfiles/blob/master/new_install.sh > new_install.sh && bash new_install.sh
+curl -s https://raw.githubusercontent.com/mnpqraven/dotfiles/master/new_install.sh && bash new_install.sh
 ```
