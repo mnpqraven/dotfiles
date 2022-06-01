@@ -10,9 +10,9 @@ cd $HOME
 # INSTALLING STUFF
 # EDITOR
 sudo pacman -S --noconfirm neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
-# not using this powerline from git rn but using pacman's version
-#pip install --user powerline
-#pip install --user git+git://github.com/powerline/powerline
+#using this for now for compat
+pip install --user powerline
+pip install --user git+git://github.com/powerline/powerline
 # MARKDOWN AND LATEX
 sudo pip3 install neovim-remote
 #sudo pacman -S --noconfirm r pandoc pandoc-citeproc texlive-most
