@@ -2,6 +2,8 @@
 git clone https://github.com/mnpqraven/dotfiles.git
 # INSTALLING YAY
 sudo pacman -Syu
+cd /opt
+sudo git clone https://aur.archlinux.org/yay.git
 sudo chown -R `whoami`:users ./yay
 cd yay
 makepkg -si --noconfirm
@@ -33,6 +35,7 @@ sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m powerline dolp
 
 # TOOLS
 sudo pacman -S --noconfirm feh deluge fzf python-pip r
+yay google-chrome
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
 # mpd setup
