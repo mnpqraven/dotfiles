@@ -73,3 +73,16 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
   - run `/sbin/rcvboxdrv setup` to reload module list in case kernel update broke it
   - add storage permission to browser
   - Android machine is Google Nexus 5X API 6.0
+
+# 2022 update
+- boot up with the arch iso
+`archinstall`
+- lets try desktop, there's already i3gaps
+- remember to config network
+- `git curl xclip` to install
+- config files saved in `/usr/share`
+
+run the install script
+```
+curl -s https://github.com/mnpqraven/dotfiles/blob/master/new_install.sh > new_install.sh && bash new_install.sh
+```
