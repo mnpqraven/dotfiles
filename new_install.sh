@@ -49,7 +49,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 cd ~/
 # bumblebee-status setup
 sudo pip install netifaces psutil requests power i3ipc docker
-git clone git://github.com/tobi-wan-kenobi/bumblebee-status
+git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
 cp ~/dotfiles/othi-burgundy.json ~/bumblebee-status/themes
 
 # COMMENTED OUT FOR NOW
