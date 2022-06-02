@@ -2,6 +2,8 @@
 git clone https://github.com/mnpqraven/dotfiles.git
 # INSTALLING YAY
 sudo pacman -Syu
+cd /opt
+sudo git clone https://aur.archlinux.org/yay.git
 sudo chown -R `whoami`:users ./yay
 cd yay
 makepkg -si --noconfirm
@@ -10,9 +12,6 @@ cd $HOME
 # INSTALLING STUFF
 # EDITOR
 sudo pacman -S --noconfirm neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
-# not using this powerline from git rn but using pacman's version
-#pip install --user powerline
-#pip install --user git+git://github.com/powerline/powerline
 # MARKDOWN AND LATEX
 sudo pip3 install neovim-remote
 #sudo pacman -S --noconfirm r pandoc pandoc-citeproc texlive-most
@@ -50,7 +49,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 cd ~/
 # bumblebee-status setup
 sudo pip install netifaces psutil requests power i3ipc docker
-git clone git://github.com/tobi-wan-kenobi/bumblebee-status
+git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
 cp ~/dotfiles/othi-burgundy.json ~/bumblebee-status/themes
 
 # COMMENTED OUT FOR NOW
