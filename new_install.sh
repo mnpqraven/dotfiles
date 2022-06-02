@@ -12,8 +12,10 @@ cd $HOME
 # INSTALLING STUFF
 # EDITOR
 sudo pacman -S --noconfirm neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
+sudo pacman -S --noconfirm texlive-most
 # MARKDOWN AND LATEX
 sudo pip3 install neovim-remote
+git config --global core.editor $EDITOR
 #sudo pacman -S --noconfirm r pandoc pandoc-citeproc texlive-most
 #yay rstudio-desktop-bin
 
@@ -32,7 +34,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m dolphin
 
 # TOOLS
-sudo pacman -S --noconfirm feh deluge fzf python-pip r fcitx5 neomutt
+sudo pacman -S --noconfirm feh deluge fzf python-pip r fcitx5 fcitx5-gtk neomutt
 yay google-chrome
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
@@ -57,12 +59,10 @@ cp $HOME/dotfiles/othi-burgundy.json ~/bumblebee-status/themes
 ## arandr
 #need this
 yay nerd-fonts-complete
-#yay emoji-font
-#yay kasumi
-#yay discord
 # TODO
 # qmk stuff
 # music stuff
+# get latex working out of the box
 # csv folder structure
 
 # copy config from dotfiles to system (note: overwrite)
