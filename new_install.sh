@@ -29,10 +29,11 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 sudo pacman -S --noconfirm maim tmux alacritty
 
 # DESKTOP ENV
-sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m powerline dolphin
+sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m dolphin
 
 # TOOLS
 sudo pacman -S --noconfirm feh deluge fzf python-pip r
+yay google-chrome
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
 # mpd setup
@@ -54,11 +55,12 @@ cp ~/dotfiles/othi-burgundy.json ~/bumblebee-status/themes
 
 # COMMENTED OUT FOR NOW
 ## arandr
-# TODO
-#yay nerd-fonts-complete
+#need this
+yay nerd-fonts-complete
 #yay emoji-font
 #yay kasumi
-#yay google-chrome
 #yay discord
+# TODO
 # qmk stuff
 # music stuff
+# csv folder structure
