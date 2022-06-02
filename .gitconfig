@@ -42,3 +42,5 @@ hint = dim green
 # 	trustExitCode = true
 [mergetool]
 	keepBackup = false
+[url "https://"]
+	insteadOf = git://
