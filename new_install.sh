@@ -26,6 +26,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # TERMITAL
 sudo pacman -S --noconfirm maim tmux alacritty
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # DESKTOP ENV
 sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m dolphin
