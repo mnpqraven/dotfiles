@@ -32,7 +32,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m dolphin
 
 # TOOLS
-sudo pacman -S --noconfirm feh deluge fzf python-pip r
+sudo pacman -S --noconfirm feh deluge fzf python-pip r fcitx5
 yay google-chrome
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
