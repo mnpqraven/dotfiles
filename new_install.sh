@@ -51,7 +51,7 @@ cd ~/
 # bumblebee-status setup
 sudo pip install netifaces psutil requests power i3ipc docker
 git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
-cp ~/dotfiles/othi-burgundy.json ~/bumblebee-status/themes
+cp $HOME/dotfiles/othi-burgundy.json ~/bumblebee-status/themes
 
 # COMMENTED OUT FOR NOW
 ## arandr
@@ -64,3 +64,6 @@ yay nerd-fonts-complete
 # qmk stuff
 # music stuff
 # csv folder structure
+
+# copy config from dotfiles to system (note: overwrite)
+yes | cp -r $HOME/dotfiles/.config/* $HOME/.config -R

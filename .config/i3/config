@@ -239,7 +239,7 @@ bar {
 			#focused_workspace  #ffffff #ffffff #$bgcolor
 			inactive_workspace #cecece #cecece #$txtcolor
 		}
-	output eDP-1
+	output Virtual1
 	font pango:DejaVu Sans Mono Nerd Font 12
 	position top
 	tray_output primary
