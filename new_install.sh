@@ -1,5 +1,5 @@
 # GRABBING FILES
-git clone https://github.com/mnpqraven/dotfiles.git
+git clone -b stable https://github.com/mnpqraven/dotfiles.git
 # INSTALLING YAY
 sudo pacman -Syu
 cd /opt
