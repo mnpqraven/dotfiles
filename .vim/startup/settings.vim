@@ -32,6 +32,7 @@ set cursorline
 set nohlsearch
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+set lbr
 
 set shell=zsh
 set relativenumber

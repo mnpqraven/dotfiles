@@ -39,8 +39,10 @@ yay google-chrome
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
 # mpd setup
+ln -s /mnt/nas-remote/db1/Music ~/Music/Music-remote
+touch ~/.config/mpd/database
+mkdir ~/.config/mpd/playlists
 # double check device list with `aplay --list-pcm`
-#mkdir ~/Playlists
 #sudo systemctl enable mpd
 #sudo systemctl start mpd
 

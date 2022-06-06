@@ -11,3 +11,4 @@ export PATH="$PATH:$GEM_HOME/bin"
 export GTK_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
+[ ! -s /home/othi/.config/mpd/pid ] && mpd
