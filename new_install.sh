@@ -18,6 +18,7 @@ sudo pip3 install neovim-remote
 git config --global core.editor $EDITOR
 #sudo pacman -S --noconfirm r pandoc pandoc-citeproc texlive-most
 #yay rstudio-desktop-bin
+pip install --user powerline-status
 
 sudo pacman -S --noconfirm atom
 # vundle
@@ -34,7 +35,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m dolphin
 
 # TOOLS
-sudo pacman -S --noconfirm feh deluge fzf python-pip r fcitx5 fcitx5-gtk neomutt
+sudo pacman -S --noconfirm feh deluge fzf python-pip r fcitx5 fcitx5-configtool-qt fcitx5-gtk neomutt
 yay google-chrome
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
@@ -69,3 +70,5 @@ yay nerd-fonts-complete
 
 # copy config from dotfiles to system (note: overwrite) testing rn
 # yes | cp -r $HOME/dotfiles/.config/* $HOME/.config -R
+
+echo "Install completed, check post-installation section on github"

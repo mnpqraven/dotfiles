@@ -5,7 +5,7 @@ export WINIT_HIDPI_FACTOR=1
 # using screen-256color here would produce a weird double output of command after <CR> in zsh like:
 # $ tmux
 # tmuxtmux no session
-export TERM="xterm-256color-italic"
+#export TERM="xterm-256color-italic"
 export UPDATE_ZSH_DAYS=7
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 # probably comment this in pc

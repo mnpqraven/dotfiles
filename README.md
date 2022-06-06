@@ -12,3 +12,6 @@ run the install script
 ```
 curl -o new_install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/stable/new_install.sh && bash new_install.sh
 ```
+post install:
+- copy contents from .config .vim .zsh .tmux.conf .profile
+- open up vim and :PlugInstall :PluginInstall
