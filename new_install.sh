@@ -56,7 +56,7 @@ cd ~/
 # bumblebee-status setup
 sudo pip install netifaces psutil requests power i3ipc docker
 git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
-cp $HOME/dotfiles/othi-burgundy.json ~/bumblebee-status/themes
+cp $HOME/dotfiles/Scripts/othi-burgundy.json ~/bumblebee-status/themes
 
 # COMMENTED OUT FOR NOW
 ## arandr
@@ -71,4 +71,6 @@ yay nerd-fonts-complete
 # copy config from dotfiles to system (note: overwrite) testing rn
 # yes | cp -r $HOME/dotfiles/.config/* $HOME/.config -R
 
+sudo bash Scripts/nas-credentials.sh && sudo bash Scripts/fstab-add-nas.sh
+sudo bash Scripts/git-genssh.sh
 echo "Install completed, check post-installation section on github"

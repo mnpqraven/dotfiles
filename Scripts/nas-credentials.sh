@@ -6,6 +6,6 @@ echo "Enter smb login password"
 read -s password
 echo -e "Enter smb workgroup\n(default=WORKGROUP)"
 read workgroup
-echo -e "username=$username\npassword=$password\nworkgroup=${workgroup:-WORKGROUP}" >> /etc/.credentials
+echo -e "username=$username\npassword=$password\ndomain=${workgroup:-WORKGROUP}" >> /etc/.credentials
 chmod 600 /etc/.credentials
 echo "file created at /etc/.credentials"
