@@ -67,5 +67,5 @@ yay nerd-fonts-complete
 # get latex working out of the box
 # csv folder structure
 
-# copy config from dotfiles to system (note: overwrite)
-yes | cp -r $HOME/dotfiles/.config/* $HOME/.config -R
+# copy config from dotfiles to system (note: overwrite) testing rn
+# yes | cp -r $HOME/dotfiles/.config/* $HOME/.config -R
