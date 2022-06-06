@@ -10,5 +10,5 @@
 
 run the install script
 ```
-curl -s https://raw.githubusercontent.com/mnpqraven/dotfiles/stable/new_install.sh && bash new_install.sh
+curl -o new_install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/stable/new_install.sh && bash new_install.sh
 ```
