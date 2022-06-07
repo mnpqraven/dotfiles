@@ -1,5 +1,5 @@
 # GRABBING FILES
-git clone -b stable https://github.com/mnpqraven/dotfiles.git
+git clone -b development https://github.com/mnpqraven/dotfiles.git
 # INSTALLING YAY
 sudo pacman -Syu
 cd /opt
@@ -41,6 +41,7 @@ yay google-chrome
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
 # mpd setup
 ln -s /mnt/nas-remote/db1/Music ~/Music/Music-remote
+mkdir ~/.comfig/mpd
 touch ~/.config/mpd/database
 mkdir ~/.config/mpd/playlists
 # double check device list with `aplay --list-pcm`
@@ -73,4 +74,5 @@ yay nerd-fonts-complete
 
 sudo bash Scripts/nas-credentials.sh && sudo bash Scripts/fstab-add-nas.sh
 sudo bash Scripts/git-genssh.sh
-echo "Install completed, check post-installation section on github"
+echo "Install completed, you can reboot now"
+echo "also check post-installation section on github"
