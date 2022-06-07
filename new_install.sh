@@ -39,14 +39,6 @@ sudo pacman -S --noconfirm feh deluge fzf python-pip r fcitx5 fcitx5-configtool-
 yay google-chrome
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
-# mpd setup
-ln -s /mnt/nas-remote/db1/Music ~/Music/Music-remote
-mkdir ~/.comfig/mpd
-touch ~/.config/mpd/database
-mkdir ~/.config/mpd/playlists
-# double check device list with `aplay --list-pcm`
-#sudo systemctl enable mpd
-#sudo systemctl start mpd
 
 # ZSH setup
 chsh -s $(which zsh)
@@ -66,13 +58,16 @@ yay nerd-fonts-complete
 # TODO
 # qmk stuff
 # music stuff
-# get latex working out of the box
+# latex works but missing pdf viewer
 # csv folder structure
 
 # copy config from dotfiles to system (note: overwrite) testing rn
+#TODO: TEST THIS
 # yes | cp -r $HOME/dotfiles/.config/* $HOME/.config -R
 
-sudo bash Scripts/nas-credentials.sh && sudo bash Scripts/fstab-add-nas.sh
-sudo bash Scripts/git-genssh.sh
+echo "ADDING NAS DRIVE TO MOUNT TABLE"
+sudo bash $HOME/dotfiles/Scripts/nas-credentials.sh && sudo bash $HOME/dotfiles/Scripts/fstab-add-nas.sh
+echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
+bash Scripts/git-genssh.sh
 echo "Install completed, you can reboot now"
 echo "also check post-installation section on github"

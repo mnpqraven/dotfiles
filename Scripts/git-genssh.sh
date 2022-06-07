@@ -1,3 +1,5 @@
+#!/bin/bash
+echo "do NOT sudo this, if you did it by accident, cancel"
 echo "enter your email:"
 read email
 ssh-keygen -t ed25519 -C "$email"

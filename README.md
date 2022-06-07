@@ -10,12 +10,14 @@
 
 run the install script
 ```
-curl -o new_install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/stable/new_install.sh && bash new_install.sh
+curl -o new_install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/development/new_install.sh && bash new_install.sh
 ```
 TODO:
-- check mpd
-- mpd symlinks
+- complete mpd install script
+- migrate font install script
+
 post install:
 - copy contents from .config .vim .zsh .tmux.conf .profile
 - open up vim and `:PlugInstall :PluginInstall`
 - open up tmux and `<Prefix> + I`
+- run mpd setup shell(incompleted for now)
