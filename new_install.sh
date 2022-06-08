@@ -66,8 +66,14 @@ yay nerd-fonts-complete
 # yes | cp -r $HOME/dotfiles/.config/* $HOME/.config -R
 
 echo "ADDING NAS DRIVE TO MOUNT TABLE"
-sudo bash $HOME/dotfiles/Scripts/nas-setup.sh
+cd $HOME/dotfiles/Scripts
+sudo bash ./nas-setup.sh
 echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
-bash Scripts/git-genssh.sh
+bash $HOME/dotfiles/Scripts/git-genssh.sh
 echo "Install completed, you can reboot now"
+cd ..
+git fetch
+git fetch
+nvim -c PlugInstall
+nvim -c PluginInstall
 echo "also check post-installation section on github"
