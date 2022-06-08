@@ -54,7 +54,6 @@ cp $HOME/dotfiles/Scripts/othi-burgundy.json ~/bumblebee-status/themes
 # COMMENTED OUT FOR NOW
 ## arandr
 #need this
-yay nerd-fonts-complete
 # TODO
 # qmk stuff
 # music stuff
@@ -69,11 +68,13 @@ echo "ADDING NAS DRIVE TO MOUNT TABLE"
 cd $HOME/dotfiles/Scripts
 sudo bash ./nas-setup.sh
 echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
-bash $HOME/dotfiles/Scripts/git-genssh.sh
+bash ./git-genssh.sh
 echo "Install completed, you can reboot now"
+#dotfiles/
 cd ..
 git fetch
 git fetch
 nvim -c PlugInstall
 nvim -c PluginInstall
+bash Scripts/nerd-fonts.sh
 echo "also check post-installation section on github"
