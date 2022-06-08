@@ -29,7 +29,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # TERMITAL
 sudo pacman -S --noconfirm maim tmux alacritty
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # DESKTOP ENV
 sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m dolphin
@@ -51,23 +51,17 @@ sudo pip install netifaces psutil requests power i3ipc docker
 git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
 cp $HOME/dotfiles/Scripts/othi-burgundy.json ~/bumblebee-status/themes
 
-# COMMENTED OUT FOR NOW
-## arandr
-#need this
 # TODO
 # qmk stuff
 # music stuff
 # latex works but missing pdf viewer
 # csv folder structure
 
-# copy config from dotfiles to system (note: overwrite) testing rn
-
 echo "ADDING NAS DRIVE TO MOUNT TABLE"
 cd $HOME/dotfiles/Scripts
 sudo bash ./nas-setup.sh
 echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
 bash ./git-genssh.sh
-echo "Install completed, you can reboot now"
 #dotfiles/
 cd ..
 bash Scripts/move-config.sh
@@ -77,4 +71,4 @@ git fetch
 nvim -c PlugInstall
 nvim -c PluginInstall
 bash Scripts/nerd-fonts.sh
-echo "also check post-installation section on github"
+echo "Install completed, you can reboot now"
