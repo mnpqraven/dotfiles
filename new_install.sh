@@ -61,8 +61,6 @@ cp $HOME/dotfiles/Scripts/othi-burgundy.json ~/bumblebee-status/themes
 # csv folder structure
 
 # copy config from dotfiles to system (note: overwrite) testing rn
-#TODO: TEST THIS
-# yes | cp -r $HOME/dotfiles/.config/* $HOME/.config -R
 
 echo "ADDING NAS DRIVE TO MOUNT TABLE"
 cd $HOME/dotfiles/Scripts
@@ -72,7 +70,9 @@ bash ./git-genssh.sh
 echo "Install completed, you can reboot now"
 #dotfiles/
 cd ..
+bash Scripts/move-config.sh
 git fetch
+read -p "press enter after you have pasted the key in your github browser" confirm
 git fetch
 nvim -c PlugInstall
 nvim -c PluginInstall
