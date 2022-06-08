@@ -1,0 +1,9 @@
+[Unit]
+Description=NAS SMB db1 automount
+
+[Automount]
+Where=/media/naslocal/db1
+TimeoutIdleSec=10
+
+[Install]
+WantedBy=multi-user.target

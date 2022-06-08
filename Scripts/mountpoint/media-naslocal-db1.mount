@@ -1,0 +1,12 @@
+[Unit]
+Description=mount using systemd
+
+[Mount]
+What=//192.168.1.14/db1
+Where=/media/naslocal/db1
+Type=cifs
+Option=_netdev,credentials=/etc/.credentials
+TimeoutSec=15
+
+[Install]
+WantedBy=multi-user.target

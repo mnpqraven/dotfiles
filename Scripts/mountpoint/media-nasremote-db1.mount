@@ -1,0 +1,12 @@
+[Unit]
+Description=mount using systemd
+
+[Mount]
+What=//othiremote.synology.me/db1
+Where=/media/nasremote/db1
+Type=cifs
+Option=_netdev,credentials=/etc/.credentials
+TimeoutSec=15
+
+[Install]
+WantedBy=multi-user.target
