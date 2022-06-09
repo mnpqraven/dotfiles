@@ -35,7 +35,7 @@ sudo pacman -S --noconfirm maim tmux alacritty
 sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m dolphin
 
 # TOOLS
-sudo pacman -S --noconfirm feh deluge fzf python-pip r fcitx5 fcitx5-configtool-qt fcitx5-gtk neomutt
+sudo pacman -S --noconfirm feh deluge fzf python-pip r fcitx5 fcitx5-configtool-qt fcitx5-gtk neomutt npm
 yay google-chrome
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
@@ -70,5 +70,6 @@ read -p "press enter after you have pasted the key in your github browser" confi
 git fetch
 nvim -c PlugInstall
 nvim -c PluginInstall
+nvim -c "CocInstall coc-tsserver coc-eslint coc-vetur coc-json coc-prettier coc-css coc-emmet
 bash Scripts/nerd-fonts.sh
 echo "Install completed, you can reboot now"
