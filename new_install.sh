@@ -61,13 +61,14 @@ echo "NAS"
 echo "ADDING NAS DRIVE TO MOUNT TABLE"
 cd $HOME/dotfiles/Scripts
 sudo bash ./nas-setup.sh
+#dotfiles/
+cd ..
 
 echo "-------------------------------"
 echo "GIT"
 echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
-bash ./git-genssh.sh
-#dotfiles/
-cd ..
+bash Scripts/git-genssh.sh
+
 echo "-------------------------------"
 echo ".CONFIG"
 bash Scripts/move-config.sh
@@ -85,8 +86,10 @@ nvim -c PlugInstall
 nvim -c PluginInstall
 nvim -c "CocInstall coc-tsserver coc-eslint coc-vetur coc-json coc-prettier coc-css coc-emmet"
 bash Scripts/nerd-fonts.sh
+
+echo "-------------------------------"
+echo "QMK"
+bash Scripts/qmk-setup.sh
+
 echo "Install completed, you can reboot now"
 echo "remember to import keymaps from mozc after reboot"
-# TODO
-# qmk stuff
-
