@@ -35,7 +35,7 @@ sudo pacman -S --noconfirm maim tmux alacritty
 sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m feh dolphin
 
 # TOOLS
-sudo pacman -S --noconfirm feh
+sudo pacman -S --noconfirm nodejs npm
 sudo pacman -S --noconfirm deluge fzf python-pip r fcitx5 fcitx5-configtool-qt fcitx5-gtk neomutt npm
 yay google-chrome
 # MEDIA
