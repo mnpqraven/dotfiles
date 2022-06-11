@@ -39,27 +39,22 @@ sudo pacman -S --noconfirm nodejs npm
 sudo pacman -S --noconfirm deluge fzf python-pip r neomutt npm
 sudo pacman -S --noconfirm fcitx5 fcitx5-unikey fcitx5-mozc fcitx5-configtool fcitx5-gtk
 yay google-chrome
+
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
 
 echo "-------------------------------"
 echo "ZSH"
-# ZSH setup
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cd .oh-my-zsh/custom/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 cd ~/
+
 # bumblebee-status setup
 sudo pip install netifaces psutil requests power i3ipc docker
 git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
 cp $HOME/dotfiles/Scripts/othi-burgundy.json ~/bumblebee-status/themes
-
-# TODO
-# qmk stuff
-# music stuff
-# latex works but missing pdf viewer
-# csv folder structure
 
 echo "-------------------------------"
 echo "NAS"
@@ -91,3 +86,7 @@ nvim -c PluginInstall
 nvim -c "CocInstall coc-tsserver coc-eslint coc-vetur coc-json coc-prettier coc-css coc-emmet"
 bash Scripts/nerd-fonts.sh
 echo "Install completed, you can reboot now"
+echo "remember to import keymaps from mozc after reboot"
+# TODO
+# qmk stuff
+

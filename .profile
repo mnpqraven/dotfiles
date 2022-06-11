@@ -8,6 +8,8 @@ export GPG_AGENT_INFO
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
+bash $HOME/dotfiles/Scripts/xrandr-setup.sh
+
 export GTK_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
