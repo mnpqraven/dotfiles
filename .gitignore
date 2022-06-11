@@ -58,7 +58,9 @@
 
 !/.config/mozc
 /.config/mozc/*
-!/.config/mozc/keymap.tsv
+!/.config/mozc/keymap.txt
+!/.config/mozc/romantable.txt
+
 
 /.config/mpd/*
 !/.config/mpd

@@ -36,7 +36,8 @@ sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m feh dolphin
 
 # TOOLS
 sudo pacman -S --noconfirm nodejs npm
-sudo pacman -S --noconfirm deluge fzf python-pip r fcitx5 fcitx5-configtool-qt fcitx5-gtk neomutt npm
+sudo pacman -S --noconfirm deluge fzf python-pip r neomutt npm
+sudo pacman -S --noconfirm fcitx5 fcitx5-unikey fcitx5-mozc fcitx5-configtool fcitx5-gtk
 yay google-chrome
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
