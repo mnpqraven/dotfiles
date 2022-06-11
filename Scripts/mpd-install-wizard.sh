@@ -1,10 +1,37 @@
 #!/bin/bash
 # mpd setup
-ln -s /mnt/nas/db1/Music ~/Music/localdb
-ln -s /mnt/nas-remote/db1/Music ~/Music/remotedb
-mkdir ~/.comfig/mpd
-touch ~/.config/mpd/database
-mkdir ~/.config/mpd/playlists
-# double check device list with `aplay --list-pcm`
-#sudo systemctl enable mpd
-#sudo systemctl start mpd
+mkdir -p "$HOME"/Music
+while true;
+do
+    read -r -p "do you want a symlink of the local nas?(y/n) " yn
+    case $yn in
+        [yY] ) ln -sfn /media/naslocal/db1/Music "$HOME"/Music/localdb;
+            break;;
+        [nN] ) break;;
+        * ) echo "invalid response";;
+    esac
+done
+
+while true;
+do
+    read -r -p "do you want a symlink of the remote nas?(y/n) " yn
+    case $yn in
+        [yY] ) ln -sfn /media/nasremote/db1/Music "$HOME"/Music/remotedb;;
+        [nN] ) break;;
+        * ) echo "invalid response";;
+    esac
+done
+
+while true;
+do
+    read -r -p "do you want to create nessesary folders in .config/mpd ?(y/n) " yn
+    case $yn in
+        [yY] ) mkdir -p "$HOME"/.config/mpd;
+            mkdir -p "$HOME"/.config/mpd;
+            touch "$HOME"/.config/mpd/database;
+            mkdir -p "$HOME"/.config/mpd/playlists;
+            break;;
+        [nN] ) break;;
+        * ) echo "invalid response";;
+    esac
+done

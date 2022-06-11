@@ -12,7 +12,7 @@ cd $HOME
 # INSTALLING STUFF
 # EDITOR
 sudo pacman -S --noconfirm neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
-sudo pacman -S --noconfirm texlive-most python-pip
+sudo pacman -S --noconfirm texlive-most python-pip evince
 # MARKDOWN AND LATEX
 sudo pip3 install neovim-remote
 git config --global core.editor $EDITOR
@@ -32,7 +32,7 @@ sudo pacman -S --noconfirm maim tmux alacritty
 #git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # DESKTOP ENV
-sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m dolphin
+sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m feh dolphin
 
 # TOOLS
 sudo pacman -S --noconfirm feh deluge fzf python-pip r fcitx5 fcitx5-configtool-qt fcitx5-gtk neomutt npm
@@ -40,6 +40,8 @@ yay google-chrome
 # MEDIA
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
 
+echo "-------------------------------"
+echo "ZSH"
 # ZSH setup
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -57,19 +59,33 @@ cp $HOME/dotfiles/Scripts/othi-burgundy.json ~/bumblebee-status/themes
 # latex works but missing pdf viewer
 # csv folder structure
 
+echo "-------------------------------"
+echo "NAS"
 echo "ADDING NAS DRIVE TO MOUNT TABLE"
 cd $HOME/dotfiles/Scripts
 sudo bash ./nas-setup.sh
+
+echo "-------------------------------"
+echo "GIT"
 echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
 bash ./git-genssh.sh
 #dotfiles/
 cd ..
+echo "-------------------------------"
+echo ".CONFIG"
 bash Scripts/move-config.sh
 git fetch
 read -p "press enter after you have pasted the key in your github browser" confirm
 git fetch
+
+echo "-------------------------------"
+echo "MPD"
+bash Scripts/mpd-install-wizard.sh
+
+echo "-------------------------------"
+echo "VIM"
 nvim -c PlugInstall
 nvim -c PluginInstall
-nvim -c "CocInstall coc-tsserver coc-eslint coc-vetur coc-json coc-prettier coc-css coc-emmet
+nvim -c "CocInstall coc-tsserver coc-eslint coc-vetur coc-json coc-prettier coc-css coc-emmet"
 bash Scripts/nerd-fonts.sh
 echo "Install completed, you can reboot now"
