@@ -16,4 +16,4 @@ Post-installation:
 - Import mozc keymap and romantable
 
 TODO:
-
+- MPD rice
