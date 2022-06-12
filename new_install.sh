@@ -12,7 +12,7 @@ cd $HOME
 # INSTALLING STUFF
 # EDITOR
 sudo pacman -S --noconfirm neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
-sudo pacman -S --noconfirm texlive-most python-pip evince
+sudo pacman -S --noconfirm texlive-most texlive-langextra python-pip evince
 # MARKDOWN AND LATEX
 sudo pip3 install neovim-remote
 git config --global core.editor $EDITOR
