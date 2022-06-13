@@ -10,6 +10,7 @@
 !.tmux.conf
 !.gtk*
 !.zshrc
+!.p10k.zsh
 
 !.dir_color*
 !.profile
