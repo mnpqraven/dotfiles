@@ -1,29 +1,20 @@
 " Vundle
 " to install the plugins use :PluginInstall in vim
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'jez/vim-superman'
-Plugin 'lervag/vimtex'
-Plugin 'chrisbra/csv.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
-if has('nvim')
-	Plugin 'vim-airline/vim-airline'
-	Plugin 'vim-airline/vim-airline-themes'
-	Plugin 'mnpqraven/othi-airline-themes'
-endif
-call vundle#end()
 
 " PLUG
 call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jez/vim-superman'
+Plug 'lervag/vimtex'
+Plug 'chrisbra/csv.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -35,6 +26,9 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-emmet.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mnpqraven/othi-airline-themes'
 call plug#end()
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete

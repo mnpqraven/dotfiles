@@ -6,11 +6,15 @@
     "typescriptreact",
     "json",
     "javascriptreact",
-    "typescript.tsx"
+    "typescript.tsx",
+    "markdown",
+    "css",
+    "vue"
   ],
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
+  "vetur.ignoreProjectWarning": true,
   "diagnostic.errorSign": "!",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•"

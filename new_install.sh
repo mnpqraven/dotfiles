@@ -38,6 +38,7 @@ sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m feh dolphin
 sudo pacman -S --noconfirm nodejs npm
 sudo pacman -S --noconfirm deluge fzf python-pip r neomutt npm
 sudo pacman -S --noconfirm fcitx5 fcitx5-unikey fcitx5-mozc fcitx5-configtool fcitx5-gtk
+sudo npm install -g neovim
 yay google-chrome
 
 # MEDIA
@@ -85,7 +86,7 @@ echo "-------------------------------"
 echo "VIM"
 nvim -c PlugInstall
 nvim -c PluginInstall
-nvim -c "CocInstall coc-tsserver coc-eslint coc-vetur coc-json coc-prettier coc-css coc-emmet"
+nvim -c "CocInstall coc-tsserver coc-eslint coc-vetur coc-json coc-vimlsp coc-python @yaegassy/coc-tailwindcss3 coc-prettier coc-css coc-emmet"
 bash Scripts/nerd-fonts.sh
 
 echo "-------------------------------"
