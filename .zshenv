@@ -65,4 +65,12 @@ alias gcom="git checkout master"
 alias qmkf="git checkout master && git fetch upstream && git pull upstream master && git push origin master"
 # }}}
 
+ranger() {
+    if [ -z "$RANGER_LEVEL" ]; then
+        /usr/bin/ranger "$@"
+    else
+        exit
+    fi
+}
+
 source $ZSH/oh-my-zsh.sh

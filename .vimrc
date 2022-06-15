@@ -9,3 +9,5 @@ source ~/.vim/startup/plugins.vim
 source ~/.vim/startup/functions.vim
 " Themes and coloway customization
 source ~/.vim/startup/themes.vim
+" CoC settings
+source ~/.vim/startup/coc.vim
