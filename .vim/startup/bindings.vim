@@ -58,8 +58,8 @@ nnoremap <Leader>8 8gt
 nnoremap <Leader>9 9gt
 
 " buffer navigation
-nnoremap <C-k> :bn<CR>
-nnoremap <C-b> :bp<CR>
+nnoremap <C-A-e> :bn<CR>
+nnoremap <C-A-h> :bp<CR>
 
 " Colemak remapping
 noremap J E
@@ -162,9 +162,6 @@ autocmd filetype csv noremap <silent>H :<C-U>call csv#MoveCol(-1, line("."))<CR>
 autocmd filetype csv noremap <silent>E :<C-U>call csv#MoveCol(1, line("."))<CR>
 autocmd filetype csv noremap <silent>N :<C-U>call csv#MoveCol(0, line(".")+v:count1)<CR>
 autocmd filetype csv noremap <silent>L :<C-U>call csv#MoveCol(0, line(".")-v:count1)<CR>
-
-" js
-inoremap <C-h> <space>=<space>()<space>=><space>{<CR>}<ESC>O
 
 " TAB COMPLETION
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

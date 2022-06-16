@@ -2,20 +2,19 @@
   "suggest.maxCompleteItemCount": 20,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
-    "typescript",
-    "typescriptreact",
+    // "typescript",
+    // "typescriptreact",
     "json",
-    "javascriptreact",
-    "typescript.tsx",
-    "markdown",
+    // "javascriptreact",
+    // "typescript.tsx",
     "css",
     "vue"
   ],
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "vetur.ignoreProjectWarning": true,
-  "diagnostic.errorSign": "!",
-  "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•"
+  "diagnostic.errorSign": "!!",
+  "diagnostic.warningSign": "!",
+  "diagnostic.infoSign": "•",
+  "diagnostic.checkCurrentLine": true
 }
