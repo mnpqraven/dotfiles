@@ -85,8 +85,7 @@ bash Scripts/mpd-install-wizard.sh
 echo "-------------------------------"
 echo "VIM"
 nvim -c PlugInstall
-nvim -c PluginInstall
-nvim -c "CocInstall coc-tsserver coc-eslint coc-vetur coc-json coc-vimlsp coc-python @yaegassy/coc-tailwindcss3 coc-prettier coc-css coc-emmet"
+#nvim -c "CocInstall coc-tsserver coc-eslint coc-vetur coc-json coc-vimlsp coc-python @yaegassy/coc-tailwindcss3 coc-prettier coc-css coc-emmet"
 bash Scripts/nerd-fonts.sh
 
 echo "-------------------------------"

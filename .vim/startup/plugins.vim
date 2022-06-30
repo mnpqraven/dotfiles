@@ -15,23 +15,44 @@ Plug 'lervag/vimtex'
 Plug 'chrisbra/csv.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'styled-components/vim-styled-components'
 Plug 'mattn/emmet-vim'
 Plug 'leafOfTree/vim-vue-plugin'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-emmet.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mnpqraven/othi-airline-themes'
+
+" LSP
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'neovim/nvim-lspconfig'
+
+" COMPLETION
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'saadparwaiz1/cmp_luasnip'
+
+" snippets
+Plug 'L3MON4D3/LuaSnip'
+Plug 'SirVer/ultisnips'
+
+Plug 'rafamadriz/friendly-snippets'
+
+
 call plug#end()
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
+
+set completeopt=menuone,menu,noselect
+lua require('user.cmp')
 
 " coc.nvim
 " install the tsserver
@@ -43,13 +64,6 @@ let g:user_emmet_settings = {
     \      'extends' : 'jsx',
     \  },
   \}
-
-" asyncomplete
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#emmet#get_source_options({
-    \ 'name': 'emmet',
-    \ 'whitelist': ['html'],
-    \ 'completor': function('asyncomplete#sources#emmet#completor'),
-    \ }))
 
 "CtrlP keys
   let g:ctrlp_prompt_mappings = {
@@ -102,3 +116,4 @@ let g:ale_fix_on_save = 1
 let g:SimpylFold_docstring_preview=1
 
 let g:python3_host_prog='/usr/bin/python3'
+

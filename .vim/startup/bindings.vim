@@ -163,11 +163,6 @@ autocmd filetype csv noremap <silent>E :<C-U>call csv#MoveCol(1, line("."))<CR>
 autocmd filetype csv noremap <silent>N :<C-U>call csv#MoveCol(0, line(".")+v:count1)<CR>
 autocmd filetype csv noremap <silent>L :<C-U>call csv#MoveCol(0, line(".")-v:count1)<CR>
 
-" TAB COMPLETION
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-
 " markdown
 autocmd Filetype md,markdown,rmd,Rmd map <leader>- i---<CR>title:<CR>author:<CR>output: pdf_document<CR>---<ESC>?title<CR>A<space>
 autocmd Filetype md,markdown,rmd,Rmd,tex map <leader>b i\
