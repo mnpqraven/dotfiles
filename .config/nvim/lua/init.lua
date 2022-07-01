@@ -20,3 +20,6 @@ capabilities = capabilities
 lspconfig.eslint.setup {
 capabilities = capabilities
 }
+
+require('Comment').setup()
+require('nvim-autopairs').setup{}

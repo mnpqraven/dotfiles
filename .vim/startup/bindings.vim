@@ -96,15 +96,6 @@ set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <A-y>
 
-" BUGGGGGGGGGGGGGGGGGGGGGGGG, only works in nvim
-" workaround to get vim getting Alt responses
-" let c='a'
-" while c <= 'z'
-" 	exec "set <A-".c.">=\e".c
-" 	exec "imap \e".c." <A-".c.">"
-" 	let c = nr2char(1+char2nr(c))
-" endw
-
 " misc bindings
 noremap <A-y> <C-e>
 autocmd Filetype rmd map <silent><F9> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
@@ -113,25 +104,6 @@ nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR> :echo ".vimrc reloaded"<
 nnoremap <silent><F3> :e %<CR> :echo "current file reloaded"<CR><C-o>
 " smart searching selected text in visual mode
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
-
-" auto bracket
-" escapes double brackets
-inoremap "" ""
-inoremap '' ''
-inoremap ;; ;;
-inoremap (<ESC> (
-inoremap [<ESC> [
-inoremap {<ESC> {
-inoremap (<tab> ()<Space>
-inoremap [<tab> []<Space>
-inoremap {<tab> {}<Space>
-inoremap "<Space> "<Space>
-inoremap '<Space> '<Space>
-inoremap ;<Space> ;<Space>
-inoremap '<ESC> '<ESC>
-inoremap "<ESC> "<ESC>
-inoremap ;<ESC> ;<ESC>
-
 
 " smarter semicolon
 inoremap ;; :

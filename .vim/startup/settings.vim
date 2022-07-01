@@ -36,7 +36,6 @@ set lbr
 
 set shell=zsh
 set relativenumber
-set complete=.,w,b,u,t,i,kspell
 
 " indentation in vim
 set tabstop=4

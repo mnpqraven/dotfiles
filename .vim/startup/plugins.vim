@@ -26,6 +26,8 @@ Plug 'ap/vim-css-color'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mnpqraven/othi-airline-themes'
+Plug 'numToStr/Comment.nvim'
+Plug 'windwp/nvim-autopairs'
 
 " LSP
 Plug 'williamboman/nvim-lsp-installer'
@@ -49,9 +51,8 @@ Plug 'rafamadriz/friendly-snippets'
 
 call plug#end()
 filetype plugin indent on
-set omnifunc=syntaxcomplete#Complete
 
-set completeopt=menuone,menu,noselect
+set completeopt=menuone,menu
 lua require('user.cmp')
 
 " coc.nvim
