@@ -28,11 +28,11 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # TERMITAL
-sudo pacman -S --noconfirm maim tmux alacritty
+sudo pacman -S --noconfirm maim tmux alacritty man-db atool
 #git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # DESKTOP ENV
-sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m feh dolphin
+sudo pacman -S --noconfirm compton rofi ranger clifm neofetch copyq w3m feh dolphin
 
 # TOOLS
 sudo pacman -S --noconfirm nodejs npm
@@ -85,7 +85,6 @@ bash Scripts/mpd-install-wizard.sh
 echo "-------------------------------"
 echo "VIM"
 nvim -c PlugInstall
-#nvim -c "CocInstall coc-tsserver coc-eslint coc-vetur coc-json coc-vimlsp coc-python @yaegassy/coc-tailwindcss3 coc-prettier coc-css coc-emmet"
 bash Scripts/nerd-fonts.sh
 
 echo "-------------------------------"
