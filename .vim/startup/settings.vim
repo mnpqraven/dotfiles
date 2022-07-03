@@ -1,7 +1,12 @@
 " DISCLAIMER: Alt bindings don't work with vim (technically it can but it fucks up macros) so no alt key bindings until powerline supports neovim or i find a just as good status line
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 
 " Basic settings
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set encoding=utf-8
 scriptencoding utf-8
 set is

@@ -7,12 +7,11 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 #alac huge font fix
-export WINIT_HIDPI_FACTOR=1
+# export WINIT_HIDPI_FACTOR=1
 
 # using screen-256color here would produce a weird double output of command after <CR> in zsh like:
 # $ tmux
 # tmuxtmux no session
-#export TERM="xterm-256color-italic"
 export UPDATE_ZSH_DAYS=7
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 # probably comment this in pc
@@ -24,21 +23,8 @@ export PATH="$PATH:$ANDROID_SDK_ROOT/emulator"
 export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
 
 # To allow any key to get things flowing again, use
-stty -ixon
+#stty -ixon
 # stty ixany
-
-# SSH
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent
-fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<.ssh-agent)" > /dev/null
-fi
-
-#if [[ -z "$(pgrep mpd)" ]]; then
-#	mpd
-#	mpc pause
-#fi
 
 bindkey -v
 plugins=(
@@ -159,3 +145,6 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{088}\u2570%F{124}\uF460%F{160}\uf4
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source $ZSH_CUSTOM/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

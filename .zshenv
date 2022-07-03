@@ -1,5 +1,4 @@
 export ZSH="$HOME/.oh-my-zsh"
-export TERM="xterm-256color"
 export UPDATE_ZSH_DAYS=7
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 # probably comment this in pc
@@ -50,6 +49,7 @@ alias xpic="xclip -sel clipboard -t image/png"
 
 # config aliases
 alias vrc="$EDITOR $HOME/.vimrc"
+alias vinit="ranger $HOME/.config/nvim"
 alias zrc="$EDITOR $HOME/.zshrc"
 alias zenv="$EDITOR $HOME/.zshenv"
 alias rrc="$EDITOR $HOME/.config/ranger/rc.conf"

@@ -1,7 +1,9 @@
 " change airline color in the Palette section
 " VIM-AIRLINE CONFIG ------------------------------------------------------------
-let g:airline_theme='othipowerline'
-"let g:airline_theme='monokai_tasty'
+" let g:airline_theme='othipowerline'
+" let g:airline_theme='monokai_tasty'
+" let g:airline_theme='codedark'
+let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_close_button = 0
@@ -15,10 +17,13 @@ let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr} %l%
 highlight SignColumn ctermbg=15
 
 "colo othi
-let g:vim_monokai_tasty_italic = 1
-colo vim-monokai-tasty
+" let g:vim_monokai_tasty_italic = 1
+" colo vim-monokai-tasty
+colo codedark
+" colo onedark
 filetype plugin on
-syntax on
+" testing off for treesitter
+syntax off
 hi Normal ctermbg=none
 
 " cursor
