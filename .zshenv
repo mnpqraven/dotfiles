@@ -1,4 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 export UPDATE_ZSH_DAYS=7
 export PATH="$PATH:$HOME/.vim/bundle/vim-superman/bin"
 # probably comment this in pc
@@ -35,7 +36,7 @@ alias cz="cd ~ && cd \$(find * -type d | fzf)"
 
 # }}}
 
-# commands aliases {{{
+# # commands aliases {{{
 alias v="$EDITOR"
 alias mz="ncmpcpp"
 alias screen="maim -s | xclip -selection clipboard -t image/png"
@@ -56,6 +57,7 @@ alias rrc="$EDITOR $HOME/.config/ranger/rc.conf"
 alias tmrc="$EDITOR $HOME/.tmux.conf"
 
 # git aliases {{{
+alias gst="git status"
 alias gt="git tree"
 alias gac="git allcommit"
 alias grst="git reset"
@@ -64,13 +66,12 @@ alias gmnc="git merge --no-commit"
 alias gcom="git checkout master"
 alias qmkf="git checkout master && git fetch upstream && git pull upstream master && git push origin master"
 # }}}
-
-ranger() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        /usr/bin/ranger "$@"
-    else
-        exit
-    fi
-}
-
-source $ZSH/oh-my-zsh.sh
+#
+# ranger() {
+#     if [ -z "$RANGER_LEVEL" ]; then
+#         /usr/bin/ranger "$@"
+#     else
+#         exit
+#     fi
+# }
+#

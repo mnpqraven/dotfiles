@@ -36,6 +36,8 @@ sudo pacman -S --noconfirm compton rofi ranger clifm neofetch copyq w3m feh dolp
 
 # TOOLS
 sudo pacman -S --noconfirm nodejs npm cmake make gcc clang
+sudo npm install -g n
+sudo n latest
 sudo pacman -S --noconfirm deluge fzf ripgrep fd python-pip r neomutt npm
 sudo pacman -S --noconfirm fcitx5 fcitx5-unikey fcitx5-mozc fcitx5-configtool fcitx5-gtk
 sudo npm install -g neovim
