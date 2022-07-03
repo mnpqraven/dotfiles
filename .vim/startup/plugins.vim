@@ -1,21 +1,13 @@
-" Vundle
-" to install the plugins use :PluginInstall in vim
-filetype off
+" filetype off
 
 " PLUG
 call plug#begin()
-Plug 'tpope/vim-surround'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jez/vim-superman'
 Plug 'lervag/vimtex'
-Plug 'chrisbra/csv.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'patstockwell/vim-monokai-tasty'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'styled-components/vim-styled-components'
@@ -23,15 +15,30 @@ Plug 'mattn/emmet-vim'
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'Yggdroot/indentLine'
 Plug 'ap/vim-css-color'
+
+" CSV
+Plug 'chrisbra/csv.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+" THEME
 Plug 'vim-airline/vim-airline'
+Plug 'patstockwell/vim-monokai-tasty'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mnpqraven/othi-airline-themes'
+Plug 'tomasiser/vim-code-dark'
+Plug 'joshdick/onedark.vim'
+
+" FUNCTIONALITY
+Plug 'tpope/vim-surround'
 Plug 'numToStr/Comment.nvim'
 Plug 'windwp/nvim-autopairs'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " LSP
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
+Plug 'folke/trouble.nvim'
 
 " COMPLETION
 Plug 'hrsh7th/nvim-cmp'
@@ -40,24 +47,28 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'saadparwaiz1/cmp_luasnip'
 
 " snippets
+Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'SirVer/ultisnips'
-
 Plug 'rafamadriz/friendly-snippets'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+Plug 'BurntSushi/ripgrep'
 
 call plug#end()
 filetype plugin indent on
 
 set completeopt=menuone,menu
 lua require('user.cmp')
-
-" coc.nvim
-" install the tsserver
-" :CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-emmet
+lua require('user.lsp')
+lua require('user.trouble')
+lua require('user.telescope')
+lua require('user.treesitter')
 
 " emmet
 let g:user_emmet_settings = {
@@ -65,18 +76,6 @@ let g:user_emmet_settings = {
     \      'extends' : 'jsx',
     \  },
   \}
-
-"CtrlP keys
-  let g:ctrlp_prompt_mappings = {
-    \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
-    \ 'PrtSelectMove("k")':   ['<c-l>', '<up>'],
-    \ 'PrtCurEnd()':          ['<c-4>'],
-    \ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
-    \ 'PrtCurRight()':        ['<c-e>', '<right>'],
-    \ 'PrtHistory(-1)':       ['<c-b>'],
-    \ 'PrtHistory(1)':        ['<c-w>'],
-    \ 'ToggleType(-1)':       ['<c-q>', '<c-down>'],
-    \ }
 
 " csv.vim
 "let g:csv_delim_test = ',|; '
@@ -104,15 +103,6 @@ let g:pandoc#spell#enabled = 0
 let g:deoplete#enable_at_startup = 1
 let g:gitgutter_override_sign_column_highlight = 0
 let g:tmux_navigator_no_mappings = 1
-
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_show_hidden = 1
-
-let g:ale_fixers = {
-            \ '*': ['remove_trailing_lines','trim_whitespace'],
-            \ 'javascript': ['importjs','prettier'],
-            \}
-let g:ale_fix_on_save = 1
 
 let g:SimpylFold_docstring_preview=1
 

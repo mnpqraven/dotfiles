@@ -35,8 +35,8 @@ sudo pacman -S --noconfirm maim tmux alacritty man-db atool
 sudo pacman -S --noconfirm compton rofi ranger clifm neofetch copyq w3m feh dolphin
 
 # TOOLS
-sudo pacman -S --noconfirm nodejs npm
-sudo pacman -S --noconfirm deluge fzf python-pip r neomutt npm
+sudo pacman -S --noconfirm nodejs npm cmake make gcc clang
+sudo pacman -S --noconfirm deluge fzf ripgrep fd python-pip r neomutt npm
 sudo pacman -S --noconfirm fcitx5 fcitx5-unikey fcitx5-mozc fcitx5-configtool fcitx5-gtk
 sudo npm install -g neovim
 yay google-chrome

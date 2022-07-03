@@ -1,6 +1,6 @@
-noremap <C-f> :CtrlP<CR>
-noremap <F6> :CtrlPClearCache<CR>
-noremap <F7> :CtrlPClearAllCaches<CR>
+" noremap <C-f> :CtrlP<CR>
+" noremap <F6> :CtrlPClearCache<CR>
+" noremap <F7> :CtrlPClearAllCaches<CR>
 noremap <F9> :VimtexStop<CR>:VimtexClean<CR>
 noremap <C-w> :bd<CR>
 " Press F8 to toggle highlighting on/off, and show current value.
@@ -37,7 +37,7 @@ nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
 nnoremap <Leader>cd :cd %:p:h<CR> :pwd<CR><left>
 nnoremap <Leader>c :%y+<CR>
 nnoremap <silent><Leader>s :setlocal spell! spelllang=en_US<CR><ESC>
-nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
+" nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 noremap <silent> <Leader>a :call ToggleAutoComment()<CR>zz
 noremap z<tab> zf%
@@ -45,6 +45,14 @@ noremap z<tab> zf%
 noremap <C-\> :NERDTreeToggle<CR>
 let NERDTreeMenuDown='n'
 let NERDTreeMenuUp='l'
+
+" Trouble
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
+nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
+nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
+nnoremap <leader>xf <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle workspace_diagnostics<cr>
 
 " chrome like tab navigation
 nnoremap <Leader>1 1gt
@@ -110,22 +118,35 @@ inoremap ;; :
 inoremap ;<Space> ;<Space>
 inoremap ;<Space><Space> <ESC>Ea;<Space>
 
+" Find files using Telescope command-line sugar.
+nnoremap <C-P> <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" Using Lua functions
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
 " auto closes brackets
-inoremap " ""<left>
-inoremap ' ''<left>
-
-inoremap ( ()<left>
-inoremap () ()
-inoremap (; ();<left><left>
-
-inoremap [ []<left>
-inoremap [] []
-inoremap [; [];<left>
-
-inoremap { {}<left>
-inoremap {} {}
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+"inoremap " ""<left>
+"inoremap ' ''<left>
+"
+"inoremap ( ()<left>
+"inoremap () ()
+"inoremap (; ();<left><left>
+"
+"inoremap [ []<left>
+"inoremap [] []
+"inoremap [; [];<left>
+"
+"inoremap { {}<left>
+"inoremap {} {}
+"inoremap {<CR> {<CR>}<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O
 
 "CSV
 "autocmd filetype csv noremap <silent>H :<C-U>call csv#MoveCol(-1, line("."))<CR>:<C-U>call csv#MoveCol(-1, line("."))<CR>l
