@@ -2,12 +2,17 @@
 " VIM-AIRLINE CONFIG ------------------------------------------------------------
 " let g:airline_theme='othipowerline'
 " let g:airline_theme='monokai_tasty'
-" let g:airline_theme='codedark'
-let g:airline_theme='onedark'
+let g:airline_theme='srcery'
+" let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#show_tab_count = 0
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#buf_label_first = 1
+let g:airline#extensions#tabline#buffers_label = 'bufs'
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#wordcount#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
@@ -16,15 +21,21 @@ let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr} %l%
 "let g:airline#extensions#tmuxline#enabled = 1
 highlight SignColumn ctermbg=15
 
-"colo othi
+" in case these are used
 " let g:vim_monokai_tasty_italic = 1
+" let g:onedark_terminal_italics = 1
+" let g:codedark_italics = 1
+let g:srcery_italic = 1
+let g:srcery_inverse = 0
+let g:srcery_bg_passthrough = 1
+
+" COLORSCHEMES
 " colo vim-monokai-tasty
-colo codedark
 " colo onedark
-filetype plugin on
-" testing off for treesitter
-syntax off
-hi Normal ctermbg=none
+" codedark's bg
+let g:srcery_black = '#1e1e1e'
+colo srcery
+syntax on
 
 " cursor
 au VimLeave * set guicursor=a:ver90-blinkon0
