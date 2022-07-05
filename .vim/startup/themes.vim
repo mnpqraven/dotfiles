@@ -27,6 +27,7 @@ highlight SignColumn ctermbg=15
 " let g:codedark_italics = 1
 let g:srcery_italic = 1
 let g:srcery_inverse = 0
+let g:srcery_bg_passthrough = 1
 
 " COLORSCHEMES
 " colo vim-monokai-tasty
