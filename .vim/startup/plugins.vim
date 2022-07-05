@@ -2,8 +2,7 @@
 
 " PLUG
 call plug#begin()
-Plug 'scrooloose/nerdtree'
-Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'jez/vim-superman'
 Plug 'lervag/vimtex'
 Plug 'tmhedberg/SimpylFold'
@@ -25,8 +24,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'mnpqraven/othi-airline-themes'
 Plug 'tomasiser/vim-code-dark'
+Plug 'srcery-colors/srcery-vim'
 Plug 'joshdick/onedark.vim'
 
 " FUNCTIONALITY
@@ -48,12 +47,15 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-nvim-lsp'
 
-" snippets
+" SNIPPETS
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'SirVer/ultisnips'
 Plug 'rafamadriz/friendly-snippets'
 
+" NAVIGATION
+Plug 'scrooloose/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
@@ -61,6 +63,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCM
 Plug 'BurntSushi/ripgrep'
 
 call plug#end()
+
 filetype plugin indent on
 
 set completeopt=menuone,menu
