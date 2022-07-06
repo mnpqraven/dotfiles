@@ -1,7 +1,5 @@
 /*
-!preview.png
-!preview2.png
-!quick_install.sh
+!new_install.sh
 !*.md
 !.bashrc
 !.*vimrc
@@ -55,7 +53,8 @@
 !/.config/neomutt
 
 !/.config/fcitx5
-/.config/fcitx5/conf
+!/.config/fcitx5/conf
+/.config/fcitx5/conf/cached_layouts
 
 !/.config/mozc
 /.config/mozc/*
@@ -69,8 +68,6 @@
 
 !/.config/ncmpcpp
 !/.config/ranger
-/**/ranger/__pycache__/*
-/**/ranger/*/__pycache__/*
 !/.config/powerline
 !/.config/nvim
 !/.config/xfce4
