@@ -1,6 +1,7 @@
-" noremap <C-f> :CtrlP<CR>
-" noremap <F6> :CtrlPClearCache<CR>
-" noremap <F7> :CtrlPClearAllCaches<CR>
+noremap <space> <nop>
+let mapleader=" "
+let maplocalleader="\\"
+
 noremap <F9> :VimtexStop<CR>:VimtexClean<CR>
 noremap <C-w> :bd<CR>
 " Press F8 to toggle highlighting on/off, and show current value.
@@ -11,7 +12,6 @@ nnoremap <silent> <C-H> :TmuxNavigateLeft<CR>
 nnoremap <silent> <C-N> :TmuxNavigateDown<CR>
 nnoremap <silent> <C-L> :TmuxNavigateUp<CR>
 nnoremap <silent> <C-E> :TmuxNavigateRight<CR>
-nnoremap <silent> <C-K> :TmuxNavigatePrevious<CR>
 
 " smart vertical mapping/dragging
 nnoremap <up> ddkP
@@ -19,18 +19,18 @@ nnoremap <down> ddp
 vnoremap <up> dkP1v
 vnoremap <down> dp1v
 
-" GoTo code navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> <C-A> <cmd>HopAnywhereCurrentLine<cr>
+nnoremap <Leader>l <cmd>HopWordBC<cr>
+nnoremap <Leader>L <cmd>HopLineBC<cr>
+nnoremap <Leader>H <cmd>HopLine<cr>
+nnoremap <Leader>hh <cmd>HopVertical<cr>
+nnoremap <Leader>E <cmd>HopPattern<cr>
+nnoremap <Leader>n <cmd>HopWordAC<cr>
+nnoremap <Leader>N <cmd>HopLineAC<cr>
 
 " Leader keys
-noremap <space> <nop>
-let mapleader=" "
-let maplocalleader="\\"
 nnoremap <Leader>cl :WhatColumn!<CR>
-nnoremap <Leader>t :NERDTree<CR>
+nnoremap <Leader>t <cmd>TroubleToggle<CR>
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
 nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
@@ -131,23 +131,6 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-" auto closes brackets
-"inoremap " ""<left>
-"inoremap ' ''<left>
-"
-"inoremap ( ()<left>
-"inoremap () ()
-"inoremap (; ();<left><left>
-"
-"inoremap [ []<left>
-"inoremap [] []
-"inoremap [; [];<left>
-"
-"inoremap { {}<left>
-"inoremap {} {}
-"inoremap {<CR> {<CR>}<ESC>O
-"inoremap {;<CR> {<CR>};<ESC>O
-
 "CSV
 "autocmd filetype csv noremap <silent>H :<C-U>call csv#MoveCol(-1, line("."))<CR>:<C-U>call csv#MoveCol(-1, line("."))<CR>l
 autocmd filetype csv noremap <silent>H :<C-U>call csv#MoveCol(-1, line("."))<CR>:<C-U>call csv#MoveCol(-1, line("."))<CR>b:<C-U>call csv#MoveCol(1, line("."))<CR>
@@ -160,9 +143,6 @@ autocmd filetype csv noremap <silent>L :<C-U>call csv#MoveCol(0, line(".")-v:cou
 autocmd Filetype md,markdown,rmd,Rmd map <leader>- i---<CR>title:<CR>author:<CR>output: pdf_document<CR>---<ESC>?title<CR>A<space>
 autocmd Filetype md,markdown,rmd,Rmd,tex map <leader>b i\
 autocmd Filetype md,markdown,rmd,Rmd map <leader>q i```<CR><CR>```<ESC>lI
-"autocmd Filetype md,markdown,rmd,Rmd noremap <leader>1 O#<ESC>A<space>
-"autocmd Filetype md,markdown,rmd,Rmd noremap <leader>2 O##<ESC>A<space>
-"autocmd Filetype md,markdown,rmd,Rmd noremap <leader>3 O###<ESC>A<space>
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>l i[]()<ESC>i
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>L i![]()<ESC>i
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>c I\centerline{<CR>}<ESC>O

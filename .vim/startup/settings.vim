@@ -17,6 +17,7 @@ set showcmd
 set splitbelow splitright
 set foldmethod=manual
 set foldlevel=99
+syntax on
 "
 " delete whitespace
 autocmd FileType rmd autocmd BufWritePre *.rmd call RRender()
@@ -63,5 +64,7 @@ au BufNewFile,BufRead *.py
 autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
+set conceallevel=2
+set concealcursor=c
 autocmd BufEnter *.tex set conceallevel=0
 

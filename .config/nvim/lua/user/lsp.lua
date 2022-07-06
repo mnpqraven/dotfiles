@@ -36,6 +36,7 @@ for type, icon in pairs(signs) do
 end
 
 -- diagnostic on hover
+-- messing up with cmp so disabled right now
 -- vim.api.nvim_create_autocmd("CursorHold", {
 --   buffer = bufnr,
 --   callback = function()

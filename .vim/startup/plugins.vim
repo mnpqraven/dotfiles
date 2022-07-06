@@ -29,7 +29,8 @@ Plug 'srcery-colors/srcery-vim'
 Plug 'joshdick/onedark.vim'
 
 " FUNCTIONALITY
-Plug 'tpope/vim-surround'
+Plug 'kylechui/nvim-surround'
+" Plug 'tpope/vim-surround'
 Plug 'numToStr/Comment.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -55,6 +56,7 @@ Plug 'rafamadriz/friendly-snippets'
 
 " NAVIGATION
 Plug 'scrooloose/nerdtree'
+Plug 'phaazon/hop.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -72,6 +74,11 @@ lua require('user.lsp')
 lua require('user.trouble')
 lua require('user.telescope')
 lua require('user.treesitter')
+lua require('user.nvim_surround')
+lua require('user.hop')
+lua require('user.luasnip')
+
+let g:indentLine_setConceal = 0
 
 " emmet
 let g:user_emmet_settings = {
@@ -98,7 +105,6 @@ let g:tex_flavor = 'xelatex'
 let g:vimtex_view_general_viewer = 'evince'
 let g:vimtex_compiler_latexmk_engine = {'xelatex': '-pdf'}
 let g:vimtex_syntax_conceal_disabled=1
-set conceallevel=0
 
 let g:pandoc#modules#disabled = ["keyboard", "spell"]
 let g:pandoc#spell#enabled = 0
