@@ -13,6 +13,9 @@ lspconfig.sumneko_lua.setup {
 lspconfig.rust_analyzer.setup {
     capabilities = capabilities
 }
+-- config debugging later
+require('rust-tools').setup({})
+
 lspconfig.volar.setup {
     capabilities = capabilities
 }
@@ -23,6 +26,12 @@ lspconfig.eslint.setup {
     capabilities = capabilities
 }
 lspconfig.tailwindcss.setup {
+    capabilities = capabilities
+}
+lspconfig.bashls.setup {
+    capabilities = capabilities
+}
+lspconfig.taplo.setup {
     capabilities = capabilities
 }
 
