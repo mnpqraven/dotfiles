@@ -59,8 +59,8 @@ nnoremap <C-A-e> :bn<CR>
 nnoremap <C-A-h> :bp<CR>
 
 " Colemak remapping
-noremap J E
-noremap j e
+" noremap J E
+" noremap j e
 noremap N K
 noremap n gj
 noremap E J

@@ -2,7 +2,7 @@
 " VIM-AIRLINE CONFIG ------------------------------------------------------------
 " let g:airline_theme='othipowerline'
 " let g:airline_theme='monokai_tasty'
-let g:airline_theme='srcery'
+let g:airline_theme='base16_monokai'
 " let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -28,13 +28,18 @@ highlight SignColumn ctermbg=15
 let g:srcery_italic = 1
 let g:srcery_inverse = 0
 let g:srcery_bg_passthrough = 1
+" let g:onedark_config = {
+"     \ 'style': 'warmer',
+" \}
+lua require('onedark').setup {style = 'warmer',transparent = true}
+
 
 " COLORSCHEMES
 " colo vim-monokai-tasty
 " colo onedark
 " codedark's bg
 let g:srcery_black = '#1e1e1e'
-colo srcery
+colo onedark
 syntax on
 
 " cursor
@@ -43,11 +48,6 @@ set guicursor=a:block
 "au VimLeave * set guicursor=a:hor70-blinkon0
 "set guicursor=a:hor50-blinkon0
 
-if !has('nvim')
-	set rtp+=/home/othi/.local/lib/python3.7/site-packages/powerline/bindings/vim/
-	set laststatus=2
-	set t_Co=256
-endif
 set timeoutlen=500 ttimeoutlen=0
 set updatetime=100
 set noshowmode

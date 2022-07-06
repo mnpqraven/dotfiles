@@ -21,19 +21,20 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " THEME
-Plug 'vim-airline/vim-airline'
+Plug 'nvim-lualine/lualine.nvim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'patstockwell/vim-monokai-tasty'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasiser/vim-code-dark'
 Plug 'srcery-colors/srcery-vim'
-Plug 'joshdick/onedark.vim'
+Plug 'navarasu/onedark.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 " FUNCTIONALITY
 Plug 'kylechui/nvim-surround'
 " Plug 'tpope/vim-surround'
 Plug 'numToStr/Comment.nvim'
 Plug 'windwp/nvim-autopairs'
-Plug 'kyazdani42/nvim-web-devicons'
 
 " LSP
 Plug 'williamboman/nvim-lsp-installer'
@@ -65,6 +66,7 @@ Plug 'phaazon/hop.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
@@ -84,6 +86,7 @@ lua require('user.nvim_surround')
 lua require('user.hop')
 lua require('user.autopairs')
 lua require('user.luasnip')
+lua require('user.lualine')
 
 " startify
 " returns all modified files of the current git repo
