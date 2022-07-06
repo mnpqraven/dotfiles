@@ -19,18 +19,7 @@ nnoremap <down> ddp
 vnoremap <up> dkP1v
 vnoremap <down> dp1v
 
-nnoremap <silent> <C-A> <cmd>HopAnywhereCurrentLine<cr>
-nnoremap <Leader>l <cmd>HopWordBC<cr>
-nnoremap <Leader>L <cmd>HopLineBC<cr>
-nnoremap <Leader>H <cmd>HopLine<cr>
-nnoremap <Leader>hh <cmd>HopVertical<cr>
-nnoremap <Leader>E <cmd>HopPattern<cr>
-nnoremap <Leader>n <cmd>HopWordAC<cr>
-nnoremap <Leader>N <cmd>HopLineAC<cr>
-
 " Leader keys
-nnoremap <Leader>cl :WhatColumn!<CR>
-nnoremap <Leader>t <cmd>TroubleToggle<CR>
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
 nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
@@ -46,7 +35,7 @@ noremap <C-\> :NERDTreeToggle<CR>
 let NERDTreeMenuDown='n'
 let NERDTreeMenuUp='l'
 
-" Trouble
+" TROUBLE
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
 nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
 nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
@@ -118,18 +107,35 @@ inoremap ;; :
 inoremap ;<Space> ;<Space>
 inoremap ;<Space><Space> <ESC>Ea;<Space>
 
+" HOP
+nnoremap <silent> <C-A> <cmd>HopAnywhereCurrentLine<cr>
+nnoremap <Leader>l <cmd>HopWordBC<cr>
+nnoremap <Leader>L <cmd>HopLineBC<cr>
+nnoremap <Leader>H <cmd>HopLine<cr>
+nnoremap <Leader>hh <cmd>HopVertical<cr>
+nnoremap <Leader>hw <cmd>HopWord<cr>
+nnoremap <Leader>E <cmd>HopPattern<cr>
+nnoremap <Leader>n <cmd>HopWordAC<cr>
+nnoremap <Leader>N <cmd>HopLineAC<cr>
+nnoremap f :lua require'hop'.hint_char1({direction = require'hop.hint'.HintDirection.AFTER_CURSOR,current_line_only = true})<cr>
+nnoremap F :lua require'hop'.hint_char1({direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,current_line_only = true})<cr>
+nnoremap t :lua require'hop'.hint_char1({direction = require'hop.hint'.HintDirection.AFTER_CURSOR,current_line_only = true,hint_offset = -1})<cr>
+nnoremap T :lua require'hop'.hint_char1({direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,current_line_only = true,hint_offset = -1})<cr>
+
+" TELESCOPE
 " Find files using Telescope command-line sugar.
 nnoremap <C-P> <cmd>Telescope find_files<cr>
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
 " Using Lua functions
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>fp <cmd>lua require('telescope.builtin').diagnostics()<cr>
+nnoremap <leader>ft <cmd>lua require('telescope.builtin').treesitter()<cr>
+nnoremap <leader>fd <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
+nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
+nnoremap <leader>fi <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
+nnoremap <leader>fn <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
 
 "CSV
 "autocmd filetype csv noremap <silent>H :<C-U>call csv#MoveCol(-1, line("."))<CR>:<C-U>call csv#MoveCol(-1, line("."))<CR>l
