@@ -38,7 +38,11 @@ Plug 'kyazdani42/nvim-web-devicons'
 " LSP
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
-Plug 'folke/trouble.nvim'
+Plug 'simrat39/rust-tools.nvim'
+
+" DEBUGGING
+Plug 'nvim-lua/plenary.nvim'
+Plug 'mfussenegger/nvim-dap'
 
 " COMPLETION
 Plug 'hrsh7th/nvim-cmp'
@@ -47,6 +51,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'folke/trouble.nvim'
 
 " SNIPPETS
 Plug 'saadparwaiz1/cmp_luasnip'
@@ -60,6 +65,7 @@ Plug 'phaazon/hop.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'p00f/nvim-ts-rainbow'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'BurntSushi/ripgrep'
@@ -76,7 +82,23 @@ lua require('user.telescope')
 lua require('user.treesitter')
 lua require('user.nvim_surround')
 lua require('user.hop')
+lua require('user.autopairs')
 lua require('user.luasnip')
+
+" startify
+" returns all modified files of the current git repo
+" `2>/dev/null` makes the command fail quietly, so that when we are not
+" in a git repo, the list will be empty
+function! s:gitModified()
+    let files = systemlist('git ls-files -m 2>/dev/null')
+    return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
+
+" same as above, but show untracked files, honouring .gitignore
+function! s:gitUntracked()
+    let files = systemlist('git ls-files -o --exclude-standard 2>/dev/null')
+    return map(files, "{'line': v:val, 'path': v:val}")
+endfunction
 
 let g:indentLine_setConceal = 0
 

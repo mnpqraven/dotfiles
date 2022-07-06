@@ -30,9 +30,9 @@ hint = dim green
 	tags = "show-ref --abbrev=6 --tags"
 	co = "checkout"
 [core]
-	editor = vim
-[url "ssh://git@github.com/"]
- 	insteadOf = https://github.com/
+	editor = /usr/bin/nvim
+# [url "ssh://git@github.com/"]
+#  	insteadOf = https://github.com/
 [url "ssh://git@bitbucket.org/"]
  	insteadOf = https://bitbucket.org/
 # [merge]
@@ -44,3 +44,5 @@ hint = dim green
 	keepBackup = false
 [url "https://"]
 	insteadOf = git://
+[credential]
+	helper = cache
