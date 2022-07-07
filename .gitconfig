@@ -31,8 +31,8 @@ hint = dim green
 	co = "checkout"
 [core]
 	editor = /usr/bin/nvim
-# [url "ssh://git@github.com/"]
-#  	insteadOf = https://github.com/
+ [url "ssh://git@github.com/"]
+  	insteadOf = https://github.com/
 [url "ssh://git@bitbucket.org/"]
  	insteadOf = https://bitbucket.org/
 # [merge]
