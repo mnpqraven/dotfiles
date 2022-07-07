@@ -31,9 +31,13 @@ noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 noremap <silent> <Leader>a :call ToggleAutoComment()<CR>zz
 noremap z<tab> zf%
 " NERDTree keys
-noremap <C-\> :NERDTreeToggle<CR>
+noremap <C-\> :NvimTreeToggle<CR>
 let NERDTreeMenuDown='n'
 let NERDTreeMenuUp='l'
+
+" RANGER
+nnoremap <leader>rr :RnvimrToggle<CR>
+
 
 " TROUBLE
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
@@ -108,7 +112,7 @@ inoremap ;<Space> ;<Space>
 inoremap ;<Space><Space> <ESC>Ea;<Space>
 
 " HOP
-nnoremap <silent> <C-A> <cmd>HopAnywhereCurrentLine<cr>
+nnoremap <silent> <C-Q> <cmd>HopAnywhereCurrentLine<cr>
 nnoremap <Leader>l <cmd>HopWordBC<cr>
 nnoremap <Leader>L <cmd>HopLineBC<cr>
 nnoremap <Leader>H <cmd>HopLine<cr>

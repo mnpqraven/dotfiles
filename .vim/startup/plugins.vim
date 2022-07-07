@@ -12,8 +12,12 @@ Plug 'pangloss/vim-javascript'
 Plug 'styled-components/vim-styled-components'
 Plug 'mattn/emmet-vim'
 Plug 'leafOfTree/vim-vue-plugin'
-Plug 'Yggdroot/indentLine'
-Plug 'ap/vim-css-color'
+" Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'ap/vim-css-color'
+Plug 'themaxmarchuk/tailwindcss-colors.nvim'
+Plug 'kevinhwang91/rnvimr'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " CSV
 Plug 'chrisbra/csv.vim'
@@ -29,6 +33,11 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'srcery-colors/srcery-vim'
 Plug 'navarasu/onedark.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
+" doesn't work correctly rn
+Plug 'folke/twilight.nvim'
+Plug 'sunjon/shade.nvim'
+Plug 'xiyaowong/virtcolumn.nvim'
+Plug 'nkakouros-original/numbers.nvim'
 
 " FUNCTIONALITY
 Plug 'kylechui/nvim-surround'
@@ -40,6 +49,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/rust-tools.nvim'
+Plug 'RRethy/vim-illuminate'
 
 " DEBUGGING
 Plug 'nvim-lua/plenary.nvim'
@@ -62,6 +72,7 @@ Plug 'rafamadriz/friendly-snippets'
 
 " NAVIGATION
 Plug 'scrooloose/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'phaazon/hop.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'nvim-lua/plenary.nvim'
@@ -70,6 +81,8 @@ Plug 'nvim-treesitter/playground'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+Plug 'MunifTanjim/nui.nvim'
+Plug 'bennypowers/nvim-regexplainer'
 Plug 'BurntSushi/ripgrep'
 
 call plug#end()
@@ -87,6 +100,7 @@ lua require('user.hop')
 lua require('user.autopairs')
 lua require('user.luasnip')
 lua require('user.lualine')
+lua require('user.indentline')
 
 " startify
 " returns all modified files of the current git repo

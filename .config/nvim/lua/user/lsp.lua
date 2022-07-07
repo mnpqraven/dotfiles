@@ -11,10 +11,14 @@ lspconfig.sumneko_lua.setup {
     capabilities = capabilities
 }
 lspconfig.rust_analyzer.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client)
+      -- [[ other on_attach code ]]
+      require 'illuminate'.on_attach(client)
+    end,
 }
 -- config debugging later
-require('rust-tools').setup({})
+require('rust-tools').setup {}
 
 lspconfig.volar.setup {
     capabilities = capabilities
@@ -26,7 +30,10 @@ lspconfig.eslint.setup {
     capabilities = capabilities
 }
 lspconfig.tailwindcss.setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function (_, bufnr)
+        require("tailwindcss-colors").buf_attach(bufnr)
+    end
 }
 lspconfig.bashls.setup {
     capabilities = capabilities

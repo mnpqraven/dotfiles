@@ -49,7 +49,7 @@ set shiftwidth=4
 set foldcolumn=1
 set expandtab
 "set textwidth=80
-"set colorcolumn=+1
+set colorcolumn=80
 set linespace=0
 set history=1000
 set showbreak=↪\
