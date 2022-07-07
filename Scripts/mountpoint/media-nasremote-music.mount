@@ -1,0 +1,12 @@
+[Unit]
+Description=mount using systemd
+
+[Mount]
+What=//192-168-1-14.othi.direct.quickconnect.to/music
+Where=/media/nasremote/music
+Type=cifs
+Options=_netdev,credentials=/etc/.credentials,uid=1000,gid=1000,users,rw
+TimeoutSec=15
+
+[Install]
+WantedBy=multi-user.target

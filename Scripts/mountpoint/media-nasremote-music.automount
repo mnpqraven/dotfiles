@@ -1,0 +1,9 @@
+[Unit]
+Description=NAS SMB music automount
+
+[Automount]
+Where=/media/nasremote/music
+TimeoutIdleSec=10
+
+[Install]
+WantedBy=multi-user.target
