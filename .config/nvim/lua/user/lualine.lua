@@ -7,14 +7,15 @@ local function modified()
   end
   return ''
 end
+
 local colors = require('lualine.themes.onedark')
-
 require('onedark').setup {style = 'warmer',transparent = true}
-
 require('lualine').setup {
     options = {
         theme = 'onedark',
         globalstatus = true,
+        component_separators = '',
+        section_separators = { left = '', right = '' },
     },
     sections = {
         lualine_c = {
@@ -22,7 +23,7 @@ require('lualine').setup {
             {
                 modified,
                 color = {bg = colors.replace.a.bg, fg = colors.replace.a.fg},
-                separator = { left = '', right = ''}
+                separator = { left = '', right = ''}
             }
         }
     },

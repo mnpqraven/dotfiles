@@ -47,6 +47,7 @@ require('numbers').setup {
         'nerdtree',
         'NvimTree',
         'unite',
+        'toggleterm',
         -- etc
   }
 }
@@ -80,4 +81,3 @@ require("nvim-tree").setup ({
 require'colorizer'.setup {
     '*';
 }
-

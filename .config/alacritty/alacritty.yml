@@ -116,23 +116,23 @@ window:
     #family: monospace
 font:
   normal:
-    family: ShureTechMono Nerd Font
+    family: ShureTechMono Nerd Font Mono
     style: Regular
   # Bold font face
-  bolds:
-    family: ShureTechMono Nerd Font
-    style: Bold
+  bold:
+    family: ShureTechMono Nerd Font Mono
+    # style: Bold
   # Italic font face
-  italics:
-    family: ShureTechMono Nerd Font
-    style: Italic
+  italic:
+    family: Monofuritalic Nerd Font
+    # style:
   # Bold italic font face
-  bold_italics:
-    family: ShureTechMono Nerd Font
-    style: Bold Italic
+  bold_italic:
+    family: Monofuritalic Nerd Font
+    # style:
 
   # Point size
-  size: 12.5
+  size: 15
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
