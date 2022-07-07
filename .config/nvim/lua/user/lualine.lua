@@ -9,6 +9,8 @@ local function modified()
 end
 local colors = require('lualine.themes.onedark')
 
+require('onedark').setup {style = 'warmer',transparent = true}
+
 require('lualine').setup {
     options = {
         theme = 'onedark',

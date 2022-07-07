@@ -31,7 +31,6 @@ let g:srcery_bg_passthrough = 1
 " let g:onedark_config = {
 "     \ 'style': 'warmer',
 " \}
-lua require('onedark').setup {style = 'warmer',transparent = true}
 
 
 " COLORSCHEMES
