@@ -10,10 +10,11 @@
 
 run the install script
 ```
-curl -o new_install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/development/new_install.sh && bash new_install.sh
+curl -o install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/development/install.sh && bash install.sh
 ```
 Post-installation:
 - Import mozc keymap and romantable
 
 TODO:
 - MPD rice
+- ranger re-rice
