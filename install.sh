@@ -9,6 +9,13 @@ cd yay
 makepkg -si --noconfirm
 cd $HOME
 
+sudo pacman -S gnome-keyring libsecret
+echo "-------------------------------"
+echo "GIT"
+echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
+bash Scripts/git-genssh.sh
+sudo systemctl enable sshd.service
+eval `/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg`
 # INSTALLING STUFF
 # EDITOR
 sudo pacman -S --noconfirm neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
@@ -71,11 +78,6 @@ sudo bash ./nas-setup.sh
 #dotfiles/
 cd ..
 
-echo "-------------------------------"
-echo "GIT"
-echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
-bash Scripts/git-genssh.sh
-sudo systemctl enable sshd.service
 
 echo "-------------------------------"
 echo ".CONFIG"
