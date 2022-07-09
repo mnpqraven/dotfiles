@@ -21,8 +21,6 @@ git config --global core.editor $EDITOR
 pip install --user powerline-status
 
 sudo pacman -S --noconfirm atom
-# vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 #vim plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -35,7 +33,8 @@ sudo pacman -S --noconfirm maim tmux alacritty man-db atool
 sudo pacman -S --noconfirm compton rofi ranger clifm neofetch copyq w3m feh dolphin
 
 # TOOLS
-sudo pacman -S --noconfirm nodejs-lts-gallium cmake make gcc clang
+sudo pacman -S --noconfirm cmake make gcc clang
+sudo pacman -S nodejs-lts-gallium npm
 yay nvm
 # npm might break
 sudo npm install -g n
@@ -80,9 +79,7 @@ sudo systemctl enable sshd.service
 echo "-------------------------------"
 echo ".CONFIG"
 bash Scripts/move-config.sh
-git fetch
 read -p "press enter after you have pasted the key in your github browser" confirm
-git fetch
 
 echo "-------------------------------"
 echo "MPD"
@@ -90,7 +87,6 @@ bash Scripts/mpd-install-wizard.sh
 
 echo "-------------------------------"
 echo "VIM"
-nvim -c PlugInstall
 bash Scripts/nerd-fonts.sh
 
 echo "-------------------------------"
