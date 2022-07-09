@@ -1,5 +1,5 @@
 # GRABBING FILES
-git clone -b development https://github.com/mnpqraven/dotfiles.git
+git clone -b keyring-beta https://github.com/mnpqraven/dotfiles.git
 # INSTALLING YAY
 sudo pacman -Syu
 cd /opt
@@ -39,10 +39,12 @@ sudo pacman -S --noconfirm maim tmux alacritty man-db atool
 #git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # DESKTOP ENV
-sudo pacman -S --noconfirm compton rofi ranger clifm neofetch copyq w3m feh dolphin
+sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m feh dolphin
+yay clifm
 
 # TOOLS
-sudo pacman -S --noconfirm nodejs-lts-gallium cmake make gcc clang
+sudo pacman -S --noconfirm cmake make gcc clang
+sudo pacman -S --noconfirm nodejs-lts-gallium npm
 yay nvm
 # npm might break
 sudo npm install -g n
