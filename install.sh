@@ -34,6 +34,7 @@ sudo pacman -S --noconfirm maim tmux alacritty man-db atool
 
 # DESKTOP ENV
 sudo pacman -S --noconfirm compton rofi ranger neofetch copyq w3m feh dolphin
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 yay clifm
 
 # TOOLS
