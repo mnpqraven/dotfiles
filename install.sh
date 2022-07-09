@@ -10,6 +10,10 @@ makepkg -si --noconfirm
 cd $HOME
 
 sudo pacman -S --noconfirm gnome-keyring libsecret
+echo "-------------------------------"
+echo "GIT"
+echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
+bash dotfiles/Scripts/git-genssh.sh
 # INSTALLING STUFF
 # EDITOR
 sudo pacman -S --noconfirm neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
@@ -34,7 +38,7 @@ yay clifm
 
 # TOOLS
 sudo pacman -S --noconfirm cmake make gcc clang
-sudo pacman -S nodejs-lts-gallium npm
+sudo pacman -S --noconfirm nodejs-lts-gallium npm
 yay nvm
 # npm might break
 sudo npm install -g n
@@ -70,16 +74,10 @@ sudo bash ./nas-setup.sh
 #dotfiles/
 cd ..
 
-echo "-------------------------------"
-echo "GIT"
-echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
-bash Scripts/git-genssh.sh
-sudo systemctl enable sshd.service
 
 echo "-------------------------------"
 echo ".CONFIG"
 bash Scripts/move-config.sh
-read -p "press enter after you have pasted the key in your github browser" confirm
 
 echo "-------------------------------"
 echo "MPD"

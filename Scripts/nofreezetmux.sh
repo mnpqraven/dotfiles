@@ -1,2 +1,0 @@
-#!bin/sh
-stty -ixon

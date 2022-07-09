@@ -5,12 +5,12 @@
 `archinstall`
 - choose i3gaps
 - remember to config network
-- install `git curl xclip`
+- install `git curl firefox xclip`
 - config files can be saved in `/usr/share`
 
 run the install script
 ```
-curl -o install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/development/install.sh && bash install.sh
+curl -o install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/keyring-beta/install.sh && bash install.sh
 ```
 Post-installation:
 - Import mozc keymap and romantable
