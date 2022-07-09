@@ -88,6 +88,7 @@ bash Scripts/mpd-install-wizard.sh
 
 echo "-------------------------------"
 echo "VIM"
+ssh-add
 nvim -c PlugInstall
 bash Scripts/nerd-fonts.sh
 
