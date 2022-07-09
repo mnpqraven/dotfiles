@@ -17,5 +17,9 @@ ssh-keygen -t ed25519 -C "$email"
 eval "$(ssh-agent -s)"
 ssh-add $HOME/.ssh/id_ed25519
 xclip $HOME/.ssh/id_ed25519.pub
-echo -e "ssh key was copied into the clipboard\nlog into your GitHub account and paste it in the setting, you can also copy with xclip later"
-echo -e "if there's issus regarding ssh authentication try running ssh-add .ssh/id_ed25519 after a reboot"
+read -p "press enter after you have pasted the key in your github browser (ED255)" confirm
+# ssh-keygen
+# xclip $HOME/.ssh/id_rsa.pub
+# read -p "press enter after you have pasted the key in your github browser (RSA)" confirm
+sudo systemctl enable sshd.service
+eval `/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg`

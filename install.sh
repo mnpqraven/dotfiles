@@ -13,9 +13,7 @@ sudo pacman -S gnome-keyring libsecret
 echo "-------------------------------"
 echo "GIT"
 echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
-bash Scripts/git-genssh.sh
-sudo systemctl enable sshd.service
-eval `/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg`
+bash dotfiles/Scripts/git-genssh.sh
 # INSTALLING STUFF
 # EDITOR
 sudo pacman -S --noconfirm neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
@@ -28,8 +26,6 @@ git config --global core.editor $EDITOR
 pip install --user powerline-status
 
 sudo pacman -S --noconfirm atom
-# vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 #vim plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -84,8 +80,6 @@ cd ..
 echo "-------------------------------"
 echo ".CONFIG"
 bash Scripts/move-config.sh
-git fetch
-read -p "press enter after you have pasted the key in your github browser" confirm
 git fetch
 
 echo "-------------------------------"

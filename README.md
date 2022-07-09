@@ -10,7 +10,7 @@
 
 run the install script
 ```
-curl -o install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/keyrin-beta/install.sh && bash install.sh
+curl -o install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/keyring-beta/install.sh && bash install.sh
 ```
 Post-installation:
 - Import mozc keymap and romantable
