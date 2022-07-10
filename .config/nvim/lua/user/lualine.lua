@@ -1,11 +1,11 @@
 ---@diagnostic disable: undefined-global
 local function modified()
-  if vim.bo.modified then
-    return '+'
-  elseif vim.bo.modifiable == false or vim.bo.readonly == true then
-    return '-'
-  end
-  return ''
+    if vim.bo.modified then
+        return '+'
+    elseif vim.bo.modifiable == false or vim.bo.readonly == true then
+        return '-'
+    end
+    return ''
 end
 
 local colors = require('lualine.themes.onedark')

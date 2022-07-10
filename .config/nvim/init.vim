@@ -8,9 +8,8 @@ source $HOME/.config/nvim/startup/bindings.vim
 source $HOME/.config/nvim/startup/settings.vim
 " Plugins
 source $HOME/.config/nvim/startup/plugins.vim
+lua require('plugins')
 " Functions and commands
 source $HOME/.config/nvim/startup/functions.vim
 " Themes and coloway customization
 source $HOME/.config/nvim/startup/themes.vim
-
-lua require('init')

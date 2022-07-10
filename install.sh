@@ -25,6 +25,7 @@ git config --global core.editor $EDITOR
 #yay rstudio-desktop-bin
 pip install --user powerline-status
 
+yay nvim-packer-git
 #vim plug
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'

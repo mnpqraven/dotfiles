@@ -13,8 +13,8 @@ lspconfig.sumneko_lua.setup {
 lspconfig.rust_analyzer.setup {
     capabilities = capabilities,
     on_attach = function(client)
-      -- [[ other on_attach code ]]
-      require 'illuminate'.on_attach(client)
+        -- [[ other on_attach code ]]
+        require 'illuminate'.on_attach(client)
     end,
 }
 -- config debugging later
@@ -47,8 +47,8 @@ vim.diagnostic.config({ update_in_insert = true, virtual_text = false, severity_
 -- signs on gutter columns
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 -- diagnostic on hover

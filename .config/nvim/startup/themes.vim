@@ -19,7 +19,6 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#branch#sha1_len = 6
 let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr} %l%#__restore__#%#__restore__#:%v'
 "let g:airline#extensions#tmuxline#enabled = 1
-highlight SignColumn ctermbg=15
 
 " in case these are used
 " let g:vim_monokai_tasty_italic = 1
@@ -27,7 +26,7 @@ highlight SignColumn ctermbg=15
 " let g:codedark_italics = 1
 let g:srcery_italic = 1
 let g:srcery_inverse = 0
-let g:srcery_bg_passthrough = 1
+" let g:srcery_bg_passthrough = 1
 " let g:onedark_config = {
 "     \ 'style': 'warmer',
 " \}
@@ -37,8 +36,10 @@ let g:srcery_bg_passthrough = 1
 " colo vim-monokai-tasty
 " colo onedark
 " codedark's bg
-let g:srcery_black = '#1e1e1e'
+" let g:srcery_black = '#1e1e1e'
 colo onedark
+" au ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+
 syntax on
 
 " cursor

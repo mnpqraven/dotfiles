@@ -28,8 +28,6 @@ autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 "  autocmd BufWrite * mkview
 "  autocmd BufRead * silent! loadview
 "
-" fix for cursor reseting to block after exiting nv
-"highlight Cursor gui=reverse guifg=NONE guibg=NONE
 set path+=**
 set wildmenu
 set wildmode=list:longest,full
@@ -60,9 +58,6 @@ au BufNewFile,BufRead *.js set shiftwidth=2
 
 au BufNewFile,BufRead *.py
     \ set foldmethod=indent tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix
-
-autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 set conceallevel=2
 set concealcursor=c

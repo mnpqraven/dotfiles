@@ -3,106 +3,94 @@
 " PLUG
 call plug#begin()
 
-Plug 'jez/vim-superman'
-Plug 'lervag/vimtex'
-Plug 'tmhedberg/SimpylFold'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'pangloss/vim-javascript'
-Plug 'styled-components/vim-styled-components'
-Plug 'mattn/emmet-vim'
-Plug 'leafOfTree/vim-vue-plugin'
-" Plug 'Yggdroot/indentLine'
-Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'lervag/vimtex'
+" Plug 'tmhedberg/SimpylFold'
+" Plug 'vim-scripts/indentpython.vim'
+" Plug 'MaxMEllon/vim-jsx-pretty'
+" Plug 'pangloss/vim-javascript'
+" Plug 'styled-components/vim-styled-components'
+" Plug 'mattn/emmet-vim'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 " Plug 'ap/vim-css-color'
-Plug 'themaxmarchuk/tailwindcss-colors.nvim'
-Plug 'kevinhwang91/rnvimr'
-Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'themaxmarchuk/tailwindcss-colors.nvim'
+" Plug 'kevinhwang91/rnvimr'
+" Plug 'norcalli/nvim-colorizer.lua'
 
 " CSV
-Plug 'chrisbra/csv.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+" Plug 'chrisbra/csv.vim'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'tpope/vim-fugitive'
 
 " THEME
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'feline-nvim/feline.nvim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'tomasiser/vim-code-dark'
-Plug 'srcery-colors/srcery-vim'
-Plug 'navarasu/onedark.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'nvim-lualine/lualine.nvim'
+" Plug 'patstockwell/vim-monokai-tasty'
+" Plug 'tomasiser/vim-code-dark'
+" Plug 'srcery-colors/srcery-vim'
+" Plug 'navarasu/onedark.nvim'
+" Plug 'kyazdani42/nvim-web-devicons'
 " doesn't work correctly rn
-Plug 'folke/twilight.nvim'
-Plug 'sunjon/shade.nvim'
-Plug 'xiyaowong/virtcolumn.nvim'
-Plug 'nkakouros-original/numbers.nvim'
+" Plug 'xiyaowong/virtcolumn.nvim'
+" Plug 'nkakouros-original/numbers.nvim'
 
 " FUNCTIONALITY
-Plug 'kylechui/nvim-surround'
-" Plug 'tpope/vim-surround'
-Plug 'numToStr/Comment.nvim'
-Plug 'windwp/nvim-autopairs'
+" Plug 'kylechui/nvim-surround'
+" Plug 'numToStr/Comment.nvim'
+" Plug 'windwp/nvim-autopairs'
 
 " LSP
-Plug 'williamboman/nvim-lsp-installer'
-Plug 'neovim/nvim-lspconfig'
-Plug 'simrat39/rust-tools.nvim'
-Plug 'RRethy/vim-illuminate'
+" Plug 'williamboman/nvim-lsp-installer'
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'simrat39/rust-tools.nvim'
+" Plug 'RRethy/vim-illuminate'
 
 " DEBUGGING
-Plug 'nvim-lua/plenary.nvim'
-Plug 'mfussenegger/nvim-dap'
+" Plug 'mfussenegger/nvim-dap'
 
 " COMPLETION
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/cmp-nvim-lua'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'folke/trouble.nvim'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/cmp-nvim-lua'
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'folke/trouble.nvim'
 
 " SNIPPETS
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'rafamadriz/friendly-snippets'
-Plug 'danymat/neogen'
+" Plug 'saadparwaiz1/cmp_luasnip'
+" Plug 'L3MON4D3/LuaSnip'
+" Plug 'rafamadriz/friendly-snippets'
+" Plug 'danymat/neogen'
 
 " NAVIGATION
-Plug 'scrooloose/nerdtree'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'phaazon/hop.nvim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
-Plug 'MunifTanjim/nui.nvim'
-Plug 'bennypowers/nvim-regexplainer'
-Plug 'BurntSushi/ripgrep'
+" Plug 'kyazdani42/nvim-tree.lua'
+" Plug 'phaazon/hop.nvim'
+" Plug 'christoomey/vim-tmux-navigator'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/playground'
+" Plug 'p00f/nvim-ts-rainbow'
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+" Plug 'MunifTanjim/nui.nvim'
+" Plug 'bennypowers/nvim-regexplainer'
 
 call plug#end()
 
 filetype plugin indent on
 
 set completeopt=menuone,menu
-lua require('user.cmp')
-lua require('user.lsp')
-lua require('user.trouble')
-lua require('user.telescope')
-lua require('user.treesitter')
-lua require('user.nvim_surround')
-lua require('user.hop')
-lua require('user.autopairs')
-lua require('user.luasnip')
-lua require('user.lualine')
-" lua require('user.feline')
-lua require('user.indentline')
+" lua require('user.cmp')
+" lua require('user.lsp')
+" lua require('user.trouble')
+" lua require('user.telescope')
+" lua require('user.treesitter')
+" lua require('user.nvim_surround')
+" lua require('user.hop')
+" lua require('user.autopairs')
+" lua require('user.luasnip')
+" lua require('user.lualine')
+" " lua require('user.feline')
+" lua require('user.indentline')
 
 " startify
 " returns all modified files of the current git repo
@@ -153,8 +141,6 @@ let g:pandoc#spell#enabled = 0
 let g:deoplete#enable_at_startup = 1
 let g:gitgutter_override_sign_column_highlight = 0
 let g:tmux_navigator_no_mappings = 1
-
-let g:SimpylFold_docstring_preview=1
 
 let g:python3_host_prog='/usr/bin/python3'
 

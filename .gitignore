@@ -24,11 +24,7 @@
 /.ssh/*
 !/.ssh/config
 
-!/.vim
-/.vim/bundle/*
-/.vim/view
-!/.vim/bundle/Vundle.vim
-!/.vim/bundle/othi-airline-themes
+.config/nvim/plugin/
 
 # !/.local
 # /.local/*

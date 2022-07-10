@@ -4,7 +4,6 @@ let maplocalleader="\\"
 
 noremap <F9> :VimtexStop<CR>:VimtexClean<CR>
 noremap <C-w> :bd<CR>
-" Press F8 to toggle highlighting on/off, and show current value.
 noremap <F8> :set hlsearch! hlsearch?<CR>
 
 " tmux navigator
@@ -30,23 +29,6 @@ nnoremap <silent><Leader>s :setlocal spell! spelllang=en_US<CR><ESC>
 noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 noremap <silent> <Leader>a :call ToggleAutoComment()<CR>zz
 noremap z<tab> zf%
-" NERDTree keys
-noremap <C-\> :NvimTreeToggle<CR>
-let NERDTreeMenuDown='n'
-let NERDTreeMenuUp='l'
-
-" RANGER
-nnoremap <leader>rr :RnvimrToggle<CR>
-
-nnoremap <leader>d <cmd>Neogen<CR>
-
-" TROUBLE
-nnoremap <leader>xx <cmd>TroubleToggle<cr>
-nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
-nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
-nnoremap <leader>xf <cmd>TroubleToggle quickfix<cr>
-nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
-nnoremap gR <cmd>TroubleToggle workspace_diagnostics<cr>
 
 " chrome like tab navigation
 nnoremap <Leader>1 1gt
@@ -112,6 +94,20 @@ inoremap ;; :
 inoremap ;<Space> ;<Space>
 inoremap ;<Space><Space> <ESC>Ea;<Space>
 
+" PLUGIN KEYS
+" NERDTree keys
+noremap <C-\> :NvimTreeToggle<CR>
+" RANGER
+nnoremap <leader>rr :RnvimrToggle<CR>
+
+nnoremap <leader>d <cmd>Neogen<CR>
+" TROUBLE
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
+nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
+nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
+nnoremap <leader>xf <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle workspace_diagnostics<cr>
 " HOP
 nnoremap <silent> <C-Q> <cmd>HopAnywhereCurrentLine<cr>
 nnoremap <Leader>l <cmd>HopWordBC<cr>
@@ -126,7 +122,6 @@ nnoremap f :lua require'hop'.hint_char1({direction = require'hop.hint'.HintDirec
 nnoremap F :lua require'hop'.hint_char1({direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,current_line_only = true})<cr>
 nnoremap t :lua require'hop'.hint_char1({direction = require'hop.hint'.HintDirection.AFTER_CURSOR,current_line_only = true,hint_offset = -1})<cr>
 nnoremap T :lua require'hop'.hint_char1({direction = require'hop.hint'.HintDirection.BEFORE_CURSOR,current_line_only = true,hint_offset = -1})<cr>
-
 " TELESCOPE
 " Find files using Telescope command-line sugar.
 nnoremap <C-P> <cmd>Telescope find_files<cr>
@@ -150,21 +145,22 @@ autocmd filetype csv noremap <silent>E :<C-U>call csv#MoveCol(1, line("."))<CR>
 autocmd filetype csv noremap <silent>N :<C-U>call csv#MoveCol(0, line(".")+v:count1)<CR>
 autocmd filetype csv noremap <silent>L :<C-U>call csv#MoveCol(0, line(".")-v:count1)<CR>
 
-" markdown
-autocmd Filetype md,markdown,rmd,Rmd map <leader>- i---<CR>title:<CR>author:<CR>output: pdf_document<CR>---<ESC>?title<CR>A<space>
-autocmd Filetype md,markdown,rmd,Rmd,tex map <leader>b i\
-autocmd Filetype md,markdown,rmd,Rmd map <leader>q i```<CR><CR>```<ESC>lI
-autocmd Filetype md,markdown,rmd,Rmd noremap <leader>c I\centerline{<CR>}<ESC>O
-autocmd Filetype md,markdown,rmd,Rmd noremap <leader>i I\includegraphics[width=1\textwidth]{}<ESC>i
-
-" LaTeX
-autocmd Filetype tex noremap <leader>st i\section{}<ESC>i
-autocmd Filetype tex noremap <leader>ss i\subsection{}<ESC>i
-autocmd Filetype tex noremap <leader>bb i\begin{}<ESC>o\end{}<ESC>k$i
-autocmd Filetype tex noremap <leader>lt i{\LaTeX}<ESC>A
-autocmd Filetype tex noremap <leader>cw a\codeword{}<ESC>i
-autocmd Filetype tex noremap \\ A<space>\\<CR>
-
-" html
-autocmd Filetype html inoremap ,br <br><ESC>o
-autocmd Filetype html inoremap ,cc <!-- --><ESC>F<space>s
+" ALL OF THESE ARE NO LONGER NEEDED, USE LUASNIP FROM NOW ON
+" " markdown
+" autocmd Filetype md,markdown,rmd,Rmd map <leader>- i---<CR>title:<CR>author:<CR>output: pdf_document<CR>---<ESC>?title<CR>A<space>
+" autocmd Filetype md,markdown,rmd,Rmd,tex map <leader>b i\
+" autocmd Filetype md,markdown,rmd,Rmd map <leader>q i```<CR><CR>```<ESC>lI
+" autocmd Filetype md,markdown,rmd,Rmd noremap <leader>c I\centerline{<CR>}<ESC>O
+" autocmd Filetype md,markdown,rmd,Rmd noremap <leader>i I\includegraphics[width=1\textwidth]{}<ESC>i
+"
+" " LaTeX
+" autocmd Filetype tex noremap <leader>st i\section{}<ESC>i
+" autocmd Filetype tex noremap <leader>ss i\subsection{}<ESC>i
+" autocmd Filetype tex noremap <leader>bb i\begin{}<ESC>o\end{}<ESC>k$i
+" autocmd Filetype tex noremap <leader>lt i{\LaTeX}<ESC>A
+" autocmd Filetype tex noremap <leader>cw a\codeword{}<ESC>i
+" autocmd Filetype tex noremap \\ A<space>\\<CR>
+"
+" " html
+" autocmd Filetype html inoremap ,br <br><ESC>o
+" autocmd Filetype html inoremap ,cc <!-- --><ESC>F<space>s
