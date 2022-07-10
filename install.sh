@@ -38,7 +38,8 @@ git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger
 yay clifm
 
 # TOOLS
-sudo pacman -S --noconfirm cmake make gcc clang
+sudo pacman -S --noconfirm cmake make gcc clang rustup
+rustup default nightly
 sudo pacman -S --noconfirm nodejs-lts-gallium npm
 yay nvm
 # npm might break

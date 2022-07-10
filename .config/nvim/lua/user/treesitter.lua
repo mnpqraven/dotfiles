@@ -36,6 +36,7 @@ require'nvim-treesitter.configs'.setup {
 }
 
 -- TODO: config this
+-- TODO2: clean up these and refactor into other files
 require'regexplainer'.setup {
     auto = true,
     filetypes = {
@@ -81,3 +82,4 @@ require("nvim-tree").setup ({
 require'colorizer'.setup {
     '*';
 }
+require('neogen').setup ({ snippet_engine = "luasnip" })

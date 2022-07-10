@@ -68,8 +68,8 @@ Plug 'folke/trouble.nvim'
 " SNIPPETS
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'L3MON4D3/LuaSnip'
-Plug 'SirVer/ultisnips'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'danymat/neogen'
 
 " NAVIGATION
 Plug 'scrooloose/nerdtree'

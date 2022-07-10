@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-local, undefined-global
 local ls = require"luasnip"
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -30,7 +31,7 @@ ls.config.set_config({
 	ext_opts = {
 		[types.choiceNode] = {
 			active = {
-				virt_text = { { "choiceNode", "Comment" } },
+				virt_text = { { "<-", "Error" } },
 			},
 		},
 	},
@@ -64,11 +65,27 @@ vim.keymap.set({ "i", "s" }, '<c-k>', function ()
     end
 end, { silent = true })
 
-vim.keymap.set({ "i", "s"}, "<c-b>", function ()
+vim.keymap.set({ "i", "s"}, "<s-tab>", function ()
     if ls.jumpable(-1) then
         ls.jump(-1)
     end
 end, { silent = true })
+vim.keymap.set({ "i", "s"}, "<tab>", function ()
+    if ls.jumpable(1) then
+        ls.jump(1)
+    end
+end, { silent = true })
+vim.keymap.set({ "i", "s"}, "<c-n>", function ()
+    if ls.choice_active() then
+        ls.change_choice(1)
+    end
+end, { silent = true })
+vim.keymap.set({ "i", "s"}, "<c-l>", function ()
+    if ls.choice_active() then
+        ls.change_choice(-1)
+    end
+end, { silent = true })
+
 
 -- load files
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/snippets"})
@@ -88,10 +105,10 @@ ls.add_snippets(nil, {
         s("triggerexample", {
             t({"After expanding, the cursor is here ->"}), i(1),
             t({"", "After jumping forward once, cursor is editing at the same time ->"}), i(2),
-            t({"", "After jumping forward once, cursor is moving at the same time ->"}), i(2),
+            t({"", "After jumping forward once, cursor is moving at the same time ->"}), rep(2),
             t({"", "After jumping once more, the snippet is exited there ->"}), i(0),
         }),
-        ls.parser.parse_snippet("lspsyn","Wow! This ${1:Stuff} really ${2:works. ${3:Well, a bit.}}"),
+        ls.parser.parse_snippet("triggerexample2","Wow! This ${1:Stuff} really ${2:works. ${3:Well, a bit.}}"),
     },
 })
 

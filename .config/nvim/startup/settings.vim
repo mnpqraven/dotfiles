@@ -36,8 +36,8 @@ set wildmode=list:longest,full
 set cursorcolumn
 set cursorline
 set nohlsearch
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions+=cro
+autocmd BufEnter * setlocal formatoptions+=cro
 set lbr
 
 set shell=zsh

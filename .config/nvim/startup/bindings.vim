@@ -38,6 +38,7 @@ let NERDTreeMenuUp='l'
 " RANGER
 nnoremap <leader>rr :RnvimrToggle<CR>
 
+nnoremap <leader>d <cmd>Neogen<CR>
 
 " TROUBLE
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
@@ -101,7 +102,7 @@ map <ScrollWheelDown> <A-y>
 noremap <A-y> <C-e>
 autocmd Filetype rmd map <silent><F9> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 ":echo<space>@%"rendered"<CR>
-nnoremap <silent><F5> :so ~/.vimrc<CR> :%s/\s\+$//e<CR> :echo ".vimrc reloaded"<CR>2<left>
+nnoremap <silent><F5> :so $HOME/.config/nvim/init.vim<CR> :%s/\s\+$//e<CR> :echo "NVim reloaded"<CR>2<left>
 nnoremap <silent><F3> :e %<CR> :echo "current file reloaded"<CR><C-o>
 " smart searching selected text in visual mode
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
@@ -153,8 +154,6 @@ autocmd filetype csv noremap <silent>L :<C-U>call csv#MoveCol(0, line(".")-v:cou
 autocmd Filetype md,markdown,rmd,Rmd map <leader>- i---<CR>title:<CR>author:<CR>output: pdf_document<CR>---<ESC>?title<CR>A<space>
 autocmd Filetype md,markdown,rmd,Rmd,tex map <leader>b i\
 autocmd Filetype md,markdown,rmd,Rmd map <leader>q i```<CR><CR>```<ESC>lI
-autocmd Filetype md,markdown,rmd,Rmd noremap <leader>l i[]()<ESC>i
-autocmd Filetype md,markdown,rmd,Rmd noremap <leader>L i![]()<ESC>i
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>c I\centerline{<CR>}<ESC>O
 autocmd Filetype md,markdown,rmd,Rmd noremap <leader>i I\includegraphics[width=1\textwidth]{}<ESC>i
 
