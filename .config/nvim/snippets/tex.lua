@@ -35,17 +35,17 @@ rec_table = function ()
 end
 
 return {
-    s("begin", {
+    s( "begin", {
         t({"\\begin{"}), i(1), t({"}",""}),
         i(2), t({"",""}),
         t({"\\end{"}), rep(1), t({"}",""})
     }),
-    s("ls", {
+    s( "ls", {
         t({"\\begin{itemize}",
         "\t\\item "}), i(1), d(2, rec_ls, {}),
         t({"", "\\end{itemize}"}), i(0)
     }),
-    s("table", {
+    s( "table", {
         t"\\begin{tabular}{",
         i(1,"0"), t{"}",""},
         d(2, table_node, {1}, {}), d(3, rec_table, {1}),

@@ -1,28 +1,28 @@
 ---@diagnostic disable: undefined-global
+rec_pl = function ()
+    return sn(nil, {
+        c(1, {
+            t({""}),
+            sn(nil, {t({" {}"}), i(1), d(2,rec_pl, {})}),
+        })
+    })
+end
+rec_pl_q = function ()
+    return sn(nil, {
+        c(1, {
+            t({""}),
+            sn(nil, {t({" {:?}"}), i(1), d(2,rec_plq, {})}),
+        })
+    })
+end
+
 return {
-    s("pl",
-    fmta(
-        [[
-        println!("{}", <node1>);
-        ]], {
-            node1 = i(1,"$1")
-        }
-    )),
-    s("pl?",
-    fmta(
-        [[
-        println!("{:?}", <NODE_1>);
-        ]], {
-            NODE_1 = i(1,"$1")
-        }
-    )),
-    s("pl2",
-    fmta(
-        [[
-        println!("{} {}", <NODE_1>,<NODE_2>);
-        ]], {
-            NODE_1 = i(1,"$1"),
-            NODE_2 = i(2,"$2")
-        }
-    ))
+    s( "pl", {
+        t({"println!(\"{}"}), i(1), d(2, rec_pl, {}),
+        t({"\", "}), i(3), t({")"});
+    }),
+    s( "pl?", {
+        t({"println!(\"{:?}"}), i(1), d(2, rec_pl_q, {}),
+        t({"\", "}), i(3), t({")"});
+    }),
 }
