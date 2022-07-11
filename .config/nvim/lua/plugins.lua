@@ -42,14 +42,10 @@ return require('packer').startup(function(use)
     use 'kylechui/nvim-surround'
     use 'numToStr/Comment.nvim'
     use 'windwp/nvim-autopairs'
-    -- disable gutter symbols
+    -- TODO: disable gutter symbols
     use {
         'folke/todo-comments.nvim',
         requires = 'nvim-lua/plenary.nvim',
-        config = function()
-            require('todo-comments').setup {
-            }
-        end
     }
     use 'abecodes/tabout.nvim'
 
@@ -178,9 +174,15 @@ return require('packer').startup(function(use)
         },
     })
     require('Comment').setup {}
+    require('todo-comments').setup {
+        signs = false,
+    }
     require('bookmarks').setup {}
-    -- TODO: config
-    require('gitsigns').setup {}
+    require('gitsigns').setup {
+        yadm = {
+            enable = true
+        }
+    }
     require('tabout').setup {
         tabkey = '<c-space>',
         backwards_tabkey = '<c-s-space>'
