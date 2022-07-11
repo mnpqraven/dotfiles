@@ -90,18 +90,10 @@ end, { silent = true })
 -- load files
 require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/snippets"})
 
-local date = function() return {os.date('%Y-%m-%d')} end
 
 ls.add_snippets(nil, {
     -- example snippets
     all = {
-        s({
-            trig = "date",
-            namr = "Date",
-            dscr = "Date in the form of YYYY-MM-DD",
-        }, {
-            f(date, {}),
-        }),
         s("triggerexample", {
             t({"After expanding, the cursor is here ->"}), i(1),
             t({"", "After jumping forward once, cursor is editing at the same time ->"}), i(2),
