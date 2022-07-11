@@ -10,9 +10,11 @@ end
 
 local colors = require('lualine.themes.onedark')
 require('onedark').setup {style = 'warmer',transparent = true}
+require('onedark').load()
 require('lualine').setup {
     options = {
-        theme = 'onedark',
+        -- theme = 'onedark',
+        theme = 'codedark',
         globalstatus = true,
         component_separators = '',
         section_separators = { left = '', right = '' },
