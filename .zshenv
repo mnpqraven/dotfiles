@@ -10,16 +10,6 @@ export FM=clifm
 
 export KEYTIMEOUT=200
 bindkey -v
-plugins=(
-git
-tmux
-archlinux
-colored-man-pages
-common-aliases
-vi-mode
-#zsh-autosuggestions
-)
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ALIASES
 # dir aliases {{{
