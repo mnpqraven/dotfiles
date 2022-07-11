@@ -18,10 +18,12 @@ return require('packer').startup(function(use)
     use 'kevinhwang91/rnvimr'
     use 'norcalli/nvim-colorizer.lua'
 
-    -- CSV
+    -- VCS
     use 'chrisbra/csv.vim'
-    use 'airblade/vim-gitgutter'
     use 'tpope/vim-fugitive'
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use { 'lewis6991/gitsigns.nvim', tag = 'release' }
+
     -- THEME
     use {
         'nvim-lualine/lualine.nvim' ,
@@ -34,16 +36,27 @@ return require('packer').startup(function(use)
     use 'tomasiser/vim-code-dark'
     use 'srcery-colors/srcery-vim'
     use 'navarasu/onedark.nvim'
+    use 'rebelot/kanagawa.nvim'
 
     -- FUNCTIONALITY
     use 'kylechui/nvim-surround'
     use 'numToStr/Comment.nvim'
     use 'windwp/nvim-autopairs'
+    -- disable gutter symbols
+    use {
+        'folke/todo-comments.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = function()
+            require('todo-comments').setup {
+            }
+        end
+    }
+    use 'abecodes/tabout.nvim'
+
     -- LSP
     use 'williamboman/nvim-lsp-installer'
     use 'neovim/nvim-lspconfig'
     use 'simrat39/rust-tools.nvim'
-    use 'RRethy/vim-illuminate'
 
     -- DEBUGGING
     use 'nvim-lua/plenary.nvim'
@@ -73,13 +86,13 @@ return require('packer').startup(function(use)
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {
-            'kyazdani42/nvim-web-devicons', -- optional, for file icons
+            'kyazdani42/nvim-web-devicons',
         },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        tag = 'nightly'
     }
     use {
         'phaazon/hop.nvim',
-        branch = 'v2', -- optional but strongly recommended
+        branch = 'v2',
         config = function()
             require'hop'.setup { keys = 'arsdheiqwfpgjluyozxcvbkmtn' }
         end
@@ -90,9 +103,19 @@ return require('packer').startup(function(use)
     use 'p00f/nvim-ts-rainbow'
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = {
+            { 'nvim-lua/plenary.nvim' },
+            { 'nvim-telescope/telescope-github.nvim' },
+        }
     }
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+    use {
+        "benfowler/telescope-luasnip.nvim",
+    }
+    -- TODO: fix crash
+    use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make'
+    }
     use 'MunifTanjim/nui.nvim'
     use { 'bennypowers/nvim-regexplainer',
     config = function() require'regexplainer'.setup() end,
@@ -100,6 +123,11 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         'MunifTanjim/nui.nvim',
     } }
+    use {
+        'crusj/bookmarks.nvim',
+        branch = 'main',
+        requires = { 'kyazdani42/nvim-web-devicons' }
+    }
 
     -- PLUGIN-SPECIFIC CONFIGS
     require('user.cmp')
@@ -117,7 +145,7 @@ return require('packer').startup(function(use)
         show_current_context = true,
         show_current_context_start = true,
     }
-    -- TODO: config this
+    -- FIX bad one
     require'regexplainer'.setup {
         auto = true,
         filetypes = { 'sh' }
@@ -150,4 +178,12 @@ return require('packer').startup(function(use)
         },
     })
     require('Comment').setup {}
+    require('bookmarks').setup {}
+    -- TODO: config
+    require('gitsigns').setup {}
+    require('tabout').setup {
+        tabkey = '<c-space>',
+        backwards_tabkey = '<c-s-space>'
+    }
+    require('onedark').load()
 end)

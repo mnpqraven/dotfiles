@@ -21,12 +21,11 @@ vnoremap <down> dp1v
 " Leader keys
 nnoremap <Leader>k :tabnext<CR>
 nnoremap <Leader>K :tabprevious<CR>
-nnoremap <Leader>g :GitGutterLineHighlightsToggle<CR>
 nnoremap <Leader>cd :cd %:p:h<CR> :pwd<CR><left>
 nnoremap <Leader>c :%y+<CR>
 nnoremap <silent><Leader>s :setlocal spell! spelllang=en_US<CR><ESC>
 " nnoremap <silent><Leader>n :tabnew<CR>:CtrlP<CR>
-noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
+" noremap <silent> <Leader>w :call ToggleWrap()<CR>zz
 noremap <silent> <Leader>a :call ToggleAutoComment()<CR>zz
 noremap z<tab> zf%
 
@@ -137,13 +136,22 @@ nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 nnoremap <leader>fi <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
 nnoremap <leader>fn <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
 
-"CSV
+" VCS
+nnoremap <leader>gg <cmd>DiffviewOpen<CR>
+nnoremap <leader>gc <cmd>DiffviewClose<CR>
+nnoremap <leader>gt <cmd>DiffviewToggleFiles<CR>
+
+
+" CSV
 "autocmd filetype csv noremap <silent>H :<C-U>call csv#MoveCol(-1, line("."))<CR>:<C-U>call csv#MoveCol(-1, line("."))<CR>l
 autocmd filetype csv noremap <silent>H :<C-U>call csv#MoveCol(-1, line("."))<CR>:<C-U>call csv#MoveCol(-1, line("."))<CR>b:<C-U>call csv#MoveCol(1, line("."))<CR>
 ":call csv#MoveCol(-1, line("."), 1)<CR>
 autocmd filetype csv noremap <silent>E :<C-U>call csv#MoveCol(1, line("."))<CR>
 autocmd filetype csv noremap <silent>N :<C-U>call csv#MoveCol(0, line(".")+v:count1)<CR>
 autocmd filetype csv noremap <silent>L :<C-U>call csv#MoveCol(0, line(".")-v:count1)<CR>
+
+" COMPILER
+autocmd Filetype rust nnoremap <leader>cc <cmd>!cargo run<CR>
 
 " ALL OF THESE ARE NO LONGER NEEDED, USE LUASNIP FROM NOW ON
 " " markdown
