@@ -7,6 +7,7 @@ require("nvim-tree").setup ({
                 { key = {"<CR>", "<C-o>", "o", "<2-LeftMouse>" }, action = "edit" },
             },
         },
+        width = 25,
     },
     renderer = {
         icons = {
@@ -21,6 +22,9 @@ require("nvim-tree").setup ({
                     -- ignored = "◌",
                 },
             },
+        },
+        indent_markers = {
+            enable = true
         },
         special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
         symlink_destination = true,

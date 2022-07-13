@@ -33,8 +33,7 @@ alias xpic="xclip -sel clipboard -t image/png"
 # }}}
 
 # config aliases
-alias vrc="$EDITOR $HOME/.vimrc"
-alias vinit="ranger $HOME/.config/nvim"
+alias vrc="$EDITOR $HOME/.config/nvim"
 alias zrc="$EDITOR $HOME/.zshrc"
 alias zenv="$EDITOR $HOME/.zshenv"
 alias rrc="$EDITOR $HOME/.config/ranger/rc.conf"

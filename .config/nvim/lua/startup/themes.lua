@@ -1,3 +1,4 @@
+vim.cmd([[
 " in case these are used
 " let g:vim_monokai_tasty_italic = 1
 " let g:onedark_terminal_italics = 1
@@ -27,3 +28,4 @@ set guicursor=a:block
 set timeoutlen=500 ttimeoutlen=0
 set updatetime=100
 set noshowmode
+]])

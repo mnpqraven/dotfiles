@@ -36,3 +36,6 @@
     insteadOf = git://
 [credential]
     helper = cache
+[user]
+	email = mnpq.raven@gmail.com
+	name = Othi
