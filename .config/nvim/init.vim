@@ -3,13 +3,11 @@ let &packpath = &runtimepath
 let g:vimtex_compiler_progname = 'nvr'
 
 " Keybindings
-source $HOME/.config/nvim/startup/bindings.vim
+lua require('bindings')
 " General settings
-source $HOME/.config/nvim/startup/settings.vim
+lua require('settings')
 " Plugins
 source $HOME/.config/nvim/startup/plugins.vim
 lua require('plugins')
-" Functions and commands
-source $HOME/.config/nvim/startup/functions.vim
 " Themes and coloway customization
-source $HOME/.config/nvim/startup/themes.vim
+lua require('themes')

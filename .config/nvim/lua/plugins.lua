@@ -42,7 +42,6 @@ return require('packer').startup(function(use)
     use 'kylechui/nvim-surround'
     use 'numToStr/Comment.nvim'
     use 'windwp/nvim-autopairs'
-    -- TODO: disable gutter symbols
     use {
         'folke/todo-comments.nvim',
         requires = 'nvim-lua/plenary.nvim',

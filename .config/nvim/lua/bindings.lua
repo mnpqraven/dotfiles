@@ -1,3 +1,10 @@
+local function map(kind, lhs, rhs, opts)
+  vim.api.nvim_set_keymap(kind, lhs, rhs, opts)
+end
+
+local silentnoremap = {noremap = true, silent = true}
+
+vim.cmd([[
 noremap <space> <nop>
 let mapleader=" "
 let maplocalleader="\\"
@@ -172,3 +179,4 @@ autocmd Filetype rust nnoremap <leader>cc <cmd>!cargo run<CR>
 " " html
 " autocmd Filetype html inoremap ,br <br><ESC>o
 " autocmd Filetype html inoremap ,cc <!-- --><ESC>F<space>s
+]])
