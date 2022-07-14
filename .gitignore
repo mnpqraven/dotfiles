@@ -37,7 +37,6 @@
 !/Scripts
 !/powerline
 !.gitignore
-!.gitconfig
 
 !/.config
 /.config/*
@@ -68,9 +67,7 @@
 !/.config/powerline
 !/.config/nvim
 !/.config/xfce4
-/.config/xfce4/*
-!/.config/xfce4/terminal/
-/.config/xfce4/terminal/*
+!/.config/xplr
 !/.config/xfce4/terminal/terminalrc
 !/.config/copyq
 /.config/copyq/*

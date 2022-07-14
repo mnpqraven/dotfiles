@@ -36,6 +36,8 @@ sudo pacman -S --noconfirm maim tmux alacritty man-db atool btop
 
 # DESKTOP ENV
 sudo pacman -S --noconfirm picom rofi ranger neofetch copyq w3m feh dolphin
+sudo pacman -S --noconfirm xplr
+mkdir -p $HOME/.config/xplr
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 yay clifm
 
