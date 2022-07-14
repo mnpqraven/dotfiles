@@ -27,7 +27,7 @@ let g:csv_nomap_k = 1
 
 autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
 let g:tex_flavor = 'xelatex'
-let g:vimtex_view_general_viewer = 'evince'
+let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_compiler_latexmk_engine = {'xelatex': '-pdf'}
 let g:vimtex_syntax_conceal_disabled=1
 

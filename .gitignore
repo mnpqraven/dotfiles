@@ -47,6 +47,7 @@
 !/.config/rofi
 !/.config/mutt/muttrc
 !/.config/neomutt
+!/.config/zathura
 
 !/.config/fcitx5
 !/.config/fcitx5/conf
