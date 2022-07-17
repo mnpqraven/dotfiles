@@ -17,6 +17,48 @@ version = "0.19.0"
 -- ```lua
 -- version = "0.0.0"
 -- ```
+-- # Packages manager----------------------------------------------------------
+local home = os.getenv("HOME")
+local xpm_path = home .. "/.local/share/xplr/dtomvan/xpm.xplr"
+local xpm_url = "https://github.com/dtomvan/xpm.xplr"
+
+package.path = package.path
+  .. ";"
+  .. xpm_path
+  .. "/?.lua;"
+  .. xpm_path
+  .. "/?/init.lua"
+
+os.execute(
+  string.format(
+    "[ -e '%s' ] || git clone '%s' '%s'",
+    xpm_path,
+    xpm_url,
+    xpm_path
+  )
+)
+
+require("xpm").setup({
+  plugins = {
+    -- Let xpm manage itself
+    'dtomvan/xpm.xplr',
+    { name = 'sayanarijit/fzf.xplr' },
+    { name = 'prncss-xyz/icons.xplr' },
+    -- { name = 'sayanarijit/material-landscape2.xplr' },
+    -- custom colorscheme
+    { name = 'mnpqraven/material-landscape2.xplr' },
+  },
+  auto_install = true,
+  auto_cleanup = true,
+})
+-- Press `ctrl-f` to spawn fzf in $PWD
+
+-- # Packages -----------------------------------------------------------------
+-- package.path = home
+-- .. "/.config/xplr/plugins/?/init.lua;"
+-- .. home
+-- .. "/.config/xplr/plugins/?.lua;"
+-- .. package.path
 
 -- # Configuration ------------------------------------------------------------
 --
@@ -68,7 +110,7 @@ xplr.config.general.disable_debug_error_mode = false
 -- Set it to `true` if you want to enable mouse scrolling.
 --
 -- Type: boolean
-xplr.config.general.enable_mouse = false
+xplr.config.general.enable_mouse = true
 
 -- Set it to `true` to show hidden files by default.
 --
@@ -159,9 +201,9 @@ xplr.config.general.logs.error.style = { fg = "Red" }
 -- * style: [Style](https://xplr.dev/en/style)
 xplr.config.general.table.header.cols = {
   { format = " index", style = {} },
-  { format = "╭─── path", style = {} },
-  { format = "permissions", style = {} },
-  { format = "size", style = {} },
+  { format = "┌── path", style = {} },
+  { format = "perms", style = {} },
+  { format = "ext", style = {} },
   { format = "modified", style = {} },
 }
 
@@ -228,7 +270,7 @@ xplr.config.general.table.style = {}
 xplr.config.general.table.tree = {
   { format = "├", style = {} },
   { format = "├", style = {} },
-  { format = "╰", style = {} },
+  { format = "└", style = {} },
 }
 
 -- Spacing between the columns in the table.
@@ -241,10 +283,10 @@ xplr.config.general.table.col_spacing = 1
 -- Type: nullable list of [Constraint](https://xplr.dev/en/layouts#constraint)
 xplr.config.general.table.col_widths = {
   { Percentage = 10 },
-  { Percentage = 50 },
+  { Percentage = 45 },
   { Percentage = 10 },
   { Percentage = 10 },
-  { Percentage = 20 },
+  { Percentage = 25 },
 }
 
 -- The content that is placed before the item name for each row by default.
@@ -265,7 +307,8 @@ xplr.config.general.default_ui.style = {}
 -- The string placed before the item name for a focused row.
 --
 -- Type: nullable string
-xplr.config.general.focus_ui.prefix = "▸["
+-- xplr.config.general.focus_ui.prefix = "▸["
+xplr.config.general.focus_ui.prefix = "▸ ["
 
 -- The string placed after the item name for a focused row.
 --
@@ -694,10 +737,10 @@ xplr.config.general.global_key_bindings = {
 -- The style for the directory nodes
 --
 -- Type: [Style](https://xplr.dev/en/style)
-xplr.config.node_types.directory.style = {
-  fg = "Cyan",
-  add_modifiers = { "Bold" },
-}
+-- xplr.config.node_types.directory.style = {
+--   fg = "Cyan",
+--   add_modifiers = { "Bold" },
+-- }
 
 -- Metadata for the directory nodes.
 -- You can set as many metadata as you want.
@@ -710,7 +753,7 @@ xplr.config.node_types.directory.style = {
 -- xplr.config.node_types.directory.meta.foo = "foo"
 -- xplr.config.node_types.directory.meta.bar = "bar"
 -- ```
-xplr.config.node_types.directory.meta.icon = "ð"
+-- xplr.config.node_types.directory.meta.icon = ""
 
 -- The style for the file nodes.
 --
@@ -728,7 +771,7 @@ xplr.config.node_types.file.style = {}
 -- xplr.config.node_types.file.meta.foo = "foo"
 -- xplr.config.node_types.file.meta.bar = "bar"
 -- ```
-xplr.config.node_types.file.meta.icon = "ƒ"
+-- xplr.config.node_types.file.meta.icon = ""
 
 -- The style for the symlink nodes.
 --
@@ -749,7 +792,7 @@ xplr.config.node_types.symlink.style = {
 -- xplr.config.node_types.symlink.meta.foo = "foo"
 -- xplr.config.node_types.symlink.meta.bar = "bar"
 -- ```
-xplr.config.node_types.symlink.meta.icon = "§"
+-- xplr.config.node_types.symlink.meta.icon = "§"
 
 -- Metadata and style based on mime types.
 -- It is possible to use the wildcard `*` to match all mime sub types. It will
@@ -778,7 +821,16 @@ xplr.config.node_types.symlink.meta.icon = "§"
 --   },
 -- }
 -- ```
-xplr.config.node_types.mime_essence = {}
+-- mimetype file
+xplr.config.node_types.mime_essence = {
+    application = {
+        -- pdf = { meta = { icon = "亮" } },
+        -- zip = { meta = { icon = ""} },
+    },
+    text = {
+        -- ["*"] = { meta = { icon = "" }, style = { fg = "Green" } },
+    },
+}
 
 -- Metadata and style based on extension.
 --
@@ -794,6 +846,8 @@ xplr.config.node_types.mime_essence = {}
 -- xplr.config.node_types.extension.rs = { meta = { icon = "🦀" } }
 -- ```
 xplr.config.node_types.extension = {}
+-- xplr.config.node_types.extension.md = { meta = { icon = "" }, style = { fg = "Blue" } }
+-- xplr.config.node_types.extension.rs = { meta = { icon = "🦀" } }
 
 -- Metadata and style based on special file names.
 --
@@ -809,6 +863,9 @@ xplr.config.node_types.extension = {}
 -- xplr.config.node_types.special["Downloads"] = { meta = { icon = "" }, style = { fg = "Blue" } }
 -- ```
 xplr.config.node_types.special = {}
+-- xplr.config.node_types.special["Cargo.toml"] = { meta = { icon = "" } }
+-- xplr.config.node_types.special["Downloads"] = { meta = { icon = "" }, style = { fg = "Blue" } }
+-- xplr.config.node_types.special["Music"] = { meta = { icon = "" }, style = { fg = "Blue" } }
 
 -- ### Layouts ----------------------------------------------------------------
 --
@@ -853,8 +910,8 @@ xplr.config.layouts.builtin.default = {
   Horizontal = {
     config = {
       constraints = {
-        { Percentage = 70 },
-        { Percentage = 30 },
+        { Percentage = 65 },
+        { Percentage = 35 },
       },
     },
     splits = {
@@ -878,13 +935,13 @@ xplr.config.layouts.builtin.default = {
         Vertical = {
           config = {
             constraints = {
-              { Percentage = 30 },
               { Percentage = 70 },
+              { Percentage = 30 },
             },
           },
           splits = {
-            "Selection",
             "HelpMenu",
+            "Selection",
           },
         },
       },
@@ -1015,10 +1072,10 @@ xplr.config.modes.builtin.default = {
     on_key = {
       ["#"] = {
         messages = {
-          "PrintAppStateAndQuit",
+          "PrintResultAndQuit",
         },
       },
-      ["."] = {
+      ["I"] = {
         help = "show hidden",
         messages = {
           {
@@ -1035,6 +1092,13 @@ xplr.config.modes.builtin.default = {
         messages = {
           "PopMode",
           { SwitchModeBuiltin = "action" },
+        },
+      },
+      ["m"] = {
+        help = "bookmark",
+        messages = {
+          "PopMode",
+          { SwitchModeCustom = "bookmark" },
         },
       },
       ["?"] = {
@@ -1054,6 +1118,25 @@ xplr.config.modes.builtin.default = {
           "PopMode",
           "FocusLast",
         },
+      },
+      ["S"] = {
+        help = "shell",
+        messages = {
+          { Call = { command = "zsh", args = { "-i" } } },
+          "ExplorePwdAsync",
+          "PopMode",
+        },
+      },
+      ["o"] = {
+          help = "open with rifle",
+          messages = {
+              {
+                  BashExec= [===[
+                  rifle ${XPLR_FOCUS_PATH:?}
+                  ]===],
+              },
+              "PopMode"
+          },
       },
       ["ctrl-a"] = {
         help = "select/unselect all",
@@ -1117,7 +1200,8 @@ xplr.config.modes.builtin.default = {
       enter = {
         help = "quit with result",
         messages = {
-          "PrintResultAndQuit",
+          -- "PrintResultAndQuit",
+          "Enter",
         },
       },
       ["f"] = {
@@ -1145,6 +1229,17 @@ xplr.config.modes.builtin.default = {
         messages = {
           "Quit",
         },
+      },
+      ["O"] = {
+          help = "open in editor",
+          messages = {
+              {
+                  BashExec = [===[
+                  ${EDITOR:-nvim} "${XPLR_FOCUS_PATH:?}"
+                  ]===],
+              },
+              "PopMode",
+          },
       },
       ["r"] = {
         help = "rename",
@@ -1222,28 +1317,28 @@ xplr.config.modes.builtin.default = {
 }
 
 xplr.config.modes.builtin.default.key_bindings.on_key["tab"] =
-  xplr.config.modes.builtin.default.key_bindings.on_key["ctrl-i"]
+xplr.config.modes.builtin.default.key_bindings.on_key["ctrl-i"]
 
 xplr.config.modes.builtin.default.key_bindings.on_key["v"] =
-  xplr.config.modes.builtin.default.key_bindings.on_key.space
+xplr.config.modes.builtin.default.key_bindings.on_key.space
 
 xplr.config.modes.builtin.default.key_bindings.on_key["V"] =
-  xplr.config.modes.builtin.default.key_bindings.on_key["ctrl-a"]
+xplr.config.modes.builtin.default.key_bindings.on_key["ctrl-a"]
 
 xplr.config.modes.builtin.default.key_bindings.on_key["/"] =
-  xplr.config.modes.builtin.default.key_bindings.on_key["ctrl-f"]
+xplr.config.modes.builtin.default.key_bindings.on_key["ctrl-f"]
 
 xplr.config.modes.builtin.default.key_bindings.on_key["h"] =
-  xplr.config.modes.builtin.default.key_bindings.on_key.left
+xplr.config.modes.builtin.default.key_bindings.on_key.left
 
 xplr.config.modes.builtin.default.key_bindings.on_key["n"] =
-  xplr.config.modes.builtin.default.key_bindings.on_key.down
+xplr.config.modes.builtin.default.key_bindings.on_key.down
 
 xplr.config.modes.builtin.default.key_bindings.on_key["l"] =
-  xplr.config.modes.builtin.default.key_bindings.on_key.up
+xplr.config.modes.builtin.default.key_bindings.on_key.up
 
 xplr.config.modes.builtin.default.key_bindings.on_key["e"] =
-  xplr.config.modes.builtin.default.key_bindings.on_key.right
+xplr.config.modes.builtin.default.key_bindings.on_key.right
 
 -- The builtin debug error mode.
 --
@@ -1424,7 +1519,7 @@ xplr.config.modes.builtin.selection_ops = {
           "PopMode",
         },
       },
-      ["x"] = {
+      ["o"] = {
         help = "open in gui",
         messages = {
           {
@@ -1641,7 +1736,7 @@ xplr.config.modes.builtin.go_to = {
           { SetInputBuffer = "" },
         },
       },
-      x = {
+      o = {
         help = "open in gui",
         messages = {
           {
@@ -1818,7 +1913,7 @@ xplr.config.modes.builtin.action = {
       ["!"] = {
         help = "shell",
         messages = {
-          { Call = { command = "bash", args = { "-i" } } },
+          { Call = { command = "zsh", args = { "-i" } } },
           "ExplorePwdAsync",
           "PopMode",
         },
@@ -1994,10 +2089,14 @@ xplr.config.modes.builtin.search = {
 
 xplr.config.modes.builtin.search.key_bindings.on_key["esc"] =
   xplr.config.modes.builtin.search.key_bindings.on_key.enter
-xplr.config.modes.builtin.search.key_bindings.on_key["ctrl-n"] =
+xplr.config.modes.builtin.search.key_bindings.on_key["alt-n"] =
   xplr.config.modes.builtin.search.key_bindings.on_key.down
-xplr.config.modes.builtin.search.key_bindings.on_key["ctrl-p"] =
+xplr.config.modes.builtin.search.key_bindings.on_key["alt-l"] =
   xplr.config.modes.builtin.search.key_bindings.on_key.up
+xplr.config.modes.builtin.search.key_bindings.on_key["alt-e"] =
+  xplr.config.modes.builtin.search.key_bindings.on_key.right
+xplr.config.modes.builtin.search.key_bindings.on_key["alt-h"] =
+  xplr.config.modes.builtin.search.key_bindings.on_key.left
 
 -- The builtin filter mode.
 --
@@ -2516,9 +2615,9 @@ xplr.fn.builtin.fmt_general_table_row_cols_2 = function(m)
     end
   end
 
-  local function yellow(x)
+  local function magenta(x)
     if no_color == nil then
-      return "\x1b[33m" .. x .. "\x1b[0m"
+      return "\x1b[35m" .. x .. "\x1b[0m"
     else
       return x
     end
@@ -2545,7 +2644,7 @@ xplr.fn.builtin.fmt_general_table_row_cols_2 = function(m)
   local r = ""
 
   r = r .. bit("r", green, p.user_read)
-  r = r .. bit("w", yellow, p.user_write)
+  r = r .. bit("w", magenta, p.user_write)
 
   if p.user_execute == false and p.setuid == false then
     r = r .. bit("-", red, p.user_execute)
@@ -2558,7 +2657,7 @@ xplr.fn.builtin.fmt_general_table_row_cols_2 = function(m)
   end
 
   r = r .. bit("r", green, p.group_read)
-  r = r .. bit("w", yellow, p.group_write)
+  r = r .. bit("w", magenta, p.group_write)
 
   if p.group_execute == false and p.setuid == false then
     r = r .. bit("-", red, p.group_execute)
@@ -2571,7 +2670,7 @@ xplr.fn.builtin.fmt_general_table_row_cols_2 = function(m)
   end
 
   r = r .. bit("r", green, p.other_read)
-  r = r .. bit("w", yellow, p.other_write)
+  r = r .. bit("w", magenta, p.other_write)
 
   if p.other_execute == false and p.setuid == false then
     r = r .. bit("-", red, p.other_execute)
@@ -2587,18 +2686,28 @@ xplr.fn.builtin.fmt_general_table_row_cols_2 = function(m)
 end
 
 -- Renders the fourth column in the table
-xplr.fn.builtin.fmt_general_table_row_cols_3 = function(m)
-  if not m.is_dir then
-    return m.human_size
-  else
-    return ""
-  end
-end
+-- xplr.fn.builtin.fmt_general_table_row_cols_3 = function(m)
+--   if not m.is_dir then
+--     return m.human_size
+--   else
+--     return ""
+--   end
+-- end
 
+-- custom replace
+xplr.fn.builtin.fmt_general_table_row_cols_3 = function(m)
+    if m.is_dir then
+        return "dir"
+    else
+        return tostring(m.extension)
+    end
+end
 -- Renders the fifth column in the table
 xplr.fn.builtin.fmt_general_table_row_cols_4 = function(m)
-  return tostring(os.date("%a %b %d %H:%M:%S %Y", m.last_modified / 1000000000))
+---@diagnostic disable-next-line: param-type-mismatch
+  return tostring(os.date("%H:%M %d %b %Y", m.last_modified / 1000000000))
 end
+
 
 -- This is where the custom functions can be added.
 --
@@ -2608,4 +2717,82 @@ end
 -- You can also use nested tables such as
 -- `xplr.fn.custom.my_plugin.my_function` to define custom functions.
 xplr.fn.custom = {}
+-- Bookmark: mode binding
+xplr.config.modes.custom.bookmark = {
+  name = "bookmark",
+  key_bindings = {
+    on_key = {
+      m = {
+        help = "add bookmark",
+        messages = {
+          {
+            BashExecSilently = [===[
+          PTH="${XPLR_FOCUS_PATH:?}"
+          if [ -d "${PTH}" ]; then
+            PTH="${PTH}"
+          elif [ -f "${PTH}" ]; then
+            PTH="$(dirname "${PTH}")"
+          fi
+          if echo "${PTH:?}" >> "${XPLR_BOOKMARK_FILE:?}"; then
+            echo "LogSuccess: ${PTH:?} added to bookmarks" >> "${XPLR_PIPE_MSG_IN:?}"
+          else
+            echo "LogError: Failed to bookmark ${PTH:?}" >> "${XPLR_PIPE_MSG_IN:?}"
+          fi
+        ]===]
+          },
+        }
+      },
+      g = {
+        help = "go to bookmark",
+        messages = {
+          {
+            BashExec = [===[
+            PTH=$(cat "${XPLR_BOOKMARK_FILE:?}" | fzf --no-sort)
+            if [ "$PTH" ]; then
+              echo FocusPath: "'"${PTH:?}"'" >> "${XPLR_PIPE_MSG_IN:?}"
+            fi
+            ]===]
+          },
+        "PopMode"
+        },
+      },
+      d = {
+        help = "delete bookmark",
+        messages = {
+          {
+            BashExec = [===[
+            PTH=$(cat "${XPLR_BOOKMARK_FILE:?}"  | fzf --no-sort)
+            sed -i "s@$PTH@@" "${XPLR_BOOKMARK_FILE:?}"
+            sed -i '/^$/d' "${XPLR_BOOKMARK_FILE:?}"
+            ]===]
+          },
+          "PopMode"
+        }
+      },
+      l = {
+        help = "up",
+        messages = {
+          "FocusPrevious",
+        },
+      },
+      n = {
+        help = "down",
+        messages = {
+          "FocusNext",
+        },
+      },
+      esc = {help = "cancel", messages = {"PopMode"}}
+    }
+  }
+}
 
+require("fzf").setup {
+  mode = "default",
+  key = "ctrl-f",
+  args = "--preview 'cat {}'"
+}
+require("material-landscape2").setup {
+  keep_default_layout = true
+}
+
+require("icons").setup {}

@@ -14,11 +14,13 @@ echo "-------------------------------"
 echo "GIT"
 echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
 bash dotfiles/Scripts/git-genssh.sh
+
 # INSTALLING STUFF
 # EDITOR
 sudo pacman -S --noconfirm neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
 sudo pacman -S --noconfirm texlive-most texlive-langextra python-pip evince
 sudo pacman -S --noconfirm zathura zathura-pdf-mupdf zathura-cb
+
 # MARKDOWN AND LATEX
 sudo pip3 install neovim-remote
 git config --global core.editor $EDITOR
@@ -35,16 +37,26 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 sudo pacman -S --noconfirm maim tmux alacritty man-db atool btop
 
 # DESKTOP ENV
-sudo pacman -S --noconfirm picom rofi ranger neofetch copyq w3m feh dolphin
+sudo pacman -S --noconfirm picom rofi ranger neofetch copyq w3m feh dolphin imv
+
 sudo pacman -S --noconfirm xplr
 mkdir -p $HOME/.config/xplr
-git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+touch $HOME/.config/xplr/bookmarks
+
 yay clifm
+mkdir -p $HOME/.config/clifm/profiles/default
+git clone https://github.com/leo-arch/clifm.git
+cd clifm
+sudo make install
+sudo cp clifm $(which clifm)
+cp $HOME
+rm -r clifm
+
 
 # TOOLS
 sudo pacman -S --noconfirm cmake make gcc clang rustup
 rustup default nightly
-sudo pacman -S --noconfirm nodejs-lts-gallium npm
+sudo pacman -S --noconfirm nodejs-lts-gallium npm jq
 yay nvm
 # npm might break
 sudo npm install -g n

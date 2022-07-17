@@ -6,7 +6,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH="$PATH:$ANDROID_SDK_ROOT/emulator"
 export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
-export FM=clifm
+export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
 
 export KEYTIMEOUT=200
 bindkey -v
@@ -22,6 +22,8 @@ alias cz="cd ~ && cd \$(find * -type d | fzf)"
 
 # # commands aliases {{{
 alias v="$EDITOR"
+alias fm="clifm"
+alias fmr="xplr"
 alias mz="ncmpcpp"
 alias screen="maim -s | xclip -selection clipboard -t image/png"
 alias cl="clear"
@@ -36,7 +38,6 @@ alias xpic="xclip -sel clipboard -t image/png"
 alias vrc="$EDITOR $HOME/.config/nvim"
 alias zrc="$EDITOR $HOME/.zshrc"
 alias zenv="$EDITOR $HOME/.zshenv"
-alias rrc="$EDITOR $HOME/.config/ranger/rc.conf"
 alias tmrc="$EDITOR $HOME/.tmux.conf"
 
 # git aliases {{{

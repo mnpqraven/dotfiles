@@ -9,8 +9,8 @@ end
 return {
     s( "titl", {
         t({"---"}),
-        t({"","title: "}), i(1),
-        t({"","description: "}), i(2),
+        t({"","title: '"}), i(1), t({"'"}),
+        t({"","description: '"}), i(2), t({"'"}),
         t({"","publishedAt: "}), f(date, {}),
         t({"","---","","# ",}), rep(1),
         t({"",""}), i(0)

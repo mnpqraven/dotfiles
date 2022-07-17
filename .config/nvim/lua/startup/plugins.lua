@@ -53,7 +53,6 @@ return require('packer').startup(function(use)
             require("tailwindcss-colors").setup()
         end
     }
-    use 'kevinhwang91/rnvimr'
     use 'norcalli/nvim-colorizer.lua'
 
     -- VCS
@@ -90,6 +89,14 @@ return require('packer').startup(function(use)
     use 'williamboman/nvim-lsp-installer'
     use 'neovim/nvim-lspconfig'
     use 'simrat39/rust-tools.nvim'
+    use 'leafOfTree/vim-vue-plugin'
+    use {
+        'saecki/crates.nvim',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            require('crates').setup()
+        end,
+    }
 
     -- DEBUGGING
     use 'nvim-lua/plenary.nvim'

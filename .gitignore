@@ -41,6 +41,16 @@
 !/.config
 /.config/*
 
+!/.config/clifm
+/.config/clifm/*
+!/.config/clifm/keybindings.cfm
+!/.config/clifm/profiles
+/.config/clifm/profiles/*
+!/.config/clifm/profiles/default
+/.config/clifm/profiles/default/*
+!/.config/clifm/profiles/default/bookmarks.cfm
+!/.config/clifm/profiles/default/clifmrc
+
 !/.config/alacritty
 !/.config/feh
 !/.config/rofi
