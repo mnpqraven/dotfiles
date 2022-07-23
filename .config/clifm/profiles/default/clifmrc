@@ -78,6 +78,8 @@ ApparentSize=false
 # If running in long view, print directories full size (including contents)
 FullDirSize=false
 
+PropFields="ats"
+
 # Keep a record of both external and internal commands able to modify the
 # files system (e.g. 'r', 'c', 'm', and so on)
 LogCmds=false

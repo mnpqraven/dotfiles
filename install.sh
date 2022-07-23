@@ -52,7 +52,6 @@ sudo cp clifm $(which clifm)
 cp $HOME
 rm -r clifm
 
-
 # TOOLS
 sudo pacman -S --noconfirm cmake make gcc clang rustup
 rustup default nightly
@@ -91,8 +90,7 @@ echo "ADDING NAS DRIVE TO MOUNT TABLE"
 cd $HOME/dotfiles/Scripts
 sudo bash ./nas-setup.sh
 #dotfiles/
-cd ..
-
+cd $HOME/dotfiles
 
 echo "-------------------------------"
 echo ".CONFIG"
