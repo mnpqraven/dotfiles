@@ -10,7 +10,6 @@ vim.cmd([[
 "     \ 'style': 'warmer',
 " \}
 
-
 " COLORSCHEMES
 " colo vim-monokai-tasty
 " codedark's bg
@@ -18,14 +17,15 @@ vim.cmd([[
 " au ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 
 syntax on
-
-" cursor
-au VimLeave * set guicursor=a:ver90-blinkon0
-set guicursor=a:block
-"au VimLeave * set guicursor=a:hor70-blinkon0
-"set guicursor=a:hor50-blinkon0
-
-set timeoutlen=500 ttimeoutlen=0
-set updatetime=100
-set noshowmode
 ]])
+vim.opt.timeoutlen = 500
+vim.opt.ttimeoutlen= 0
+vim.opt.updatetime = 100
+vim.opt.showmode   = false
+vim.opt.guicursor  = "a:block"
+local cursor_reset = function ()
+    vim.opt.guicursor = "a:ver90-blinkon0"
+end
+vim.api.nvim_create_autocmd({ "VimLeave" }, {
+    callback = cursor_reset
+})

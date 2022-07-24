@@ -1,5 +1,5 @@
 ---@diagnostic disable: undefined-global
-rec_ls = function()
+local rec_ls = function()
 	return sn(nil, {
 		c(1, {
 			-- important!! Having the sn(...) as the first choice will cause infinite recursion.
@@ -10,7 +10,7 @@ rec_ls = function()
 	});
 end
 
-table_node= function(args)
+local table_node= function(args)
     local tabs = {}
     local count
     table = args[1][1]:gsub("%s",""):gsub("|","")

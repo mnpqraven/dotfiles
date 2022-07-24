@@ -13,8 +13,9 @@ run the install script
 curl -o install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/keyring-beta/install.sh && bash install.sh
 ```
 Post-installation:
-- Import mozc keymap and romantable
+- Import mozc keymap and romantable in dotfiles/.config/mozc
 
 TODO:
+- signing
 - MPD rice
-- ranger re-rice
+- test yadm
