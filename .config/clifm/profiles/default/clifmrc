@@ -245,7 +245,7 @@ RestoreLastPath=false
 
 # If set to true, the 'r' command executes 'trash' instead of 'rm' to
 # prevent accidental deletions.
-TrashAsRm=false
+TrashAsRm=true
 
 # Set readline editing mode: 0 for vi and 1 for emacs (default).
 RlEditMode=1
