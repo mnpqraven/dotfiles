@@ -51,7 +51,7 @@ cd clifm
 sudo make install
 sudo cp clifm $(which clifm)
 cp $HOME
-rm -r clifm
+rm -rf clifm
 
 # TOOLS
 sudo pacman -S --noconfirm cmake make gcc clang rustup
@@ -75,7 +75,7 @@ echo "-------------------------------"
 echo "ZSH"
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-cd .oh-my-zsh/custom/plugins
+cd .oh-my-zsh/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions
 cd ~/

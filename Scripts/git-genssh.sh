@@ -15,7 +15,7 @@ done
 echo "enter your name:"
 while true;
 do
-read email
+read name
 read -p "is $name the correct name ?(y/n) " yn
 case $yn in
     [yY] ) break;;
