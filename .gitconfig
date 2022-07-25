@@ -22,7 +22,7 @@
     remoteBranch = bold red italic
     tag = reverse cyan
 [alias]
-    allcommit = "!git add . && git commit -m"
+    allcommit = "!git add . && git commit -S -m"
     tree = log --graph --abbrev-commit --decorate --date=format:'%d-%m-%Y %H:%M:%S' --format=format:'%C(reverse bold red)%h%C(reset) - %C(white)%ad%C(reset) %C(dim white)(%ar)%C(reset)%C(auto)%d%C(reset)%n''   %C(bold cyan)%s%C(reset) <%C(dim white)%an - %ae%C(reset)>' --all
     tags = "show-ref --abbrev=6 --tags"
     co = "checkout"
