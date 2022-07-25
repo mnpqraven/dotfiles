@@ -66,6 +66,7 @@
 !/.config/mozc/keymap.txt
 !/.config/mozc/romantable.txt
 
+!/.config/polybar
 
 /.config/mpd/*
 !/.config/mpd
