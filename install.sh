@@ -61,7 +61,7 @@ yay nvm
 # npm might break
 sudo npm install -g n
 sudo n latest
-sudo pacman -S --noconfirm deluge fzf ripgrep fd python-pip r neomutt
+sudo pacman -S --noconfirm deluge fzf ripgrep zoxide fd python-pip r neomutt
 sudo pacman -S --noconfirm fcitx5 fcitx5-unikey fcitx5-mozc fcitx5-configtool fcitx5-gtk
 # npm might break
 sudo npm install -g neovim
