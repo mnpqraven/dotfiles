@@ -39,6 +39,7 @@ sudo pacman -S --noconfirm maim tmux alacritty man-db atool btop
 # DESKTOP ENV
 sudo pacman -S --noconfirm picom rofi ranger neofetch copyq w3m feh dolphin imv
 
+pip install trash-cli
 sudo pacman -S --noconfirm xplr
 mkdir -p $HOME/.config/xplr
 touch $HOME/.config/xplr/bookmarks
