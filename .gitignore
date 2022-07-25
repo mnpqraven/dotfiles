@@ -48,7 +48,6 @@
 /.config/clifm/profiles/*
 !/.config/clifm/profiles/default
 /.config/clifm/profiles/default/*
-!/.config/clifm/profiles/default/bookmarks.cfm
 !/.config/clifm/profiles/default/clifmrc
 
 !/.config/alacritty
