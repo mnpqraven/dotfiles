@@ -1,22 +1,12 @@
 ---@diagnostic disable
 local xplr = xplr -- The globally exposed configuration to be overridden.
+
+-- To create a custom configuration file, you need to define the script version
+-- for compatibility checks.
+-- See https://xplr.dev/en/upgrade-guide
 version = "0.19.0"
 ---@diagnostic enable
 
--- This is the built-in configuration file that gets loaded and sets the
--- default values when xplr loads, before loading any other custom
--- configuration file.
---
--- You can use this file as a reference to create a your custom config file.
---
--- To create a custom configuration file, you need to define the script version
--- for compatibility checks.
---
--- See https://xplr.dev/en/upgrade-guide
---
--- ```lua
--- version = "0.0.0"
--- ```
 -- # Packages manager----------------------------------------------------------
 local home = os.getenv("HOME")
 local xpm_path = home .. "/.local/share/xplr/dtomvan/xpm.xplr"
@@ -45,23 +35,16 @@ require("xpm").setup({
     { name = 'sayanarijit/fzf.xplr' },
     { name = 'prncss-xyz/icons.xplr' },
     -- { name = 'sayanarijit/material-landscape2.xplr' },
-    -- custom colorscheme
+    -- INFO: custom colorscheme
     { name = 'mnpqraven/material-landscape2.xplr' },
     { name = 'sayanarijit/dual-pane.xplr' },
     { name = 'sayanarijit/scp.xplr' },
-    { name = 'sayanarijit/zoxide.xplr' },
+    { name = 'sayanarijit/xclip.xplr' },
+    { name = 'sayanarijit/trash-cli.xplr' },
   },
   auto_install = true,
   auto_cleanup = true,
 })
--- Press `ctrl-f` to spawn fzf in $PWD
-
--- # Packages -----------------------------------------------------------------
--- package.path = home
--- .. "/.config/xplr/plugins/?/init.lua;"
--- .. home
--- .. "/.config/xplr/plugins/?.lua;"
--- .. package.path
 
 -- # Configuration ------------------------------------------------------------
 --
@@ -1097,7 +1080,7 @@ xplr.config.modes.builtin.default = {
           { SwitchModeBuiltin = "action" },
         },
       },
-      ["m"] = {
+      ["b"] = {
         help = "bookmark",
         messages = {
           "PopMode",
@@ -1116,7 +1099,7 @@ xplr.config.modes.builtin.default = {
         },
       },
       ["G"] = {
-        help = "go to bottom",
+        -- help = "go to bottom",
         messages = {
           "PopMode",
           "FocusLast",
@@ -1134,7 +1117,7 @@ xplr.config.modes.builtin.default = {
           help = "open with rifle",
           messages = {
               {
-                  BashExec= [===[
+                  BashExec = [===[
                   rifle ${XPLR_FOCUS_PATH:?}
                   ]===],
               },
@@ -1194,20 +1177,7 @@ xplr.config.modes.builtin.default = {
           { SwitchModeBuiltin = "delete" },
         },
       },
-      down = {
-        help = "down",
-        messages = {
-          "FocusNext",
-        },
-      },
-      enter = {
-        help = "quit with result",
-        messages = {
-          -- "PrintResultAndQuit",
-          "Enter",
-        },
-      },
-      ["f"] = {
+      ["F"] = {
         help = "filter",
         messages = {
           "PopMode",
@@ -1221,28 +1191,11 @@ xplr.config.modes.builtin.default = {
           { SwitchModeBuiltin = "go_to" },
         },
       },
-      left = {
-        help = "back",
-        messages = {
-          "Back",
-        },
-      },
       ["q"] = {
         help = "quit",
         messages = {
           "Quit",
         },
-      },
-      ["O"] = {
-          help = "open in editor",
-          messages = {
-              {
-                  BashExec = [===[
-                  ${EDITOR:-nvim} "${XPLR_FOCUS_PATH:?}"
-                  ]===],
-              },
-              "PopMode",
-          },
       },
       ["r"] = {
         help = "rename",
@@ -1270,10 +1223,29 @@ xplr.config.modes.builtin.default = {
           },
         },
       },
-      right = {
-        help = "enter",
+      down = {
+        messages = {
+          "FocusNext",
+        },
+      },
+      enter = {
         messages = {
           "Enter",
+        },
+      },
+      left = {
+        messages = {
+          "Back",
+        },
+      },
+      right = {
+        messages = {
+          "Enter",
+        },
+      },
+      up = {
+        messages = {
+          "FocusPrevious",
         },
       },
       ["s"] = {
@@ -1288,12 +1260,6 @@ xplr.config.modes.builtin.default = {
         messages = {
           "ToggleSelection",
           "FocusNext",
-        },
-      },
-      up = {
-        help = "up",
-        messages = {
-          "FocusPrevious",
         },
       },
       ["~"] = {
@@ -1328,7 +1294,7 @@ xplr.config.modes.builtin.default.key_bindings.on_key.space
 xplr.config.modes.builtin.default.key_bindings.on_key["V"] =
 xplr.config.modes.builtin.default.key_bindings.on_key["ctrl-a"]
 
-xplr.config.modes.builtin.default.key_bindings.on_key["/"] =
+xplr.config.modes.builtin.default.key_bindings.on_key["f"] =
 xplr.config.modes.builtin.default.key_bindings.on_key["ctrl-f"]
 
 xplr.config.modes.builtin.default.key_bindings.on_key["h"] =
@@ -1913,7 +1879,7 @@ xplr.config.modes.builtin.action = {
   name = "action to",
   key_bindings = {
     on_key = {
-      ["!"] = {
+      ["S"] = {
         help = "shell",
         messages = {
           { Call = { command = "zsh", args = { "-i" } } },
@@ -1926,17 +1892,6 @@ xplr.config.modes.builtin.action = {
         messages = {
           "PopMode",
           { SwitchModeBuiltin = "create" },
-        },
-      },
-      ["e"] = {
-        help = "open in editor",
-        messages = {
-          {
-            BashExec = [===[
-              ${EDITOR:-vi} "${XPLR_FOCUS_PATH:?}"
-            ]===],
-          },
-          "PopMode",
         },
       },
       ["l"] = {
@@ -2090,6 +2045,8 @@ xplr.config.modes.builtin.search = {
   },
 }
 
+xplr.config.modes.builtin.search.key_bindings.on_key["ctrl-o"] =
+  xplr.config.modes.builtin.search.key_bindings.on_key.enter
 xplr.config.modes.builtin.search.key_bindings.on_key["esc"] =
   xplr.config.modes.builtin.search.key_bindings.on_key.enter
 xplr.config.modes.builtin.search.key_bindings.on_key["alt-n"] =
@@ -2725,7 +2682,7 @@ xplr.config.modes.custom.bookmark = {
   name = "bookmark",
   key_bindings = {
     on_key = {
-      m = {
+      a = {
         help = "add bookmark",
         messages = {
           {
@@ -2745,7 +2702,7 @@ xplr.config.modes.custom.bookmark = {
           },
         }
       },
-      g = {
+      m = {
         help = "go to bookmark",
         messages = {
           {
@@ -2801,4 +2758,5 @@ require("material-landscape2").setup {
 require("icons").setup {}
 require("dual-pane").setup {}
 require("scp").setup {}
-require("zoxide").setup()
+require("xclip").setup {}
+require("trash-cli").setup {}
