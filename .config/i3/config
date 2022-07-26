@@ -186,62 +186,62 @@ default_border pixel 3
 set $shortcmds "zsh -c 'maim -s | xclip -selection clipboard -t image/png';xfce4-screenshooter;thunar"
 set $shortlabels "screenshot;imgur;thunar"
 # pc display
-bar {
-		colors {
-			background $bg-color
-			statusline #eeeeee
-			separator #eeeeee
-			#background #666666
-			#statusline #ffffff
-			#separator #ffffff
-			focused_workspace  #ffffff #ffffff #333333
-			#focused_workspace  #ffffff #ffffff #$bgcolor
-			inactive_workspace #cecece #cecece #333333
-		}
-	output DP-1
-	font pango:DejaVu Sans Mono Nerd Font 12
-	position bottom
-	tray_output primary
-	status_command bumblebee-status/bumblebee-status -m mpd cpu date time weather pasink pasource -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.left-click="orage" mpd.right-click="i3-msg workspace 7: Music " date.format="%a, %b %d %Y" -t othi-burgundy
-}
-bar {
-		colors {
-			background $bg-color
-			statusline #eeeeee
-			separator #eeeeee
-			#background #666666
-			#statusline #ffffff
-			#separator #ffffff
-			focused_workspace  #ffffff #ffffff #333333
-			#focused_workspace  #ffffff #ffffff #$bgcolor
-			inactive_workspace #cecece #cecece #333333
-		}
-	output DP-3
-	font pango:DejaVu Sans Mono Nerd Font 15
-	position bottom
-	tray_output none
-	status_command bumblebee-status/bumblebee-status -m shortcut -p shortcut.cmds=$shortcmds shortcut.labels=$shortlabels -t othi-burgundy
-}
-
-# LAPTOP DISPLAY
-bar {
-		colors {
-			background $bg-color
-			statusline #eeeeee
-			separator #eeeeee
-			#background #666666
-			#statusline #ffffff
-			#separator #ffffff
-			focused_workspace  #ffffff #ffffff #333333
-			#focused_workspace  #ffffff #ffffff #$bgcolor
-			inactive_workspace #cecece #cecece #333333
-		}
-	output Virtual1
-	font pango:DejaVu Sans Mono Nerd Font 12
-	position top
-	tray_output primary
-	status_command bumblebee-status/bumblebee-status  -m shortcut cpu thunderbird date time weather pasink pasource indicator battery -p shortcut.cmds="xfce4-screenshooter" shortcut.labels="Print" thunderbird.home="$HOME/.thunderbird" thunderbird.inboxes="imap.gmail.com/INBOX.msf,imap.gmail-1.com/INBOX.msf" weather.location="Hanoi" nic.right-click="nm-applet" root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d %Y" date.left-click="orage" -t othi-burgundy
-}
+# bar {
+# 		colors {
+# 			background $bg-color
+# 			statusline #eeeeee
+# 			separator #eeeeee
+# 			#background #666666
+# 			#statusline #ffffff
+# 			#separator #ffffff
+# 			focused_workspace  #ffffff #ffffff #333333
+# 			#focused_workspace  #ffffff #ffffff #$bgcolor
+# 			inactive_workspace #cecece #cecece #333333
+# 		}
+# 	output DP-1
+# 	font pango:DejaVu Sans Mono Nerd Font 12
+# 	position bottom
+# 	tray_output primary
+# 	status_command bumblebee-status/bumblebee-status -m mpd cpu date time weather pasink pasource -p weather.location="Marburg" root.path=/ time.format="%H:%M:%S" date.left-click="orage" mpd.right-click="i3-msg workspace 7: Music " date.format="%a, %b %d %Y" -t othi-burgundy
+# }
+# bar {
+# 		colors {
+# 			background $bg-color
+# 			statusline #eeeeee
+# 			separator #eeeeee
+# 			#background #666666
+# 			#statusline #ffffff
+# 			#separator #ffffff
+# 			focused_workspace  #ffffff #ffffff #333333
+# 			#focused_workspace  #ffffff #ffffff #$bgcolor
+# 			inactive_workspace #cecece #cecece #333333
+# 		}
+# 	output DP-3
+# 	font pango:DejaVu Sans Mono Nerd Font 15
+# 	position bottom
+# 	tray_output none
+# 	status_command bumblebee-status/bumblebee-status -m shortcut -p shortcut.cmds=$shortcmds shortcut.labels=$shortlabels -t othi-burgundy
+# }
+#
+# # LAPTOP DISPLAY
+# bar {
+# 		colors {
+# 			background $bg-color
+# 			statusline #eeeeee
+# 			separator #eeeeee
+# 			#background #666666
+# 			#statusline #ffffff
+# 			#separator #ffffff
+# 			focused_workspace  #ffffff #ffffff #333333
+# 			#focused_workspace  #ffffff #ffffff #$bgcolor
+# 			inactive_workspace #cecece #cecece #333333
+# 		}
+# 	output eDP-1
+# 	font pango:DejaVu Sans Mono Nerd Font 12
+# 	position top
+# 	tray_output primary
+# 	status_command bumblebee-status/bumblebee-status  -m shortcut cpu thunderbird date time weather pasink pasource indicator battery -p shortcut.cmds="xfce4-screenshooter" shortcut.labels="Print" thunderbird.home="$HOME/.thunderbird" thunderbird.inboxes="imap.gmail.com/INBOX.msf,imap.gmail-1.com/INBOX.msf" weather.location="Hanoi" nic.right-click="nm-applet" root.path=/ time.format="%H:%M:%S" date.format="%a, %b %d %Y" date.left-click="orage" -t othi-burgundy
+# }
 
 # monitor scaling
 # the screen layout/resolution scpipts are computer-bound, set them up with arandr before going into i3, landscape.sh and portrait.sh can be used as-is
