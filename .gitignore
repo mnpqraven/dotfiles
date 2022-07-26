@@ -67,6 +67,7 @@
 !/.config/mozc/romantable.txt
 
 !/.config/polybar
+!/.config/polybar.old
 
 /.config/mpd/*
 !/.config/mpd
