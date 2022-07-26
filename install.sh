@@ -63,6 +63,7 @@ sudo npm install -g n
 sudo n latest
 sudo pacman -S --noconfirm deluge fzf ripgrep zoxide fd python-pip r neomutt
 sudo pacman -S --noconfirm fcitx5 fcitx5-unikey fcitx5-mozc fcitx5-configtool fcitx5-gtk
+sudo pacman -S --noconfirm qt5-tools
 # npm might break
 sudo npm install -g neovim
 sudo pacman -S --noconfirm firefox yadm
