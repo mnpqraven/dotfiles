@@ -79,6 +79,7 @@ return require('packer').startup(function(use)
   use 'rebelot/kanagawa.nvim'
   use 'stevearc/dressing.nvim'
   use 'rcarriga/nvim-notify'
+  use 'j-hui/fidget.nvim'
 
   -- FUNCTIONALITY
   use 'kylechui/nvim-surround'
@@ -89,6 +90,7 @@ return require('packer').startup(function(use)
     requires = 'nvim-lua/plenary.nvim',
   }
   use 'abecodes/tabout.nvim'
+  use 'rlue/vim-barbaric'
 
   -- LSP
   use 'williamboman/nvim-lsp-installer'

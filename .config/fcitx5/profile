@@ -2,7 +2,7 @@
 # Group Name
 Name=US
 # Layout
-Default Layout=us
+Default Layout=us-colemak
 # Default Input Method
 DefaultIM=unikey
 
@@ -14,19 +14,19 @@ Layout=
 
 [Groups/0/Items/1]
 # Name
-Name=mozc
+Name=unikey
 # Layout
 Layout=
 
 [Groups/0/Items/2]
 # Name
-Name=unikey
+Name=mozc
 # Layout
 Layout=
 
 [Groups/1]
 # Group Name
-Name="NATIVE COLEMAK"
+Name=Colemak
 # Layout
 Default Layout=us-colemak
 # Default Input Method
@@ -40,17 +40,17 @@ Layout=
 
 [Groups/1/Items/1]
 # Name
-Name=mozc
+Name=unikey
 # Layout
 Layout=
 
 [Groups/1/Items/2]
 # Name
-Name=unikey
+Name=mozc
 # Layout
 Layout=
 
 [GroupOrder]
-0=US
-1="NATIVE COLEMAK"
+0=Colemak
+1=US
 

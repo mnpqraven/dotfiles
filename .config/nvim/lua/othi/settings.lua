@@ -43,7 +43,13 @@ if exists('+termguicolors')
 endif
 ]])
 
+-- WHITESPACE
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { command = "%s/\\s\\+$//e" })
+
+-- COMPILER
+vim.api.nvim_create_autocmd(
+{ "BufRead", "BufNewFile" },
+{ pattern = { "*.rs", "Cargo.toml", "Cargo.lock" }, command = "compiler cargo" })
 
 vim.cmd([[
 "set path+=**

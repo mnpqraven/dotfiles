@@ -6,7 +6,7 @@ require('indent_blankline').setup {
   show_current_context_start = true,
 }
 -- FIX: bad one
-require'regexplainer'.setup {
+require 'regexplainer'.setup {
   auto = true,
   filetypes = { 'sh' }
 }
@@ -18,7 +18,7 @@ require('numbers').setup {
     'toggleterm',
   }
 }
-require('neogen').setup ({ snippet_engine = "luasnip" })
+require('neogen').setup({ snippet_engine = "luasnip" })
 require('colorizer').setup { '*' }
 require('Comment').setup {}
 require('todo-comments').setup {
@@ -38,4 +38,13 @@ require('onedark').load()
 require('dressing').setup {}
 require('notify').setup {
   background_colour = "#000000",
+}
+require "fidget".setup {
+  timer = {
+    spinner_rate = 60,
+    fidget_decay = 1000
+  },
+  window = {
+    blend = 0
+  }
 }

@@ -86,12 +86,3 @@ inoremap <C-z> <ESC>l"+pi
 nnoremap <C-z> "+P
 vnoremap <C-c> "+y
 ]])
-
--- rust compiler
-local rust_compile = function ()
-  nnoremap('<leader>cc', '<cmd>!cargo run<CR>')
-end
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = { "*.rs", "Cargo.toml" },
-  callback = rust_compile
-})

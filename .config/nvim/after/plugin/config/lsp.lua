@@ -17,13 +17,6 @@ lspconfig.sumneko_lua.setup {
     },
   },
 }
-lspconfig.rust_analyzer.setup {
-  capabilities = capabilities,
-  on_attach = function(client)
-    -- [[ other on_attach code ]]
-    require 'illuminate'.on_attach(client)
-  end,
-}
 -- config debugging later
 require('rust-tools').setup {}
 
@@ -46,6 +39,9 @@ lspconfig.bashls.setup {
   capabilities = capabilities
 }
 lspconfig.taplo.setup {
+  capabilities = capabilities
+}
+lspconfig.texlab.setup {
   capabilities = capabilities
 }
 

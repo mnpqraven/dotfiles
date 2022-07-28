@@ -47,6 +47,10 @@ nnoremap('<leader>fd', telescope_builtin.lsp_definitions)
 nnoremap('<leader>fr', telescope_builtin.lsp_references)
 nnoremap('<leader>fi', telescope_builtin.lsp_implementations)
 nnoremap('<leader>fn', telescope_builtin.lsp_document_symbols)
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.rs", "Cargo.toml", "Cargo.lock" },
+  callback = function () nnoremap('<leader>cr', '<cmd>RustRunnables<cr>') end
+})
 
 -- INFO: HOP
 vim.api.nvim_set_keymap('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})

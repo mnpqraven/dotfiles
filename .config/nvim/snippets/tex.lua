@@ -10,10 +10,11 @@ local rec_ls = function()
 	});
 end
 
-local table_node= function(args)
+local table_node = function(args)
     local tabs = {}
     local count
     table = args[1][1]:gsub("%s",""):gsub("|","")
+---@diagnostic disable-next-line: undefined-field
     count = table:len()
     for j=1, count do
         local iNode
@@ -25,7 +26,7 @@ local table_node= function(args)
     end
     return sn(nil, tabs)
 end
-rec_table = function ()
+local rec_table = function ()
     return sn(nil, {
         c(1, {
             t({""}),
@@ -51,5 +52,10 @@ return {
         d(2, table_node, {1}, {}), d(3, rec_table, {1}),
         t{"","\\end{tabular}"}
     }),
+    s( "bf", {
+      t({"\\textbf{"}), i(1), t({"}"})
+    }),
+    s( "it", {
+      t({"\\textit{"}), i(1), t({"}"})
+    })
 }
-
