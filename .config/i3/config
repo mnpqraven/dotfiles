@@ -65,16 +65,16 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show; move position center
 
 # workspace settings
-set $ws1 "1: Main  "
-set $ws2 "2: Term  "
-set $ws3 "3: Term  "
-set $ws4 "4: Term  "
-set $ws5 "5: IDE  "
-set $ws6 "6: Shitpost  "
-set $ws7 "7: Music  "
-set $ws8 "8: Reader  "
-set $ws9 "9: Atom  "
-set $ws10 "10: Term  "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 workspace $ws1 output  DP-1
 workspace $ws2 output  DP-1
 workspace $ws3 output  DP-1
@@ -123,6 +123,7 @@ bindsym $mod+Mod1+Right resize grow width 1 px or 1 ppt
 
 # STARTUP
 exec_always --no-startup-id fcitx5
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --othi
 exec dbus-launch nm-applet
 # exec_always --no-startup-id ~/.screenlayout/layout.sh
 exec_always --no-startup-id compton -b -f

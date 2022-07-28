@@ -81,10 +81,22 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions
 cd ~/
 
-# bumblebee-status setup
-sudo pip install netifaces psutil requests power i3ipc docker
-git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
-cp $HOME/dotfiles/Scripts/othi-burgundy.json ~/bumblebee-status/themes
+sudo pacman -S polybar
+git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+cd polybar-themes
+FDIR="$HOME/.local/share/fonts"
+echo -e "\n[*] Installing fonts..."
+if [[ -d "$FDIR" ]]; then
+  cp -rf $DIR/fonts/* "$FDIR"
+else
+  mkdir -p "$FDIR"
+  cp -rf $DIR/fonts/* "$FDIR"
+fi
+cd $HOME
+# # bumblebee-status setup
+# sudo pip install netifaces psutil requests power i3ipc docker
+# git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
+# cp $HOME/dotfiles/Scripts/othi-burgundy.json ~/bumblebee-status/themes
 
 echo "-------------------------------"
 echo "NAS"

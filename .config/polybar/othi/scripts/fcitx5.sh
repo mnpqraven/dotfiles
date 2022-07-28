@@ -4,7 +4,7 @@
 INPUT=$(qdbus "org.fcitx.Fcitx5" "/controller" "org.fcitx.Fcitx.Controller1.CurrentInputMethod")
 
 if [[ "$INPUT" == "keyboard-us-colemak" ]]; then
-    echo "us-colemak"
+    echo "colemak"
 elif [[ "$INPUT" == "keyboard-us" ]]; then
     echo "us"
 elif [[ "$INPUT" == "mozc" ]]; then
