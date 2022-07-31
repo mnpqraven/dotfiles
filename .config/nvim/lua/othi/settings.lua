@@ -47,6 +47,7 @@ endif
 vim.api.nvim_create_autocmd({ "BufWritePre" }, { command = "%s/\\s\\+$//e" })
 
 -- COMPILER
+vim.g.rust_recommended_style = 0
 vim.api.nvim_create_autocmd(
 { "BufRead", "BufNewFile" },
 { pattern = { "*.rs", "Cargo.toml", "Cargo.lock" }, command = "compiler cargo" })
