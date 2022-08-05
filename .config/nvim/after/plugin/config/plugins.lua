@@ -177,4 +177,5 @@ return require('packer').startup(function(use)
     branch = 'main',
     requires = { 'kyazdani42/nvim-web-devicons' }
   }
+  use 'nvim-treesitter/nvim-treesitter-context'
 end)
