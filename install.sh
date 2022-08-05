@@ -1,5 +1,5 @@
 # GRABBING FILES
-git clone -b development https://github.com/mnpqraven/dotfiles.git
+git clone -b dev-yadm https://github.com/mnpqraven/dotfiles.git
 # INSTALLING YAY
 sudo pacman -Syu
 cd /opt
@@ -106,21 +106,26 @@ sudo bash ./nas-setup.sh
 #dotfiles/
 cd $HOME/dotfiles
 
-echo "-------------------------------"
-echo ".CONFIG"
-bash Scripts/move-config.sh
+echo "TEST YADM NOW"
+echo "TEST YADM NOW"
+echo "TEST YADM NOW"
+echo "TEST YADM NOW"
 
-echo "-------------------------------"
-echo "MPD"
-bash Scripts/mpd-install-wizard.sh
-
-echo "-------------------------------"
-echo "VIM"
-bash Scripts/nerd-fonts.sh
-
-echo "-------------------------------"
-echo "QMK"
-bash Scripts/qmk-setup.sh
-
-echo "Install completed, you can reboot now"
-echo "remember to import keymaps from mozc after reboot"
+# echo "-------------------------------"
+# echo ".CONFIG"
+# bash Scripts/move-config.sh
+#
+# echo "-------------------------------"
+# echo "MPD"
+# bash Scripts/mpd-install-wizard.sh
+#
+# echo "-------------------------------"
+# echo "VIM"
+# bash Scripts/nerd-fonts.sh
+#
+# echo "-------------------------------"
+# echo "QMK"
+# bash Scripts/qmk-setup.sh
+#
+# echo "Install completed, you can reboot now"
+# echo "remember to import keymaps from mozc after reboot"
