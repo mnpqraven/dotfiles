@@ -104,6 +104,7 @@ return require('packer').startup(function(use)
       require('crates').setup()
     end,
   }
+  use 'RRethy/vim-illuminate'
 
   -- DEBUGGING
   use 'nvim-lua/plenary.nvim'
