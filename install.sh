@@ -110,6 +110,11 @@ echo "TEST YADM NOW"
 echo "TEST YADM NOW"
 echo "TEST YADM NOW"
 echo "TEST YADM NOW"
+# INFO: post reboot
+# gf in dotfiles
+# yadm works after cloning
+# yadm is pulling from development
+# TODO: git script doesn't have input waiter
 
 # echo "-------------------------------"
 # echo ".CONFIG"
