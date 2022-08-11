@@ -56,6 +56,10 @@ rm -rf clifm
 # TOOLS
 sudo pacman -S --noconfirm cmake make gcc clang rustup
 rustup default nightly
+curl -o init.sh https://rustwasm.github.io/wasm-pack/installer/init.sh
+chmod +x init.sh
+sudo bash init.sh
+
 sudo pacman -S --noconfirm nodejs-lts-gallium npm jq
 yay nvm
 # npm might break
