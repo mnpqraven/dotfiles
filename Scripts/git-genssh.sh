@@ -31,3 +31,4 @@ ssh-add $HOME/.ssh/id_ed25519
 xclip $HOME/.ssh/id_ed25519.pub
 touch $HOME/.ssh/config
 echo AddKeysToAgent yes >> $HOME/.ssh/config
+done

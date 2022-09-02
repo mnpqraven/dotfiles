@@ -76,6 +76,7 @@ echo "-------------------------------"
 echo "ZSH"
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+mkdir -p .oh-my-zsh/plugins
 cd .oh-my-zsh/plugins
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone https://github.com/zsh-users/zsh-autosuggestions
@@ -106,10 +107,11 @@ sudo bash ./nas-setup.sh
 #dotfiles/
 cd $HOME/dotfiles
 
+yadm clone https://github.com/mnpqraven/dotfiles
 echo "TEST YADM NOW"
 echo "TEST YADM NOW"
 echo "TEST YADM NOW"
-echo "TEST YADM NOW"
+echo "reboot then run post-install.sh"
 # INFO: post reboot
 # gf in dotfiles
 # yadm works after cloning
