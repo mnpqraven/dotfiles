@@ -1,5 +1,6 @@
 /*
 !install.sh
+!post-install.sh
 !*.md
 !.bashrc
 !.*vimrc
