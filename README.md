@@ -8,7 +8,7 @@
 
 run the install script
 ```
-curl -o install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/dev-yadm/install.sh && bash install.sh
+curl -o install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/development/install.sh && bash install.sh
 ```
 Post-installation:
 - run `post-install.sh`
