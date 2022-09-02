@@ -126,7 +126,7 @@ exec_always --no-startup-id fcitx5
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --othi
 exec dbus-launch nm-applet
 # exec_always --no-startup-id ~/.screenlayout/layout.sh
-exec_always --no-startup-id compton -b -f
+exec_always --no-startup-id compton --shadow-exclude argb -b -f
 # laptop input
 exec_always --no-startup-id xinput set-prop 13 309 {0,0,0,0,1,3,2}
 exec_always --no-startup-id feh --bg-center Pictures/scarlett-forest-1920×1080.jpg
