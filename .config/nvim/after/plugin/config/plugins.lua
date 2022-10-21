@@ -93,8 +93,11 @@ return require('packer').startup(function(use)
   use 'rlue/vim-barbaric'
 
   -- LSP
-  use 'williamboman/nvim-lsp-installer'
-  use 'neovim/nvim-lspconfig'
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
   use 'simrat39/rust-tools.nvim'
   use 'leafOfTree/vim-vue-plugin'
   use {

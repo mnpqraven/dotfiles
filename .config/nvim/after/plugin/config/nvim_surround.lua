@@ -1,5 +1,5 @@
 require('nvim-surround').setup({
-  delimiters = {
+  surround = {
     pairs = {
       ["a"] = { "<", ">" },
       ["r"] = { "[", "]" },

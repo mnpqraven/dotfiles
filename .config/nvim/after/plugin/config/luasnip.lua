@@ -31,8 +31,8 @@ ls.config.set_config({
   ext_opts = {
     [types.choiceNode] = {
       active = {
-        virt_text = { { "<-", "Error" } },
-      },
+        virt_text = {{"●", "Orange"}}
+      }
     },
   },
   -- custom rep global env scope
@@ -53,9 +53,7 @@ ls.config.set_config({
     -- require("luasnip.extras.filetype_functions").from_cursor (requires
     -- `nvim-treesitter/nvim-treesitter`). This allows correctly resolving
     -- the current filetype in eg. a markdown-code block or `vim.cmd()`.
-    ft_func = function()
-      return vim.split(vim.bo.filetype, ".", true)
-    end,
+    ft_func = require("luasnip.extras.filetype_functions").from_cursor
   })
 
 

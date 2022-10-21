@@ -74,7 +74,6 @@ map('<A-e>', '<cmd>vertical resize +5<CR>')
 nmap('G', 'Gzz')
 
 -- tabbingout semicolon
-nnoremap(';;', 'A;<ESC>')
 inoremap(';;', ':')
 inoremap(';<tab>', '<ESC>%%a;<ESC>hi')
 

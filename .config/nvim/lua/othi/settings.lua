@@ -17,23 +17,23 @@ vim.opt.textwidth      = 79
 vim.opt.splitbelow     = true
 vim.opt.splitright     = true
 
-local indent          = 4
-vim.opt.tabstop       = indent
-vim.opt.shiftwidth    = indent
-vim.opt.foldcolumn    = "1"
-vim.opt.expandtab     = true
-vim.opt.linespace     = 0
-vim.opt.history       = 1000
-vim.opt.lbr           = true
-vim.opt.shell         = "zsh"
-vim.opt.smartindent   = true
-vim.opt.conceallevel  = 2
-vim.opt.concealcursor = "c"
+local indent = 2
+vim.opt.tabstop        = indent
+vim.opt.shiftwidth     = indent
+vim.opt.foldcolumn     = "1"
+vim.opt.expandtab      = true
+vim.opt.linespace      = 0
+vim.opt.history        = 1000
+vim.opt.lbr            = true
+vim.opt.shell          = "zsh"
+vim.opt.smartindent    = true
+vim.opt.conceallevel   = 2
+vim.opt.concealcursor  = "c"
 
-vim.opt.showbreak = "↪\\"
-vim.opt.list      = true
-vim.opt.listchars = { tab = '» ', extends = '›', precedes = '‹', nbsp = '·', trail = '·', eol = '¬' }
-vim.opt.mouse     = "a"
+vim.opt.showbreak      = "↪\\"
+vim.opt.list           = true
+vim.opt.listchars      = {tab='» ',extends='›',precedes='‹',nbsp='·',trail='·',eol='¬'}
+vim.opt.mouse          = "a"
 
 vim.cmd([[
 if exists('+termguicolors')
@@ -49,14 +49,15 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, { command = "%s/\\s\\+$//e" })
 -- COMPILER
 vim.g.rust_recommended_style = 0
 vim.api.nvim_create_autocmd(
-  { "BufRead", "BufNewFile" },
-  { pattern = { "*.rs", "Cargo.toml", "Cargo.lock" }, command = "compiler cargo" })
+{ "BufRead", "BufNewFile" },
+{ pattern = { "*.rs", "Cargo.toml", "Cargo.lock" }, command = "compiler cargo" })
+
 vim.api.nvim_create_autocmd(
-  { "BufRead", "BufNewFile" },
-  { pattern = { "*.html", "*.js", "*.ts", "*.vue" }, callback = function()
-    vim.opt.tabstop    = 2
-    vim.opt.shiftwidth = 2
-  end })
+{ "BufRead", "BufNewFile" },
+{ pattern = { "*.rs", "Cargo.toml", "Cargo.lock" }, callback = function ()
+vim.opt.tabstop        = 4
+vim.opt.shiftwidth     = 4
+end })
 
 vim.cmd([[
 "set path+=**
