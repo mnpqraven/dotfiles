@@ -142,7 +142,6 @@ for_window [title="TweetDeck"] resize set height 85 ppt
 for_window [title="TweetDeck"] move down
 focus_follows_mouse yes
 for_window [class="Pavucontrol"] floating enable
-for_window [class="Atom"] move container to workspace $ws9
 for_window [class="jetbrains-idea-ce"] move container to workspace $ws5
 
 # bindings
@@ -183,7 +182,7 @@ bindsym $mod+Mod1+r exec $term -x ranger
 
 # window borders
 # new_window pixel 3
-default_border pixel 3
+for_window [all] border pixel 2
 set $shortcmds "zsh -c 'maim -s | xclip -selection clipboard -t image/png';xfce4-screenshooter;thunar"
 set $shortlabels "screenshot;imgur;thunar"
 # pc display
