@@ -54,7 +54,12 @@ cp $HOME
 rm -rf clifm
 
 # TOOLS
-sudo pacman -S --noconfirm cmake make gcc clang rustup
+sudo pacman -S --noconfirm cmake make gcc clang rustup bat
+sudo pacman -S pastel
+cargo install --locked zellij
+cargo install starship --locked
+cargo install kalker
+cargo install macchina
 rustup default nightly
 curl -o init.sh https://rustwasm.github.io/wasm-pack/installer/init.sh
 chmod +x init.sh
@@ -112,6 +117,8 @@ sudo bash ./nas-setup.sh
 cd $HOME/dotfiles
 
 yadm clone https://github.com/mnpqraven/dotfiles
+# altenative to moving config by symlinking
+# ln -s ~/dotfiles/.config/nvim ~/.config/nvim
 echo "TEST YADM NOW"
 echo "TEST YADM NOW"
 echo "TEST YADM NOW"

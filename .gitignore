@@ -88,3 +88,6 @@
 !/.config/i3
 !/.config/gtk-3.0
 /.config/BetterDiscord
+
+!/.config/zellij
+!/.config/starship.toml

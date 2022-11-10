@@ -18,6 +18,7 @@ bindkey -v
 alias gh="cd $HOME"
 alias cfg="$FM $HOME/.config/"
 alias cz="cd ~ && cd \$(find * -type d | fzf)"
+alias cr="cargo run --"
 
 # }}}
 
@@ -32,7 +33,11 @@ alias tat="tmux attach"
 alias key="source $HOME/Scripts/ssh-agent.sh"
 alias r="ranger"
 alias tm="tmux"
+alias zm="zellij"
 alias xpic="xclip -sel clipboard -t image/png"
+
+alias rwork="rsync -avzx -e 'ssh -p 6661' $HOME/work othi@183.81.43.11:/volume1/NetBackup/$(hostname)"
+alias btw="macchina --theme mezora --show Host Kernel Distribution Packages DesktopEnvironment Memory ProcessorLoad Shell Terminal WindowManager Battery"
 # }}}
 
 # config aliases
