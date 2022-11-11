@@ -80,6 +80,7 @@ lspconfig.tailwindcss.setup { capabilities = capabilities,
     require("tailwindcss-colors").buf_attach(bufnr)
   end
 }
+lspconfig.cssls.setup { capabilities = capabilities }
 
 vim.diagnostic.config({ update_in_insert = true, virtual_text = false, severity_sort = true })
 
