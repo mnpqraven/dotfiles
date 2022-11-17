@@ -31,7 +31,6 @@ map('L', 'H')
 map('N', 'L')
 map('<C-d>', '<C-d>zz')
 map('<C-d>', '<C-d>zz')
-map('<leader><leader>', 'za')
 
 -- smart vertical mapping/dragging
 nmap('<up>', 'ddkP')

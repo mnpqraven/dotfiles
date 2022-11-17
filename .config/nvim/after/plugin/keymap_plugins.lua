@@ -51,6 +51,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { "*.rs", "Cargo.toml", "Cargo.lock" },
   callback = function () nnoremap('<leader>cr', '<cmd>RustRunnables<cr>') end
 })
+nnoremap('<leader><leader>', vim.diagnostic.open_float)
 
 -- INFO: HOP
 vim.api.nvim_set_keymap('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", {})
