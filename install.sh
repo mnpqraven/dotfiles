@@ -1,5 +1,5 @@
 # GRABBING FILES
-git clone -b dev-yadm https://github.com/mnpqraven/dotfiles.git
+git clone https://github.com/mnpqraven/dotfiles.git
 # INSTALLING YAY
 sudo pacman -Syu
 cd /opt
@@ -40,7 +40,6 @@ sudo pacman -S --noconfirm maim tmux alacritty man-db atool btop
 sudo pacman -S --noconfirm picom rofi ranger neofetch copyq w3m feh dolphin imv
 
 pip install trash-cli
-sudo pacman -S --noconfirm xplr
 mkdir -p $HOME/.config/xplr
 touch $HOME/.config/xplr/bookmarks
 
@@ -57,6 +56,7 @@ rm -rf clifm
 sudo pacman -S --noconfirm cmake make gcc clang rustup bat
 sudo pacman -S pastel
 cargo install --locked zellij
+cargo install --locked --force xplr
 cargo install starship --locked
 cargo install kalker
 cargo install macchina

@@ -23,6 +23,7 @@ case $yn in
     * ) echo "invalid response";;
 esac
 
+mkdir -p $HOME/.ssh
 ssh-keygen -t ed25519 -C "$email"
 git config --global user.email $email
 git config --global user.name $name
