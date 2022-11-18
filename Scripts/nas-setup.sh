@@ -27,6 +27,7 @@ done
 
 echo -e "Enter smb workgroup\n(default=WORKGROUP)"
 read workgroup
+sudo touch /etc/.credentials
 echo -e "username=$username\npassword=$password\ndomain=${workgroup:-WORKGROUP}" > /etc/.credentials
 sudo chmod 600 /etc/.credentials
 echo "file created at /etc/.credentials"

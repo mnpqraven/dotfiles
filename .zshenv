@@ -37,7 +37,7 @@ alias tm="tmux"
 alias zm="zellij -s main"
 alias xpic="xclip -sel clipboard -t image/png"
 
-alias rwork="rsync -avzx -e 'ssh -p 6661' $HOME/work othi@183.81.43.11:/volume1/NetBackup/$(hostname)"
+alias rwork="rsync -avzx -e 'ssh -p 6661' $HOME/work othi@183.81.43.11:/volume1/NetBackup/$(whoami)"
 alias btw="macchina --theme mezora --show Host Kernel Distribution Packages DesktopEnvironment Memory ProcessorLoad Shell Terminal WindowManager Battery"
 # }}}
 

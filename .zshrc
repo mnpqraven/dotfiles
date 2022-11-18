@@ -4,8 +4,9 @@
     https://github.com/marlonrichert/zsh-snap.git ~/.zsh/zsh-snap
 source ~/.zsh/zsh-snap/znap.zsh
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(git common-aliases zsh-syntax-highlighting vi-mode zsh-autosuggestions)
+plugins=(git common-aliases vi-mode)
 source $ZSH/oh-my-zsh.sh
+zstyle ':omz:update' frequency 7
 # if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
