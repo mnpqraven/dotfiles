@@ -7,6 +7,7 @@ export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH="$PATH:$ANDROID_SDK_ROOT/emulator"
 export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
 export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
+export YADM_REPO="$HOME/.local/share/yadm/repo.git"
 export GPG_TTY=$(tty)
 
 export KEYTIMEOUT=200
@@ -45,6 +46,7 @@ alias vrc="$EDITOR $HOME/.config/nvim"
 alias zrc="$EDITOR $HOME/.zshrc"
 alias zenv="$EDITOR $HOME/.zshenv"
 alias tmrc="$EDITOR $HOME/.tmux.conf"
+alias ydot="$EDITOR $YADM_REPO"
 
 # git aliases {{{
 alias gt="git tree"
