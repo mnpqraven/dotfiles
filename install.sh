@@ -54,13 +54,12 @@ rm -rf clifm
 
 # TOOLS
 sudo pacman -S --noconfirm cmake make gcc clang rustup bat
-sudo pacman -S pastel
+rustup default nightly
 cargo install --locked zellij
 cargo install --locked --force xplr
 cargo install starship --locked
 cargo install kalker
 cargo install macchina
-rustup default nightly
 curl -o init.sh https://rustwasm.github.io/wasm-pack/installer/init.sh
 chmod +x init.sh
 sudo bash init.sh

@@ -33,7 +33,7 @@ alias tat="tmux attach"
 alias key="source $HOME/Scripts/ssh-agent.sh"
 alias r="ranger"
 alias tm="tmux"
-alias zm="zellij"
+alias zm="zellij -s main"
 alias xpic="xclip -sel clipboard -t image/png"
 
 alias rwork="rsync -avzx -e 'ssh -p 6661' $HOME/work othi@183.81.43.11:/volume1/NetBackup/$(hostname)"

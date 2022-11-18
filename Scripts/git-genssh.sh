@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo pacman -S --noconfirm xclip
 echo "do NOT sudo this, if you did it by accident, cancel"
 echo "enter your email:"
 while true;
@@ -22,6 +23,7 @@ case $yn in
     [nN] ) echo "reenter your name";;
     * ) echo "invalid response";;
 esac
+done
 
 mkdir -p $HOME/.ssh
 ssh-keygen -t ed25519 -C "$email"
@@ -32,4 +34,3 @@ ssh-add $HOME/.ssh/id_ed25519
 xclip $HOME/.ssh/id_ed25519.pub
 touch $HOME/.ssh/config
 echo AddKeysToAgent yes >> $HOME/.ssh/config
-done

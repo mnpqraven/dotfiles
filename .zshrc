@@ -1,15 +1,14 @@
 # Download Znap, if it's not there yet.
-[[ -f ~/zsh/zsh-snap/znap.zsh ]] ||
+[[ -f ~/.zsh/zsh-snap/znap.zsh ]] ||
   git clone --depth 1 -- \
-    https://github.com/marlonrichert/zsh-snap.git ~/zsh/zsh-snap
-
-source ~/zsh/zsh-snap/znap.zsh
+    https://github.com/marlonrichert/zsh-snap.git ~/.zsh/zsh-snap
+source ~/.zsh/zsh-snap/znap.zsh
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(git common-aliases zsh-syntax-highlighting vi-mode zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
