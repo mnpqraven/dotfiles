@@ -43,34 +43,34 @@ lspconfig.volar.setup { capabilities = capabilities }
 lspconfig.tsserver.setup { capabilities = capabilities }
 lspconfig.eslint.setup { capabilities = capabilities }
 lspconfig.yamlls.setup { capabilities = capabilities }
-local yaml_schemas = {}
-local json_schemas = require('schemastore').json.schemas {}
-vim.tbl_map(function (schema)
-  yaml_schemas[schema.url] = schema.fileMatch
-end, json_schemas)
 lspconfig.jsonls.setup { capabilities = capabilities,
-  -- settings = {
-  --   json = {
-  --     schemas = vim.list_extend(
-  --     {
-  --       {
-  --         description = 'My custom JSON schemas',
-  --         filematch = { 'skillbook_schema.json' },
-  --         name = 'skillbook_schema.json'
-  --       }
-  --     },
-  --     require('schemastore').json.schemas()
-  --     ),
-  --     validate = { enable = true },
-  --   }
-  -- }
+  settings = {
+    json = {
+      schemas = vim.list_extend(
+        {
+          {
+            name = 'Skillbook Chema',
+            description = 'My custom JSON schema',
+            fileMatch = { 'skillbook.json', 'skillbook.jsonc' },
+            -- url = 'https://raw.githubusercontent.com/mnpqraven/bevy-rpg/main/assets/db/skillbook_schema.json'
+            url = './schemas/skillbook_schema.json'
+          },
+        },
+        require('schemastore').json.schemas()
+      ),
+      validate = { enable = true },
+    }
+  }
 }
-lspconfig.yamlls.setup {
+lspconfig.yamlls.setup { capabilities = capabilities,
   settings = {
     yaml = {
-      schemas = yaml_schemas,
-    },
-  },
+      schemas = {
+        ['./schemas/skillbook_schema.json'] =
+        'skillbook.{yml,yaml}'
+      },
+    }
+  }
 }
 lspconfig.bashls.setup { capabilities = capabilities }
 lspconfig.texlab.setup { capabilities = capabilities }
