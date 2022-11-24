@@ -45,11 +45,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # startup
+exec $HOME/.screenlayout/pc.sh
 exec wired
 exec dbus-launch
+exec eww open dock
+exec picom -cf
+exec easyeffects --gapplication-service
+
 # dropdown terminal
 exec_always --no-startup-id $term --title=dropdown
 exec_always --no-startup-id copyq
+for_window [class="othirpg"] floating enable
+
 for_window [class="copyq"] floating enable
 for_window [class="copyq"] move scratchpad
 for_window [class="copyq"] sticky enable
@@ -124,7 +131,6 @@ bindsym $mod+Mod1+Right resize grow width 1 px or 1 ppt
 exec_always --no-startup-id fcitx5
 # exec_always --no-startup-id $HOME/.config/polybar/launch.sh --othi
 # exec dbus-launch nm-applet
-exec_always --no-startup-id ~/.screenlayout/pc.sh
 # exec_always --no-startup-id compton --shadow-exclude argb -b -f
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 

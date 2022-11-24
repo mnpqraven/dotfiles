@@ -109,6 +109,7 @@ return require('packer').startup(function(use)
   }
   use 'RRethy/vim-illuminate'
   use 'b0o/schemastore.nvim'
+  use 'ron-rs/ron.vim'
   use 'elkowar/yuck.vim'
 
   -- DEBUGGING

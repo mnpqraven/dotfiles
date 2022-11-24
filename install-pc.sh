@@ -19,7 +19,11 @@ bash $HOME/dotfiles/Scripts/git-genssh.sh
 
 # INSTALLING STUFF
 # EDITOR
-sudo pacman -S --noconfirm neovim
+sudo pacman -S --noconfirm neovim jq
+sudo pacman -S --noconfirm alsa-utils easyeffects
+# install linux studio plugins
+# extract the tarball with `tar vfx`
+# sudo cp tarball content to /usr/local/lib
 yay nvim-packer-git
 # xrandr install script
 cd $HOME/dotfiles
@@ -29,7 +33,12 @@ sudo systemctl enable --now mpd
 
 # notification
 sudo pacman -S libnotify
+yay leftwm
 yay wired
+yay xmessage
+yay discord-canary-electron-bin
+yay ttf-symbola
+sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
 # MUSIC
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc pamixer
@@ -46,18 +55,20 @@ sudo pip3 install neovim-remote
 sudo pacman -S --noconfirm maim tmux man-db atool btop
 sudo pacman -S --noconfirm picom rofi feh pastel bat
 sudo pacman -S awesome-terminal-fonts ttf-font-awesome
+# fonts and wm
 yay papirus-icon-theme-git
 yay nerd-fonts-complete
-# [yY] ) yay nerd-fonts-mplus;
+sudo pacman -S --noconfirm wmctrl
 
 # FM
 yay clifm
 
 # LANGS
-sudo pacman -S --noconfirm cmake make gcc clang rustup
+sudo pacman -S --noconfirm cmake make gcc clang rustup mold
 rustup default nightly
 cargo install --locked zellij xplr starship
-cargo install exa
+cargo install exa kalker macchina
+
 yay --sync eww-git
 
 sudo pacman -S --noconfirm --overwrite "*" deluge
@@ -80,3 +91,8 @@ touch $HOME/.oh-my-zsh/completions/_zellij
 echo zellij setup --generate-completion zsh >> $HOME/.oh-my-zsh/completions/_zellij
 # config a bar
 # nas
+#
+# POST-INSTALL
+# cp .screenlayout/setup_monitors /usr/bin
+# sudo nvim /etc/lightdm/lightdm.conf
+# display-setup-script=/usr/bin/setup_monitors
