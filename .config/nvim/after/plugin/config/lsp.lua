@@ -52,7 +52,6 @@ lspconfig.jsonls.setup { capabilities = capabilities,
             name = 'Skillbook Chema',
             description = 'My custom JSON schema',
             fileMatch = { 'skillbook.json', 'skillbook.jsonc' },
-            -- url = 'https://raw.githubusercontent.com/mnpqraven/bevy-rpg/main/assets/db/skillbook_schema.json'
             url = './schemas/skillbook_schema.json'
           },
         },

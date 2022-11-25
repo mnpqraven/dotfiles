@@ -40,7 +40,8 @@ alias ee="i3-msg exec 'easyeffects --gapplication-service'"
 alias y="yadm"
 
 alias rwork="rsync -avzx -e 'ssh -p 6661' $HOME/work othi@183.81.43.11:/volume1/NetBackup/$(whoami)"
-alias btw="macchina --theme mezora --show Host Kernel Distribution Packages DesktopEnvironment Memory ProcessorLoad Shell Terminal WindowManager Battery"
+alias btw="macchina -o Host Kernel Distribution OperatingSystem DesktopEnvironment WindowManager Shell LocalIP Resolution Uptime Processor"
+alias update="cargo install $(cargo install --list | grep -E '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ') && sudo pacman -Syu"
 # }}}
 
 # config aliases
