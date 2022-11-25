@@ -59,6 +59,8 @@
 !/.config/neomutt
 !/.config/zathura
 !/.config/leftwm
+!/.config/leftwm/config.ron
+!/.config/leftwm/themes/*
 !/.config/macchina
 
 !/.config/fcitx5
@@ -93,4 +95,5 @@
 
 !/.config/zellij
 !/.config/eww
+/.config/eww/target/*
 !/.config/starship.toml

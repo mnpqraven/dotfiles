@@ -33,7 +33,9 @@ sudo systemctl enable --now mpd
 
 # notification
 sudo pacman -S libnotify
-yay leftwm
+yay leftwm leftwm-theme-git
+leftwm-theme update
+ln -s ~/.config/leftwm/themes/othi ~/.config/leftwm/themes/current
 yay wired
 yay xmessage
 yay discord-canary-electron-bin
