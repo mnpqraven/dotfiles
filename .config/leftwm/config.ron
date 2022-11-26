@@ -76,12 +76,13 @@
         (modifier: ["modkey"],            key: "l", command: FocusWindowUp, value: "", ),
         (modifier: ["modkey", "Shift"],   key: "n", command: MoveWindowDown, value: "", ),
         (modifier: ["modkey"],            key: "n", command: FocusWindowDown, value: "", ),
-        (modifier: ["modkey", "Shift"],   key: "Return", command: MoveWindowTop, value: "", ),
+        (modifier: ["modkey"],            key: "a", command: FocusWindowTop, value: "", ),
+        (modifier: ["modkey", "Shift"],   key: "a", command: MoveWindowTop, value: "", ),
         (modifier: ["modkey"],            key: "h", command: FocusWorkspaceNext, value: "", ),
         (modifier: ["modkey"],            key: "e", command: FocusWorkspacePrevious, value: "", ),
         (modifier: ["modkey"],            key: "f", command: ToggleFullScreen, value: "", ),
-        (modifier: ["modkey"],            key: "t", command: ToggleScratchPad,
-         value: "Alacritty", ),
+        (modifier: ["modkey"],            key: "z", command: RotateTag, value: "", ),
+        (modifier: ["modkey"],            key: "t", command: ToggleScratchPad, value: "Alacritty", ),
         (modifier: ["modkey", "Shift"],   key: "space", command: ToggleFloating, value: "", ),
 
         // layout switching
