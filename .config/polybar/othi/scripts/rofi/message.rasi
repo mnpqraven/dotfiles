@@ -22,3 +22,7 @@ entry {
     expand: 				true;
     text-color:				@ac;
 }
+element-text, element-icon {
+	background-color: inherit;
+	text-color: inherit;
+}

@@ -15,7 +15,8 @@ require('lualine').setup {
     theme = 'codedark',
     globalstatus = true,
     component_separators = '',
-    section_separators = { left = '', right = '' },
+    -- section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
   },
   sections = {
     lualine_c = {
@@ -23,7 +24,8 @@ require('lualine').setup {
       {
         modified,
         color = {bg = colors.replace.a.bg, fg = colors.replace.a.fg},
-        separator = { left = '', right = ''}
+        -- separator = { left = '', right = ''}
+        separator = { left = '', right = ''}
       }
     }
   },

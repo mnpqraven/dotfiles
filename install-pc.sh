@@ -1,6 +1,6 @@
 # in case user forget
 sudo pacman -Syu
-sudo pacman -S firefox alacritty git
+sudo pacman -S firefox alacritty git xclip
 # GRABBING FILES
 git clone https://github.com/mnpqraven/dotfiles.git
 # INSTALLING YAY
@@ -96,3 +96,5 @@ echo zellij setup --generate-completion zsh >> $HOME/.oh-my-zsh/completions/_zel
 # cp .screenlayout/setup_monitors /usr/bin
 # sudo nvim /etc/lightdm/lightdm.conf
 # display-setup-script=/usr/bin/setup_monitors
+# disable sub-pixel rendering
+sudo rm /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf
