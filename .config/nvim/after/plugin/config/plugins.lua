@@ -28,7 +28,16 @@ let g:user_emmet_settings = {
   autocmd BufNewFile,BufRead fugitive://* set bufhidden=delete
   let g:tex_flavor = 'xelatex'
   let g:vimtex_view_general_viewer = 'zathura'
-  let g:vimtex_compiler_latexmk_engine = {'xelatex': '-pdf'}
+  let g:vimtex_compiler_latexmk_engines = {
+    \ '_'                : '-xelatex',
+    \ 'pdflatex'         : '-pdf',
+    \ 'dvipdfex'         : '-pdfdvi',
+    \ 'lualatex'         : '-lualatex',
+    \ 'xelatex'          : '-xelatex',
+    \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+    \ 'context (luatex)' : '-pdf -pdflatex=context',
+    \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
+    \}
   let g:vimtex_syntax_conceal_disabled=1
 
   let g:pandoc#modules#disabled = ["keyboard", "spell"]
@@ -44,6 +53,10 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use 'lervag/vimtex'
+  use 'davidgranstrom/nvim-markdown-preview'
+  use 'vim-pandoc/vim-rmarkdown'
+  use 'vim-pandoc/vim-pandoc'
+  use 'vim-pandoc/vim-pandoc-syntax'
   use 'frabjous/knap'
   use 'mattn/emmet-vim'
   use 'lukas-reineke/indent-blankline.nvim'
