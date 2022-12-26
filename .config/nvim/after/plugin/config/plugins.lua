@@ -64,7 +64,7 @@ return require('packer').startup(function(use)
     'themaxmarchuk/tailwindcss-colors.nvim',
     module = "tailwindcss-colors",
     -- run the setup function after plugin is loaded
-    config = function ()
+    config = function()
       -- pass config options here (or nothing to use defaults)
       require("tailwindcss-colors").setup()
     end
@@ -79,7 +79,7 @@ return require('packer').startup(function(use)
 
   -- THEME
   use {
-    'nvim-lualine/lualine.nvim' ,
+    'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
   use 'kyazdani42/nvim-web-devicons'
@@ -95,7 +95,11 @@ return require('packer').startup(function(use)
   use 'j-hui/fidget.nvim'
 
   -- FUNCTIONALITY
-  use 'kylechui/nvim-surround'
+  use({ 'kylechui/nvim-surround',
+    tag = "*",
+    config = function()
+      require("nvim-surround").setup({})
+    end })
   use 'numToStr/Comment.nvim'
   use 'windwp/nvim-autopairs'
   use {
@@ -161,7 +165,7 @@ return require('packer').startup(function(use)
     'phaazon/hop.nvim',
     branch = 'v2',
     config = function()
-      require'hop'.setup { keys = 'arsdheiqwfpgjluyozxcvbkmtn' }
+      require 'hop'.setup { keys = 'arsdheiqwfpgjluyozxcvbkmtn' }
     end
   }
   use 'christoomey/vim-tmux-navigator'
@@ -186,11 +190,11 @@ return require('packer').startup(function(use)
   use 'xiyaowong/telescope-emoji.nvim'
   use 'MunifTanjim/nui.nvim'
   use { 'bennypowers/nvim-regexplainer',
-  config = function() require'regexplainer'.setup() end,
-  requires = {
-    'nvim-treesitter/nvim-treesitter',
-    'MunifTanjim/nui.nvim',
-  } }
+    config = function() require 'regexplainer'.setup() end,
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+      'MunifTanjim/nui.nvim',
+    } }
   use {
     'crusj/bookmarks.nvim',
     branch = 'main',
