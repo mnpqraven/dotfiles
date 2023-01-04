@@ -16,6 +16,7 @@ require('numbers').setup {
     'NvimTree',
     'unite',
     'toggleterm',
+    'Outline'
   }
 }
 require('neogen').setup({ snippet_engine = "luasnip" })
@@ -46,5 +47,10 @@ require "fidget".setup {
   },
   window = {
     blend = 0
+  }
+}
+require("symbols-outline").setup {
+  keymaps = {
+    unfold = "e"
   }
 }

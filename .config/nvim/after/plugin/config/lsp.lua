@@ -32,7 +32,8 @@ rt.setup({
       ["rust-analyzer"] = {
         checkOnSave = {
           command = "clippy"
-        }
+        },
+        inlayHints = { locationLinks = false }
       }
     }
   }
@@ -49,10 +50,10 @@ lspconfig.jsonls.setup { capabilities = capabilities,
       schemas = vim.list_extend(
         {
           {
-            name = 'Skillbook Chema',
+            name = 'Custom Schema',
             description = 'My custom JSON schema',
-            fileMatch = { 'skillbook.json', 'skillbook.jsonc' },
-            url = './schemas/skillbook_schema.json'
+            fileMatch = { 'schemadata.json', 'schemadata.jsonc' },
+            -- url = './schemas/schema.json'
           },
         },
         require('schemastore').json.schemas()
@@ -65,8 +66,7 @@ lspconfig.yamlls.setup { capabilities = capabilities,
   settings = {
     yaml = {
       schemas = {
-        ['./schemas/skillbook_schema.json'] =
-        'skillbook.{yml,yaml}'
+        ['./schemas/schema.json'] = 'schemadata.yaml'
       },
     }
   }
