@@ -27,6 +27,7 @@
 
 .config/nvim/plugin/
 
+!/.fonts
 # !/.local
 # /.local/*
 # !/.local/share

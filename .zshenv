@@ -9,6 +9,7 @@ export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
 export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
 export YADM_REPO="$HOME/.local/share/yadm/repo.git"
 export GPG_TTY=$(tty)
+export OPENSSL_DIR=$(openssl version -d | cut -d '"' -f2)
 
 export KEYTIMEOUT=200
 bindkey -v

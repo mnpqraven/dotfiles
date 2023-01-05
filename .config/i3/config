@@ -49,7 +49,7 @@ exec $HOME/.screenlayout/pc.sh
 exec wired
 exec dbus-launch
 exec eww open dock
-exec picom -cf
+# exec picom -cf
 exec easyeffects --gapplication-service
 
 # dropdown terminal

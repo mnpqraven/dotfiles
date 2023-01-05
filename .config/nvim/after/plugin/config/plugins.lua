@@ -95,11 +95,13 @@ return require('packer').startup(function(use)
   use 'j-hui/fidget.nvim'
 
   -- FUNCTIONALITY
-  use({ 'kylechui/nvim-surround',
+  use {
+    "kylechui/nvim-surround",
     tag = "*",
     config = function()
-      require("nvim-surround").setup({})
-    end })
+      require("nvim-surround").setup()
+    end
+  }
   use 'numToStr/Comment.nvim'
   use 'windwp/nvim-autopairs'
   use {

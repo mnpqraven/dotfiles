@@ -12,9 +12,13 @@ ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 sh $HOME/.screenlayout/pc.sh
 #boot compton or picom if it exists
 if [ -x "$(command -v picom)" ]; then
-  pkill picom
+  killall picom
   picom --shadow-exclude argb -b -f
-  # &> /dev/null &
 fi
+if [ -x s"$(command -v wired)" ]; then
+  wired
+fi
+
+sh $HOME/.config/polybar/launch.sh --othi
 
 feh --bg-fill $HOME/.screenlayout/wallpapers/hor/0.jpg $HOME/.screenlayout/wallpapers/vert/0.jpg

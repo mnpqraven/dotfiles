@@ -34,6 +34,10 @@ sudo systemctl enable --now mpd
 # notification
 sudo pacman -S libnotify
 yay leftwm leftwm-theme-git
+sudo pacman -S polybar
+mkdir -p $HOME/.local/share/fonts
+cp -rf .fonts/* $HOME/.local/share/fonts
+
 leftwm-theme update
 ln -s ~/.config/leftwm/themes/othi ~/.config/leftwm/themes/current
 yay wired
@@ -44,6 +48,7 @@ sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
 # MUSIC
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc pamixer
+sudo pacman -S openssl
 
 sudo pacman -S yadm
 yadm clone https://github.com/mnpqraven/dotfiles
@@ -76,6 +81,7 @@ yay --sync eww-git
 sudo pacman -S --noconfirm --overwrite "*" deluge
 sudo pacman -S --noconfirm fzf ripgrep zoxide fd
 sudo pacman -S --noconfirm fcitx5 fcitx5-unikey fcitx5-mozc fcitx5-configtool fcitx5-gtk
+sudo pacman -S qt5-tools
 # not yet installed
 # sudo npm install -g neovim
 sudo pacman -S --noconfirm npm

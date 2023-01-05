@@ -9,9 +9,11 @@ $surface-red: #f87070;
 .layout-box {
   font-family: Phosphor, Koulen;
   background-repeat: no-repeat;
-  background-size: contain;
-  padding: 5em;
+  background-size: cover;
   color: rgba($surface-fg, 0.8);
+}
+.layout-box.layout-container {
+  padding: 5em;
 }
 
 .net-box,

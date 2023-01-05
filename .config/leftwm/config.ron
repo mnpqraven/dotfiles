@@ -52,7 +52,9 @@
     scratchpad: [
         (name: "Alacritty", value: "alacritty", x: 860, y: 390, height: 600, width: 400),
     ],
-    window_rules: [],
+    window_rules: [
+        ( window_class: "othirpg", spawn_floating: true )
+    ],
     disable_current_tag_swap: true,
     disable_tile_drag: false,
     disable_window_snap: true,
@@ -82,6 +84,8 @@
         (modifier: ["modkey"],            key: "e", command: FocusWorkspacePrevious, value: "", ),
         (modifier: ["modkey"],            key: "f", command: ToggleFullScreen, value: "", ),
         (modifier: ["modkey"],            key: "z", command: RotateTag, value: "", ),
+        (modifier: ["modkey"],            key: "c", command: Execute, value: "maim -s | xclip -selection clipboard -t image/png", ),
+        (modifier: ["modkey", "Shift"],   key: "c", command: Execute, value: "maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png", ),
         (modifier: ["modkey"],            key: "t", command: ToggleScratchPad, value: "Alacritty", ),
         (modifier: ["modkey", "Shift"],   key: "space", command: ToggleFloating, value: "", ),
 

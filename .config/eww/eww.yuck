@@ -81,9 +81,63 @@
   :wm-ignore false
   :geometry (geometry :height "1.5%")
   (dock_layout))
+
 (defwidget dock_layout []
+  (box :space-evenly true :orientation "horizontal"
+    (button :onclick "eww open dashboard" :class "close-btn" "")
+    (_dock_time)))
+
+(defwidget _dock_time []
+  (eventbox :onhover "eww update date=true"
+            :onhoverlost "eww update date=false"
+    (box :halign "end"
+      (revealer :transition "slideleft" :reveal date :duration "500ms"
+        (label :text "${fulldate.day} ${fulldate.month} ${fulldate.year}"))
+      (label :text "${time.hour}:${time.min}"))))
+(defvar date false)
+
+
+(defvar WS '{"ws1": [{"name": "1", "icon": "", "status": "occupied"},
+                     {"name": "2", "icon": "", "status": "empty"},
+                     {"name": "3", "icon": "", "status": "focused"}],
+             "ws2": [{"name": "4", "icon": "", "status": "empty"},
+                     {"name": "5", "icon": "", "status": "occupied"},
+                     {"name": "6", "icon": "", "status": "urgent"}],
+             "focused": "3"}')
+(defwidget _dock_workspace []
+    (box :class "ws"
+       :orientation "vertical"
+       :space-evenly false
+    (small-wss :wss "${WS.ws1}")
+    (small-wss :wss "${WS.ws2}")
+    (big-ws :focused-ws "${WS.focused}")))
+(defwidget small-wss [wss]
   (box
-    (button :onclick "eww open dashboard" :class "close-btn" "")))
+    :class "small-wss"
+    :hexpand false
+    :vexpand false
+    (for ws in wss
+      (small-ws :ws ws))))
+
+(defwidget small-ws [ws]
+  (eventbox
+    :cursor "hand"
+    (button
+      :onclick "i3-msg workspace ${ws.name}"
+      (label
+        :class "small-ws status-${ws.status}"
+        :text "${ws.icon}"))))
+
+(defwidget big-ws [focused-ws]
+  (box
+    :class "big-ws"
+    :hexpand false
+    :vexpand false
+    :height "50"
+    :width "50"
+
+    (label
+      :text "${focused-ws}")))
 
 
 (defwindow dashboard
@@ -96,6 +150,10 @@
 (defpoll time :interval "5s"
   :initial `date +'{"hour":"%H","min":"%M"}'`
   `date +'{"hour":"%H","min":"%M"}'`)
+(defpoll fulldate :interval "5s"
+  :initial `date +'{"day":"%d","month":"%h","year":"%Y","hour":"%H","min":"%M"}'`
+  `date +'{"day":"%d","month":"%h","year":"%Y","hour":"%H","min":"%M"}'`)
+
 (defpoll net :interval "100s"
   :initial `N/A`
   `nmcli -t -f SIGNAL,ACTIVE device wifi \
@@ -104,25 +162,29 @@
 (defwidget dashboard_layout []
   (box :class "layout-box" :space-evenly false :orientation "vertical"
        :style "background-image: url('./wallpaper')"
-    (box :valign "start" :space-evenly false :spacing 25
-      (_sundial)
-      (_battery :status {EWW_BATTERY.BAT0.status}
-                :battery {EWW_BATTERY.BAT0.capacity}
-                :charge "" :one "" :two "" :three "" :four ""
-                :five "" :six "" :seven "")
-      (_network :strength net :offline "" :excellent "" :good ""
-                :okay "" :slow "")
-      (label :text "|" :class "sep")
-      (button :onclick "eww close dashboard" :class "close-btn" ""))
-    (box :space-evenly false :hexpand true :vexpand true
-      (box :spacing 15 :class "tm-box" :space-evenly false
-            :valign "end" :halign "start"
-        (label :text "")
-        (label :text "${time.hour}  ${time.min}"))
-      (_buttons :shutdown "poweroff" :reboot "reboot"
-                :logout "loginctl kill-session self"
-                :shutdown_icon "" :reboot_icon ""
-                :logout_icon ""))))
+    (button :onclick "eww close dashboard" :class "close-btn" "")
+    (box :class "layout-box layout-container" :space-evenly false :orientation "vertical"
+         :hexpand true :vexpand true
+      (box :valign "start" :space-evenly false :spacing 25
+        (_sundial)
+        (_battery :status {EWW_BATTERY.BAT0.status}
+                  :battery {EWW_BATTERY.BAT0.capacity}
+                  :charge "" :one "" :two "" :three "" :four ""
+                  :five "" :six "" :seven "")
+        (_network :strength net :offline "" :excellent "" :good ""
+                  :okay "" :slow "")
+        (label :text "|" :class "sep"))
+      (box :space-evenly false :hexpand true :vexpand true
+        (box :spacing 15 :class "tm-box" :space-evenly false
+             :valign "end" :halign "start"
+          (label :text "")
+          (label :text "${time.hour}  ${time.min}"))
+        (_buttons :shutdown "poweroff" :reboot "reboot"
+                  :logout "loginctl kill-session self"
+                  :shutdown_icon "襤 Shutdown" :reboot_icon "累 Reboot"
+                  :logout_icon "  Logout"))
+      )
+    ))
 
 (defwidget _battery [battery status one two three
                     four five six seven charge]
