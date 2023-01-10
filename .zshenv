@@ -12,7 +12,6 @@ export GPG_TTY=$(tty)
 export LD_LIBRARY_PATH="/usr/local/lib"
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
-
 export KEYTIMEOUT=200
 bindkey -v
 
