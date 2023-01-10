@@ -73,8 +73,8 @@ yay clifm
 # LANGS
 sudo pacman -S --noconfirm cmake make gcc clang rustup mold
 rustup default nightly
-cargo install --locked zellij xplr starship
-cargo install exa kalker macchina
+cargo install --locked zellij xplr starship bacon
+cargo install exa kalker macchina cargo-update
 
 yay --sync eww-git
 
@@ -106,3 +106,8 @@ echo zellij setup --generate-completion zsh >> $HOME/.oh-my-zsh/completions/_zel
 # display-setup-script=/usr/bin/setup_monitors
 # disable sub-pixel rendering
 sudo rm /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf
+
+
+# dev
+# helix install
+sh Scripts/helix-setup.sh

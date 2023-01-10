@@ -127,6 +127,7 @@ return require('packer').startup(function(use)
     end,
   }
   use 'RRethy/vim-illuminate'
+  use 'onsails/lspkind.nvim'
   use 'b0o/schemastore.nvim'
   use 'ron-rs/ron.vim'
   use 'elkowar/yuck.vim'

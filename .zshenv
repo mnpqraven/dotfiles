@@ -7,9 +7,11 @@ export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH="$PATH:$ANDROID_SDK_ROOT/emulator"
 export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
 export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
-export YADM_REPO="$HOME/.local/share/yadm/repo.git"
 export GPG_TTY=$(tty)
-export OPENSSL_DIR=$(openssl version -d | cut -d '"' -f2)
+# dotnet stuff
+export LD_LIBRARY_PATH="/usr/local/lib"
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+
 
 export KEYTIMEOUT=200
 bindkey -v
@@ -26,6 +28,7 @@ alias cr="cargo run --"
 
 # # commands aliases {{{
 alias v="$EDITOR"
+alias hx="helix"
 alias fm="clifm"
 alias fmr="xplr"
 alias mz="ncmpcpp"
@@ -37,12 +40,10 @@ alias r="ranger"
 alias tm="tmux"
 alias zm="zellij -s main"
 alias xpic="xclip -sel clipboard -t image/png"
-alias ee="i3-msg exec 'easyeffects --gapplication-service'"
-alias y="yadm"
-
-alias rwork="rsync -avzx -e 'ssh -p 6661' $HOME/work othi@183.81.43.11:/volume1/NetBackup/$(whoami)"
-alias btw="macchina -o Host Kernel Distribution OperatingSystem DesktopEnvironment WindowManager Shell LocalIP Resolution Uptime Processor"
 alias update="cargo install $(cargo install --list | grep -E '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ') && sudo pacman -Syu"
+
+alias rwork="rsync -avzx -e 'ssh -p 6661' $HOME/work othi@183.81.43.11:/volume1/NetBackup/$(hostname)"
+alias btw="macchina"
 # }}}
 
 # config aliases
@@ -50,7 +51,6 @@ alias vrc="$EDITOR $HOME/.config/nvim"
 alias zrc="$EDITOR $HOME/.zshrc"
 alias zenv="$EDITOR $HOME/.zshenv"
 alias tmrc="$EDITOR $HOME/.tmux.conf"
-alias ydot="$EDITOR $YADM_REPO"
 
 # git aliases {{{
 alias gt="git tree"

@@ -3,4 +3,17 @@
 # handle long desc
 long_kernel = false
 long_shell = false
-theme="othi"
+theme = "othi"
+show = [
+  "Host",
+  "Kernel",
+  "Distribution",
+  "OperatingSystem",
+  "DesktopEnvironment",
+  "WindowManager",
+  "Shell",
+  "LocalIP",
+  "Resolution",
+  "Uptime",
+  "Processor",
+]

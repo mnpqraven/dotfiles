@@ -84,6 +84,7 @@
 !/.config/ranger
 !/.config/powerline
 !/.config/nvim
+!/.config/helix
 !/.config/xfce4
 !/.config/xplr
 !/.config/xfce4/terminal/terminalrc
