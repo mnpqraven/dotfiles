@@ -84,6 +84,7 @@
 !/.config/ranger
 !/.config/powerline
 !/.config/nvim
+!/.config/nvim-backup
 !/.config/helix
 !/.config/xfce4
 !/.config/xplr
