@@ -98,7 +98,7 @@ require('dressing').setup({
         filetype = "DressingSelect",
       },
       win_options = {
-        winblend = 0,
+        winblend = 10,
       },
       max_width = 80,
       max_height = 40,
@@ -117,7 +117,7 @@ require('dressing').setup({
       buf_options = {},
       win_options = {
         -- Window transparency (0-100)
-        winblend = 0,
+        winblend = 10,
       },
 
       -- These can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)

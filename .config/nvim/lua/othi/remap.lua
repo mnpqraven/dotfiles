@@ -1,13 +1,9 @@
-vim.g.mapleader=" "
-vim.g.maplocalleader="\\"
-
 local map = require("user.functions").map
 local nmap = require("user.functions").nmap
 local vmap = require("user.functions").vmap
 local nnoremap = require("user.functions").nnoremap
 local inoremap = require("user.functions").inoremap
 local vnoremap = require("user.functions").nnoremap
-
 
 map('N', 'K' )
 map('n', 'gj')
