@@ -238,11 +238,12 @@ current = false
 
 [[repos.themes]]
 name = "Blood-Moon"
+directory = "/home/othi/.config/leftwm/themes/Blood-Moon"
 repository = "https://github.com/zawesomekid/Blood-Moon-leftwm-theme"
 commit = "*"
 version = "0.0.1"
 leftwm_versions = ">0.3.0"
-current = false
+current = true
 
 [[repos]]
 url = "localhost"
@@ -254,4 +255,18 @@ name = "othi"
 directory = "/home/othi/.config/leftwm/themes/othi"
 version = "0.0.0"
 leftwm_versions = "*"
-current = true
+current = false
+
+[[repos.themes]]
+name = "leftwm-theme-dracula-rounded"
+directory = "/home/othi/.config/leftwm/themes/leftwm-theme-dracula-rounded"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
+
+[[repos.themes]]
+name = "zexanima-leftwm-theme"
+directory = "/home/othi/.config/leftwm/themes/zexanima-leftwm-theme"
+version = "0.0.0"
+leftwm_versions = "*"
+current = false
