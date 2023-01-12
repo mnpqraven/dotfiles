@@ -2,9 +2,16 @@
 [[ -f ~/.zsh/zsh-snap/znap.zsh ]] ||
   git clone --depth 1 -- \
     https://github.com/marlonrichert/zsh-snap.git ~/.zsh/zsh-snap
+# ZNAP
 source ~/.zsh/zsh-snap/znap.zsh
+# znap prompt sindresorhus/pure
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
+znap eval alacritty 'echo "macchina"'
+
+# OMZ
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(git common-aliases zsh-syntax-highlighting vi-mode zsh-autosuggestions)
+plugins=(git common-aliases vi-mode)
 source $ZSH/oh-my-zsh.sh
 # if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -55,4 +62,3 @@ znap source zsh-users/zsh-syntax-highlighting
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-btw
