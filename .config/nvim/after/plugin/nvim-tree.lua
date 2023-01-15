@@ -4,6 +4,7 @@ require("nvim-tree").setup ({
     mappings = {
       list = {
         { key = "<C-e>", action = "" },
+        { key = "e", action = "" },
         { key = "<C-n>", action = "tabnew" },
         { key = {"<CR>", "<C-o>", "o", "<2-LeftMouse>" }, action = "edit" },
       },

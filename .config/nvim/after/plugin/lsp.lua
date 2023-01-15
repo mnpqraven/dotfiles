@@ -2,12 +2,20 @@
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require('lsp-zero')
 local rt = require("rust-tools")
+local wk = require('which-key')
+local crates = require('crates')
 lsp.preset('lsp-compe')
-lsp.skip_server_setup({'rust_analyzer'})
+lsp.skip_server_setup({ 'rust_analyzer' })
 
 lsp.ensure_installed({
+  'sumneko_lua',
   'tsserver',
-  'rust_analyzer'
+  'rust_analyzer',
+  'taplo',
+  'tailwindcss',
+  'cssls',
+  'cssmodules_ls',
+  'emmet_ls'
 })
 local cmp = require('cmp')
 local lspkind = require('lspkind')
@@ -26,7 +34,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-d>'] = cmp.mapping.scroll_docs(4),
   ['<C-e>'] = cmp.mapping.complete(),
   ['<C-h>'] = cmp.mapping.abort(),
-  ['<CR>'] = cmp.mapping.confirm({select = true}),
+  ['<CR>'] = cmp.mapping.confirm({ select = true }),
 })
 local cmp_configs = lsp.defaults.cmp_config({
   window = {
@@ -34,11 +42,11 @@ local cmp_configs = lsp.defaults.cmp_config({
     documentation = cmp.config.window.bordered(),
   },
   sources = cmp.config.sources({
-    {name = 'nvim_lsp'},
-    {name = 'luasnip'},
-    {name = 'crates'},
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'crates' },
   }, {
-    {name = 'buffer'}
+    { name = 'buffer' }
   }),
   formatting = {
     format = lspkind.cmp_format({
@@ -50,35 +58,74 @@ local cmp_configs = lsp.defaults.cmp_config({
 })
 
 cmp.event:on(
-'confirm_done', cmp_autopairs.on_confirm_done())
+  'confirm_done', cmp_autopairs.on_confirm_done())
 
-lsp.on_attach( function(client,bufnr)
-  local opts = {buffer = bufnr, remap = false}
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  vim.keymap.set('n', '<leader><leader>', vim.diagnostic.open_float, opts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  -- NOTE: see if needed
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, bufopts)
-  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>qf', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  -- vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
-  vim.keymap.set("n", "[d", vim.diagnostic.goto_next, opts)
-  vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, opts)
-  -- vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-  -- vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
-  -- vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
-  -- vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+lsp.on_attach(function(client, bufnr)
+  require('lsp_signature').on_attach({
+    bind = true,
+    handler_opts = { border = "single" },
+    hint_prefix = "> "
+  }, bufnr)
 
+  local opts = { buffer = bufnr, noremap = true }
+  wk.register({
+    g = {
+      name = "Go",
+      d = { vim.lsp.buf.definition, "Go to definition", buffer = bufnr },
+      D = { vim.lsp.buf.declaration, "Go to declaration", buffer = bufnr },
+      r = { vim.lsp.buf.references, "List references", buffer = bufnr }
+    },
+    K = { vim.lsp.buf.hover, "Hover", buffer = bufnr },
+    ['<C-k>'] = { vim.lsp.buf.signature_help, "Signature help", buffer = bufnr },
+    ["["] = {
+      d = { vim.diagnostic.goto_next, "Next diagnostic", buffer = bufnr }
+    },
+    ["]"] = {
+      d = { vim.diagnostic.goto_prev, "Previous diagnostic", buffer = bufnr }
+    }
+  })
+  wk.register({
+    o = { vim.lsp.buf.format, "Format", buffer = bufnr },
+    D = { vim.lsp.buf.type_definition, "Go to type definition", buffer = bufnr },
+    ["rn"] = { vim.lsp.buf.rename, "Rename", buffer = bufnr },
+    ["qf"] = { vim.lsp.buf.code_action, "Code actions", buffer = bufnr },
+    ["<leader>"] = { vim.diagnostic.open_float, "Open diagnostic window", buffer = bufnr }
+  }, { prefix = "<leader>" })
 end)
+
+lsp.configure('taplo', {
+  on_attach = function(_, bufnr)
+    wk.register({
+      c = {
+        name = "Cargo",
+        u = { crates.update_crate, "Update crate", buffer = bufnr },
+        U = { crates.upgrade_crate, "Upgrade crate", buffer = bufnr },
+        u = { crates.update_crates, "Update crates", mode = "v", buffer = bufnr },
+        u = { crates.upgrade_crates, "Upgrade crates", mode = "v", buffer = bufnr },
+        a = { crates.upgrade_all_crates, "Upgrade all crates", buffer = bufnr },
+        h = { crates.open_homepage, "Open homepage", buffer = bufnr },
+        d = { crates.open_documentation, "Open documentation", buffer = bufnr },
+      }
+    }, { prefix = "<leader>"})
+  end
+})
+lsp.configure('tailwindcss', {
+  on_attach = function(_, bufnr)
+    require("tailwindcss-colors").buf_attach(bufnr)
+  end
+})
+
 local rust_lsp = lsp.build_options('rust_analyzer', {
   on_attach = function(_, bufnr)
-    -- Hover actions
-    vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+    wk.register({
+      K = {rt.hover_actions.hover_actions,"Hover actions", buffer = bufnr },
+    })
+    wk.register({
+      c = {
+        name = "cargo",
+        r = {rt.runnables.runnables, "Cargo actions", buffer = bufnr }
+      },
+    }, {prefix = "<leader>"})
     -- Code action groups
     vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
   end,
@@ -123,3 +170,10 @@ cmp.setup.cmdline(':', {
 require('rust-tools').setup({
   server = rust_lsp
 })
+
+-- signs on gutter columns
+local signs = { Error = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end

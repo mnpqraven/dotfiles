@@ -17,29 +17,31 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader=" "
-vim.g.maplocalleader="\\"
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- TODO: LSP keybind
 -- todo color
 -- tabout key
 require('lazy').setup({
-  -- NOTE: PACKER ------------------------------------------------------------
-  'wbthomason/packer.nvim',
-
   -- NOTE: SYNTAX ------------------------------------------------------------
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
-    dependencies = { {'nvim-lua/plenary.nvim'} }
+    dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
   'nvim-telescope/telescope-ui-select.nvim',
 
   -- NOTE: THEME -------------------------------------------------------------
   { "catppuccin/nvim", as = "catppuccin" },
+  'rebelot/kanagawa.nvim',
+  'kvrohit/mellow.nvim',
+  { 'ramojus/mellifluous.nvim',
+    dependencies = { 'rktjmp/lush.nvim' },
+  },
   { 'nvim-tree/nvim-tree.lua',
-  dependencies = { 'nvim-tree/nvim-web-devicons', },
-  tag = 'nightly' },
+    dependencies = { 'nvim-tree/nvim-web-devicons', },
+    tag = 'nightly' },
   {
     'nvim-treesitter/nvim-treesitter',
     build = function()
@@ -47,30 +49,38 @@ require('lazy').setup({
       ts_update()
     end,
   },
+  'nvim-treesitter/nvim-treesitter-textobjects',
+  'nvim-treesitter/playground',
+  'lukas-reineke/indent-blankline.nvim',
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
+  },
+
 
   {
     'VonHeikemen/lsp-zero.nvim',
     dependencies = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
+      { 'neovim/nvim-lspconfig' },
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
       -- Specific languagess
-      {'simrat39/rust-tools.nvim'},
+      { 'simrat39/rust-tools.nvim' },
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'hrsh7th/cmp-cmdline'},
-      {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-nvim-lua'},
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'hrsh7th/cmp-cmdline' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-nvim-lua' },
 
       -- Snippets
-      {'L3MON4D3/LuaSnip'},
+      { 'L3MON4D3/LuaSnip' },
       -- Snippet Collection (Optional)
-      {'rafamadriz/friendly-snippets'},
+      { 'rafamadriz/friendly-snippets' },
     }
   },
   'mfussenegger/nvim-dap',
@@ -84,27 +94,23 @@ require('lazy').setup({
   {
     'Lilja/zellij.nvim',
     config = function()
-        require('zellij').setup({})
+      require('zellij').setup({})
     end
   },
   'tpope/vim-fugitive',
-  {
-    "kylechui/nvim-surround",
-    config = function()
-      require("nvim-surround").setup()
-    end
-  },
+
+  { 'kylechui/nvim-surround', tag = '*' },
   {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end
   },
   {
     'folke/todo-comments.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
-      require('todo-comments').setup ({
+      require('todo-comments').setup({
         signs = false
       })
     end
@@ -122,7 +128,7 @@ require('lazy').setup({
   {
     "danymat/neogen",
     config = function()
-        require('neogen').setup({ snippet_engine = 'luasnip' })
+      require('neogen').setup({ snippet_engine = 'luasnip' })
     end,
     dependencies = "nvim-treesitter/nvim-treesitter",
   },
@@ -137,8 +143,55 @@ require('lazy').setup({
 
   'mattn/emmet-vim',
   'onsails/lspkind.nvim',
+  'ray-x/lsp_signature.nvim',
+  {
+    'folke/trouble.nvim',
+    config = function()
+      require("trouble").setup()
+    end,
+    dependencies = "nvim-tree/nvim-web-devicons",
+  },
   'j-hui/fidget.nvim',
+  { 'lewis6991/gitsigns.nvim', tag = 'release' },
   'simrat39/symbols-outline.nvim',
   'rcarriga/nvim-notify',
-  'stevearc/dressing.nvim'
+  'stevearc/dressing.nvim',
+  {
+    'themaxmarchuk/tailwindcss-colors.nvim',
+    module = "tailwindcss-colors",
+    -- run the setup function after plugin is loaded
+    config = function()
+      -- pass config options here (or nothing to use defaults)
+      require("tailwindcss-colors").setup()
+    end
+  },
+  'norcalli/nvim-colorizer.lua',
+  {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 0
+      require("which-key").setup()
+    end,
+  },
+  {
+    "folke/twilight.nvim",
+    config = function()
+      require("twilight").setup({
+        dimming = {
+          alpha = 0.6,
+          inactive = true
+        },
+        expand = {
+          "function_item",
+          "function",
+          "method",
+          "table",
+          "if_statement",
+          "expression_statement",
+        },
+      })
+      vim.cmd([[TwilightEnable]])
+    end
+  }
 })

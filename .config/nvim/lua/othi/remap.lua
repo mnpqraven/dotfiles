@@ -1,11 +1,12 @@
 local map = require("user.functions").map
+local noremap = require("user.functions").noremap
 local nmap = require("user.functions").nmap
 local vmap = require("user.functions").vmap
 local nnoremap = require("user.functions").nnoremap
 local inoremap = require("user.functions").inoremap
 local vnoremap = require("user.functions").nnoremap
 
-map('N', 'K' )
+map('N', 'K')
 map('n', 'gj')
 map('E', 'J')
 map('e', 'l')
