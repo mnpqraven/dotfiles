@@ -51,6 +51,7 @@ require('lazy').setup({
   },
   'nvim-treesitter/nvim-treesitter-textobjects',
   'nvim-treesitter/playground',
+  'nvim-treesitter/nvim-treesitter-context',
   'lukas-reineke/indent-blankline.nvim',
   {
     'nvim-lualine/lualine.nvim',
@@ -80,7 +81,7 @@ require('lazy').setup({
       -- Snippets
       { 'L3MON4D3/LuaSnip' },
       -- Snippet Collection (Optional)
-      { 'rafamadriz/friendly-snippets' },
+      -- { 'rafamadriz/friendly-snippets' },
     }
   },
   'mfussenegger/nvim-dap',
@@ -193,5 +194,6 @@ require('lazy').setup({
       })
       vim.cmd([[TwilightEnable]])
     end
-  }
+  },
+  'RRethy/vim-illuminate',
 })

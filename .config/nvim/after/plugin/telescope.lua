@@ -3,8 +3,8 @@ local wk = require('which-key')
 wk.register({
   f = {
     name = "Telescope",
-    w = { builtin.find_files, "Find Files" },
-    f = { builtin.git_files, "Find git Files" }, -- create a binding with label
+    f = { builtin.find_files, "Find files" },
+    w = { builtin.git_files, "Find git files" },
     g = { builtin.live_grep, "Grep" },
     b = { builtin.buffers, "Buffers" },
     p = { builtin.diagnostics, "Diagnostics" },

@@ -2,6 +2,7 @@
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require('lsp-zero')
 local rt = require("rust-tools")
+local builtin = require('telescope.builtin')
 local wk = require('which-key')
 local crates = require('crates')
 lsp.preset('lsp-compe')
@@ -109,6 +110,17 @@ lsp.configure('taplo', {
     }, { prefix = "<leader>"})
   end
 })
+
+lsp.configure('lua', {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
+})
+
 lsp.configure('tailwindcss', {
   on_attach = function(_, bufnr)
     require("tailwindcss-colors").buf_attach(bufnr)

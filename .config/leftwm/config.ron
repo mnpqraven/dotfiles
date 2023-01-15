@@ -54,7 +54,9 @@
         (name: "Alacritty", value: "alacritty", x: 860, y: 390, height: 600, width: 400),
     ],
     window_rules: [
-        ( window_class: "othirpg", spawn_floating: true )
+        (window_class: "othirpg", spawn_floating: true),
+        (window_title: "pnc-checklist", spawn_on_tag: 7, spawn_floating: true),
+        (window_class: "pnc-checklist", spawn_on_tag: 7, spawn_floating: true)
     ],
     disable_current_tag_swap: true,
     disable_tile_drag: false,
