@@ -1,0 +1,5 @@
+[user]
+	email = mnpq.raven@gmail.com
+	name = Othi
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
