@@ -25,7 +25,7 @@ rustup default nightly
 
 # EDITOR
 sudo pacman -S --noconfirm neovim jq
-sudo pacman -S --noconfirm alsa-utils easyeffects
+sudo pacman -S --noconfirm alsa-utils easyeffects arandr
 # install linux studio plugins
 # extract the tarball with `tar vfx`
 # sudo cp tarball content to /usr/local/lib
@@ -56,7 +56,6 @@ sudo pacman -S openssl
 
 sudo pacman -S yadm
 yadm clone https://github.com/mnpqraven/dotfiles
-yadm reset --HARD
 
 sudo pacman -S --noconfirm zathura zathura-pdf-mupdf zathura-cb
 sudo pacman -S --noconfirm texlive-most texlive-langextra python-pip
@@ -111,6 +110,9 @@ echo zellij setup --generate-completion zsh >> $HOME/.oh-my-zsh/completions/_zel
 # disable sub-pixel rendering
 sudo rm /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf
 
+cd $HOME/.config/leftwm/themes/Blood-Moon
+git clone git@github.com:mnpqraven/Blood-Moon-leftwm-theme.git .
+cd $HOME
 
 # dev
 # helix install
