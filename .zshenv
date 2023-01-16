@@ -60,5 +60,6 @@ alias gmnc="git merge --no-commit"
 alias gcom="git checkout master"
 alias qmkf="git checkout master && git fetch upstream && git pull upstream master && git push origin master"
 # yadm aliases
+alias y="yadm"
 alias yst="yadm status"
 alias ydot="$EDITOR $HOME/.local/share/yadm/repo.git/config"
