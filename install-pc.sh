@@ -25,7 +25,7 @@ rustup default nightly
 
 # EDITOR
 sudo pacman -S --noconfirm neovim jq
-sudo pacman -S --noconfirm alsa-utils easyeffects arandr
+sudo pacman -S --noconfirm alsa-utils easyeffects arandr inetutils
 # install linux studio plugins
 # extract the tarball with `tar vfx`
 # sudo cp tarball content to /usr/local/lib

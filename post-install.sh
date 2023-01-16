@@ -1,3 +1,3 @@
-cd $HOME/dotfiles
-git fetch
-cd $HOME
+yadm submodule update --recursive --init
+sudo systemctl enable mpd
+rm -rf nerd-fonts
