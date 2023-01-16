@@ -16,4 +16,15 @@ require('mellifluous').setup({
   }
 })
 
-vim.cmd.colorscheme "kanagawa"
+require('onedark').setup {
+  transparent = true,
+  style = 'warmer',
+  code_style = {
+    keywords = 'italic',
+  },
+  lualine = {
+    transparent = true
+  }
+}
+
+vim.cmd.colorscheme "onedark"

@@ -1,4 +1,12 @@
 local wk = require('which-key')
+require('trouble').setup({
+  height = 7
+})
 wk.register({
-  ["tt"] = { "<cmd>TroubleToggle<CR>", "Open diagnostic list" }
+  s = {
+    name = 'Show',
+    t = { "<cmd>TroubleToggle<CR>", "Diagnostic list" },
+    s = { '<cmd>SymbolsOutline<CR>', "Symbols outline"}
+
+  }
 }, { prefix = "<leader>" })

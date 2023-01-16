@@ -21,6 +21,7 @@ vim.opt.colorcolumn    = "80"
 vim.opt.textwidth      = 79
 vim.opt.splitbelow     = true
 vim.opt.splitright     = true
+vim.opt.laststatus     = 3
 
 local indent = 2
 vim.opt.tabstop        = indent

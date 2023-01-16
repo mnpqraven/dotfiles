@@ -36,6 +36,7 @@ require('lazy').setup({
   { "catppuccin/nvim", as = "catppuccin" },
   'rebelot/kanagawa.nvim',
   'kvrohit/mellow.nvim',
+  'navarasu/onedark.nvim',
   { 'ramojus/mellifluous.nvim',
     dependencies = { 'rktjmp/lush.nvim' },
   },
@@ -57,7 +58,7 @@ require('lazy').setup({
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
-
+  'b0o/incline.nvim',
 
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -111,9 +112,7 @@ require('lazy').setup({
     'folke/todo-comments.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
-      require('todo-comments').setup({
-        signs = false
-      })
+      require('todo-comments').setup()
     end
   },
   {
@@ -175,25 +174,6 @@ require('lazy').setup({
       require("which-key").setup()
     end,
   },
-  {
-    "folke/twilight.nvim",
-    config = function()
-      require("twilight").setup({
-        dimming = {
-          alpha = 0.6,
-          inactive = true
-        },
-        expand = {
-          "function_item",
-          "function",
-          "method",
-          "table",
-          "if_statement",
-          "expression_statement",
-        },
-      })
-      vim.cmd([[TwilightEnable]])
-    end
-  },
+  'folke/twilight.nvim',
   'RRethy/vim-illuminate',
 })

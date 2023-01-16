@@ -68,7 +68,6 @@ lsp.on_attach(function(client, bufnr)
     hint_prefix = "> "
   }, bufnr)
 
-  local opts = { buffer = bufnr, noremap = true }
   wk.register({
     g = {
       name = "Go",
@@ -111,7 +110,7 @@ lsp.configure('taplo', {
   end
 })
 
-lsp.configure('lua', {
+lsp.configure('sumneko_lua', {
   settings = {
     Lua = {
       diagnostics = {
@@ -150,8 +149,10 @@ local rust_lsp = lsp.build_options('rust_analyzer', {
     }
   }
 })
+
 lsp.setup()
 cmp.setup(cmp_configs)
+
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.

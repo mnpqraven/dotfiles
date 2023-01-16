@@ -33,17 +33,18 @@ local expr_pattern = "[%:%w%<%(%)$>%.%_%-%\"%']+$"
 -- print(string.match("test Option<Ok(t)>.", expr_pattern))
 
 return {
-  postfix(".option", {
-    f(function (_, parent)
-      return "Option<" .. parent.env.POSTFIX_MATCH .. ">"
+  postfix({trig=".option", match_pattern="[%<%>%(%)%w%.%_%-]+$"},
+  {
+    f(function(_, parent)
+      print(parent.snippet.env.POSTFIX_MATCH)
+      return "Option<" .. parent.snippet.env.POSTFIX_MATCH .. ">"
     end, {}),
   }),
-  postfix({
-    trig = ".res",
-    match_pattern = expr_pattern
-  }, {
-    f(function (_, parent)
-      return "Result<" .. parent.env.POSTFIX_MATCH .. ">"
-    end, {}),
-  })
+  s( "pl?", {
+    t({"println!(\"{:?}"}), i(1), d(2, rec_pl_q, {}),
+    t({"\", "}), i(3), t({")"});
+  }),
+  s( "tst", {
+    t({"#[test]",""}), i(1)
+  }),
 }
