@@ -18,6 +18,11 @@ echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to
 bash $HOME/dotfiles/Scripts/git-genssh.sh
 
 # INSTALLING STUFF
+#
+# LANGS
+sudo pacman -S --noconfirm cmake make gcc clang rustup mold
+rustup default nightly
+
 # EDITOR
 sudo pacman -S --noconfirm neovim jq
 sudo pacman -S --noconfirm alsa-utils easyeffects
@@ -38,7 +43,7 @@ mkdir -p $HOME/.local/share/fonts
 cp -rf .fonts/* $HOME/.local/share/fonts
 
 leftwm-theme update
-ln -s ~/.config/leftwm/themes/othi ~/.config/leftwm/themes/current
+# ln -s ~/.config/leftwm/themes/othi ~/.config/leftwm/themes/current
 yay wired
 yay xmessage
 yay discord-canary-electron-bin
@@ -63,15 +68,15 @@ sudo pacman -S --noconfirm picom rofi feh pastel bat
 sudo pacman -S awesome-terminal-fonts ttf-font-awesome
 # fonts and wm
 yay papirus-icon-theme-git
-yay nerd-fonts-complete
+git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
+bash nerd-fonts/install.sh
+# checksum error for now
+# yay nerd-fonts-complete
 sudo pacman -S --noconfirm wmctrl
 
 # FM
 yay clifm
 
-# LANGS
-sudo pacman -S --noconfirm cmake make gcc clang rustup mold
-rustup default nightly
 cargo install --locked zellij xplr starship bacon
 cargo install exa kalker macchina cargo-update
 

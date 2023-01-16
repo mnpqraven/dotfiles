@@ -17,7 +17,7 @@
     mousekey: "Mod4",
     workspaces: [
     ( y: 313, x: 0, height: 1440, width: 2560, id: 0, output: "DP-2" ),
-    ( y: 0, x: 2560, height: 1920, width: 1080, id: 1, output: "DP-0", layouts:
+    ( y: 0, x: 2560, height: 1920, width: 1080, id: 1, output: "DP-3", layouts:
       [EvenVertical]),
     ],
     tags: [
