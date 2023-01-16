@@ -1,6 +1,7 @@
 #!/bin/bash
 # mpd setup
 mkdir -p "$HOME"/Music
+sudo mkdir -p /media
 while true;
 do
     read -r -p "do you want a symlink of the local nas?(y/n) " yn

@@ -51,7 +51,7 @@ alias zrc="$EDITOR $HOME/.zshrc"
 alias zenv="$EDITOR $HOME/.zshenv"
 alias tmrc="$EDITOR $HOME/.tmux.conf"
 
-# git aliases {{{
+# git aliases
 alias gt="git tree"
 alias gac="git allcommit"
 alias grst="git reset"
@@ -59,4 +59,6 @@ alias gRST="git reset --hard && git clean -fd"
 alias gmnc="git merge --no-commit"
 alias gcom="git checkout master"
 alias qmkf="git checkout master && git fetch upstream && git pull upstream master && git push origin master"
-# }}}
+# yadm aliases
+alias yst="yadm status"
+alias ydot="$EDITOR $HOME/.local/share/yadm/repo.git/config"

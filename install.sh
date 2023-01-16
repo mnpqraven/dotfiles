@@ -1,7 +1,9 @@
+# in case user forget
+sudo pacman -Syu
+sudo pacman -S firefox alacritty git xclip
 # GRABBING FILES
 git clone https://github.com/mnpqraven/dotfiles.git
 # INSTALLING YAY
-sudo pacman -Syu
 cd /opt
 sudo git clone https://aur.archlinux.org/yay.git
 sudo chown -R `whoami`:users ./yay
@@ -13,136 +15,114 @@ sudo pacman -S --noconfirm gnome-keyring libsecret
 echo "-------------------------------"
 echo "GIT"
 echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
-bash dotfiles/Scripts/git-genssh.sh
+bash $HOME/dotfiles/Scripts/git-genssh.sh
 
 # INSTALLING STUFF
+#
+# LANGS
+sudo pacman -S --noconfirm cmake make gcc clang rustup mold
+rustup default nightly
+
 # EDITOR
-sudo pacman -S --noconfirm neovim zsh-theme-powerlevel10k awesome-terminal-fonts ttf-font-awesome powerline-fonts
-sudo pacman -S --noconfirm texlive-most texlive-langextra python-pip evince
+sudo pacman -S --noconfirm neovim jq
+sudo pacman -S --noconfirm alsa-utils easyeffects arandr inetutils
+
+# EQ for easyeffects
+curl -L https://udomain.dl.sourceforge.net/project/lsp-plugins/lsp-plugins/1.2.4/Linux-x86_64/lsp-plugins-lv2-1.2.4-Linux-x86_64.tar.gz > lsp-lv2.tar.gz
+tar vfx lsp-lv2.tar.gz
+sudo cp $HOME/lsp-plugins-lv2-1.2.4-Linux-x86_64/usr/lib/* /usr/local/lib -r
+rm -rf lsp-lv2.tar.gz lsp-plugins-lv2-1.2.4-Linux-x86_64
+
+
+cd $HOME/dotfiles/Scripts
+bash nas-setup.sh
+cd $HOME/dotfiles
+bash Scripts/mpd-install-wizard.sh
+cd $HOME
+
+# notification
+sudo pacman -S libnotify
+yay leftwm leftwm-theme-git
+sudo pacman -S polybar
+mkdir -p $HOME/.local/share/fonts
+cp -rf .fonts/* $HOME/.local/share/fonts
+
+leftwm-theme update
+# ln -s ~/.config/leftwm/themes/othi ~/.config/leftwm/themes/current
+yay wired
+yay xmessage
+yay discord-canary-electron-bin
+yay ttf-symbola
+sudo pacman -S --noconfirm noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+
+# MUSIC
+sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc pamixer
+sudo pacman -S openssl
+sudo systemctl enable --now mpd
+
+sudo pacman -S yadm
+yadm clone https://github.com/mnpqraven/dotfiles
+
 sudo pacman -S --noconfirm zathura zathura-pdf-mupdf zathura-cb
+sudo pacman -S --noconfirm texlive-most texlive-langextra python-pip
 
 # MARKDOWN AND LATEX
 sudo pip3 install neovim-remote
-git config --global core.editor $EDITOR
-#sudo pacman -S --noconfirm r pandoc pandoc-citeproc texlive-most
-#yay rstudio-desktop-bin
-pip install --user powerline-status
+sudo pacman -S --noconfirm maim tmux man-db atool btop
+sudo pacman -S --noconfirm picom rofi feh pastel bat
+sudo pacman -S awesome-terminal-fonts ttf-font-awesome
+# fonts and wm
+yay papirus-icon-theme-git
+git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
+bash nerd-fonts/install.sh
+# checksum error for now
+# yay nerd-fonts-complete
+sudo pacman -S --noconfirm wmctrl
 
-yay nvim-packer-git
-#vim plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-# TERMITAL
-sudo pacman -S --noconfirm maim tmux alacritty man-db atool btop
-
-# DESKTOP ENV
-sudo pacman -S --noconfirm picom rofi ranger neofetch copyq w3m feh dolphin imv
-
-pip install trash-cli
-mkdir -p $HOME/.config/xplr
-touch $HOME/.config/xplr/bookmarks
-
+# FM
 yay clifm
-mkdir -p $HOME/.config/clifm/profiles/default
-git clone https://github.com/leo-arch/clifm.git
-cd clifm
-sudo make install
-sudo cp clifm $(which clifm)
-cp $HOME
-rm -rf clifm
 
-# TOOLS
-sudo pacman -S --noconfirm cmake make gcc clang rustup bat
-rustup default nightly
-cargo install --locked zellij
-cargo install --locked --force xplr
-cargo install starship --locked
-cargo install kalker
-cargo install macchina
-curl -o init.sh https://rustwasm.github.io/wasm-pack/installer/init.sh
-chmod +x init.sh
-sudo bash init.sh
+cargo install --locked zellij xplr starship bacon
+cargo install exa kalker macchina cargo-update
 
-sudo pacman -S --noconfirm nodejs-lts-gallium npm jq
-yay nvm
-# npm might break
-sudo npm install -g n
-sudo n latest
-sudo pacman -S --noconfirm deluge fzf ripgrep zoxide fd python-pip r neomutt
+yay --sync eww-git
+
+sudo pacman -S --noconfirm --overwrite "*" deluge
+sudo pacman -S --noconfirm fzf ripgrep zoxide fd
 sudo pacman -S --noconfirm fcitx5 fcitx5-unikey fcitx5-mozc fcitx5-configtool fcitx5-gtk
-sudo pacman -S --noconfirm qt5-tools
-# npm might break
-sudo npm install -g neovim
-sudo pacman -S --noconfirm firefox yadm
-yay google-chrome
+sudo pacman -S qt5-tools
+# not yet installed
+# sudo npm install -g neovim
+sudo pacman -S --noconfirm npm
+mkdir -p $HOME/.nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+nvm install node
+# wasm-pack, node
+sudo pacman -S --noconfirm zsh
+sudo pacman -S --noconfirm unzip
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+mkdir -p $HOME/.oh-my-zsh/completions
+touch $HOME/.oh-my-zsh/completions/_zellij
+echo zellij setup --generate-completion zsh >> $HOME/.oh-my-zsh/completions/_zellij
 
-# MEDIA
-sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc
 
-echo "-------------------------------"
-echo "ZSH"
-chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-mkdir -p .oh-my-zsh/plugins
-cd .oh-my-zsh/plugins
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-git clone https://github.com/zsh-users/zsh-autosuggestions
-cd ~/
+sudo cp .screenlayout/setup_monitors /usr/bin
+sudo rm /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf
 
-sudo pacman -S polybar
-git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
-cd polybar-themes
-FDIR="$HOME/.local/share/fonts"
-echo -e "\n[*] Installing fonts..."
-if [[ -d "$FDIR" ]]; then
-  cp -rf $DIR/fonts/* "$FDIR"
-else
-  mkdir -p "$FDIR"
-  cp -rf $DIR/fonts/* "$FDIR"
-fi
+cd $HOME/.config/leftwm/themes/Blood-Moon
+git clone git@github.com:mnpqraven/Blood-Moon-leftwm-theme.git .
 cd $HOME
-# # bumblebee-status setup
-# sudo pip install netifaces psutil requests power i3ipc docker
-# git clone https://github.com/tobi-wan-kenobi/bumblebee-status.git
-# cp $HOME/dotfiles/Scripts/othi-burgundy.json ~/bumblebee-status/themes
 
-echo "-------------------------------"
-echo "NAS"
-echo "ADDING NAS DRIVE TO MOUNT TABLE"
-cd $HOME/dotfiles/Scripts
-sudo bash ./nas-setup.sh
-#dotfiles/
-cd $HOME/dotfiles
+# NOTE: dev corner
+sh Scripts/helix-setup.sh
 
-yadm clone https://github.com/mnpqraven/dotfiles
-# altenative to moving config by symlinking
-# ln -s ~/dotfiles/.config/nvim ~/.config/nvim
-echo "TEST YADM NOW"
-echo "TEST YADM NOW"
-echo "TEST YADM NOW"
-echo "reboot then run post-install.sh"
-# INFO: post reboot
-# gf in dotfiles
-# yadm works after cloning
-# yadm is pulling from development
-# TODO: git script doesn't have input waiter
+cd $HOME
 
-# echo "-------------------------------"
-# echo ".CONFIG"
-# bash Scripts/move-config.sh
-#
-# echo "-------------------------------"
-# echo "MPD"
-# bash Scripts/mpd-install-wizard.sh
-#
-# echo "-------------------------------"
-# echo "VIM"
-# bash Scripts/nerd-fonts.sh
-#
-# echo "-------------------------------"
-# echo "QMK"
-# bash Scripts/qmk-setup.sh
-#
-# echo "Install completed, you can reboot now"
-# echo "remember to import keymaps from mozc after reboot"
+yadm reset --hard
+yadm pull
+rm .*.pre-oh-my-zsh -f
+yadm submodule update --recursive --init
+rm -rf nerd-fonts
+rm -rf dotfiles

@@ -1,29 +1,30 @@
 # My dotfiles
 
-# 2022 update
+## Installation (2023 update)
 - boot up with the arch iso then run `archinstall`
 - choose `i3gaps`
 - config network with `NetworkManager`
-- install `git curl firefox xclip`
+- install `git curl firefox xclip alacritty`
 
 run the install script
 ```
-curl -o install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/development/install.sh && bash install.sh
+curl -o install.sh https://raw.githubusercontent.com/mnpqraven/dotfiles/development/install.sh && sh install.sh
 ```
-Post-installation:
-- run `post-install.sh`
+
+## Post-installation:
+
+Mozc:
 - Import mozc keymap and romantable in dotfiles/.config/mozc
-- `reboot`
-- confirm that the ssh key for git is added, you can quickly do this by running
+- Enable IME inline preedit by opening `fcitx5-configtool` -> Addons -> `X
+  Input Method Frontend` -> Enable 'Use On The Spot Style'
 
+LightDM:
+- Change config to run randr script by
 ```
-cd dotfiles && git fetch
+sudoedit /etc/lightdm/lightdm.conf
 ```
-- Load vim plugins by running `nvim
-  .config/nvim/after/plugin/config/plugins.lua`. Ignore the errors popping
-  up, `so` the file then run `PackerSync`
+and edit the line starting with `display-setup-script` to
+`display-setup-script=/usr/bin/setup_monitors`
 
-TODO:
-- signing
-- MPD rice
-- test yadm
+EasyEffects:
+- import the EQs from `.config/easyeffects/EQs` (choose APO import)

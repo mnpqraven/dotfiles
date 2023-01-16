@@ -28,9 +28,9 @@ done
 echo -e "Enter smb workgroup\n(default=WORKGROUP)"
 read workgroup
 sudo touch /etc/.credentials
-echo -e "username=$username\npassword=$password\ndomain=${workgroup:-WORKGROUP}" > /etc/.credentials
+echo -e "username=$username\npassword=$password\ndomain=${workgroup:-WORKGROUP}" | sudo tee /etc/.credentials
 sudo chmod 600 /etc/.credentials
 echo "file created at /etc/.credentials"
 echo "Copying mountpoint to systemd directory..."
-sudo cp mountpoint/* /etc/systemd/system
+sudo cp -r mountpoint/* /etc/systemd/system
 echo "NAS mounts are not automounted by default, you can set automount with systemctl enable mountpoint.automount"

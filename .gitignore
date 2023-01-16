@@ -55,6 +55,7 @@
 !/.config/clifm/profiles/default/mimelist.cfm
 
 !/.config/alacritty
+!/.config/btop
 !/.config/feh
 !/.config/rofi
 !/.config/mutt/muttrc

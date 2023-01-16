@@ -7,10 +7,6 @@
 // A WindowManager for Adventurers                         (____/
 // For info about configuration please visit https://github.com/leftwm/leftwm/wiki
 
-// NOTE:
-// autostart picom
-// picom --shadow-exclude argb -b -f
-
 #![enable(implicit_some)]
 (
     modkey: "Mod4",
