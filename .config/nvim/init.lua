@@ -175,5 +175,22 @@ require('lazy').setup({
     end,
   },
   'folke/twilight.nvim',
+  {
+    'ziontee113/icon-picker.nvim',
+    config = function()
+      require("icon-picker").setup {
+        disable_legacy_commands = true
+      }
+    end
+  },
   'RRethy/vim-illuminate',
+  {
+    "nvim-neorg/neorg",
+    run = ":Neorg sync-parsers", -- This is the important bit!
+    config = function()
+      require("neorg").setup {
+        -- configuration here
+      }
+    end,
+  }
 })

@@ -9,20 +9,24 @@ wk.register({
     b = { builtin.buffers, "Buffers" },
     p = { builtin.diagnostics, "Diagnostics" },
     t = { builtin.lsp_document_symbols, "Symbols in file" },
+    e = { '<cmd>IconPickerNormal<CR>', 'Symbols and icons' }
   },
   w = {
     name = "Workspace",
     s = { builtin.lsp_workspace_symbols, "Symbols in workspace" }
   },
 }, { prefix = "<leader>" })
+wk.register({
+  ["<C-i>"] = { '<cmd>IconPickerNormal<CR>', 'Symbols and icons' }
+}, { mode = "i" })
 
 local borderchars = {
-  prompt = { "─", "│", "─", "│", '┌', '┐', "┘", "└" },
+  prompt  = { "─", "│", "─", "│", '┌', '┐', "┘", "└" },
   results = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
   preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
 }
 local borderchars_dropdown = {
-  prompt = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+  prompt  = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
   results = { "─", "│", "─", "│", '├', '┤', "┘", "└" },
   preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
 }
@@ -41,7 +45,7 @@ require('telescope').setup {
         preview_width = 0.6
       }
     },
-    path_display = "truncate",
+    path_display = { "smart", "truncate" },
     borderchars = borderchars,
   },
   pickers = {

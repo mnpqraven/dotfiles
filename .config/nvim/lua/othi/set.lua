@@ -3,6 +3,7 @@ vim.opt.updatetime     = 50
 
 vim.opt.encoding       = 'utf-8'
 vim.opt.is             = true
+vim.opt.showmode       = false
 vim.opt.compatible     = false
 vim.opt.number         = true
 vim.opt.spell          = false

@@ -1,5 +1,5 @@
 local function get_diagnostic_label(props)
-  local icons = { error = '', warn = '', info = '', hint = '', }
+  local icons = { error = '', warn = '', info = '', hint = '', }
   local label = {}
 
   for severity, icon in pairs(icons) do
@@ -37,12 +37,17 @@ require('incline').setup({
     local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
     local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
     local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
+    -- TODO: dynamic color
+    local guifg_focused = '#c678dd'
+    local guifg_dimmed = '#a9a1e1'
+    local fg = props.focused and guifg_focused or guifg_dimmed
 
     local buffer = {
       { get_diagnostic_label(props) },
       { get_git_diff(props) },
       { ft_icon, guifg = ft_color }, { " " },
-      { filename, gui = modified },
+      -- { filename, gui = modified },
+      { filename, gui = modified, guifg = fg },
     }
     return buffer
   end,
