@@ -20,11 +20,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- TODO: LSP keybind
--- todo color
--- tabout key
+-- TODO: tabout key
 require('lazy').setup({
-  -- NOTE: SYNTAX ------------------------------------------------------------
+  -- NOTE: SYNTAX ----------------------------------------------------------
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
@@ -32,7 +30,7 @@ require('lazy').setup({
   },
   'nvim-telescope/telescope-ui-select.nvim',
 
-  -- NOTE: THEME -------------------------------------------------------------
+  -- NOTE: THEME -----------------------------------------------------------
   { "catppuccin/nvim", as = "catppuccin" },
   'rebelot/kanagawa.nvim',
   'kvrohit/mellow.nvim',
@@ -58,7 +56,10 @@ require('lazy').setup({
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
-  'b0o/incline.nvim',
+  {
+    'b0o/incline.nvim',
+    dependencies = 'lewis6991/gitsigns.nvim'
+  },
 
   {
     'VonHeikemen/lsp-zero.nvim',
@@ -171,7 +172,11 @@ require('lazy').setup({
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 0
-      require("which-key").setup()
+      require("which-key").setup({
+        plugins = {
+          spelling = { enabled = true }
+        }
+      })
     end,
   },
   'folke/twilight.nvim',

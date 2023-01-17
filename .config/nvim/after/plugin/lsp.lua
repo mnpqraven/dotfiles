@@ -16,7 +16,6 @@ lsp.ensure_installed({
   'tailwindcss',
   'cssls',
   'cssmodules_ls',
-  'emmet_ls'
 })
 local cmp = require('cmp')
 local lspkind = require('lspkind')

@@ -12,6 +12,7 @@ vim.opt.cursorcolumn   = true
 vim.opt.cursorline     = true
 vim.opt.hlsearch       = false
 vim.opt.incsearch      = true
+vim.opt.cmdheight      = 1
 vim.opt.foldmethod     = 'manual'
 vim.opt.foldlevel      = 99
 vim.opt.scrolloff      = 8

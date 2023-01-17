@@ -22,6 +22,18 @@ bash $HOME/dotfiles/Scripts/git-genssh.sh
 # LANGS
 sudo pacman -S --noconfirm cmake make gcc clang rustup mold
 rustup default nightly
+# deps + env for tauri
+sudo pacman -S --needed \
+    webkit2gtk \
+    base-devel \
+    curl \
+    wget \
+    openssl \
+    appmenu-gtk-module \
+    gtk3 \
+    libappindicator-gtk3 \
+    librsvg \
+    libvips
 
 # EDITOR
 sudo pacman -S --noconfirm neovim jq
@@ -83,7 +95,8 @@ sudo pacman -S --noconfirm wmctrl
 yay clifm
 
 cargo install --locked zellij xplr starship bacon
-cargo install exa kalker macchina cargo-update
+cargo install exa kalker macchina cargo-update tauri-cli
+echo $(zellij setup --generate-completion zsh) > $ZSH/completions/zellij_completion
 
 yay --sync eww-git
 
@@ -119,6 +132,7 @@ cd $HOME
 sh Scripts/helix-setup.sh
 
 cd $HOME
+mkdir -p Repos
 
 yadm reset --hard
 yadm pull

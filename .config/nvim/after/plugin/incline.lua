@@ -9,20 +9,32 @@ local function get_diagnostic_label(props)
     end
   end
   if #label > 0 then
-    table.insert(label, {'| '})
+    table.insert(label, { '| ' })
   end
   return label
 end
+
 local function get_git_diff(props)
   local icons = { removed = "", changed = "", added = "" }
   local labels = {}
   local signs = vim.api.nvim_buf_get_var(props.buf, "gitsigns_status_dict")
-  -- local signs = vim.b.gitsigns_status_dict
   for name, icon in pairs(icons) do
     if tonumber(signs[name]) and signs[name] > 0 then
-      table.insert(labels, { icon .. " " .. signs[name] .. " ",
-        group = "Diff" .. name
-      })
+      if name == "changed" then
+        table.insert(labels, { icon .. " " .. signs[name] .. " ",
+          group = "GitSignsChange"
+        })
+      end
+      if name == "added" then
+        table.insert(labels, { icon .. " " .. signs[name] .. " ",
+          group = "GitSignsAdd"
+        })
+      end
+      if name == "deleted" then
+        table.insert(labels, { icon .. " " .. signs[name] .. " ",
+          group = "GitSignsDelete"
+        })
+      end
     end
   end
   if #labels > 0 then
@@ -30,7 +42,6 @@ local function get_git_diff(props)
   end
   return labels
 end
-
 
 require('incline').setup({
   render = function(props)
