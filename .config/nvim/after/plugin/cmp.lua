@@ -8,14 +8,17 @@ local cmp_configs = lsp.defaults.cmp_config({
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp', keyword_length = 1 },
-    { name = 'luasnip', keyword_length = 1 },
+  -- TODO: see if we need this
+  expand = function(args)
+    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+  end,
+  sources = {
+    { name = 'luasnip'  },
+    { name = 'nvim_lsp' },
     { name = 'crates' },
   }, {
     { name = 'buffer' },
-  }
-  ),
+  },
   formatting = {
     format = lspkind.cmp_format({
       mode = 'symbol_text',

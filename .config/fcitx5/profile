@@ -1,14 +1,14 @@
 [Groups/0]
 # Group Name
-Name=US
+Name=Colemak
 # Layout
-Default Layout=us
+Default Layout=us-colemak
 # Default Input Method
-DefaultIM=mozc
+DefaultIM=unikey
 
 [Groups/0/Items/0]
 # Name
-Name=keyboard-us
+Name=keyboard-us-colemak
 # Layout
 Layout=
 
@@ -16,25 +16,25 @@ Layout=
 # Name
 Name=unikey
 # Layout
-Layout=
+Layout=us
 
 [Groups/0/Items/2]
 # Name
 Name=mozc
 # Layout
-Layout=
+Layout=us
 
 [Groups/1]
 # Group Name
-Name=Colemak
+Name=US
 # Layout
-Default Layout=us-colemak
+Default Layout=us
 # Default Input Method
-DefaultIM=unikey
+DefaultIM=mozc
 
 [Groups/1/Items/0]
 # Name
-Name=keyboard-us-colemak
+Name=keyboard-us
 # Layout
 Layout=
 
@@ -42,13 +42,13 @@ Layout=
 # Name
 Name=unikey
 # Layout
-Layout=us
+Layout=
 
 [Groups/1/Items/2]
 # Name
 Name=mozc
 # Layout
-Layout=us
+Layout=
 
 [GroupOrder]
 0=US

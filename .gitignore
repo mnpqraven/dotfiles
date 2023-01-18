@@ -2,7 +2,6 @@
 !install.sh
 !post-install.sh
 !*.md
-!.bashrc
 !.*vimrc
 !.zshrc
 !.zshenv
@@ -29,14 +28,6 @@
 .config/nvim/lazy-lock.json
 
 !/.fonts
-# !/.local
-# /.local/*
-# !/.local/share
-# /.local/share/*
-# !/.local/share/nvim
-# /.local/share/nvim/*
-# !/.local/share/nvim/view
-
 !/Scripts
 !/.powerline
 !.gitignore
