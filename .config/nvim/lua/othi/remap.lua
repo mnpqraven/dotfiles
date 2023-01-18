@@ -7,12 +7,14 @@ local inoremap = require("user.functions").inoremap
 local vnoremap = require("user.functions").nnoremap
 
 map('N', 'K')
-map('n', 'gj')
+nmap('n', 'gj') -- needs strictly nv mode else nvim-surround messes up
+vmap('n', 'gj')
 map('E', 'J')
 map('e', 'l')
 map('k', 'nzz')
 map('K', 'Nzz')
-map('l', 'gk')
+nmap('l', 'gk')
+vmap('l', 'gk')
 map('E', '$')
 map('H', '0')
 map('N', 'L')

@@ -102,7 +102,7 @@ require('lazy').setup({
   },
   'tpope/vim-fugitive',
 
-  { 'kylechui/nvim-surround', tag = '*' },
+  'kylechui/nvim-surround',
   {
     'numToStr/Comment.nvim',
     config = function()
@@ -191,11 +191,11 @@ require('lazy').setup({
   'RRethy/vim-illuminate',
   {
     "nvim-neorg/neorg",
-    run = ":Neorg sync-parsers", -- This is the important bit!
-    config = function()
-      require("neorg").setup {
-        -- configuration here
-      }
-    end,
+    after = 'nvim-treesitter/nvim-treesitter',
+    build = ":Neorg sync-parsers",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { 'lukas-reineke/headlines.nvim' }
+    },
   }
 })

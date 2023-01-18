@@ -20,15 +20,15 @@ lsp.ensure_installed({
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-cmp.setup {
-  formatting = {
-    format = lspkind.cmp_format({
-      mode = 'symbol_text', -- show only symbol annotations
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-    })
-  },
-}
+-- cmp.setup {
+--   formatting = {
+--     format = lspkind.cmp_format({
+--       mode = 'symbol_text', -- show only symbol annotations
+--       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+--       ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+--     })
+--   },
+-- }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-u>'] = cmp.mapping.scroll_docs(-4),
   ['<C-d>'] = cmp.mapping.scroll_docs(4),
@@ -105,7 +105,7 @@ lsp.configure('taplo', {
         h = { crates.open_homepage, "Open homepage", buffer = bufnr },
         d = { crates.open_documentation, "Open documentation", buffer = bufnr },
       }
-    }, { prefix = "<leader>"})
+    }, { prefix = "<leader>" })
   end
 })
 
@@ -128,14 +128,14 @@ lsp.configure('tailwindcss', {
 local rust_lsp = lsp.build_options('rust_analyzer', {
   on_attach = function(_, bufnr)
     wk.register({
-      K = {rt.hover_actions.hover_actions,"Hover actions", buffer = bufnr },
+      K = { rt.hover_actions.hover_actions, "Hover actions", buffer = bufnr },
     })
     wk.register({
       c = {
         name = "cargo",
-        r = {rt.runnables.runnables, "Cargo actions", buffer = bufnr }
+        r = { rt.runnables.runnables, "Cargo actions", buffer = bufnr }
       },
-    }, {prefix = "<leader>"})
+    }, { prefix = "<leader>" })
     -- Code action groups
     vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
   end,
@@ -155,6 +155,15 @@ cmp.setup(cmp_configs)
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+  }, {
+    { name = 'buffer' },
+  })
+})
+
+cmp.setup.filetype('norg', {
+  sources = cmp.config.sources({
+    { name = 'neorg' },
+    { name = 'luasnip' },
   }, {
     { name = 'buffer' },
   })
