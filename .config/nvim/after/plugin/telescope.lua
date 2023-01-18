@@ -9,7 +9,8 @@ wk.register({
     b = { builtin.buffers, "Buffers" },
     p = { builtin.diagnostics, "Diagnostics" },
     t = { builtin.lsp_document_symbols, "Symbols in file" },
-    e = { '<cmd>IconPickerNormal<CR>', 'Symbols and icons' }
+    e = { '<cmd>IconPickerNormal<CR>', 'Symbols and icons' },
+    n = { '<cmd>Neorg<CR>', 'Neorg'}
   },
   w = {
     name = "Workspace",

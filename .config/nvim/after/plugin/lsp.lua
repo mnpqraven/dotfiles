@@ -2,11 +2,13 @@
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require('lsp-zero')
 local rt = require("rust-tools")
-local builtin = require('telescope.builtin')
 local wk = require('which-key')
 local crates = require('crates')
 lsp.preset('lsp-compe')
 lsp.skip_server_setup({ 'rust_analyzer' })
+
+-- TODO:
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 lsp.ensure_installed({
   'sumneko_lua',
@@ -17,9 +19,7 @@ lsp.ensure_installed({
   'cssls',
   'cssmodules_ls',
 })
-local cmp = require('cmp')
-local lspkind = require('lspkind')
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+
 -- cmp.setup {
 --   formatting = {
 --     format = lspkind.cmp_format({
@@ -29,38 +29,16 @@ local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 --     })
 --   },
 -- }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-  ['<C-d>'] = cmp.mapping.scroll_docs(4),
-  ['<C-e>'] = cmp.mapping.complete(),
-  ['<C-h>'] = cmp.mapping.abort(),
-  ['<CR>'] = cmp.mapping.confirm({ select = true }),
-})
-local cmp_configs = lsp.defaults.cmp_config({
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'crates' },
-  }, {
-    { name = 'buffer' }
-  }),
-  formatting = {
-    format = lspkind.cmp_format({
-      mode = 'symbol_text', -- show only symbol annotations
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-      ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-    })
-  }
-})
+-- TODO:
+-- local cmp_mappings = lsp.defaults.cmp_mappings({
+--   ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+--   ['<C-d>'] = cmp.mapping.scroll_docs(4),
+--   ['<C-e>'] = cmp.mapping.complete(),
+--   ['<C-h>'] = cmp.mapping.abort(),
+--   ['<CR>'] = cmp.mapping.confirm({ select = true }),
+-- })
 
-cmp.event:on(
-  'confirm_done', cmp_autopairs.on_confirm_done())
-
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
   require('lsp_signature').on_attach({
     bind = true,
     handler_opts = { border = "single" },
@@ -150,42 +128,6 @@ local rust_lsp = lsp.build_options('rust_analyzer', {
 })
 
 lsp.setup()
-cmp.setup(cmp_configs)
-
-cmp.setup.filetype('gitcommit', {
-  sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-  }, {
-    { name = 'buffer' },
-  })
-})
-
-cmp.setup.filetype('norg', {
-  sources = cmp.config.sources({
-    { name = 'neorg' },
-    { name = 'luasnip' },
-  }, {
-    { name = 'buffer' },
-  })
-})
-
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
-})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
 
 -- Initialize rust_analyzer with rust-tools
 require('rust-tools').setup({

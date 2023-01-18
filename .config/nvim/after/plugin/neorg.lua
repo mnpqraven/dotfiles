@@ -49,6 +49,7 @@ wk.register({
     c = { name = " Cancelled"},
     r = { name = " Recurring"},
     i = { name = "⚠ Important"},
+    w = { name = " Uncertain"},
   },
   ["<leader>nn"] = {name = "New .norg file"}
 })
