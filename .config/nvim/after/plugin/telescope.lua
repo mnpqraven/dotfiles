@@ -17,9 +17,6 @@ wk.register({
     s = { builtin.lsp_workspace_symbols, "Symbols in workspace" }
   },
 }, { prefix = "<leader>" })
-wk.register({
-  ["<C-i>"] = { '<cmd>IconPickerNormal<CR>', 'Symbols and icons' }
-}, { mode = "i" })
 
 local borderchars = {
   prompt  = { "─", "│", "─", "│", '┌', '┐', "┘", "└" },

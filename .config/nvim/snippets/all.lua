@@ -12,7 +12,7 @@ return {
     {
       f(function(_, parent)
         print(parent.snippet.env.POSTFIX_MATCH)
-        return "vec<" .. parent.snippet.env.POSTFIX_MATCH .. ">"
+        return "Vec<" .. parent.snippet.env.POSTFIX_MATCH .. ">"
       end, {}),
     }),
 }

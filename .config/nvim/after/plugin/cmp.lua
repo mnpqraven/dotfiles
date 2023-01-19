@@ -2,19 +2,40 @@ local lsp = require('lsp-zero')
 local cmp = require('cmp')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local lspkind = require('lspkind')
+local ls = require('luasnip')
+
+local has_words_before = function()
+  unpack = unpack or table.unpack
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+local cmp_mapping = lsp.defaults.cmp_mappings({
+  ["<Tab>"] = cmp.mapping(function(fallback)
+    if ls.jumpable() then
+      ls.jump(1)
+    end
+  end, { "i", "s" }),
+
+  ["<S-Tab>"] = cmp.mapping(function(fallback)
+    if ls.jumpable(-1) then
+      ls.jump(-1)
+    -- else -- fallback will autocomplete TODO: handle
+    --   fallback()
+    end
+  end, { "i", "s" }),
+})
+
+-- cmp_mapping['<Tab>'] = nil
 
 local cmp_configs = lsp.defaults.cmp_config({
   window = {
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
-  -- TODO: see if we need this
-  expand = function(args)
-    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-  end,
+  mapping = cmp_mapping,
   sources = {
-    { name = 'luasnip'  },
-    { name = 'nvim_lsp' },
+    { name = 'luasnip', keyword_length = 1 },
+    { name = 'nvim_lsp', keyword_length = 2 },
     { name = 'crates' },
   }, {
     { name = 'buffer' },
