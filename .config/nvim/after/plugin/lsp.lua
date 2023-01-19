@@ -54,10 +54,10 @@ lsp.on_attach(function(_, bufnr)
     },
     K = { vim.lsp.buf.hover, "Hover", buffer = bufnr },
     ['<C-k>'] = { vim.lsp.buf.signature_help, "Signature help", buffer = bufnr },
-    ["["] = {
+    ["]"] = {
       d = { vim.diagnostic.goto_next, "Next diagnostic", buffer = bufnr }
     },
-    ["]"] = {
+    ["["] = {
       d = { vim.diagnostic.goto_prev, "Previous diagnostic", buffer = bufnr }
     }
   })
