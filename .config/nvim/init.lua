@@ -196,5 +196,8 @@ require('lazy').setup({
       { "nvim-lua/plenary.nvim" },
       { 'lukas-reineke/headlines.nvim' }
     },
+  },
+  {
+    'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'
   }
 })

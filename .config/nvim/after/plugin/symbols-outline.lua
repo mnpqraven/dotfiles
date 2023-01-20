@@ -1,5 +1,6 @@
 local wk = require('which-key')
 require('symbols-outline').setup({
+  width = 15,
   keymaps = {
     unfold = "e"
   },

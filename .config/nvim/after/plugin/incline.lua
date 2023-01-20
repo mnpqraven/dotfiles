@@ -69,7 +69,6 @@ require('incline').setup({
       horizontal = 0
     },
     placement = {
-      horizontal = "left",
       vertical = "bottom"
     }
   }
