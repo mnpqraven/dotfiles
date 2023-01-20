@@ -3,6 +3,7 @@ wk.register({
   [";"] = {
     [";"] = { ":", ":", mode = "i" },
     ["e"] = { ";<esc>a", "Escape ;", mode = "i" },
+    ["n"] = { ";<esc>", "Escape ; to NORMAL", mode = "i" },
     ["o"] = { ";<esc>o", "Escape ; to new line", mode = "i" },
     ["K"] = { ";<esc>", "Esc", mode = "i" }
   }

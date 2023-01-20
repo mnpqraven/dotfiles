@@ -30,7 +30,6 @@ return {
   postfix({ trig = ".option", match_pattern = "[%<%>%(%)%w%.%_%-]+$" },
     {
       f(function(_, parent)
-        print(parent.snippet.env.POSTFIX_MATCH)
         return "Option<" .. parent.snippet.env.POSTFIX_MATCH .. ">"
       end, {}),
     }),
@@ -38,7 +37,6 @@ return {
   postfix({ trig = ".vec", match_pattern = "[%<%>%(%)%w%.%_%-]+$" },
     {
       f(function(_, parent)
-        print(parent.snippet.env.POSTFIX_MATCH)
         return "Vec<" .. parent.snippet.env.POSTFIX_MATCH .. ">"
       end, {}),
     }),

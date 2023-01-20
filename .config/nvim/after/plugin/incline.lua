@@ -43,14 +43,15 @@ local function get_git_diff(props)
   return labels
 end
 
+local onedark_colors = require('lualine.themes.onedark')
+local guifg_focused = onedark_colors.insert.a.bg
+local guifg_dimmed = onedark_colors.inactive.a.fg
+
 require('incline').setup({
   render = function(props)
     local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
     local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
     local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
-    -- TODO: dynamic color
-    local guifg_focused = '#c678dd'
-    local guifg_dimmed = '#a9a1e1'
     local fg = props.focused and guifg_focused or guifg_dimmed
 
     local buffer = {
@@ -64,7 +65,12 @@ require('incline').setup({
   end,
   window = {
     margin = {
-      vertical = 0
+      vertical = 0,
+      horizontal = 0
+    },
+    placement = {
+      horizontal = "left",
+      vertical = "bottom"
     }
   }
 })
