@@ -119,8 +119,9 @@ local rust_lsp = lsp.build_options('rust_analyzer', {
   end,
   settings = {
     ["rust-analyzer"] = {
-      checkOnSave = {
-        command = "clippy"
+      check = {
+        command = "clippy",
+        extraArgs = { "--all", "--", "-W", "clippy::all" },
       },
       inlayHints = { locationLinks = false }
     }

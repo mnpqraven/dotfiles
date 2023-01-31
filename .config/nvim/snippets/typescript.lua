@@ -2,9 +2,9 @@
 
 return {
   s('setState', {
-    t('const [ '), i(1, 'state'), t(', set'),
+    t('const ['), i(1, 'state'), t(', set'),
     l(l._1:gsub('^%l', string.upper), 1),
-    t(' ] = useState('), i(2),
+    t('] = useState('), i(2),
     t(');')
   }),
   s('useEffect', {
@@ -21,8 +21,13 @@ return {
     t { ']);', '' }
   }),
   postfix('.tsx', {
-    f(function (_, parent)
+    f(function(_, parent)
       return "<" .. parent.snippet.env.POSTFIX_MATCH .. " />"
-    end), t{'', ''}
+    end), t { '', '' }
+  }),
+  s('invoke', {
+    t('invoke (\''), i(1), t('\', {'),
+    i(2), t('}'),
+    t(')')
   })
 }

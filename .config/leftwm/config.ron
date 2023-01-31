@@ -6,15 +6,38 @@
 // |_|\____)_|   \___)____|_|_|_|   \____)___/|_| |_|_|  |_|\_|| (_)_|   \___/|_| |_|
 // A WindowManager for Adventurers                         (____/
 // For info about configuration please visit https://github.com/leftwm/leftwm/wiki
+    //( y: 3640, x: 420, height: 1080, width: 1920, id: 1, output: "DP-0" ),
 
 #![enable(implicit_some)]
 (
     modkey: "Mod4",
     mousekey: "Mod4",
     workspaces: [
-    ( y: 313, x: 0, height: 1440, width: 2560, id: 0, output: "DP-2" ),
-    ( y: 0, x: 2560, height: 1920, width: 1080, id: 1, output: "DP-0", layouts:
-      [EvenVertical]),
+    (
+      height: 1080,
+      width: 1920,
+      x: 3640,
+      y: 420,
+      output: "DP-0",
+      index: 1,
+    ),
+    (
+      height: 1440,
+      width: 2560,
+      x: 1080,
+      y: 215,
+      output: "DP-2",
+      index: 0,
+    ),
+    (
+      height: 1920,
+      width: 1080,
+      x: 0,
+      y: 0,
+      output: "DP-5",
+      layouts: [EvenVertical],
+      index: 2,
+    )
     ],
     tags: [
         "1",
@@ -51,8 +74,9 @@
     ],
     window_rules: [
         (window_class: "othirpg", spawn_floating: true),
-        (window_title: "pnc-checklist", spawn_on_tag: 7, spawn_floating: true),
-        (window_class: "pnc-checklist", spawn_on_tag: 7, spawn_floating: true)
+        (window_class: "discord", spawn_on_tag: 6),
+        (window_class: "pnc-checklist", spawn_on_tag: 7, spawn_floating: true),
+        (window_title: "pnc-checklist", spawn_on_tag: 7, spawn_floating: true)
     ],
     disable_current_tag_swap: true,
     disable_tile_drag: false,
@@ -63,6 +87,7 @@
     keybind: [
         // commands
         (modifier: ["modkey"],            key: "d", command: Execute, value: "rofi -show run -monitor primary", ),
+        (modifier: ["modkey"],            key: "m", command: Execute, value: "rofi -show run", ),
         (modifier: ["modkey"],            key: "w", command: Execute, value: "rofi -show window -monitor primary", ),
         (modifier: ["modkey"],            key: "Return", command: Execute, value: "alacritty", ),
         (modifier: [],                    key: "XF86XK_AudioPlay", command: Execute, value: "mpc toggle", ),
