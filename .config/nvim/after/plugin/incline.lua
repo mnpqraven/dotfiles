@@ -46,20 +46,31 @@ end
 local onedark_colors = require('lualine.themes.onedark')
 local guifg_focused = onedark_colors.insert.a.bg
 local guifg_dimmed = onedark_colors.inactive.a.fg
+local guifg_modified = onedark_colors.replace.a.bg
 
 require('incline').setup({
   render = function(props)
     local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
     local ft_icon, ft_color = require("nvim-web-devicons").get_icon_color(filename)
-    local modified = vim.api.nvim_buf_get_option(props.buf, "modified") and "bold,italic" or "bold"
-    local fg = props.focused and guifg_focused or guifg_dimmed
+    local function modFocus(both, val1, val2)
+      if vim.api.nvim_buf_get_option(props.buf, "modified") and props.focused then
+        return both
+      elseif vim.api.nvim_buf_get_option(props.buf, "modified") then
+        return val1
+      elseif props.focused then
+        return val2
+      end
+    end
 
     local buffer = {
       { get_diagnostic_label(props) },
       { get_git_diff(props) },
       { ft_icon, guifg = ft_color }, { " " },
-      -- { filename, gui = modified },
-      { filename, gui = modified, guifg = fg },
+      {
+        filename,
+        gui = modFocus('bold', 'italic', 'bold'),
+        guifg = modFocus(guifg_modified, guifg_modified, guifg_focused)
+      },
     }
     return buffer
   end,

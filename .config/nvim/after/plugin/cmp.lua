@@ -33,7 +33,8 @@ local cmp_configs = lsp.defaults.cmp_config({
     -- completion = cmp.config.window.bordered(),
     -- documentation = cmp.config.window.bordered(),
     completion = {
-      border = square
+      border = square,
+      col_offset = -5,
     },
     documentation = {
       border = square

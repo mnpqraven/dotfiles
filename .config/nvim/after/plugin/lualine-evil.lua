@@ -93,7 +93,7 @@ ins_left {
     return '▊'
   end,
   color = { fg = colors.blue }, -- Sets highlighting of component
-  padding = { left = 0, right = 1 }, -- We don't need space before this
+  padding = { left = 0, right = 0 }, -- We don't need space before this
 }
 
 -- ins_left {
@@ -172,14 +172,14 @@ ins_left {
     if vim.bo.modifiable == false or vim.bo.readonly == true then
       return { fg = colors.fg, gui = 'bold' }
     end
-    return { fg = vim.bo.modified and colors.red or colors.green, gui = 'bold' }
+    return { fg = vim.bo.modified and colors.red or colors.blue, gui = 'bold' }
   end,
 }
 
 ins_left {
   'branch',
   icon = '',
-  color = { fg = colors.violet, gui = 'bold' },
+  color = { fg = colors.blue },
 }
 
 ins_left {
@@ -260,7 +260,7 @@ ins_right {
     return '▊'
   end,
   color = { fg = colors.blue },
-  padding = { left = 1 },
+  padding = { left = 0 },
 }
 
 -- Now don't forget to initialize lualine
