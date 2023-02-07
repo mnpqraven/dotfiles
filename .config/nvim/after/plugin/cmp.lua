@@ -19,18 +19,25 @@ local cmp_mapping = lsp.defaults.cmp_mappings({
   ["<S-Tab>"] = cmp.mapping(function(fallback)
     if ls.jumpable(-1) then
       ls.jump(-1)
-    -- else -- fallback will autocomplete TODO: handle
-    --   fallback()
+      -- else -- fallback will autocomplete TODO: handle
+      --   fallback()
     end
   end, { "i", "s" }),
 })
 
 -- cmp_mapping['<Tab>'] = nil
 
+local square = { '┌', "─", "┐", '│', "┘", "─", "└", "│" }
 local cmp_configs = lsp.defaults.cmp_config({
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
+    -- completion = cmp.config.window.bordered(),
+    -- documentation = cmp.config.window.bordered(),
+    completion = {
+      border = square
+    },
+    documentation = {
+      border = square
+    }
   },
   mapping = cmp_mapping,
   sources = {
