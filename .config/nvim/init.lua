@@ -112,7 +112,9 @@ require('lazy').setup({
     'folke/todo-comments.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
-      require('todo-comments').setup()
+      require('todo-comments').setup({
+        signs = false
+      })
     end
   },
   {
@@ -199,5 +201,34 @@ require('lazy').setup({
   },
   {
     'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'
+  },
+  'lervag/vimtex',
+  'jose-elias-alvarez/null-ls.nvim',
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup({
+        vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+      })
+    end,
+  },
+  {
+    'zbirenbaum/neodim',
+    event = "LspAttach",
+    config = function()
+      require("neodim").setup({
+        alpha = 0.75,
+        blend_color = "#000000",
+        update_in_insert = {
+          enable = true,
+          delay = 100,
+        },
+        hide = {
+          virtual_text = true,
+          signs = true,
+          underline = true,
+        }
+      })
+    end
   }
 })
