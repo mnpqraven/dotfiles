@@ -75,8 +75,8 @@
     window_rules: [
         (window_class: "othirpg", spawn_floating: true),
         (window_class: "discord", spawn_on_tag: 6),
-        (window_class: "pnc-checklist", spawn_on_tag: 7, spawn_floating: true),
-        (window_title: "pnc-checklist", spawn_on_tag: 7, spawn_floating: true)
+        (window_class: "pnc-checklist", spawn_on_tag: 7),
+        (window_title: "pnc-checklist", spawn_on_tag: 7)
     ],
     disable_current_tag_swap: true,
     disable_tile_drag: false,

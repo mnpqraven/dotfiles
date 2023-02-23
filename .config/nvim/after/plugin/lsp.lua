@@ -8,7 +8,8 @@ lsp.preset('lsp-compe')
 lsp.skip_server_setup({ 'rust_analyzer' })
 
 -- TODO:
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
 
 lsp.ensure_installed({
   'sumneko_lua',
@@ -101,6 +102,15 @@ lsp.configure('tailwindcss', {
   on_attach = function(_, bufnr)
     require("tailwindcss-colors").buf_attach(bufnr)
   end
+})
+
+lsp.configure('cssmodules_ls', {
+  on_attach = function(client)
+    client.server_capabilities.definitionProvider = false
+  end,
+  init_options = {
+    camelCase = false
+  }
 })
 
 local rust_lsp = lsp.build_options('rust_analyzer', {

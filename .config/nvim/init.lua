@@ -1,6 +1,6 @@
 require("othi")
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
 
@@ -50,6 +50,8 @@ require('lazy').setup({
   'nvim-treesitter/nvim-treesitter-textobjects',
   'nvim-treesitter/playground',
   'nvim-treesitter/nvim-treesitter-context',
+  'mrjones2014/nvim-ts-rainbow',
+  'JoosepAlviste/nvim-ts-context-commentstring',
   'lukas-reineke/indent-blankline.nvim',
   {
     'nvim-lualine/lualine.nvim',
@@ -105,7 +107,9 @@ require('lazy').setup({
   {
     'numToStr/Comment.nvim',
     config = function()
-      require('Comment').setup()
+      require('Comment').setup({
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      })
     end
   },
   {
@@ -204,14 +208,14 @@ require('lazy').setup({
   },
   'lervag/vimtex',
   'jose-elias-alvarez/null-ls.nvim',
-  {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    config = function()
-      require("lsp_lines").setup({
-        vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
-      })
-    end,
-  },
+  -- {
+  --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  --   config = function()
+  --     require("lsp_lines").setup({
+  --       vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
+  --     })
+  --   end,
+  -- },
   {
     'zbirenbaum/neodim',
     event = "LspAttach",
