@@ -26,7 +26,7 @@ vim.opt.splitbelow     = true
 vim.opt.splitright     = true
 vim.opt.laststatus     = 3
 
-local indent = 2
+local indent = 4
 vim.opt.tabstop        = indent
 vim.opt.shiftwidth     = indent
 vim.opt.foldcolumn     = "1"
