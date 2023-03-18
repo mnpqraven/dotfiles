@@ -12,7 +12,7 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
 
 lsp.ensure_installed({
-  'sumneko_lua',
+  'lua_ls',
   'tsserver',
   'rust_analyzer',
   'taplo',
