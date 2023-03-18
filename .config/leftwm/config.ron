@@ -18,7 +18,7 @@
       width: 1920,
       x: 3640,
       y: 420,
-      output: "DP-0",
+      output: "DP-2",
       index: 1,
     ),
     (
@@ -26,7 +26,7 @@
       width: 2560,
       x: 1080,
       y: 215,
-      output: "DP-2",
+      output: "DP-0",
       index: 0,
     ),
     (
