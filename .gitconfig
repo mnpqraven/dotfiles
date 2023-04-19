@@ -39,3 +39,5 @@
 [user]
   email = mnpq.raven@gmail.com
   name = Othi
+[http]
+	sslVerify = false

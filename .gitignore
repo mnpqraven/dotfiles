@@ -94,3 +94,8 @@
 !/.config/eww
 /.config/eww/target/*
 !/.config/starship.toml
+
+!/.config/systemd
+!/.config/systemd/user
+/.config/systemd/user/*
+!/.config/systemd/user/*.service

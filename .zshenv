@@ -11,6 +11,8 @@ export GPG_TTY=$(tty)
 # dotnet stuff
 export LD_LIBRARY_PATH="/usr/local/lib"
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+export EDITOR="/usr/bin/nvim"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 
 export KEYTIMEOUT=200
 bindkey -v
