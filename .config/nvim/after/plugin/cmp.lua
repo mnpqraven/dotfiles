@@ -11,18 +11,26 @@ local has_words_before = function()
 end
 local cmp_mapping = lsp.defaults.cmp_mappings({
   ["<Tab>"] = cmp.mapping(function(fallback)
-    if ls.jumpable() then
-      ls.jump(1)
-    end
+      if cmp.visible() then
+          cmp.select_next_item()
+      elseif ls.expandable() then
+          ls.expand()
+      elseif ls.expand_or_jumpable() then
+          ls.expand_or_jump()
+      else
+          fallback()
+      end
   end, { "i", "s" }),
-
   ["<S-Tab>"] = cmp.mapping(function(fallback)
-    if ls.jumpable(-1) then
-      ls.jump(-1)
-      -- else -- fallback will autocomplete TODO: handle
-      --   fallback()
-    end
+      if cmp.visible() then
+          cmp.select_prev_item()
+      elseif ls.jumpable(-1) then
+          ls.jump(-1)
+      else
+          fallback()
+      end
   end, { "i", "s" }),
+  ["<CR>"] = cmp.mapping.confirm({ select = true })
 })
 
 -- cmp_mapping['<Tab>'] = nil
