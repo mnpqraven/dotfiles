@@ -71,6 +71,7 @@ sudo pacman -S --noconfirm noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 sudo pacman -S --noconfirm mpd mpv mpc ncmpcpp vlc pamixer
 sudo pacman -S openssl
 sudo systemctl enable --now mpd
+sudo systemctl enable --now sshd
 
 sudo pacman -S yadm
 yadm clone https://github.com/mnpqraven/dotfiles

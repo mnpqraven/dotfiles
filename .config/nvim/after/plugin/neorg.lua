@@ -13,20 +13,20 @@ vim.cmd [[highlight Dash guibg=#D19A66 gui=bold]]
 require('neorg').setup({
   load = {
     ["core.defaults"] = {}, -- Loads default behaviour
-    ["core.norg.concealer"] = {
+    ["core.concealer"] = {
       config = {
         icon_preset = "diamond",
         conceal = false
       }
     },
-    ["core.norg.dirman"] = {
+    ["core.dirman"] = {
       config = {
         workspaces = {
           repos = "~/Repos",
         },
       },
     },
-    ["core.norg.completion"] = {
+    ["core.completion"] = {
       config = { engine = "nvim-cmp" }
     },
     ["core.keybinds"] = {
