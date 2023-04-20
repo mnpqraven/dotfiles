@@ -1,6 +1,5 @@
 require('gitsigns').setup {
-  yadm = {
-    enable = true
-  }
+    yadm = {
+        enable = true
+    }
 }
-

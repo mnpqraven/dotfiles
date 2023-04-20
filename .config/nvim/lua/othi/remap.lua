@@ -39,11 +39,11 @@ nmap('<C-w>', '<cmd>bd<CR>')
 nmap('<F8>', '<cmd>set hlsearch! hlsearch?<CR>')
 
 -- Leader keys
-nnoremap('<Leader>k', '<cmd>tabnext<CR>' )
-nnoremap('<Leader>K', '<cmd>tabprevious<CR>' )
-nnoremap('<Leader>cd', '<cmd>cd %:p:h<CR> <cmd>pwd<CR><left>' )
-nnoremap('<Leader>c', '<cmd>%y+<CR>' )
-nnoremap('<silent><Leader>s', '<cmd>setlocal spell! spelllang=en_US<CR><ESC>' )
+nnoremap('<Leader>k', '<cmd>tabnext<CR>')
+nnoremap('<Leader>K', '<cmd>tabprevious<CR>')
+nnoremap('<Leader>cd', '<cmd>cd %:p:h<CR> <cmd>pwd<CR><left>')
+nnoremap('<Leader>c', '<cmd>%y+<CR>')
+nnoremap('<silent><Leader>s', '<cmd>setlocal spell! spelllang=en_US<CR><ESC>')
 nmap('z<tab>', 'zf%')
 
 -- buffer navigation
@@ -59,16 +59,15 @@ nmap('<A-e>', '<cmd>vertical resize +5<CR>')
 nmap('G', 'Gzz')
 
 -- tabbingout semicolon
-inoremap(';;', ':' )
-inoremap(';<tab>', '<ESC>%%a;<ESC>hi' )
+inoremap(';;', ':')
+inoremap(';<tab>', '<ESC>%%a;<ESC>hi')
 
-nnoremap('<A-y>', '<C-e>' )
-nnoremap('<C-A-y>', '<C-y>' )
+nnoremap('<A-y>', '<C-e>')
+nnoremap('<C-A-y>', '<C-y>')
 
- -- CLIPBOARD
+-- CLIPBOARD
 vim.cmd([[
 inoremap <C-z> <ESC>l"+pi
 nnoremap <C-z> "+P
 vnoremap <C-c> "+y
 ]])
-

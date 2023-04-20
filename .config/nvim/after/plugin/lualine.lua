@@ -1,23 +1,23 @@
 local function modified()
-  if vim.bo.modified then
-    return '+'
-  elseif vim.bo.modifiable == false or vim.bo.readonly == true then
-    return '-'
-  end
-  return ''
+    if vim.bo.modified then
+        return '+'
+    elseif vim.bo.modifiable == false or vim.bo.readonly == true then
+        return '-'
+    end
+    return ''
 end
 
 local colors = require('lualine.themes.onedark')
 local options = {
-  section_separators = { left = '', right = '' },
-  component_separators = { left = '', right = '' }
+    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' }
 }
 
 local component_separators = { left = '', right = '' }
 local separator_arrow = { left = '', right = '' }
-local separator_arrowInv = { left = '', right = ''}
+local separator_arrowInv = { left = '', right = '' }
 local separator_slanted = { left = '', right = '' }
-local separator_slantedInv = { left = '', right = ''}
+local separator_slantedInv = { left = '', right = '' }
 
 -- require('lualine').setup {
 --   options = {
@@ -62,4 +62,3 @@ local separator_slantedInv = { left = '', right = ''}
 --     'quickfix'
 --   },
 -- }
-

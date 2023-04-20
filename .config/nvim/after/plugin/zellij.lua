@@ -4,4 +4,3 @@ nmap('<C-h>', '<cmd>ZellijNavigateLeft<CR>')
 nmap('<C-n>', '<cmd>ZellijNavigateDown<CR>')
 nmap('<C-e>', '<cmd>ZellijNavigateRight<CR>')
 nmap('<C-l>', '<cmd>ZellijNavigateUp<CR>')
-

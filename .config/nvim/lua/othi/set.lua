@@ -1,4 +1,4 @@
-vim.opt.guicursor = "a:block"
+vim.opt.guicursor      = "a:block"
 vim.opt.updatetime     = 50
 
 vim.opt.encoding       = 'utf-8'
@@ -26,7 +26,7 @@ vim.opt.splitbelow     = true
 vim.opt.splitright     = true
 vim.opt.laststatus     = 3
 
-local indent = 4
+local indent           = 4
 vim.opt.tabstop        = indent
 vim.opt.shiftwidth     = indent
 vim.opt.foldcolumn     = "1"
@@ -40,7 +40,7 @@ vim.opt.concealcursor  = "c"
 
 vim.opt.showbreak      = "↪\\"
 vim.opt.list           = true
-vim.opt.listchars      = {tab='» ',extends='›',precedes='‹',nbsp='·',trail='·',eol='¬'}
+vim.opt.listchars      = { tab = '» ', extends = '›', precedes = '‹', nbsp = '·', trail = '·', eol = '¬' }
 vim.opt.mouse          = "a"
 
 vim.cmd([[
@@ -57,18 +57,24 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, { command = "%s/\\s\\+$//e" })
 -- COMPILER
 vim.g.rust_recommended_style = 0
 vim.api.nvim_create_autocmd(
-{ "BufRead", "BufNewFile" },
-{ pattern = { "*.rs", "Cargo.toml", "Cargo.lock" }, command = "compiler cargo" })
+    { "BufRead", "BufNewFile" },
+    { pattern = { "*.rs", "Cargo.toml", "Cargo.lock" }, command = "compiler cargo" })
 
 vim.api.nvim_create_autocmd(
-{ "BufRead", "BufNewFile" },
-{ pattern = { "*.rs", "Cargo.toml", "Cargo.lock" }, callback = function ()
-vim.opt.tabstop        = 4
-vim.opt.shiftwidth     = 4
-end })
+    { "BufRead", "BufNewFile" },
+    {
+        pattern = { "*.rs", "Cargo.toml", "Cargo.lock" },
+        callback = function()
+            vim.opt.tabstop    = 4
+            vim.opt.shiftwidth = 4
+        end
+    })
 vim.api.nvim_create_autocmd(
-{ "BufRead", "BufNewFile" },
-{ pattern = { "*.tsx", "*.ts" }, callback = function ()
-vim.opt.tabstop        = 2
-vim.opt.shiftwidth     = 2
-end })
+    { "BufRead", "BufNewFile" },
+    {
+        pattern = { "*.tsx", "*.ts" },
+        callback = function()
+            vim.opt.tabstop    = 2
+            vim.opt.shiftwidth = 2
+        end
+    })

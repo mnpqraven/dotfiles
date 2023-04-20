@@ -11,45 +11,45 @@ vim.cmd [[highlight Dash guibg=#D19A66 gui=bold]]
 -- }
 
 require('neorg').setup({
-  load = {
-    ["core.defaults"] = {}, -- Loads default behaviour
-    ["core.concealer"] = {
-      config = {
-        icon_preset = "diamond",
-        conceal = false
-      }
-    },
-    ["core.dirman"] = {
-      config = {
-        workspaces = {
-          repos = "~/Repos",
+    load = {
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.concealer"] = {
+            config = {
+                icon_preset = "diamond",
+                conceal = false
+            }
         },
-      },
+        ["core.dirman"] = {
+            config = {
+                workspaces = {
+                    repos = "~/Repos",
+                },
+            },
+        },
+        ["core.completion"] = {
+            config = { engine = "nvim-cmp" }
+        },
+        ["core.keybinds"] = {
+            config = {
+                default_keybinds = true,
+                neorg_leader = "<leader>"
+            }
+        },
+        ["core.export"] = {}
     },
-    ["core.completion"] = {
-      config = { engine = "nvim-cmp" }
-    },
-    ["core.keybinds"] = {
-      config = {
-        default_keybinds = true,
-        neorg_leader = "<leader>"
-      }
-    },
-    ["core.export"] = {}
-  },
 })
 local wk = require('which-key')
 wk.register({
-  ["gt"] = {
-    name = "Neorg TODO",
-    d = { name = " Done"},
-    p = { name = " Pending"},
-    u = { name = " Undone"},
-    h = { name = " On Hold"},
-    c = { name = " Cancelled"},
-    r = { name = " Recurring"},
-    i = { name = "⚠ Important"},
-    w = { name = " Uncertain"},
-  },
-  ["<leader>nn"] = {name = "New .norg file"}
+    ["gt"] = {
+        name = "Neorg TODO",
+        d = { name = " Done" },
+        p = { name = " Pending" },
+        u = { name = " Undone" },
+        h = { name = " On Hold" },
+        c = { name = " Cancelled" },
+        r = { name = " Recurring" },
+        i = { name = "⚠ Important" },
+        w = { name = " Uncertain" },
+    },
+    ["<leader>nn"] = { name = "New .norg file" }
 })
