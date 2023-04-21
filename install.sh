@@ -141,3 +141,6 @@ rm .*.pre-oh-my-zsh -f
 yadm submodule update --recursive --init
 rm -rf nerd-fonts
 rm -rf dotfiles
+# testing
+# disable auto idle
+xset -dpms

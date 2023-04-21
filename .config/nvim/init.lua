@@ -58,6 +58,19 @@ require('lazy').setup({
     'JoosepAlviste/nvim-ts-context-commentstring',
     'lukas-reineke/indent-blankline.nvim',
     {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+    },
+    {
+        'petertriho/nvim-scrollbar',
+        config = function()
+            require('scrollbar').setup({
+                handle = { blend = 0 }
+            })
+        end
+    },
+    {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
@@ -103,7 +116,7 @@ require('lazy').setup({
     {
         'Lilja/zellij.nvim',
         config = function()
-            require('zellij').setup({})
+            require('zellij').setup()
         end
     },
     'tpope/vim-fugitive',
@@ -211,16 +224,13 @@ require('lazy').setup({
     {
         'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'
     },
+    "luukvbaal/statuscol.nvim",
     'lervag/vimtex',
     'jose-elias-alvarez/null-ls.nvim',
-    -- {
-    --   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    --   config = function()
-    --     require("lsp_lines").setup({
-    --       vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
-    --     })
-    --   end,
-    -- },
+    {
+        'phaazon/hop.nvim',
+        branch = 'v2',
+    },
     {
         'zbirenbaum/neodim',
         event = "LspAttach",
