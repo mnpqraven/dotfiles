@@ -8,6 +8,7 @@
 !.tmux.conf
 !.gtk*
 !.zshrc
+!.xprofile
 !.p10k.zsh
 
 !.dir_color*

@@ -18,16 +18,11 @@ export KEYTIMEOUT=200
 bindkey -v
 
 # ALIASES
-# dir aliases {{{
-# add an a at the end to go to the dir directly
 alias gh="cd $HOME"
 alias cfg="$FM $HOME/.config/"
 alias cz="cd ~ && cd \$(find * -type d | fzf)"
 alias cr="cargo run --"
 
-# }}}
-
-# # commands aliases {{{
 alias v="$EDITOR"
 alias hx="helix"
 alias fm="clifm"
@@ -46,7 +41,6 @@ alias update="cargo install $(cargo install --list | grep -E '^[a-z0-9_-]+ v[0-9
 
 alias rwork="rsync -avzx -e 'ssh -p 6661' $HOME/work othi@183.81.43.11:/volume1/NetBackup/$(hostname)"
 alias btw="macchina"
-# }}}
 
 # config aliases
 alias vrc="$EDITOR $HOME/.config/nvim"

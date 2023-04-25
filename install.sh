@@ -121,6 +121,7 @@ mkdir -p $HOME/.oh-my-zsh/completions
 touch $HOME/.oh-my-zsh/completions/_zellij
 echo zellij setup --generate-completion zsh >> $HOME/.oh-my-zsh/completions/_zellij
 
+npm i -g vercel
 
 sudo cp .screenlayout/setup_monitors /usr/bin
 sudo rm /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf
