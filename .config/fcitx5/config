@@ -15,11 +15,10 @@ ActivateKeys=
 TogglePreedit=
 
 [Hotkey/TriggerKeys]
-0=Zenkaku_Hankaku
-1=Hangul
+0=Super+Home
 
 [Hotkey/EnumerateForwardKeys]
-0=Super+space
+0=Super+End
 
 [Hotkey/EnumerateGroupForwardKeys]
 0=Alt+Super+space

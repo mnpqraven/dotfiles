@@ -144,3 +144,9 @@ rm -rf dotfiles
 # testing
 # disable auto idle
 xset -dpms
+
+# install docker
+sudo pacman -S --noconfirm docker
+sudo usermod -aG docker $USER
+sudo systemctl enable --now docker
+

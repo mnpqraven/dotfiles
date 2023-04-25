@@ -66,3 +66,5 @@ alias qmkf="git checkout master && git fetch upstream && git pull upstream maste
 alias y="yadm"
 alias yst="yadm status"
 alias ydot="$EDITOR $HOME/.local/share/yadm/repo.git/config"
+
+alias pdocker="docker run -e HOME=/tmp -v $HOME/.config/planetscale:/tmp/.config/planetscale --user $(id -u):$(id -g) --rm -it -p 3306:3306/tcp planetscale/pscale:latest"

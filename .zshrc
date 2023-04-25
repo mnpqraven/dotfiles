@@ -44,3 +44,4 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=225'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -f "/home/othi/.ghcup/env" ] && source "/home/othi/.ghcup/env" # ghcup-env
