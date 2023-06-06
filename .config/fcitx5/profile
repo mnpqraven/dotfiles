@@ -41,7 +41,7 @@ Name=keyboard-us
 Layout=
 
 [GroupOrder]
-0=JP
-1=US
-2=VN
+0=US
+1=VN
+2=JP
 

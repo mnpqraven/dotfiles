@@ -101,7 +101,16 @@ lsp.configure('lua_ls', {
 lsp.configure('tailwindcss', {
     on_attach = function(_, bufnr)
         require("tailwindcss-colors").buf_attach(bufnr)
-    end
+    end,
+    settings = {
+        tailwindCSS = {
+            experimental = {
+                classRegex = {
+                    { "cva\\(((?:[^()]|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                },
+            },
+        },
+    },
 })
 
 lsp.configure('cssmodules_ls', {
