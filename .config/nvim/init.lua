@@ -175,7 +175,7 @@ require('lazy').setup({
         end,
         dependencies = "nvim-tree/nvim-web-devicons",
     },
-    'j-hui/fidget.nvim',
+    { 'j-hui/fidget.nvim',       tag = 'legacy' },
     { 'lewis6991/gitsigns.nvim', tag = 'release' },
     'simrat39/symbols-outline.nvim',
     'rcarriga/nvim-notify',

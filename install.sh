@@ -1,6 +1,6 @@
 # in case user forget
 sudo pacman -Syu
-sudo pacman -S firefox alacritty git xclip
+sudo pacman -S firefox alacritty git xclip xdotool
 # GRABBING FILES
 git clone https://github.com/mnpqraven/dotfiles.git
 # INSTALLING YAY
