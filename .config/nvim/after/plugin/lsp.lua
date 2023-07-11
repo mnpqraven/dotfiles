@@ -142,7 +142,6 @@ local rust_lsp = lsp.build_options('rust_analyzer', {
                 command = "clippy",
                 extraArgs = { "--all", "--", "-W", "clippy::all" },
             },
-            inlayHints = { locationLinks = false }
         }
     }
 })
