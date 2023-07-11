@@ -150,7 +150,12 @@ lsp.setup()
 
 -- Initialize rust_analyzer with rust-tools
 require('rust-tools').setup({
-    server = rust_lsp
+    server = rust_lsp,
+    tools = {
+        inlay_hints = {
+            auto = false
+        }
+    }
 })
 
 -- signs on gutter columns
