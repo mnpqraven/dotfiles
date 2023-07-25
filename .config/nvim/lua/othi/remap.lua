@@ -36,6 +36,7 @@ nmap('<leader>8', '8gt')
 nmap('<leader>9', '9gt')
 
 nmap('<C-w>', '<cmd>bd<CR>')
+nmap('<C-s>', '<cmd>:w!<CR>')
 nmap('<F8>', '<cmd>set hlsearch! hlsearch?<CR>')
 
 -- Leader keys

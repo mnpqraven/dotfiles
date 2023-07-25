@@ -54,7 +54,6 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter-textobjects',
     'nvim-treesitter/playground',
     'nvim-treesitter/nvim-treesitter-context',
-    'mrjones2014/nvim-ts-rainbow',
     'JoosepAlviste/nvim-ts-context-commentstring',
     'lukas-reineke/indent-blankline.nvim',
     {
@@ -104,6 +103,13 @@ require('lazy').setup({
             -- Snippet Collection (Optional)
             -- { 'rafamadriz/friendly-snippets' },
         }
+    },
+    'MunifTanjim/prettier.nvim',
+    {
+        'laytan/tailwind-sorter.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim' },
+        build = 'cd formatter && npm i && npm run build',
+        config = true,
     },
     'mfussenegger/nvim-dap',
     {
@@ -212,15 +218,6 @@ require('lazy').setup({
         end
     },
     'RRethy/vim-illuminate',
-    {
-        "nvim-neorg/neorg",
-        after = 'nvim-treesitter/nvim-treesitter',
-        build = ":Neorg sync-parsers",
-        dependencies = {
-            { "nvim-lua/plenary.nvim" },
-            { 'lukas-reineke/headlines.nvim' }
-        },
-    },
     {
         'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'
     },
