@@ -10,7 +10,10 @@ require('dressing').setup({
         -- When true, input will start in insert mode.
         start_in_insert = true,
         -- These are passed to nvim_open_win
-        anchor = "SW",
+        override = function(conf)
+            conf.anchor = "SW"
+            return conf
+        end,
         border = "single",
         -- 'editor' and 'win' will default to being centered
         relative = "cursor",
@@ -41,11 +44,6 @@ require('dressing').setup({
                 ["<C-n>"] = "HistoryNext",
             },
         },
-        override = function(conf)
-            -- This is the config that will be passed to nvim_open_win.
-            -- Change values here to customize the layout
-            return conf
-        end,
         -- see :help dressing_get_config
         get_config = nil,
     },
@@ -97,7 +95,10 @@ require('dressing').setup({
         -- Options for built-in selector
         builtin = {
             -- These are passed to nvim_open_win
-            anchor = "NW",
+            override = function(conf)
+                conf.anchor = "NW"
+                return conf
+            end,
             border = "rounded",
             -- 'editor' and 'win' will default to being centered
             relative = "editor",
@@ -121,11 +122,6 @@ require('dressing').setup({
                 ["<C-c>"] = "Close",
                 ["<CR>"] = "Confirm",
             },
-            override = function(conf)
-                -- This is the config that will be passed to nvim_open_win.
-                -- Change values here to customize the layout
-                return conf
-            end,
         },
         -- Used to override format_item. See :help dressing-format
         format_item_override = {},

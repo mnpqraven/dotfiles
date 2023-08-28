@@ -57,11 +57,6 @@ require('lazy').setup({
     'JoosepAlviste/nvim-ts-context-commentstring',
     'lukas-reineke/indent-blankline.nvim',
     {
-        'glepnir/dashboard-nvim',
-        event = 'VimEnter',
-        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-    },
-    {
         'petertriho/nvim-scrollbar',
         config = function()
             require('scrollbar').setup({
