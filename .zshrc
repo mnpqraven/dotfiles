@@ -45,3 +45,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -f "/home/othi/.ghcup/env" ] && source "/home/othi/.ghcup/env" # ghcup-env
+[[ ! -r /home/othi/.opam/opam-init/init.zsh ]] || source /home/othi/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

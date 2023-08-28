@@ -35,6 +35,11 @@ sudo pacman -S --needed \
     librsvg \
     libvips
 
+bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
+opam init
+eval $(opam env --switch=default)
+opam install dune merlin ocaml-lsp-server odoc ocamlformat utop dune-release
+
 # EDITOR
 sudo pacman -S --noconfirm neovim jq
 sudo pacman -S --noconfirm alsa-utils easyeffects arandr inetutils
