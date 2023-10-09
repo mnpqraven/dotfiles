@@ -1,5 +1,21 @@
 local builtin = require('telescope.builtin')
 local wk = require('which-key')
+local previewers = require("telescope.previewers")
+
+local new_maker = function(filepath, bufnr, opts)
+  opts = opts or {}
+
+  filepath = vim.fn.expand(filepath)
+  vim.loop.fs_stat(filepath, function(_, stat)
+    if not stat then return end
+    if stat.size > 100000 then
+      return
+    else
+      previewers.buffer_previewer_maker(filepath, bufnr, opts)
+    end
+  end)
+end
+
 wk.register({
     f = {
         name = "Telescope",
@@ -10,7 +26,6 @@ wk.register({
         p = { builtin.diagnostics, "Diagnostics" },
         t = { builtin.lsp_document_symbols, "Symbols in file" },
         e = { '<cmd>IconPickerNormal<CR>', 'Symbols and icons' },
-        n = { '<cmd>Neorg<CR>', 'Neorg' },
         d = { '<cmd>TodoTelescope<CR>', 'TODOs' }
     },
     w = {
@@ -44,8 +59,9 @@ require('telescope').setup {
                 preview_width = 0.6
             }
         },
-        path_display = { "smart", "truncate" },
+        path_display = { "smart" },
         borderchars = borderchars,
+        buffer_previewer_maker = new_maker,
     },
     pickers = {
         diagnostics = {

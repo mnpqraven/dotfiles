@@ -1,6 +1,10 @@
 ---@diagnostic disable: undefined-global
 
 return {
+    s('callback', {
+        t { '(' }, i(1),
+        t { ') => ' }, i(2)
+    }),
     s('setState', {
         t('const ['), i(1, 'state'), t(', set'),
         l(l._1:gsub('^%l', string.upper), 1),
@@ -8,7 +12,7 @@ return {
         t(');')
     }),
     s('useEffect', {
-        t { 'useEffect(() => {', '' }, i(1),
+        t { 'useEffect(() => {', '  ' }, i(1),
         t { '', '' },
         t('}, ['), i(2),
         t { ']);', '' }

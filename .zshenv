@@ -6,6 +6,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 export PATH="$PATH:$ANDROID_SDK_ROOT/emulator"
 export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools"
+export PATH="$HOME/go/bin:$PATH"
 export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
 export GPG_TTY=$(tty)
 # dotnet stuff
@@ -41,6 +42,8 @@ alias update="cargo install $(cargo install --list | grep -E '^[a-z0-9_-]+ v[0-9
 
 alias rwork="rsync -avzx -e 'ssh -p 6661' $HOME/work othi@183.81.43.11:/volume1/NetBackup/$(hostname)"
 alias btw="macchina"
+alias sqld="docker container run -d --name sqld -v sqld-data:/var/lib/sqld \
+  -p 127.0.0.1:8080:8080 libsql/sqld:latest"
 
 # config aliases
 alias vrc="$EDITOR $HOME/.config/nvim"

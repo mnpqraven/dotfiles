@@ -122,6 +122,20 @@ lsp.configure('cssmodules_ls', {
     }
 })
 
+-- remove this when nvim is v0.10+
+-- lsp.configure('svelte', {
+--     on_attach = function(client, bufnr)
+--         vim.api.nvim_create_autocmd("BufWritePost", {
+--             pattern = { "*.js", "*.ts" },
+--             callback = function(ctx)
+--                 if client.name == "svelte" then
+--                     client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+--                 end
+--             end,
+--         })
+--     end
+-- })
+
 local rust_lsp = lsp.build_options('rust_analyzer', {
     on_attach = function(_, bufnr)
         wk.register({

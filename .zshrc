@@ -46,3 +46,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -f "/home/othi/.ghcup/env" ] && source "/home/othi/.ghcup/env" # ghcup-env
 [[ ! -r /home/othi/.opam/opam-init/init.zsh ]] || source /home/othi/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# Turso
+export PATH="/home/othi/.turso:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/othi/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

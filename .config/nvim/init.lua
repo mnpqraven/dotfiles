@@ -25,8 +25,7 @@ require('lazy').setup({
     -- NOTE: SYNTAX ----------------------------------------------------------
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
+        branch = '0.1.x',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
     'nvim-telescope/telescope-ui-select.nvim',
@@ -94,7 +93,11 @@ require('lazy').setup({
             { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippets
-            { 'L3MON4D3/LuaSnip' },
+            {
+                'L3MON4D3/LuaSnip',
+                version = "2.*",
+                build = "make install_jsregexp"
+            },
             -- Snippet Collection (Optional)
             -- { 'rafamadriz/friendly-snippets' },
         }
@@ -223,21 +226,21 @@ require('lazy').setup({
         'phaazon/hop.nvim',
         branch = 'v2',
     },
-    {
-        'zbirenbaum/neodim',
-        event = "LspAttach",
-        config = function()
-            require("neodim").setup({
-                alpha = 0.75,
-                blend_color = "#000000",
-                refresh_delay = 100,
-                priority = 100,
-                hide = {
-                    virtual_text = true,
-                    signs = true,
-                    underline = true,
-                }
-            })
-        end
-    }
+    -- {
+    --     'zbirenbaum/neodim',
+    --     event = "LspAttach",
+    --     config = function()
+    --         require("neodim").setup({
+    --             alpha = 0.75,
+    --             blend_color = "#000000",
+    --             refresh_delay = 100,
+    --             priority = 100,
+    --             hide = {
+    --                 virtual_text = true,
+    --                 signs = true,
+    --                 underline = true,
+    --             }
+    --         })
+    --     end
+    -- }
 })
