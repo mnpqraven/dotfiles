@@ -72,7 +72,7 @@ vim.api.nvim_create_autocmd(
 vim.api.nvim_create_autocmd(
     { "BufRead", "BufNewFile" },
     {
-        pattern = { "*.tsx", "*.ts" },
+        pattern = { "*.tsx", "*.ts", "*.js", "*.jsx", "*.mjs", "*.cjs" },
         callback = function()
             vim.opt.tabstop    = 2
             vim.opt.shiftwidth = 2

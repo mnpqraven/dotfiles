@@ -24,6 +24,12 @@ nmap('<down>', 'ddp')
 vmap('<up>', 'dkP1v')
 vmap('<down>', 'dp1v')
 
+-- split navigation
+nmap('<C-h>', '<cmd>:wincmd h<CR>')
+nmap('<C-n>', '<cmd>:wincmd j<CR>')
+nmap('<C-e>', '<cmd>:wincmd l<CR>')
+nmap('<C-l>', '<cmd>:wincmd k<CR>')
+
 -- tab navigation
 nmap('<leader>1', '1gt')
 nmap('<leader>2', '2gt')

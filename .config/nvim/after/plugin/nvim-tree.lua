@@ -3,13 +3,13 @@ require("nvim-tree").setup({
     view = {
         mappings = {
             list = {
-                { key = "<C-e>",                                  action = "" },
-                { key = "e",                                      action = "" },
-                { key = "<C-n>",                                  action = "tabnew" },
+                { key = "<C-e>",                                   action = "" },
+                { key = "e",                                       action = "" },
+                { key = "<C-n>",                                   action = "tabnew" },
                 { key = { "<CR>", "<C-o>", "o", "<2-LeftMouse>" }, action = "edit" },
             },
         },
-        width = 25,
+        width = 35,
     },
     renderer = {
         icons = {
