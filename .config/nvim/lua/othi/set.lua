@@ -26,7 +26,7 @@ vim.opt.splitbelow     = true
 vim.opt.splitright     = true
 vim.opt.laststatus     = 3
 
-local indent           = 4
+local indent           = 2
 vim.opt.tabstop        = indent
 vim.opt.shiftwidth     = indent
 vim.opt.foldcolumn     = "1"
@@ -38,7 +38,7 @@ vim.opt.smartindent    = true
 vim.opt.conceallevel   = 2
 vim.opt.concealcursor  = "c"
 
-vim.opt.showbreak      = "↪\\"
+vim.opt.showbreak      = "↪"
 vim.opt.list           = true
 vim.opt.listchars      = { tab = '» ', extends = '›', precedes = '‹', nbsp = '·', trail = '·', eol = '¬' }
 vim.opt.mouse          = "a"
@@ -69,6 +69,7 @@ vim.api.nvim_create_autocmd(
             vim.opt.shiftwidth = 4
         end
     })
+
 vim.api.nvim_create_autocmd(
     { "BufRead", "BufNewFile" },
     {

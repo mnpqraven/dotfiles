@@ -14,11 +14,13 @@ vim.diagnostic.config({ virtual_lines = { only_current_line = true } })
 lsp.ensure_installed({
     'lua_ls',
     'tsserver',
+    'eslint',
     'rust_analyzer',
     'taplo',
     'tailwindcss',
     'cssls',
     'cssmodules_ls',
+    'nil_ls'
 })
 
 -- cmp.setup {
@@ -173,7 +175,8 @@ require('rust-tools').setup({
 })
 
 -- signs on gutter columns
-local signs = { Error = " ", Hint = " ", Info = " " }
+-- local signs = { Error = " ", Hint = " ", Info = " " }
+local signs = { Error = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })

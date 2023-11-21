@@ -49,12 +49,19 @@ require('lazy').setup({
         build = function()
             require('nvim-treesitter.install').update({ with_sync = true })
         end,
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter-textobjects',
+            'nvim-treesitter/playground',
+            'nvim-treesitter/nvim-treesitter-context',
+            'JoosepAlviste/nvim-ts-context-commentstring',
+        }
     },
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    'nvim-treesitter/playground',
-    'nvim-treesitter/nvim-treesitter-context',
-    'JoosepAlviste/nvim-ts-context-commentstring',
-    'lukas-reineke/indent-blankline.nvim',
+    {
+        'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {},
+        init = function()
+            require('ibl').setup()
+        end
+    },
     {
         'petertriho/nvim-scrollbar',
         config = function()
@@ -117,12 +124,12 @@ require('lazy').setup({
             require('crates').setup()
         end,
     },
-    {
-        'Lilja/zellij.nvim',
-        config = function()
-            require('zellij').setup()
-        end
-    },
+    -- {
+    --     'Lilja/zellij.nvim',
+    --     config = function()
+    --         require('zellij').setup()
+    --     end
+    -- },
     'tpope/vim-fugitive',
 
     'kylechui/nvim-surround',
@@ -227,20 +234,20 @@ require('lazy').setup({
         branch = 'v2',
     },
     -- {
-    --     'zbirenbaum/neodim',
-    --     event = "LspAttach",
-    --     config = function()
-    --         require("neodim").setup({
-    --             alpha = 0.75,
-    --             blend_color = "#000000",
-    --             refresh_delay = 100,
-    --             priority = 100,
-    --             hide = {
-    --                 virtual_text = true,
-    --                 signs = true,
-    --                 underline = true,
-    --             }
-    --         })
-    --     end
-    -- }
-})
+        --     'zbirenbaum/neodim',
+        --     event = "LspAttach",
+        --     config = function()
+            --         require("neodim").setup({
+                --             alpha = 0.75,
+                --             blend_color = "#000000",
+                --             refresh_delay = 100,
+                --             priority = 100,
+                --             hide = {
+                    --                 virtual_text = true,
+                    --                 signs = true,
+                    --                 underline = true,
+                    --             }
+                    --         })
+                    --     end
+                    -- }
+                })
