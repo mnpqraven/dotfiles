@@ -10,9 +10,9 @@ znap source zsh-users/zsh-syntax-highlighting
 znap eval alacritty 'echo "macchina"'
 
 # OMZ
-export ZSH="$HOME/.oh-my-zsh"
-plugins=(git common-aliases vi-mode)
-source $ZSH/oh-my-zsh.sh
+# export ZSH="$HOME/.oh-my-zsh"
+# plugins=(git common-aliases)
+# source $ZSH/oh-my-zsh.sh
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"

@@ -124,21 +124,15 @@ require('lazy').setup({
             require('crates').setup()
         end,
     },
-    -- {
-    --     'Lilja/zellij.nvim',
-    --     config = function()
-    --         require('zellij').setup()
-    --     end
-    -- },
     'tpope/vim-fugitive',
 
     'kylechui/nvim-surround',
     {
         'numToStr/Comment.nvim',
         config = function()
-            require('Comment').setup({
+            require('Comment').setup {
                 pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-            })
+            }
         end
     },
     {
@@ -232,22 +226,8 @@ require('lazy').setup({
     {
         'phaazon/hop.nvim',
         branch = 'v2',
+        config = function()
+          require'hop'.setup { keys = 'arsdheiqwfpgjluyokzxcvbnmtn' }
+        end
     },
-    -- {
-        --     'zbirenbaum/neodim',
-        --     event = "LspAttach",
-        --     config = function()
-            --         require("neodim").setup({
-                --             alpha = 0.75,
-                --             blend_color = "#000000",
-                --             refresh_delay = 100,
-                --             priority = 100,
-                --             hide = {
-                    --                 virtual_text = true,
-                    --                 signs = true,
-                    --                 underline = true,
-                    --             }
-                    --         })
-                    --     end
-                    -- }
-                })
+  })

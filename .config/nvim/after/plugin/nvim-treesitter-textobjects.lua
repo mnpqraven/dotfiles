@@ -71,3 +71,5 @@ require 'nvim-treesitter.configs'.setup {
 require 'treesitter-context'.setup {
     max_lines = 5,
 }
+
+vim.g.skip_ts_context_commentstring_module = true

@@ -10,18 +10,17 @@ export PATH="$HOME/go/bin:$PATH"
 export XPLR_BOOKMARK_FILE="$HOME/.config/xplr/bookmarks"
 export GPG_TTY=$(tty)
 # dotnet stuff
-export LD_LIBRARY_PATH="/usr/local/lib"
+# export LD_LIBRARY_PATH="/usr/local/lib"
+export NIXPKGS_ALLOW_INSECURE=1
 export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
-export EDITOR="/usr/bin/nvim"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 
 export KEYTIMEOUT=200
 bindkey -v
 
 # ALIASES
-alias gh="cd $HOME"
 alias cfg="$FM $HOME/.config/"
-alias cz="cd ~ && cd \$(find * -type d | fzf)"
+alias cz="cd $HOME && cd \$(find * -type d | fzf)"
 alias cr="cargo run --"
 
 alias v="$EDITOR"
@@ -52,8 +51,13 @@ alias zenv="$EDITOR $HOME/.zshenv"
 alias tmrc="$EDITOR $HOME/.tmux.conf"
 
 # git aliases
+alias g="git"
 alias gt="git tree"
-alias gac="git allcommit"
+alias gp="git push"
+alias gpl="git pull"
+alias gco="git checkout"
+alias gst="git status"
+alias gac="git add -A && git commit -m"
 alias grst="git reset"
 alias gRST="git reset --hard && git clean -fd"
 alias gmnc="git merge --no-commit"
