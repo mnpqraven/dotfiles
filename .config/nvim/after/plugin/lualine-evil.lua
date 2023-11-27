@@ -96,39 +96,6 @@ ins_left {
     padding = { left = 0, right = 0 }, -- We don't need space before this
 }
 
--- ins_left {
---   -- mode component
---   function()
---     return ''
---   end,
---   color = function()
---     -- auto change color according to neovims mode
---     local mode_color = {
---       n = colors.red,
---       i = colors.green,
---       v = colors.blue,
---       [''] = colors.blue,
---       V = colors.yellow,
---       c = colors.magenta,
---       no = colors.red,
---       s = colors.yellow,
---       S = colors.yellow,
---       [''] = colors.yellow,
---       ic = colors.yellow,
---       R = colors.violet,
---       Rv = colors.violet,
---       cv = colors.red,
---       ce = colors.red,
---       r = colors.cyan,
---       rm = colors.cyan,
---       ['r?'] = colors.cyan,
---       ['!'] = colors.red,
---       t = colors.red,
---     }
---     return { fg = mode_color[vim.fn.mode()] }
---   end,
---   padding = { right = 1 },
--- }
 ins_left {
     'mode',
     color = function()
@@ -184,7 +151,6 @@ ins_left {
 
 ins_left {
     'diff',
-    -- Is it me or the symbol for modified us really weird
     symbols = { added = ' ', modified = ' ', removed = ' ' },
     diff_color = {
         removed = { fg = colors.red },
@@ -197,7 +163,7 @@ ins_left {
 ins_left {
     'diagnostics',
     sources = { 'nvim_diagnostic' },
-    symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+    symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
     diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.yellow },

@@ -227,7 +227,9 @@ require('lazy').setup({
         'phaazon/hop.nvim',
         branch = 'v2',
         config = function()
-          require'hop'.setup { keys = 'arsdheiqwfpgjluyokzxcvbnmtn' }
+          require'hop'.setup {
+            keys = 'arsdheioqwfpgjluyzxcvbkmtn'
+          }
         end
     },
   })
