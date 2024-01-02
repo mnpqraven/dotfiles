@@ -19,8 +19,7 @@ lsp.ensure_installed({
     'taplo',
     'tailwindcss',
     'cssls',
-    'cssmodules_ls',
-    'nil_ls'
+    'cssmodules_ls'
 })
 
 -- cmp.setup {
@@ -81,7 +80,7 @@ lsp.configure('taplo', {
                 u = { crates.update_crate, "Update crate", buffer = bufnr },
                 U = { crates.upgrade_crate, "Upgrade crate", buffer = bufnr },
                 u = { crates.update_crates, "Update crates", mode = "v", buffer = bufnr },
-                u = { crates.upgrade_crates, "Upgrade crates", mode = "v", buffer = bufnr },
+                -- u = { crates.upgrade_crates, "Upgrade crates", mode = "v", buffer = bufnr },
                 a = { crates.upgrade_all_crates, "Upgrade all crates", buffer = bufnr },
                 h = { crates.open_homepage, "Open homepage", buffer = bufnr },
                 d = { crates.open_documentation, "Open documentation", buffer = bufnr },

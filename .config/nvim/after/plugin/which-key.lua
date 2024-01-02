@@ -10,5 +10,6 @@ wk.register({
 })
 
 wk.register({
-    g = { "<cmd>G<CR>", "Open Git console" }
+    g = { "<cmd>G<CR>", "Open Git console" },
+    h = { "<cmd>HopWord<CR>", "Hop" }
 }, { prefix = "<leader>" })

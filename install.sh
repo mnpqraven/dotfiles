@@ -34,6 +34,7 @@ sudo pacman -S --needed \
     libappindicator-gtk3 \
     librsvg \
     libvips
+yay -S protobuf
 
 bash -c "sh <(curl -fsSL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)"
 opam init
@@ -59,15 +60,16 @@ cd $HOME
 
 # notification
 sudo pacman -S libnotify
-yay leftwm leftwm-theme-git
+yay -S leftwm
+yay -S leftwm-theme-git
 sudo pacman -S polybar
 mkdir -p $HOME/.local/share/fonts
 cp -rf .fonts/* $HOME/.local/share/fonts
 
 leftwm-theme update
 # ln -s ~/.config/leftwm/themes/othi ~/.config/leftwm/themes/current
-yay wired
-yay xmessage
+yay -S wired
+yay -S xmessage
 yay discord-canary-electron-bin
 yay ttf-symbola
 sudo pacman -S --noconfirm noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
@@ -92,16 +94,19 @@ sudo pacman -S awesome-terminal-fonts ttf-font-awesome
 # fonts and wm
 yay papirus-icon-theme-git
 git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
-bash nerd-fonts/install.sh
+sh nerd-fonts/install.sh
 # checksum error for now
 # yay nerd-fonts-complete
 sudo pacman -S --noconfirm wmctrl
 
-# FM
-yay clifm
+# AUDIO
+sudo pacman -S pipewire-audio pipewire-alsa pipewire-pulse
 
-cargo install --locked zellij xplr starship bacon
-cargo install exa kalker macchina cargo-update tauri-cli
+# FM
+yay -S clifm
+
+cargo install zellij xplr starship bacon
+cargo install exa kalker macchina cargo-update cargo-watch tauri-cli
 echo $(zellij setup --generate-completion zsh) > $ZSH/completions/zellij_completion
 
 yay --sync eww-git
@@ -113,6 +118,9 @@ sudo pacman -S qt5-tools
 # not yet installed
 # sudo npm install -g neovim
 sudo pacman -S --noconfirm npm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+pnpm i -g dotenv-cli
+
 mkdir -p $HOME/.nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"

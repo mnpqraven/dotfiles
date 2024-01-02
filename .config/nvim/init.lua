@@ -232,22 +232,10 @@ require('lazy').setup({
     {
         'phaazon/hop.nvim',
         branch = 'v2',
+        config = function ()
+          require('hop').setup {
+            keys = 'arsdhlqwfpgjluynzxcvbkmtn'
+          }
+        end
     },
-    -- {
-        --     'zbirenbaum/neodim',
-        --     event = "LspAttach",
-        --     config = function()
-            --         require("neodim").setup({
-                --             alpha = 0.75,
-                --             blend_color = "#000000",
-                --             refresh_delay = 100,
-                --             priority = 100,
-                --             hide = {
-                    --                 virtual_text = true,
-                    --                 signs = true,
-                    --                 underline = true,
-                    --             }
-                    --         })
-                    --     end
-                    -- }
-                })
+  })
