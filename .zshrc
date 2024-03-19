@@ -50,6 +50,9 @@ export NVM_DIR="$HOME/.nvm"
 # Turso
 export PATH="/home/othi/.turso:$PATH"
 
+# SSH
+eval $(keychain --eval --quiet id_ed25519)
+
 # pnpm
 export PNPM_HOME="/home/othi/.local/share/pnpm"
 case ":$PATH:" in

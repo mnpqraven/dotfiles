@@ -64,6 +64,8 @@
         (modifier: ["modkey", "Shift"],   key: "q", command: CloseWindow, value: "", ),
         (modifier: ["modkey", "Shift"],   key: "r", command: SoftReload, value: "", ),
         (modifier: ["modkey", "Shift"],   key: "x", command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", ),
+        (modifier: ["modkey", "Alt"],     key: "l", command: IncreaseMainWidth, value: "5", ),
+        (modifier: ["modkey", "Alt"],     key: "n", command: DecreaseMainWidth, value: "5", ),
         (modifier: ["modkey", "Shift"],   key: "l", command: MoveWindowUp, value: "", ),
         (modifier: ["modkey"],            key: "l", command: FocusWindowUp, value: "", ),
         (modifier: ["modkey", "Shift"],   key: "n", command: MoveWindowDown, value: "", ),

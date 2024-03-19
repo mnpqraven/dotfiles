@@ -35,7 +35,7 @@
 [url "https://"]
   insteadOf = git://
 [credential]
-  helper = cache
+	helper = store
 [user]
   email = mnpq.raven@gmail.com
   name = Othi

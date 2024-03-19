@@ -234,8 +234,14 @@ require('lazy').setup({
         branch = 'v2',
         config = function ()
           require('hop').setup {
-            keys = 'arsdhlqwfpgjluynzxcvbkmtn'
+            keys = 'arsdheiqwfpgjluyozxcvbkmtn'
           }
         end
     },
+    {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+    }
   })

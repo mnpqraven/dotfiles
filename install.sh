@@ -11,7 +11,7 @@ cd yay
 makepkg -si --noconfirm
 cd $HOME
 
-sudo pacman -S --noconfirm gnome-keyring libsecret
+sudo pacman -S --noconfirm gnome-keyring libsecret keychain
 echo "-------------------------------"
 echo "GIT"
 echo "Installing GitHub SSH key, open up GitHub in your browser and get ready to add the key"
@@ -57,6 +57,7 @@ bash nas-setup.sh
 cd $HOME/dotfiles
 bash Scripts/mpd-install-wizard.sh
 cd $HOME
+sudo pacman -S spotify-launcher
 
 # notification
 sudo pacman -S libnotify
