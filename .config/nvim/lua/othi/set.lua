@@ -63,7 +63,7 @@ vim.api.nvim_create_autocmd(
 vim.api.nvim_create_autocmd(
     { "BufRead", "BufNewFile" },
     {
-        pattern = { "*.rs", "Cargo.toml", "Cargo.lock" },
+        pattern = { "*.rs", "Cargo.toml", "Cargo.lock", "*.lua" },
         callback = function()
             vim.opt.tabstop    = 4
             vim.opt.shiftwidth = 4

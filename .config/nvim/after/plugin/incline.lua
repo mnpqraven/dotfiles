@@ -1,5 +1,8 @@
+local symbols = require('user.constants')
+
 local function get_diagnostic_label(props)
-    local icons = { error = '', warn = '', info = '', hint = '', }
+    -- local icons = { error = '', warn = '', info = '', hint = '󰌵', }
+    local icons = { error = symbols.Error, warn = symbols.Warn, info = symbols.Info, hint = symbols.Hint, }
     local label = {}
 
     for severity, icon in pairs(icons) do
@@ -67,7 +70,7 @@ require('incline').setup({
 
         local buffer = {
             { get_diagnostic_label(props) },
-            { get_git_diff(props) },
+            -- { get_git_diff(props) },
             { ft_icon,                    guifg = ft_color }, { " " },
             {
                 filename,

@@ -1,9 +1,11 @@
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
+local symbols = require('user.constants')
 local lsp = require('lsp-zero')
 local rt = require("rust-tools")
 local wk = require('which-key')
 local crates = require('crates')
+
 lsp.preset('lsp-compe')
 lsp.skip_server_setup({ 'rust_analyzer' })
 
@@ -173,10 +175,10 @@ require('rust-tools').setup({
     }
 })
 
+
 -- signs on gutter columns
 -- local signs = { Error = " ", Hint = " ", Info = " " }
-local signs = { Error = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
+for type, icon in pairs(symbols) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end

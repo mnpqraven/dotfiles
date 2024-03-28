@@ -40,6 +40,12 @@ require('lazy').setup({
         dependencies = { 'rktjmp/lush.nvim' },
     },
     {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    {
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons', },
         tag = 'nightly'
@@ -57,8 +63,10 @@ require('lazy').setup({
         }
     },
     {
-        'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {},
-        init = function()
+        'lukas-reineke/indent-blankline.nvim',
+        main = 'ibl',
+        opts = {},
+        config = function()
             require('ibl').setup()
         end
     },
@@ -76,8 +84,10 @@ require('lazy').setup({
     },
     {
         'b0o/incline.nvim',
+        event = 'VeryLazy',
         dependencies = 'lewis6991/gitsigns.nvim'
     },
+    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -232,16 +242,25 @@ require('lazy').setup({
     {
         'phaazon/hop.nvim',
         branch = 'v2',
-        config = function ()
-          require('hop').setup {
-            keys = 'arsdheiqwfpgjluyozxcvbkmtn'
-          }
+        config = function()
+            require('hop').setup {
+                keys = 'arsdheiqwfpgjluyozxcvbkmtn'
+            }
         end
     },
     {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+    },
+    {
+        "keaising/im-select.nvim",
+        config = function()
+            require("im_select").setup({
+                default_im_select = "keyboard-us",
+                default_command = "fcitx5-remote",
+            })
+        end,
     }
-  })
+})
