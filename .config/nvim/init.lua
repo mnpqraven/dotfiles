@@ -87,7 +87,7 @@ require('lazy').setup({
         event = 'VeryLazy',
         dependencies = 'lewis6991/gitsigns.nvim'
     },
-    {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+    { 'akinsho/bufferline.nvim', version = "*",    dependencies = 'nvim-tree/nvim-web-devicons' },
 
     {
         'VonHeikemen/lsp-zero.nvim',
@@ -192,13 +192,28 @@ require('lazy').setup({
     {
         'folke/trouble.nvim',
         config = function()
-            require("trouble").setup()
+            require("trouble").setup {
+                height = 7
+            }
         end,
         dependencies = "nvim-tree/nvim-web-devicons",
     },
     { 'j-hui/fidget.nvim',       tag = 'legacy' },
     { 'lewis6991/gitsigns.nvim', tag = 'release' },
-    'simrat39/symbols-outline.nvim',
+    {
+        "hedyhli/outline.nvim",
+        lazy = true,
+        cmd = { "Outline", "OutlineOpen" },
+        opts = {
+            outline_window = {
+                width = 15,
+            },
+            keymaps = {
+                unfold = "e",
+                fold_all = "H"
+            },
+        },
+    },
     'rcarriga/nvim-notify',
     'stevearc/dressing.nvim',
     {
@@ -223,7 +238,6 @@ require('lazy').setup({
             })
         end,
     },
-    'folke/twilight.nvim',
     {
         'ziontee113/icon-picker.nvim',
         config = function()

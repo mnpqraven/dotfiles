@@ -3,8 +3,6 @@
 EnumerateWithTriggerKeys=True
 # Temporally switch between first and current Input Method
 AltTriggerKeys=
-# Enumerate Input Method Backward
-EnumerateBackwardKeys=
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
 # Activate Input Method
@@ -18,11 +16,14 @@ TogglePreedit=
 [Hotkey/EnumerateForwardKeys]
 0=Super+End
 
+[Hotkey/EnumerateBackwardKeys]
+0=Super+Home
+
 [Hotkey/EnumerateGroupForwardKeys]
-0=Super+End
+0=Super+Next
 
 [Hotkey/EnumerateGroupBackwardKeys]
-0=Super+Home
+0=Super+Page_Up
 
 [Hotkey/DeactivateKeys]
 0=Hangul_Romaja
@@ -64,6 +65,12 @@ CustomXkbOption=
 EnabledAddons=
 # Preload input method to be used by default
 PreloadInputMethod=True
+# Allow input method in the password field
+AllowInputMethodForPassword=False
+# Show preedit text when typing password
+ShowPreeditForPassword=False
+# Interval of saving user data in minutes
+AutoSavePeriod=30
 
 [Behavior/DisabledAddons]
 0=clipboard
