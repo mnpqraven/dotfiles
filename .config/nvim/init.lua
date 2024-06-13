@@ -31,7 +31,7 @@ require('lazy').setup({
     'nvim-telescope/telescope-ui-select.nvim',
 
     -- NOTE: THEME -----------------------------------------------------------
-    { "catppuccin/nvim",         as = "catppuccin" },
+    'catppuccin/nvim',
     'rebelot/kanagawa.nvim',
     'kvrohit/mellow.nvim',
     'navarasu/onedark.nvim',
@@ -87,7 +87,7 @@ require('lazy').setup({
         event = 'VeryLazy',
         dependencies = 'lewis6991/gitsigns.nvim'
     },
-    { 'akinsho/bufferline.nvim', version = "*",    dependencies = 'nvim-tree/nvim-web-devicons' },
+    { 'akinsho/bufferline.nvim', version = "*",  dependencies = 'nvim-tree/nvim-web-devicons' },
 
     {
         'VonHeikemen/lsp-zero.nvim',
