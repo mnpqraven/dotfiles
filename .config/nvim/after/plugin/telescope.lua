@@ -3,36 +3,33 @@ local wk = require('which-key')
 local previewers = require("telescope.previewers")
 
 local new_maker = function(filepath, bufnr, opts)
-  opts = opts or {}
+    opts = opts or {}
 
-  filepath = vim.fn.expand(filepath)
-  vim.loop.fs_stat(filepath, function(_, stat)
-    if not stat then return end
-    if stat.size > 100000 then
-      return
-    else
-      previewers.buffer_previewer_maker(filepath, bufnr, opts)
-    end
-  end)
+    filepath = vim.fn.expand(filepath)
+    vim.loop.fs_stat(filepath, function(_, stat)
+        if not stat then return end
+        if stat.size > 100000 then
+            return
+        else
+            previewers.buffer_previewer_maker(filepath, bufnr, opts)
+        end
+    end)
 end
 
-wk.register({
-    f = {
-        name = "Telescope",
-        f = { builtin.find_files, "Find files" },
-        w = { builtin.git_files, "Find git files" },
-        g = { builtin.live_grep, "Grep" },
-        b = { builtin.buffers, "Buffers" },
-        p = { builtin.diagnostics, "Diagnostics" },
-        t = { builtin.lsp_document_symbols, "Symbols in file" },
-        e = { '<cmd>IconPickerNormal<CR>', 'Symbols and icons' },
-        d = { '<cmd>TodoTelescope<CR>', 'TODOs' }
-    },
-    w = {
-        name = "Workspace",
-        s = { builtin.lsp_workspace_symbols, "Symbols in workspace" }
-    },
-}, { prefix = "<leader>" })
+wk.add({
+    { "<leader>f",  group = "Telescope" },
+    { "<leader>ff", builtin.find_files,            desc = "Find files" },
+    { "<leader>fw", builtin.git_files,             desc = "Find git files" },
+    { "<leader>fg", builtin.live_grep,             desc = "Grep" },
+    { "<leader>fb", builtin.buffers,               desc = "Bufferst" },
+    { "<leader>fp", builtin.diagnostics,           desc = "Diagnostics" },
+    { "<leader>ft", builtin.lsp_document_symbols,  desc = "Symbols in file" },
+    { "<leader>fe", "<cmd>IconPickerNormal<CR>",   desc = "Symbols and icons" },
+    { "<leader>fd", "<cmd>TodoTelescope<CR>",      desc = "TODOs" },
+
+    { "<leader>w",  group = "Workspace" },
+    { "<leader>ws", builtin.lsp_workspace_symbols, desc = "Symbols in workspace" },
+})
 
 local borderchars = {
     prompt  = { "─", "│", "─", "│", '┌', '┐', "┘", "└" },

@@ -1,20 +1,18 @@
 local wk = require('which-key')
-wk.register({
-    [";"] = {
-        [";"] = { ":", ":", mode = "i" },
-        ["e"] = { ";<esc>a", "Escape ;", mode = "i" },
-        ["n"] = { ";<esc>", "Escape ; to NORMAL", mode = "i" },
-        ["o"] = { ";<esc>o", "Escape ; to new line", mode = "i" },
-        ["K"] = { ";<esc>", "Esc", mode = "i" }
-    }
-})
 
-wk.register({
-    g = { "<cmd>G<CR>", "Open Git console" },
-    h = { "<cmd>HopWord<CR>", "Hop" },
-    s = {
-        name = 'Show',
-        t = { "<cmd>TroubleToggle<CR>", "Diagnostic" },
-        s = { '<cmd>Outline<CR>', "Outline Symbols" }
-    }
-}, { prefix = "<leader>" })
+wk.add({
+    { "<leader>g",  "<cmd>G<CR>",             desc = "Open Git console" },
+    { "<leader>h",  "<cmd>HopWord<CR>",       desc = "Hop" },
+    { "<leader>s",  group = "Show" },
+    { "<leader>ss", "<cmd>Outline<CR>",       desc = "Outline Symbols" },
+    { "<leader>st", "<cmd>TroubleToggle<CR>", desc = "Diagnostic" },
+    -- TODO:
+    -- {
+    --     mode = { "i" },
+    --     { ";;", ":",       desc = ":" },
+    --     { ";K", ";<esc>",  desc = "Esc" },
+    --     { ";e", ";<esc>a", desc = "Escape ;" },
+    --     { ";n", ";<esc>",  desc = "Escape ; to NORMAL" },
+    --     { ";o", ";<esc>o", desc = "Escape ; to new line" },
+    -- }
+})

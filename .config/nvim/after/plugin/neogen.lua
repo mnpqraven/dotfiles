@@ -1,4 +1,5 @@
 local wk = require('which-key')
-wk.register({
-    d = { function() require('neogen').generate() end, "Create documentation" }
-}, { prefix = "<leader>" })
+
+-- wk.register({
+--     { "<leader>d", function() require('neogen').generate() end, desc = "Create documentation" },
+-- })
