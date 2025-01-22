@@ -36,7 +36,7 @@ alias tat="tmux attach"
 alias key="source $HOME/Scripts/ssh-agent.sh"
 alias r="ranger"
 alias tm="tmux"
-alias zm="zellij -s main"
+alias zm="zellij"
 alias xpic="xclip -sel clipboard -t image/png"
 alias update="cargo install $(cargo install --list | grep -E '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ') && sudo pacman -Syu"
 
