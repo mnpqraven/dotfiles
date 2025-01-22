@@ -69,7 +69,7 @@ cp -rf .fonts/* $HOME/.local/share/fonts
 
 leftwm-theme update
 # ln -s ~/.config/leftwm/themes/othi ~/.config/leftwm/themes/current
-yay -S wired
+sudo pacman -S --noconfirm dunst
 yay -S xmessage
 yay discord-canary-electron-bin
 yay ttf-symbola
