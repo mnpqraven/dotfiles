@@ -44,17 +44,17 @@ ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=225'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[ -f "/home/othi/.ghcup/env" ] && source "/home/othi/.ghcup/env" # ghcup-env
-[[ ! -r /home/othi/.opam/opam-init/init.zsh ]] || source /home/othi/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+[[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh"  > /dev/null 2> /dev/null
 
 # Turso
-export PATH="/home/othi/.turso:$PATH"
+export PATH="$HOME/.turso:$PATH"
 
 # SSH
 eval $(keychain --eval --quiet id_ed25519)
 
 # pnpm
-export PNPM_HOME="/home/othi/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
