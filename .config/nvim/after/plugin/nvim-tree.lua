@@ -1,5 +1,7 @@
 local nmap = require('user.functions').nmap
 
+nmap('<C-\\>', '<cmd>NvimTreeToggle<CR>')
+
 local function my_on_attach(bufnr)
     local api = require "nvim-tree.api"
 
@@ -11,13 +13,14 @@ local function my_on_attach(bufnr)
     api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
-    vim.keymap.set("n", "<C-e>", function() end, opts(""))
-    vim.keymap.set("n", "e", function() end, opts(""))
-    vim.keymap.set("n", "<C-n>", api.node.open.tab, opts("Edit in new tab"))
-    vim.keymap.set("n", "<CR>", api.node.open.edit, opts("Edit"))
-    vim.keymap.set("n", "<C-o>", api.node.open.edit, opts("Edit"))
-    vim.keymap.set("n", "o", api.node.open.edit, opts("Edit"))
-    vim.keymap.set("n", "<2-LeftMouse>", api.node.open.edit, opts("Edit"))
+
+    nmap("<C-e>", "<cmd>:wincmd l<CR>", opts(""))
+    nmap("e", function() end, opts(""))
+    nmap("<C-n>", api.node.open.tab, opts("Edit in new tab"))
+    nmap("<CR>", api.node.open.edit, opts("Edit"))
+    nmap("<C-o>", api.node.open.edit, opts("Edit"))
+    nmap("o", api.node.open.edit, opts("Edit"))
+    nmap("<2-LeftMouse>", api.node.open.edit, opts("Edit"))
 end
 
 require("nvim-tree").setup({
@@ -46,4 +49,3 @@ require("nvim-tree").setup({
         symlink_destination = true,
     },
 })
-nmap('<C-\\>', '<cmd>NvimTreeToggle<CR>')

@@ -21,7 +21,7 @@ wk.add({
     { "<leader>ff", builtin.find_files,            desc = "Find files" },
     { "<leader>fw", builtin.git_files,             desc = "Find git files" },
     { "<leader>fg", builtin.live_grep,             desc = "Grep" },
-    { "<leader>fb", builtin.buffers,               desc = "Bufferst" },
+    { "<leader>fb", builtin.buffers,               desc = "Buffers" },
     { "<leader>fp", builtin.diagnostics,           desc = "Diagnostics" },
     { "<leader>ft", builtin.lsp_document_symbols,  desc = "Symbols in file" },
     { "<leader>fe", "<cmd>IconPickerNormal<CR>",   desc = "Symbols and icons" },

@@ -1,9 +1,8 @@
 require("othi")
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
 
+-- NOTE: PACKAGE MANAGER
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -31,14 +30,6 @@ require('lazy').setup({
     'nvim-telescope/telescope-ui-select.nvim',
 
     -- NOTE: THEME -----------------------------------------------------------
-    'catppuccin/nvim',
-    'rebelot/kanagawa.nvim',
-    'kvrohit/mellow.nvim',
-    'navarasu/onedark.nvim',
-    {
-        'ramojus/mellifluous.nvim',
-        dependencies = { 'rktjmp/lush.nvim' },
-    },
     {
         "folke/tokyonight.nvim",
         lazy = false,
@@ -47,8 +38,8 @@ require('lazy').setup({
     },
     {
         'nvim-tree/nvim-tree.lua',
-        dependencies = { 'nvim-tree/nvim-web-devicons', },
-        tag = 'nightly'
+        version = "*",
+        lazy = false
     },
     {
         'nvim-treesitter/nvim-treesitter',
@@ -61,6 +52,10 @@ require('lazy').setup({
             'nvim-treesitter/nvim-treesitter-context',
             'JoosepAlviste/nvim-ts-context-commentstring',
         }
+    },
+    {
+        'echasnovski/mini.nvim',
+        version = false,
     },
     {
         'lukas-reineke/indent-blankline.nvim',
@@ -78,17 +73,7 @@ require('lazy').setup({
             })
         end
     },
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
-    },
-    {
-        'b0o/incline.nvim',
-        event = 'VeryLazy',
-        dependencies = 'lewis6991/gitsigns.nvim'
-    },
-    { 'akinsho/bufferline.nvim', version = "*",  dependencies = 'nvim-tree/nvim-web-devicons' },
-
+    'nvim-lualine/lualine.nvim',
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -115,8 +100,6 @@ require('lazy').setup({
                 version = "2.*",
                 build = "make install_jsregexp"
             },
-            -- Snippet Collection (Optional)
-            -- { 'rafamadriz/friendly-snippets' },
         }
     },
     'MunifTanjim/prettier.nvim',
@@ -134,23 +117,7 @@ require('lazy').setup({
             require('crates').setup()
         end,
     },
-    -- {
-    --     'Lilja/zellij.nvim',
-    --     config = function()
-    --         require('zellij').setup()
-    --     end
-    -- },
     'tpope/vim-fugitive',
-
-    'kylechui/nvim-surround',
-    {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup({
-                pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-            })
-        end
-    },
     {
         'folke/todo-comments.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
@@ -158,12 +125,6 @@ require('lazy').setup({
             require('todo-comments').setup({
                 signs = false
             })
-        end
-    },
-    {
-        "windwp/nvim-autopairs",
-        config = function()
-            require("nvim-autopairs").setup()
         end
     },
     'abecodes/tabout.nvim',
@@ -196,10 +157,7 @@ require('lazy').setup({
                 height = 7
             }
         end,
-        dependencies = "nvim-tree/nvim-web-devicons",
     },
-    { 'j-hui/fidget.nvim',       tag = 'legacy' },
-    { 'lewis6991/gitsigns.nvim', tag = 'release' },
     {
         "hedyhli/outline.nvim",
         lazy = true,
@@ -214,29 +172,30 @@ require('lazy').setup({
             },
         },
     },
-    'rcarriga/nvim-notify',
-    'stevearc/dressing.nvim',
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        ---@type snacks.Config
+        opts = {
+            input = {
+                enabled = true
+                -- your input configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        }
+    },
     {
         'themaxmarchuk/tailwindcss-colors.nvim',
         module = "tailwindcss-colors",
-        -- run the setup function after plugin is loaded
         config = function()
-            -- pass config options here (or nothing to use defaults)
             require("tailwindcss-colors").setup()
         end
     },
-    'norcalli/nvim-colorizer.lua',
     {
         "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 0
-            require("which-key").setup({
-                plugins = {
-                    spelling = { enabled = true }
-                }
-            })
-        end,
+        event = "VeryLazy",
     },
     {
         'ziontee113/icon-picker.nvim',
@@ -246,11 +205,9 @@ require('lazy').setup({
             }
         end
     },
-    'RRethy/vim-illuminate',
     {
         'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'
     },
-    "luukvbaal/statuscol.nvim",
     'lervag/vimtex',
     'jose-elias-alvarez/null-ls.nvim',
     {

@@ -1,10 +1,7 @@
 local map = require("user.functions").map
-local noremap = require("user.functions").noremap
 local nmap = require("user.functions").nmap
-local vmap = require("user.functions").vmap
 local nnoremap = require("user.functions").nnoremap
 local inoremap = require("user.functions").inoremap
-local vnoremap = require("user.functions").nnoremap
 
 map('N', 'K')
 map('n', 'gj')
@@ -18,11 +15,6 @@ map('H', '0')
 map('N', 'L')
 
 map('<C-d>', '<C-d>zz')
-
-nmap('<up>', 'ddkp')
-nmap('<down>', 'ddp')
-vmap('<up>', 'dkP1v')
-vmap('<down>', 'dp1v')
 
 -- split navigation
 nmap('<C-h>', '<cmd>:wincmd h<CR>')
@@ -67,7 +59,10 @@ nmap('G', 'Gzz')
 
 -- tabbingout semicolon
 inoremap(';;', ':')
-inoremap(';<tab>', '<ESC>%%a;<ESC>hi')
+inoremap(';K', ';<esc>')
+inoremap(';e', ';<esc>a')
+inoremap(';n', ';<esc>')
+inoremap(';o', ';<esc>o')
 
 nnoremap('<A-y>', '<C-e>')
 nnoremap('<C-A-y>', '<C-y>')

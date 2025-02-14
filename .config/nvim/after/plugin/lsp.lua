@@ -24,24 +24,6 @@ lsp.ensure_installed({
     'cssmodules_ls'
 })
 
--- cmp.setup {
---   formatting = {
---     format = lspkind.cmp_format({
---       mode = 'symbol_text', -- show only symbol annotations
---       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
---       ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
---     })
---   },
--- }
--- TODO:
--- local cmp_mappings = lsp.defaults.cmp_mappings({
---   ['<C-u>'] = cmp.mapping.scroll_docs(-4),
---   ['<C-d>'] = cmp.mapping.scroll_docs(4),
---   ['<C-e>'] = cmp.mapping.complete(),
---   ['<C-h>'] = cmp.mapping.abort(),
---   ['<CR>'] = cmp.mapping.confirm({ select = true }),
--- })
-
 lsp.on_attach(function(_, bufnr)
     require('lsp_signature').on_attach({
         bind = true,
@@ -49,40 +31,34 @@ lsp.on_attach(function(_, bufnr)
         hint_prefix = "> "
     }, bufnr)
 
-    wk.register({
-        g = {
-            name = "Go",
-            d = { vim.lsp.buf.definition, "Go to definition", buffer = bufnr },
-            D = { vim.lsp.buf.declaration, "Go to declaration", buffer = bufnr },
-            r = { vim.lsp.buf.references, "List references", buffer = bufnr }
-        },
-        K = { vim.lsp.buf.hover, "Hover", buffer = bufnr },
-        ['<C-k>'] = { vim.lsp.buf.signature_help, "Signature help", buffer = bufnr },
-        ["]"] = {
-            d = { vim.diagnostic.goto_next, "Next diagnostic", buffer = bufnr }
-        },
-        ["["] = {
-            d = { vim.diagnostic.goto_prev, "Previous diagnostic", buffer = bufnr }
-        }
+    wk.add({
+        { "g",                group = "Go" },
+        { "gd",               vim.lsp.buf.definition,      desc = "Go to definition" },
+        { "gD",               vim.lsp.buf.declaration,     desc = "Go to declaration" },
+        { "gr",               vim.lsp.buf.references,      desc = "List references" },
+        { "K",                vim.lsp.buf.hover,           desc = "Hover" },
+        { "<C-k>",            vim.lsp.buf.signature_help,  desc = "Signature help" },
+        { "]d",               vim.diagnostic.goto_next,    desc = "Next diagnostic" },
+        { "[d",               vim.diagnostic.goto_prev,    desc = "Previous diagnostic" },
+
+        { "<leader>o",        vim.lsp.buf.format,          desc = "Format" },
+        { "<leader>D",        vim.lsp.buf.type_definition, desc = "Go to type definition" },
+        { "<leader>r",        group = "Rename" },
+        { "<leader>rn",       vim.lsp.buf.rename,          desc = "Rename" },
+        { "<leader>q",        group = "Quickfix" },
+        { "<leader>qf",       vim.lsp.buf.code_action,     desc = "Code actions" },
+        { "<leader><leader>", vim.diagnostic.open_float,   desc = "Open diagnostic window", }
     })
-    wk.register({
-        o = { vim.lsp.buf.format, "Format", buffer = bufnr },
-        D = { vim.lsp.buf.type_definition, "Go to type definition", buffer = bufnr },
-        ["rn"] = { vim.lsp.buf.rename, "Rename", buffer = bufnr },
-        ["qf"] = { vim.lsp.buf.code_action, "Code actions", buffer = bufnr },
-        ["<leader>"] = { vim.diagnostic.open_float, "Open diagnostic window", buffer = bufnr }
-    }, { prefix = "<leader>" })
 end)
 
 lsp.configure('taplo', {
+    -- TODO:
     on_attach = function(_, bufnr)
         wk.register({
             c = {
                 name = "Cargo",
                 u = { crates.update_crate, "Update crate", buffer = bufnr },
                 U = { crates.upgrade_crate, "Upgrade crate", buffer = bufnr },
-                u = { crates.update_crates, "Update crates", mode = "v", buffer = bufnr },
-                -- u = { crates.upgrade_crates, "Upgrade crates", mode = "v", buffer = bufnr },
                 a = { crates.upgrade_all_crates, "Upgrade all crates", buffer = bufnr },
                 h = { crates.open_homepage, "Open homepage", buffer = bufnr },
                 d = { crates.open_documentation, "Open documentation", buffer = bufnr },
@@ -125,22 +101,9 @@ lsp.configure('cssmodules_ls', {
     }
 })
 
--- remove this when nvim is v0.10+
--- lsp.configure('svelte', {
---     on_attach = function(client, bufnr)
---         vim.api.nvim_create_autocmd("BufWritePost", {
---             pattern = { "*.js", "*.ts" },
---             callback = function(ctx)
---                 if client.name == "svelte" then
---                     client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
---                 end
---             end,
---         })
---     end
--- })
-
 local rust_lsp = lsp.build_options('rust_analyzer', {
     on_attach = function(_, bufnr)
+        -- TODO:
         wk.register({
             K = { rt.hover_actions.hover_actions, "Hover actions", buffer = bufnr },
         })
@@ -174,11 +137,3 @@ require('rust-tools').setup({
         }
     }
 })
-
-
--- signs on gutter columns
--- local signs = { Error = " ", Hint = " ", Info = " " }
--- for type, icon in pairs(symbols) do
---     local hl = "DiagnosticSign" .. type
---     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
--- end

@@ -1,5 +1,6 @@
 vim.opt.guicursor      = "a:block"
 vim.opt.updatetime     = 50
+vim.opt.timeoutlen     = 500
 
 vim.opt.encoding       = 'utf-8'
 vim.opt.is             = true
@@ -40,7 +41,14 @@ vim.opt.concealcursor  = "c"
 
 vim.opt.showbreak      = "↪"
 vim.opt.list           = true
-vim.opt.listchars      = { tab = '» ', extends = '›', precedes = '‹', nbsp = '·', trail = '·', eol = '¬' }
+vim.opt.listchars      = {
+    tab = '» ',
+    extends = '›',
+    precedes = '‹',
+    nbsp = '·',
+    trail = '·',
+    -- eol = '¬'
+}
 vim.opt.mouse          = "a"
 
 vim.cmd([[
