@@ -153,7 +153,11 @@ require('lazy').setup({
         end,
         dependencies = "nvim-treesitter/nvim-treesitter",
     },
-
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+    },
     'mattn/emmet-vim',
     'onsails/lspkind.nvim',
     'ray-x/lsp_signature.nvim',

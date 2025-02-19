@@ -1,6 +1,6 @@
 local lsp = require('lsp-zero')
 local cmp = require('cmp')
--- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local lspkind = require('lspkind')
 local ls = require('luasnip')
 
@@ -67,9 +67,8 @@ local cmp_configs = lsp.defaults.cmp_config({
     }
 })
 
--- TODO: see what's with this
--- cmp.event:on(
---     'confirm_done', cmp_autopairs.on_confirm_done())
+cmp.event:on(
+    'confirm_done', cmp_autopairs.on_confirm_done())
 
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
